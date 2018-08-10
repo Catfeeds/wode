@@ -1,0 +1,86 @@
+<view class="container">
+  <view class="status-box">
+    <view bindtap="statusTap" class="status-label {{index == currentType ? 'active' : ''}}" wx:for-items="{{statusType}}" wx:key="{{index}}" data-index="{{index}}" data-statu="{{statusKey[index]}}">
+      {{item}}
+      <view class="{{tabClass[index]}}"></view>
+    </view>
+  </view>
+  <view class="no-order" hidden="{{(orderList.length || orderWaterList.length) ? true : false}}">
+    <image src="/images/no-order.png" class="no-order-img"></image>
+    <view class="text">暂无订单</view>
+  </view>
+  <view class="order-list" hidden="{{(orderList.length || orderWaterList.length) ? false : true}}">
+    <view class="a-order" wx:for-items="{{orderWaterList}}" wx:key="{{index}}">
+      <view class="order-date">
+        <view class="date-box">期望送达时间：{{item.best_time}}</view>
+        <view class="status {{(item.order_status==-1) ? '':'red'}}" wx:if="{{item.shipping_status == 0}}">待发货</view>
+        <view class="status {{(item.order_status==-1) ? '':'red'}}" wx:if="{{item.shipping_status == 1}}">待收货</view>
+        <view class="status {{(item.order_status==-1) ? '':'red'}}" wx:if="{{item.shipping_status == 2}}">交易成功</view>
+      </view>
+
+      <view data-id="{{item.id}}">
+        <view wx:if="{{goodsWaterMap[index].length==1}}" class='img'>
+          <view class='img-box1'>
+            <image src="{{goodsWaterMap[index][0].goods_imgs}}" class="goods-img"></image>
+            <view class='img-box1-1'>
+              <view>{{goodsWaterMap[index][0].goods_name}}  {{goodsWaterMap[index][0].goods_number}}桶</view>
+              <view class='img-box1-guige'>{{goodsWaterMap[index][0].goods_attr}}</view>
+            </view>
+            <view class='img-box1-2'>
+              <view></view>
+              <view></view>
+            </view>
+          </view>
+        </view>
+        <scroll-view class="goods-img-container" scroll-x="true" wx:else>
+          <view class="img-box" wx:for-items="{{goodsWaterMap[index]}}" wx:key="{{index2}}">
+            <image src="{{item.goods_imgs}}" class="goods-img"></image>
+          </view>
+        </scroll-view>
+      </view>
+      <view class="price-box" wx:if="{{item.shipping_status <= 1? true:false}}">
+        <view class="btn cancel-btn" wx:if="{{item.shipping_status==0?true:false}}" bindtap="cancelOrderWaterTap" data-id="{{item.id}}">取消叫水</view>
+        <view class="btn topay-btn main-color-click" wx:if="{{item.shipping_status == 1? true:false}}" bindtap="confirmBtnWaterTap" data-id="{{item.id}}">确认收货</view>
+        <view class="btn cancel-btn" bindtap="makePhoneCall">联系客服</view>
+      </view>
+    </view>
+    <view class="a-order" wx:for-items="{{orderList}}" wx:key="{{index}}">
+      <view class="order-date">
+        <view class="date-box">期望送达时间：{{item.best_time}}</view>
+        <view class="status {{(item.order_status==-1) ? '':'red'}}" wx:if="{{item.shipping_status == 0}}">待发货</view>
+        <view class="status {{(item.order_status==-1) ? '':'red'}}" wx:if="{{item.shipping_status == 1}}">待收货</view>
+        <view class="status {{(item.order_status==-1) ? '':'red'}}" wx:if="{{item.shipping_status == 2}}">交易成功</view>
+      </view>
+
+      <view bindtap="orderDetail" data-id="{{item.id}}">
+        <view wx:if="{{goodsMap[index].length==1}}" class='img'>
+          <view class='img-box1'>
+            <image src="{{goodsMap[index][0].goods_imgs}}" class="goods-img"></image>
+            <view class='img-box1-1'>
+              <view>{{goodsMap[index][0].goods_name}}</view>
+              <view class='img-box1-guige'>首次配送：{{goodsMap[index][0].first_num}}桶</view>
+            </view>
+            <view class='img-box1-2'>
+              <view>￥{{goodsMap[index][0].goods_price}}</view>
+              <view>x{{goodsMap[index][0].goods_number}}</view>
+            </view>
+          </view>
+        </view>
+        <scroll-view class="goods-img-container" scroll-x="true" wx:else>
+          <view class="img-box" wx:for-items="{{goodsMap[index]}}" wx:key="{{index2}}">
+            <image src="{{item.goods_imgs}}" class="goods-img"></image>
+          </view>
+        </scroll-view>
+      </view>
+      <view class="price-box">
+        <view class="total-price">共计：¥ {{item.order_amount}}</view>
+      </view>
+      <view class="price-box" wx:if="{{item.shipping_status <= 1? true:false}}">
+        <view class="btn cancel-btn" wx:if="{{item.shipping_status==0?true:false}}" bindtap="cancelOrderTap" data-id="{{item.id}}">取消订单</view>
+        <view class="btn topay-btn main-color-click" wx:if="{{item.shipping_status == 1? true:false}}" bindtap="confirmBtnTap" data-id="{{item.id}}">确认收货</view>
+        <view class="btn cancel-btn" bindtap="makePhoneCall">联系客服</view>
+      </view>
+    </view>
+
+  </view>
+</view>

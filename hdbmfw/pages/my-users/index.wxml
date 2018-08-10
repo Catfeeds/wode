@@ -1,0 +1,41 @@
+<!--pages/my-console-check/index.wxml-->
+<view class='container'>
+  <view class="status-box">
+    <view bindtap="statusTap" class="status-label {{index == currentType ? 'active' : ''}}" wx:for-items="{{statusType}}" wx:key="{{index}}" data-index="{{index}}" data-statu="{{statusKey[index]}}">
+      {{item}}
+      <view class="{{tabClass[index]}}"></view>
+    </view>
+  </view>
+  <!--未审核  -->
+  <view class='check-list' wx:for="{{weishenhe}}" wx:key="{{index}}" wx:if="{{currentStatu==1}}" data-id="{{item.user_id}}">
+    <view class='check-list-img'>
+      <image src='{{item.avatar}}'></image>
+    </view>
+    <view class='check-list-content'>
+      <view>姓名：{{item.user_name}}</view>
+      <view catchtap='tocallphone' data-phone="{{item.mobile}}">手机号码：{{item.mobile}}
+        <text class='iconfont icon-shouji'></text>
+      </view>
+    </view>
+    <view class='check-list-btn'>
+      <button catchtap='toShenhe' data-id="{{item.user_id}}">设为管理员</button>
+    </view>
+  </view>
+
+  <!--已审核  -->
+  <view class='check-list checked-list' wx:for="{{yishenhe}}" wx:key="{{index}}" catchtap='' data-id="{{item.user_id}}" wx:if="{{currentStatu==0}}">
+    <view class='check-list-img'>
+      <image src='{{item.avatar}}'></image>
+    </view>
+    <view class='check-list-content'>
+      <view>姓名：{{item.user_name}}</view>
+      <view catchtap='tocallphone' data-phone="{{item.mobile_phone}}">手机号码：{{item.mobile_phone}}
+        <text class='iconfont icon-shouji'></text>
+      </view>
+    </view>
+    <view class='check-list-btn'>
+      <button catchtap='toJiechu' data-id="{{item.user_id}}">取消管理员</button>
+    </view>
+  </view>
+
+</view>

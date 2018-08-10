@@ -1,0 +1,22 @@
+<view class="container">
+    <view class="address-list">
+        <view class="a-address"  wx:for-items="{{addressList}}" wx:key="{{index}}">
+             <view class="left-text {{item.is_default? 'active':''}}" bindtap="selectTap" data-id="{{item.address_id}}">
+                 <view class="name-tel">
+                    {{item.consignee}}  {{item.mobile}}
+                 </view>
+                 <view class="address-box">
+                    {{item.address}}
+                 </view>     
+             </view>   
+             <view class="right-edit" bindtap="editAddess" data-id="{{item.address_id}}"></view> 
+        </view>
+    </view>
+  <view class='address-btn'>
+    <view bindtap='addAddess' class='addbtn'>
+      <text class='iconfont icon-tianjia-copy main-color '></text>新增地址</view>
+    <view bindtap='getWxAddress' class='wxbtn'>
+      <text class='iconfont icon-weixin'></text>微信添加</view>
+  </view>
+
+</view>

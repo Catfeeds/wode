@@ -1,0 +1,75 @@
+/* pages/my-console-check/index.wxss */
+
+.icon-shouji {
+  color: #44b8f4;
+  font-size: 35rpx;
+}
+
+.icon-youcecaidan {
+  color: #e50012;
+}
+
+.check-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx 40rpx;
+  border-bottom: 8rpx solid #f0f0f0;
+}
+
+.check-list-img {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.check-list-img image {
+  width: 100%;
+  height: 100%;
+}
+
+.check-list-content {
+  line-height: 40rpx;
+  text-align: left;
+  margin-left: 20rpx;
+  flex: 1;
+}
+
+.check-list-btn {
+  width: 250rpx;
+  text-align: right;
+}
+
+.check-list-btn button {
+  height: 55rpx;
+  color: #fff;
+  background-color: #58bc9c;
+  line-height: 55rpx;
+  font-size: 26rpx;
+  border-radius: 50px;
+  padding: 0 40rpx;
+}
+
+.status-box {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-top: 1rpx solid #eee;
+}
+
+.status-box .status-label {
+  border-right: 1px solid #f0f0f0;
+  text-align: center;
+  font-size: 30rpx;
+  padding: 0px 40rpx;
+  flex: 1;
+  border-bottom: 6rpx solid #eee;
+  position: relative;
+}
+
+.status-box .status-label.active {
+  color: #58bc9c;
+  border-bottom: 6rpx solid #58bc9c;
+}

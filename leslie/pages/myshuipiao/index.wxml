@@ -1,0 +1,38 @@
+<view class="container">
+    <view class="coupons-list">
+      <view class="coupons-item" wx:for-items="{{shuipiaos}}" wx:key="id" wx:for-index="idx"  bindtap="toDetailsTap" data-id="{{item.goods_id}}">
+        <view style="font-size: 50rpx"> {{item.water_number}}张 </view>
+        <view> {{item.goods_name}} </view>
+      </view>
+    </view>
+    <view class="goodsList" hidden='true'>
+        <view class="a-gooods" wx:for="{{shuipiaos}}"  wx:key="{{index}}" >
+            <view class="a-goods-conts" data-index="{{index}}"    style="{{item.left}}">
+                <view class="goods-info">
+                    <view class="img-box">
+                        <image src="{{item.goods_imgs}}" class="img"/>
+                    </view>
+                    <view class="text-box">
+                        <view class="goods-title">{{item.goods_name}}</view>
+                        <view class="goods-label">{{item.goods_name}}</view>
+                        <view class="goods-price">{{item.water_number}}张</view>
+                        <view class="buy-num">
+                            <view class="jian-btn {{item.goods_number<=1? 'disabled' : ''}}" catchtap="jianBtnTap" data-index="{{index}}">-</view>
+                            <input  type="number" value="{{item.goods_number}}" disabled/>
+                            <view class="jia-btn {{item.goods_number>=item.water_number? 'disabled' : ''}}" catchtap="jiaBtnTap" data-index="{{index}}">+</view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view style="height:100rpx;background-color:#fff;width:100%;"></view>
+    <view class="jiesuan-box" hidden='true'>
+        <view class="left-price">
+            <view class="all-selected  {{allSelect?'active':''}}" bindtap="bindAllSelect">全选</view>
+        </view>
+        <view class="to-pay-btn {{noSelect?'no-select':''}}" bindtap="toPayOrder">叫水</view>
+    </view>
+
+</view>
