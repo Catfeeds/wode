@@ -10,6 +10,7 @@
 }
 
 .check-list {
+  width: 95%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -28,6 +29,7 @@
 }
 
 .check-list-content {
+  font-size: 28rpx;
   line-height: 40rpx;
   text-align: left;
   margin-left: 20rpx;
@@ -35,18 +37,18 @@
 }
 
 .check-list-btn {
-  width: 250rpx;
+  width: 200rpx;
   text-align: right;
 }
 
 .check-list-btn button {
   height: 55rpx;
   color: #fff;
-  background-color: #58bc9c;
+  background-color: #e85654;
   line-height: 55rpx;
   font-size: 26rpx;
-  border-radius: 50px;
-  padding: 0 40rpx;
+  border-radius: 30px;
+  padding: 0 10rpx;
 }
 
 .status-box {
@@ -70,6 +72,6 @@
 }
 
 .status-box .status-label.active {
-  color: #58bc9c;
-  border-bottom: 6rpx solid #58bc9c;
+  color: #e85654;
+  border-bottom: 6rpx solid #e85654;
 }

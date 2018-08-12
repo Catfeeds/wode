@@ -36,7 +36,6 @@ App({
               return;
             } else {
               that.globalData.userInfo = res.data.data;
-              that.globalData.uid = res.data.data.user_id;
               wx.setStorageSync('kefu', res.data.kefu);
               wx.setStorageSync('user_id', res.data.data.user_id);
             }
@@ -72,7 +71,6 @@ App({
   },
   globalData: {
     userInfo: null,
-    uid: 0,
     subDomain: "https://www.lanrengj.com" + "/wxapi/hdbm",
     version: "1.0",
     shareProfile: '一款黄岛本地便民服务小工具，提供一键订水，附近便利店查询，闲置物品信息发布等服务。'

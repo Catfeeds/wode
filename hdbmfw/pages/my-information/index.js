@@ -48,7 +48,7 @@ Page({
               that.setData({
                 userAvatar: resData.data.avatar
               })
-              // app.globalData.userInfo.avatar = resData.data.avatar;
+              app.globalData.userInfo.avatar = resData.data.avatar;
             } else {
               wx.showModal({
                 content: resData.message,
@@ -94,8 +94,8 @@ Page({
         if (res.data.code == 0) {
           that.data.userInfo.user_name = param.realname;
           that.data.userInfo.mobile = param.mobile;
-          // app.globalData.userInfo.user_name = param.realname;
-          // app.globalData.userInfo.mobile = param.mobile;
+          app.globalData.userInfo.user_name = param.realname;
+          app.globalData.userInfo.mobile = param.mobile;
           wx.showModal({
             content: '修改成功',
             success: function(res) {

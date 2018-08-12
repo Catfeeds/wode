@@ -44,25 +44,10 @@ Page({
       }
     })
   },
-  //需要审核提示
-  toShenhe: function (e) {
-    var that = this
-    //审核人的id
-    var id = e.currentTarget.dataset.id;
-    that.shenhe(id, 'tongguo')
-  },
-  //取消管理提示
-  toJiechu: function (e) {
-    var that = this
-    //审核人的id
-    var id = e.currentTarget.dataset.id;
-    that.jiechu(id)
-
-  },
   //设为管理
-  shenhe: function (id, type) {
+  swgl: function (e) {
     var that = this;
-    var user_id = wx.getStorageSync('user_id');
+    var user_id = e.currentTarget.dataset.id;
     wx.request({
       url: app.globalData.subDomain + '/swgl',
       data: {
@@ -79,11 +64,11 @@ Page({
     })
   },
   //取消管理
-  jiechu: function (id) {
+  qxgl: function (e) {
     var that = this;
-    var user_id = wx.getStorageSync('user_id');
+    var user_id = e.currentTarget.dataset.id;
     wx.request({
-      url: app.globalData.subDomain + 'qxgl',
+      url: app.globalData.subDomain + '/qxgl',
       data: {
         user_id: user_id
       },

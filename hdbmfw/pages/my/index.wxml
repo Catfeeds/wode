@@ -14,10 +14,7 @@
     <navigator url="/pages/select-address/index" hover-class="navigator-hover">我的地址</navigator>
   </view>
   <view class="my-item" wx:if="{{userInfo.user_type==99}}">
-    <navigator url="/pages/order-list-gzt/index" hover-class="navigator-hover">送水小哥工作台</navigator>
-  </view>
-  <view class="my-item" wx:if="{{userInfo.user_type==99}}">
-    <navigator url="/pages/my-users/index" hover-class="navigator-hover">用户管理</navigator>
+    <navigator url="/pages/my-gzt/index" hover-class="navigator-hover">工作台</navigator>
   </view>
   <!--<view class="my-item">
     <navigator url="/pages/mycoupons/index" hover-class="navigator-hover">我的优惠券</navigator>

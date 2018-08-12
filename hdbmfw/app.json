@@ -13,7 +13,8 @@
     "pages/order-details-gzt/index",
     "pages/myshuipiao/index",
     "pages/my/index",
-    "pages/my-users/index",
+    "pages/my-gzt/index",
+    "pages/my-users-gzt/index",
     "pages/my-information/index",
     "pages/notice/show",
     "pages/recharge/index"

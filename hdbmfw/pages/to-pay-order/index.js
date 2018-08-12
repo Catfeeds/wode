@@ -91,6 +91,7 @@ Page({
     var goodsList = that.data.goodsList;
     var order_amount = that.data.allGoodsPrice;
     var best_time = that.data.dateValue;
+    //var inviter_id = wx.getStorageSync('inviter_id');
     var user_id = wx.getStorageSync('user_id');
     var postData = {
       goodsList: goodsList,
@@ -98,6 +99,7 @@ Page({
       first_num: first_num,
       best_time: best_time,
       remark: remark,
+      //inviter_id: inviter_id,
       user_id: user_id
     };
     if (that.data.isNeedLogistics > 0) {

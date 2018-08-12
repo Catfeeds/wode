@@ -33,10 +33,25 @@ Page({
   },
   onLoad: function(e) {
     if (e.inviter_id) {
-      wx.setStorage({
-        key: 'inviter_id_' + e.id,
-        data: e.inviter_id
-      })
+      var inviter_id = e.inviter_id;
+      var user_id = wx.getStorageSync('user_id');
+      if (user_id != inviter_id) {
+        wx.request({
+          url: app.globalData.subDomain + '/up_user_inviter',
+          data: {
+            inviter_id: inviter_id,
+            goods_id: e.id,
+            user_id: user_id
+          },
+          success: function(res) {}
+        })
+      }
+      // app.globalData.inviter_id = e.inviter_id;
+      // wx.setStorageSync('inviter_id', e.inviter_id);
+      // wx.setStorage({
+      //   key: 'inviter_id_' + e.id,
+      //   data: e.inviter_id
+      // })
     }
     var that = this;
     // 获取购物车数据
@@ -119,7 +134,7 @@ Page({
     }
   },
   numJiaTap: function() {
-    if (this.data.shopType =="tojiaoshui"){
+    if (this.data.shopType == "tojiaoshui") {
       if (this.data.buyNumber < this.data.goodsDetail.shuipiao) {
         var currentNum = this.data.buyNumber;
         currentNum++;
@@ -127,7 +142,7 @@ Page({
           buyNumber: currentNum
         })
       }
-    }else{
+    } else {
       if (this.data.buyNumber < this.data.buyNumMax) {
         var currentNum = this.data.buyNumber;
         currentNum++;
@@ -136,7 +151,7 @@ Page({
         })
       }
     }
-    
+
   },
   /**
    * 加入购物车
@@ -285,14 +300,14 @@ Page({
     buyNowInfo.shopList.push(shopCarMap);
     return buyNowInfo;
   },
-  makePhoneCall: function (e) {
+  makePhoneCall: function(e) {
     var phoneNumber = wx.getStorageSync('kefu');
     wx.makePhoneCall({
       phoneNumber: phoneNumber,
     })
   },
   onShareAppMessage: function() {
-  	var user_id = wx.getStorageSync('user_id');
+    var user_id = wx.getStorageSync('user_id');
     return {
       title: this.data.goodsDetail.goods_name,
       path: '/pages/goods-details/index?id=' + this.data.goodsDetail.goods_id + '&inviter_id=' + user_id,
