@@ -99,7 +99,9 @@ Page({
     wx.request({
       url: app.globalData.subDomain + '/bindMobile',
       data: {
-        mobile: e.detail.encryptedData,
+        encryptedData: e.detail.encryptedData,
+        iv: e.detail.iv,
+        errMsg: e.detail.errMsg,
         user_id: user_id
       },
       success: function(res) {
@@ -109,11 +111,11 @@ Page({
             icon: 'success',
             duration: 2000
           })
-          // that.getUserApiInfo();
+          that.getUserInfo();
         } else {
           wx.showModal({
             title: '提示',
-            content: '绑定失败',
+            content: res.data.message,
             showCancel: false
           })
         }

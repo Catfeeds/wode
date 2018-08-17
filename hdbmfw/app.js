@@ -10,10 +10,19 @@ App({
     var that = this;
     //  获取商城名称
     wx.setStorageSync('mallName', "黄岛便民服务");
-    var user_id = wx.getStorageSync('user_id');
-    if (!user_id) {
-      this.login();
-    }
+    wx.checkSession({
+      success: function() {
+        //session_key 未过期，并且在本生命周期一直有效
+        var user_id = wx.getStorageSync('user_id');
+        if (!user_id) {
+          that.login();
+        }
+      },
+      fail: function() {
+        // session_key 已经失效，需要重新执行登录流程
+        that.login(); //重新登录
+      }
+    })
   },
   login: function() {
     var that = this;
