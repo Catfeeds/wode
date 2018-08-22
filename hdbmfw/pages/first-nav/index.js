@@ -116,10 +116,8 @@ Page({
     })
   },
   toErshouTap: function () {
-    wx.showToast({
-      title: '敬请期待',
-      icon: 'none',
-      duration: 2000
+    wx.navigateTo({
+      url: '/pages/es-xxlb/index'
     })
   },
   toDingshuiTap: function () {

@@ -17,7 +17,9 @@
     "pages/my-users-gzt/index",
     "pages/my-information/index",
     "pages/notice/show",
-    "pages/recharge/index"
+    "pages/recharge/index",
+    "pages/es-xxlb/index",
+    "pages/es-fbxx/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
