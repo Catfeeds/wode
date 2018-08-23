@@ -37,6 +37,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
+    var user_id = wx.getStorageSync('user_id');
+    this.setData({
+      user_id: user_id,
+    });
     this.getXxList();
   },
 
@@ -80,7 +84,9 @@ Page({
   },
 
   xxDetailTap: function(e) {
-
+    wx.navigateTo({
+      url: "/pages/es-details/index?id=" + e.currentTarget.dataset.id
+    })
   },
 
   hireXxTap: function(e) {

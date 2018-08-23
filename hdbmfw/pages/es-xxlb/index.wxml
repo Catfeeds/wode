@@ -34,7 +34,7 @@
 
       <view class='jiedan'>
         {{item.goods_number}}件
-        <view class='btn' catchtap="hireXxTap" data-id="{{item.id}}">我想要</view>
+        <view class='btn' catchtap="hireXxTap" wx:if="{{user_id!=item.user_id}}" data-id="{{item.id}}">我想要</view>
       </view>
 
     </view>

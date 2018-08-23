@@ -48,9 +48,9 @@
   opacity: 0;
 }
 
-/* .row-wrap:last-child {
-  padding-bottom: 100rpx;
-} */
+.row-wrap:last-child {
+  padding-bottom: 30rpx;
+}
 
 .row-wrap  textarea {
   line-height: initial;

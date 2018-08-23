@@ -19,7 +19,8 @@
     "pages/notice/show",
     "pages/recharge/index",
     "pages/es-xxlb/index",
-    "pages/es-fbxx/index"
+    "pages/es-fbxx/index",
+    "pages/es-details/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
