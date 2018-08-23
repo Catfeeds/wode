@@ -6,9 +6,8 @@ Page({
    */
   data: {
     pages: 1,
-    isshangla: false,//是否为上拉加载
-    isMoredata: true,//是否请求到数据
-    isHideLoadMore: true,//是否显示加载更多.默认为true
+    isMoredata: true, //是否请求到数据
+    isHideLoadMore: true, //是否显示加载更多.默认为true
   },
 
   /**
@@ -50,54 +49,32 @@ Page({
         page: pages
       },
       success: (res) => {
-        var esxxList = new Array();
-        if (that.data.esxxList && that.data.pages > 1) {
-          esxxList = that.data.esxxList;
-        } else {
-          that.setData({
-            esxxList: []
-          })
-        }
-        console.log("dswd");
-        console.log(esxxList);
-        wx.stopPullDownRefresh()
+        wx.stopPullDownRefresh();
         wx.hideLoading();
         that.setData({
           isHideLoadMore: true
-        })
+        });
 
+        var esxxList = new Array();
+        if (that.data.esxxList && that.data.pages > 1) {
+          esxxList = that.data.esxxList;
+        }
         var datas = res.data.data;
-        if (datas.length == 0) {//当没有数据时
+        if (datas.length == 0) { //当没有数据时
           that.setData({
             isMoredata: false
           })
-        } else {//当请求到数据时
+        } else { //当请求到数据时
           that.setData({
             isMoredata: true
           })
-          for (var i = 0; i < datas.length; i++) {//把剩下的for循环加进去
+          for (var i = 0; i < datas.length; i++) { //把剩下的for循环加进去
             esxxList.push(datas[i])
           }
-          console.log("111111111");
-          console.log(esxxList);
-          //点击上拉时需要显示的所有数据 
-          if (that.data.isshangla) {
-            that.setData({
-              esxxList: esxxList,
-              pages: pages,
-            });
-            //下拉时显示第一页的数据
-          } else {
-            that.setData({
-              esxxList: datas,
-            });
-          }
+          that.setData({
+            esxxList: esxxList,
+          });
         }
-
-
-        // that.setData({
-        //   esxxList: res.data.data
-        // });
       }
     })
   },
@@ -131,10 +108,8 @@ Page({
     wx.showLoading({
       title: '加载中',
     })
-
     this.setData({
       pages: 1,
-      isshangla: false
     })
     var that = this;
     setTimeout(function() {
@@ -147,21 +122,19 @@ Page({
    */
   onReachBottom: function() {
     var pages = this.data.pages;
-
     if (this.data.isHideLoadMore) {
+      this.setData({
+        isHideLoadMore: false,
+      });
       if (this.data.isMoredata) {
         pages++;
         this.setData({
           pages: pages,
-          isshangla: true
         });
-      }
-      this.setData({
-        isHideLoadMore: false,
-      });
+      };
       setTimeout(() => {
         this.getXxList();
-      }, 1000)
+      }, 500)
     }
   },
 
