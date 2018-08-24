@@ -1,0 +1,27 @@
+/* pages/Shop/search-list/index.wxss */
+@import "../search/index.wxss";
+.search-title{
+  display: flex;
+  justify-content: space-around;
+  line-height: 88rpx;
+  font-size: 30rpx;
+  border-bottom: 1px solid #eee;
+  align-items: center;
+}
+.search-title .active{
+  color: #0095e5
+}
+.search-title image{
+  width: 35rpx;
+  height:35rpx;
+  margin-left: 5rpx;
+}
+.search-title view{
+  display: flex;
+  align-items: center;
+}
+.search-title .up .img{
+transform: rotate(180deg);
+-ms-transform: rotate(180deg); /* IE 9 */
+-webkit-transform: rotate(180deg); /* Safari and Chrome */
+}
