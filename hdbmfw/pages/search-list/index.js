@@ -1,4 +1,3 @@
-
 // pages/search/index.js
 Page({
 
@@ -21,7 +20,7 @@ Page({
     pricehigh: 0,
     pinpaiid: [],
     gongzhongid: [],
-    catid:"",
+    catid: "",
     //paramkey, paramorder, paramsort,
     //parampricemax, parammin, parambrand, prarmgongzhong, parampage
     //加载更多时传递的参数
@@ -29,7 +28,7 @@ Page({
     paramsort: ""
   },
   //当nav被点击的时候
-  statusTap: function (e) {
+  statusTap: function(e) {
     console.log("tab:", e.currentTarget.dataset.index);
     this.setData({
       currentType: e.currentTarget.dataset.index
@@ -46,7 +45,7 @@ Page({
         paramsort: ""
       })
       //综合
-      this.getGoodsList(this.data.region_id,this.data.keyword, '', '', '', '', '', '', this.data.parampage);
+      this.getGoodsList(this.data.region_id, this.data.keyword, '', '', '', '', '', '', this.data.parampage);
     } else if (e.currentTarget.dataset.index == '1') {
       //销量 高到低
       this.setData({
@@ -60,7 +59,7 @@ Page({
         parampage: 1,
       })
 
-      this.getGoodsList(this.data.region_id,this.data.keyword, this.data.paramorder,
+      this.getGoodsList(this.data.region_id, this.data.keyword, this.data.paramorder,
         this.data.paramsort, this.data.pricehigh, this.data.pricelow, '', '', this.data.parampaage);
 
     } else if (e.currentTarget.dataset.index == '2') {
@@ -82,7 +81,7 @@ Page({
           gongzhongid: [],
           parampage: 1,
         })
-        this.getGoodsList(this.data.region_id,this.data.keyword, this.data.paramorder,
+        this.getGoodsList(this.data.region_id, this.data.keyword, this.data.paramorder,
           this.data.paramsort, this.data.pricehigh, this.data.pricelow, '', '', this.data.parampaage);
       } else {
         //低到高
@@ -96,7 +95,7 @@ Page({
           gongzhongid: [],
           parampage: 1,
         })
-        this.getGoodsList(this.data.region_id,this.data.keyword, this.data.paramorder,
+        this.getGoodsList(this.data.region_id, this.data.keyword, this.data.paramorder,
           this.data.paramsort, this.data.pricehigh, this.data.pricelow, '', '', this.data.parampaage);
       }
     } else {
@@ -107,7 +106,7 @@ Page({
     }
   },
   // 当键盘输入时
-  searchIpt: function (e) {
+  searchIpt: function(e) {
     if (e.detail.value == "") {
       this.setData({
         ssButton: "取消",
@@ -123,28 +122,28 @@ Page({
 
   },
   //当点击价格排序的时候
-  jiageTap: function (e) {
+  jiageTap: function(e) {
     var isclick = !this.data.isclick;
     console.log(isclick)
     this.setData({
       isclick: isclick
     })
   },
-  buttonTap: function () {
+  buttonTap: function() {
     if (this.data.ssButton == "确定") {
       this.setData({
         goods: [],
         parampage: 1
       })
       var pinpaiid = this.data.pinpaiid.toString().substring(0, this.data.pinpaiid.toString().length);
-      this.getGoodsList(this.data.region_id,this.data.keyword, this.data.paramorder,
+      this.getGoodsList(this.data.region_id, this.data.keyword, this.data.paramorder,
         this.data.paramsort, this.data.pricehigh, this.data.pricelow, pinpaiid, '', this.data.parampage);
     } else {
       wx.navigateBack();
     }
   },
   //条件筛选后
-  shaixuan: function () {
+  shaixuan: function() {
     this.setData({
       goods: [],
       paramorder: "",
@@ -154,18 +153,18 @@ Page({
     var id = this.data.pinpaiid.toString().substring(0, this.data.pinpaiid.toString().length);
 
     console.log(id)
-    this.getGoodsList(this.data.region_id,this.data.keyword, this.data.paramorder, this.data.paramsort, this.data.pricehigh, this.data.pricelow, id, '', this.data.parampage);
+    this.getGoodsList(this.data.region_id, this.data.keyword, this.data.paramorder, this.data.paramsort, this.data.pricehigh, this.data.pricelow, id, '', this.data.parampage);
   },
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    var that=this;
+  onLoad: function(options) {
+    var that = this;
     var region_id = wx.getStorageSync('region_id');
-    if (options.keyword==undefined){
-      options.keyword="";
+    if (options.keyword == undefined) {
+      options.keyword = "";
     }
-    if (options.gongzhongid==undefined){
+    if (options.gongzhongid == undefined) {
       options.gongzhongid = "";
     }
     this.setData({
@@ -173,33 +172,33 @@ Page({
       buttonClass: "queding",
       keyword: options.keyword,
       catid: options.gongzhongid,
-      region_id:region_id
+      region_id: region_id
     })
     if (that.data.catid != "") {
       this.getGoods(that.data.catid, that.data.region_id);
       console.log("?/??", that.data.region_id)
-      
-    }else{
-      this.getGoodsList(that.data.region_id,options.keyword, '', '', '', '', '', '', this.data.parampage);
+
+    } else {
+      this.getGoodsList(that.data.region_id, options.keyword, '', '', '', '', '', '', this.data.parampage);
     }
-   
+
   },
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
     var that = this;
     var page = that.data.parampage;
     page = page + 1;
@@ -207,22 +206,21 @@ Page({
       parampage: page
     })
     console.log(this.data.procehigh)
-      var pinpaiid = this.data.pinpaiid.toString().substring(0, this.data.pinpaiid.toString().length);
-      this.getGoodsList(that.data.region_id,this.data.keyword, this.data.paramorder,
-        this.data.paramsort, this.data.pricehigh, this.data.pricelow, pinpaiid, '', this.data.parampage);
-    
-    
+    var pinpaiid = this.data.pinpaiid.toString().substring(0, this.data.pinpaiid.toString().length);
+    this.getGoodsList(that.data.region_id, this.data.keyword, this.data.paramorder,
+      this.data.paramsort, this.data.pricehigh, this.data.pricelow, pinpaiid, '', this.data.parampage);
+
+
   },
   //商品列表
-  getGoodsList: function (region_id,paramkey, paramorder, paramsort,
+  getGoodsList: function(region_id, paramkey, paramorder, paramsort,
     parampricemax, parammin, parambrand, prarmgongzhong, parampage) {
     var that = this;
     wx.showLoading();
-    console.log("工种", that.data.catid);
     wx.request({
       url: 'small/search',
       data: {
-        region_id:region_id,
+        region_id: region_id,
         cat_id: that.data.catid,
         keyword: paramkey,
         order: paramorder,
@@ -233,7 +231,7 @@ Page({
         gongzhong: prarmgongzhong,
         page: parampage
       },
-      success: function (res) {
+      success: function(res) {
         wx.hideLoading();
         console.log(res)
         var datas = res.data.data;
@@ -248,37 +246,37 @@ Page({
           });
         }
       },
-      fail: function () {
+      fail: function() {
         wx.hideLoading();
       }
     })
   },
-// 商品列表
-  getGoods: function (gongzhongid, region_id, parampage){
+  // 商品列表
+  getGoods: function(gongzhongid, region_id, parampage) {
     wx.showLoading();
-    var that=this;
-  wx.request({
-    url: 'small/goods',
-    data: {
-      cat_id: gongzhongid,
-      region_id: region_id,
-      page: parampage
-    },
-    success: function (res) {
-      wx.hideLoading();
-      console.log(res)
-      for (var i=0; i < res.data.data.length;i++){
-        that.data.goods.push(res.data.data[i])
+    var that = this;
+    wx.request({
+      url: 'small/goods',
+      data: {
+        cat_id: gongzhongid,
+        region_id: region_id,
+        page: parampage
+      },
+      success: function(res) {
+        wx.hideLoading();
+        console.log(res)
+        for (var i = 0; i < res.data.data.length; i++) {
+          that.data.goods.push(res.data.data[i])
+        }
+        console.log(that.data.goods)
+        that.setData({
+          goods: that.data.goods,
+
+        });
       }
-      console.log(that.data.goods)
-      that.setData({
-        goods: that.data.goods,
-        
-      });
-    }
-  })
-},
-  toGoodDetailsTap: function (e) {
+    })
+  },
+  toGoodDetailsTap: function(e) {
     wx.navigateTo({
       url: "/pages/Shop/goods-details/index?id=" + e.currentTarget.dataset.id + "&&gongzhong=" + this.data.gongzhongid
     })
@@ -287,7 +285,7 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   }
 })

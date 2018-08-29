@@ -9,7 +9,7 @@
   align-items: center;
 }
 .search-title .active{
-  color: #0095e5
+  color: #e85654
 }
 .search-title image{
   width: 35rpx;

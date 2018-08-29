@@ -30,7 +30,7 @@
   <view class="goods-container2">
     <view class="goods-box2" wx:for-items="{{goods}}" wx:key="{{index}}" bindtap="toGoodDetailsTap" data-id="{{item.goods_id}}">
       <view class="img-box2">
-        <image src="http://www.jcdlm.com/{{item.original_img}}" class="image" mode="widthFix" lazy-load="true" />
+        <image src="{{item.original_img}}" class="image" mode="widthFix" lazy-load="true" />
       </view>
       <view class='img-contect2'>
         <view class="goods-title2"> {{item.goods_name}} </view>

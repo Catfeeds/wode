@@ -85,7 +85,7 @@
 
 .ss-title view:last-child {
   font-size: 28rpx;
-  color: #58bc9c;
+  color: #e85654;
 }
 
 .ss-content {
