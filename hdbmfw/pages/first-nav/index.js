@@ -7,60 +7,61 @@ Page({
     autoplay: true,
     interval: 3000,
     duration: 1000,
-    loadingHidden: false , // loading
+    loadingHidden: false, // loading
     userInfo: {},
-    swiperCurrent: 0,  
-    selectCurrent:0,
+    swiperCurrent: 0,
+    selectCurrent: 0,
     categories: [],
     activeCategoryId: 0,
-    goods:[],
-    scrollTop:"0",
-    loadingMoreHidden:true,
+    goods: [],
+    scrollTop: "0",
+    loadingMoreHidden: true,
 
   },
   //事件处理函数
   swiperchange: function(e) {
-      //console.log(e.detail.current)
-       this.setData({  
-        swiperCurrent: e.detail.current  
-    })  
+    //console.log(e.detail.current)
+    this.setData({
+      swiperCurrent: e.detail.current
+    })
   },
-  toDetailsTap:function(e){
+  toDetailsTap: function(e) {
     wx.navigateTo({
-      url:"/pages/goods-details/index?id="+e.currentTarget.dataset.id
+      url: "/pages/goods-details/index?id=" + e.currentTarget.dataset.id
     })
   },
   tapBanner: function(e) {
 
   },
   bindTypeTap: function(e) {
-     this.setData({  
-        selectCurrent: e.index  
-    })  
+    this.setData({
+      selectCurrent: e.index
+    })
   },
-  scroll: function (e) {
+  scroll: function(e) {
     //  console.log(e) ;
-    var that = this,scrollTop=that.data.scrollTop;
+    var that = this,
+      scrollTop = that.data.scrollTop;
     that.setData({
-      scrollTop:e.detail.scrollTop
+      scrollTop: e.detail.scrollTop
     })
     // console.log('e.detail.scrollTop:'+e.detail.scrollTop) ;
     // console.log('scrollTop:'+scrollTop)
   },
-  onLoad: function () {
+  onLoad: function() {
     var that = this
     wx.setNavigationBarTitle({
       title: wx.getStorageSync('mallName')
     })
-    /*
-    //调用应用实例的方法获取全局数据
-    app.getUserInfo(function(userInfo){
-      //更新数据
-      that.setData({
-        userInfo:userInfo
-      })
-    })
-    */
+
+    if (app.globalData.userInfo) {
+      this.setData({
+        userInfo: app.globalData.userInfo
+      });
+    } else {
+      this.getUserInfo();
+    }
+
     wx.request({
       url: app.globalData.subDomain + '/banner_list',
       data: {
@@ -80,26 +81,67 @@ Page({
         }
       }
     })
-    that.getNotice ();
+    that.getNotice();
   },
-  onShareAppMessage: function () {
+
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function() {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function() {
+    this.getUserInfo();
+  },
+
+  getUserInfo: function() {
+    var that = this;
+    var user_id = wx.getStorageSync('user_id');
+    wx.request({
+      url: app.globalData.subDomain + '/user_detail',
+      data: {
+        user_id: user_id
+      },
+      success: (res) => {
+        wx.stopPullDownRefresh();
+        if (res.data.code == 0) {
+          app.globalData.userInfo = res.data.data;
+          that.setData({
+            userInfo: res.data.data
+          });
+        } else {
+          that.setData({
+            userInfo: null
+          });
+        }
+      }
+    })
+  },
+  onShareAppMessage: function() {
     return {
       title: wx.getStorageSync('mallName') + '——' + app.globalData.shareProfile,
       path: '/pages/index/index',
-      success: function (res) {
+      success: function(res) {
         // 转发成功
       },
-      fail: function (res) {
+      fail: function(res) {
         // 转发失败
       }
     }
   },
-  getNotice: function () {
+  getNotice: function() {
     var that = this;
     wx.request({
       url: app.globalData.subDomain + '/notice_list',
-      data: { pageSize :5},
-      success: function (res) {
+      data: {
+        pageSize: 5
+      },
+      success: function(res) {
         if (res.data.code == 0) {
           that.setData({
             noticeList: res.data.data
@@ -108,21 +150,29 @@ Page({
       }
     })
   },
-  toBldTap: function () {
+  toBldTap: function() {
+    wx.navigateTo({
+      url: '/pages/search/index'
+    })
+  },
+  toErshouTap: function() {
+    wx.navigateTo({
+      url: '/pages/es-xxlb/index'
+    })
+  },
+  toHaoshuTap: function() {
     wx.showToast({
       title: '敬请期待',
       icon: 'none',
       duration: 2000
     })
   },
-  toErshouTap: function () {
+  toDingshuiTap: function() {
     wx.navigateTo({
-      url: '/pages/es-xxlb/index'
+      url: '/pages/index/index'
     })
-  },
-  toDingshuiTap: function () {
-    wx.switchTab({
-      url: "/pages/index/index"
-    });
+    // wx.switchTab({
+    //   url: "/pages/index/index"
+    // });
   }
 })

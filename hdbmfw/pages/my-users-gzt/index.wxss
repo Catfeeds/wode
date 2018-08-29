@@ -2,7 +2,6 @@
 
 .icon-shouji {
   color: #44b8f4;
-  font-size: 35rpx;
 }
 
 .icon-youcecaidan {
@@ -10,7 +9,6 @@
 }
 
 .check-list {
-  width: 95%;
   display: flex;
   align-items: center;
   justify-content: space-between;

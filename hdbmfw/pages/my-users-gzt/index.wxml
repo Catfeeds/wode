@@ -13,12 +13,12 @@
     </view>
     <view class='check-list-content'>
       <view>姓名：{{item.user_name}}</view>
-      <view catchtap='tocallphone' data-phone="{{item.mobile}}">手机号码：{{item.mobile}}
-        <text class='iconfont icon-shouji'></text>
+      <view catchtap='tocallphone' data-phone="{{item.mobile}}">
+        <text class='iconfont icon-shouji'>手机号码：{{item.mobile}}</text>
       </view>
     </view>
     <view class='check-list-btn'>
-      <button catchtap='swgl' data-id="{{item.user_id}}">设为管理员</button>
+      <button catchtap='toSetTap' data-id="{{item.user_id}}">设置</button>
     </view>
   </view>
 
@@ -29,8 +29,8 @@
     </view>
     <view class='check-list-content'>
       <view>姓名：{{item.user_name}}</view>
-      <view catchtap='tocallphone' data-phone="{{item.mobile}}">手机号码：{{item.mobile}}
-        <text class='iconfont icon-shouji'></text>
+      <view catchtap='tocallphone' data-phone="{{item.mobile}}">
+        <text class='iconfont icon-shouji'>手机号码：{{item.mobile}}</text>
       </view>
     </view>
     <view class='check-list-btn'>

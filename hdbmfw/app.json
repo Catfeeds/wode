@@ -18,6 +18,8 @@
     "pages/my-information/index",
     "pages/notice/show",
     "pages/recharge/index",
+    "pages/search/index",
+    "pages/search-list/index",
     "pages/es-xxlb/index",
     "pages/es-fbxx/index",
     "pages/es-details/index"
@@ -25,7 +27,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "黄岛便民服务",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
@@ -40,12 +42,6 @@
         "iconPath": "images/nav/home-off.png",
         "selectedIconPath": "images/nav/home-on.png",
         "text": "首页"
-      },
-      {
-        "pagePath": "pages/index/index",
-        "iconPath": "images/nav/order-off.png",
-        "selectedIconPath": "images/nav/order-on.png",
-        "text": "订水服务"
       },
       {
         "pagePath": "pages/shop-cart/index",
