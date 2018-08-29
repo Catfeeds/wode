@@ -5,27 +5,27 @@
         <view class="label name">
           物品名称</view>
         <view class="label-right">
-          <input name="goods_name" class="input" type="text" />
+          <input name="goods_name" class="input" type="text" value="{{esxxData.goods_name}}" />
         </view>
       </view>
       <view class="row-wrap">
         <view class="label name">
           数量</view>
         <view class="label-right">
-          <input name="goods_number" class="input" value='1' type="number" />
+          <input name="goods_number" class="input" value='1' type="number" value="{{esxxData.goods_number}}" />
         </view>
       </view>
       <view class="row-wrap">
         <view class="label name">
           一口价</view>
         <view class="label-right">
-          <input name="goods_price" class="input" placeholder='不填价格则默认免费赠送' type="digit" />
+          <input name="goods_price" class="input" placeholder='不填价格则默认免费赠送' value="{{esxxData.goods_price}}" type="digit" />
         </view>
       </view>
       <view class="row-wrap">
         <view class="label">
           物品详情</view>
-        <textarea name="goods_desc" class="label-right2" auto-height />
+        <textarea name="goods_desc" class="label-right2" value="{{esxxData.goods_desc}}" auto-height />
       </view>
     </view>
     <button class="save-btn" formType="submit" bindtap='fabuClick' disabled='{{isclick}}' loading='{{isclick}}'>确认发布</button>

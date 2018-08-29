@@ -11,8 +11,29 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
-
+  onLoad: function(e) {
+    var that = this;
+    var id = e.id;
+    if (id) {
+      // 初始化原数据
+      wx.showLoading();
+      wx.request({
+        url: app.globalData.subDomain + '/esxx_detail',
+        data: {
+          id: id
+        },
+        success: function (res) {
+          wx.hideLoading();
+          if (res.data.code == 0) {
+            that.setData({
+              id: id,
+              esxxData: res.data.data
+            });
+            return;
+          }
+        }
+      })
+    }
   },
 
   /**
@@ -106,10 +127,19 @@ Page({
       return
     }
 
+    var apiAddoRuPDATE = "add";
+    var id = that.data.id;
+    if (id) {
+      apiAddoRuPDATE = "update";
+    } else {
+      id = 0;
+    }
+
     var user_id = wx.getStorageSync('user_id');
     wx.request({
       url: app.globalData.subDomain + '/user_es_goods_add',
       data: {
+        id: id,
         user_id: user_id,
         goods_name: goods_name,
         goods_number: goods_number,
@@ -128,7 +158,9 @@ Page({
           return;
         }
         // 跳转到消息列表
-        wx.navigateBack({})
+        wx.navigateTo({
+          url: '/pages/es-xxlb/index'
+        })
       }
     })
 

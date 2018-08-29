@@ -89,6 +89,12 @@ Page({
     })
   },
 
+  xxEditTap: function(e) {
+    wx.navigateTo({
+      url: "/pages/es-fbxx/index?id=" + e.currentTarget.dataset.id
+    })
+  },
+
   hireXxTap: function(e) {
 
   },
