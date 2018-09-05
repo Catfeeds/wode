@@ -4,9 +4,6 @@
     <navigator url="/pages/order-list-gzt/index" hover-class="navigator-hover">订单管理 </navigator>
   </view>
   <view class="my-item">
-    <navigator url="/pages/my-users-gzt/index" hover-class="navigator-hover">商品管理</navigator>
-  </view>
-  <view class="my-item">
     <navigator url="/pages/my-users-gzt/index" hover-class="navigator-hover">用户管理</navigator>
   </view>
 </view>

@@ -1,6 +1,7 @@
 /* pages/my-console-check/index.wxss */
 
 .icon-shouji {
+  font-size: 28rpx;
   color: #44b8f4;
 }
 

@@ -15,7 +15,7 @@
     <view class="text">暂无信息</view>
   </view>
 
-  <view class='esxxlist' bindtap="xxDetailTap" data-id="{{item.id}}" hidden="{{esxxList ? false : true}}" wx:for-items="{{esxxList}}" wx:key="{{index}}">
+  <view class='esxxlist' bindtap="xxDetailTap" data-id="{{item.id}}" hidden="{{esxxList ? false : true}}" wx:for-items="{{esxxList}}" wx:for-index="ind" wx:key="{{index}}">
     <view class='img'>
       <image src='{{item.goods_img}}' mode='aspectFit'></image>
     </view>
@@ -34,8 +34,9 @@
 
       <view class='jiedan'>
         {{item.goods_number}}件
-        <view class='btn' catchtap="hireXxTap" wx:if="{{user_id!=item.user_id}}" data-id="{{item.id}}">我想要</view>
-        <view class='btn' catchtap="xxEditTap" wx:else data-id="{{item.id}}">编辑</view>
+        <view class='btn' catchtap="xxEditTap" wx:if="{{user_id==item.user_id}}" data-id="{{item.id}}">编辑</view>
+        <view class='btn' catchtap="hireXxTap" wx:elif="{{item.is_want==0}}" data-id="{{item.id}}" data-ind="{{ind}}">我想要</view>
+        <view class='btn iswant' wx:else>已想要</view>
       </view>
 
     </view>

@@ -47,9 +47,19 @@ Page({
     this.setGoodsList(this.getSaveHide(), this.totalPrice(), this.allSelect(), this.noSelect(), shopList);
   },
   toIndexPage: function() {
-    wx.switchTab({
-      url: "/pages/index/index"
-    });
+    var userInfo = app.globalData.userInfo;
+    if (userInfo && userInfo.user_type > 5) {
+      wx.navigateTo({
+        url: '/pages/index/index'
+      })
+    } else {
+      wx.navigateTo({
+        url: '/pages/search/index'
+      })
+    }
+    // wx.switchTab({
+    //   url: "/pages/index/index"
+    // });
   },
 
   touchS: function(e) {

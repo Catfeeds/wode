@@ -42,7 +42,7 @@
       <view class="img-box">
         <image src="https://www.lanrengj.com/static/images/weappshop/hk2.png" class="image" mode="widthFix" lazy-load="true" />
       </view>
-      <view class="goods-title">好书交流</view>
+      <view class="goods-title">好书推荐</view>
     </view>
     <view class="goods-box" bindtap="toDingshuiTap" wx:if="{{userInfo.user_type>5}}">
       <view class="img-box">

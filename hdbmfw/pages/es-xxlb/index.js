@@ -47,10 +47,12 @@ Page({
   getXxList: function() {
     var that = this;
     var pages = this.data.pages;
+    var user_id = wx.getStorageSync('user_id');
     wx.request({
       url: app.globalData.subDomain + '/esxx_list',
       data: {
-        page: pages
+        page: pages,
+        user_id: user_id,
       },
       success: (res) => {
         wx.stopPullDownRefresh();
@@ -96,7 +98,29 @@ Page({
   },
 
   hireXxTap: function(e) {
-
+    var that = this;
+    var user_id = wx.getStorageSync('user_id');
+    var goods_id = e.currentTarget.dataset.id;
+    var ind = e.currentTarget.dataset.ind;
+    wx.request({
+      url: app.globalData.subDomain + '/user_es_goods_want',
+      data: {
+        user_id: user_id,
+        goods_id: goods_id
+      },
+      success: function(res) {
+        wx.showToast({
+          title: '已想要',
+          icon: 'success',
+          duration: 1000
+        })
+        var esxxList = that.data.esxxList;
+        esxxList[ind]['is_want'] = 1;
+        that.setData({
+          esxxList: esxxList,
+        });
+      }
+    })
   },
 
   /**
