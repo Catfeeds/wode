@@ -5,9 +5,6 @@
   </view>
   <view style="height:20rpx;background: #eee;width:100%;"></view>
   <view class="my-item">
-    <navigator url="/pages/myshuipiao/index" hover-class="navigator-hover">我的水票</navigator>
-  </view>
-  <view class="my-item">
     <navigator url="/pages/order-list/index" hover-class="navigator-hover">我的订单</navigator>
   </view>
   <view class="my-item">
