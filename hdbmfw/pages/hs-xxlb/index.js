@@ -15,7 +15,7 @@ Page({
    */
   fabuTask: function(e) {
     wx.navigateTo({
-      url: "/pages/es-fbxx/index"
+      url: "/pages/hs-fbxx/index"
     })
   },
 
@@ -52,7 +52,7 @@ Page({
       url: app.globalData.subDomain + '/esxx_list',
       data: {
         page: pages,
-        is_book: 0,
+        is_book: 1,
         user_id: user_id,
       },
       success: (res) => {
@@ -87,14 +87,14 @@ Page({
   },
 
   xxDetailTap: function(e) {
-    wx.navigateTo({
-      url: "/pages/es-details/index?id=" + e.currentTarget.dataset.id
-    })
+    // wx.navigateTo({
+    //   url: "/pages/es-details/index?id=" + e.currentTarget.dataset.id
+    // })
   },
 
   xxEditTap: function(e) {
     wx.navigateTo({
-      url: "/pages/es-fbxx/index?id=" + e.currentTarget.dataset.id
+      url: "/pages/hs-fbxx/index?id=" + e.currentTarget.dataset.id
     })
   },
 
@@ -111,7 +111,7 @@ Page({
       },
       success: function(res) {
         wx.showToast({
-          title: '已想要',
+          title: '已想借阅',
           icon: 'success',
           duration: 1000
         })

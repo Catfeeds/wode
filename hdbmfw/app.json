@@ -20,6 +20,8 @@
     "pages/recharge/index",
     "pages/search/index",
     "pages/search-list/index",
+    "pages/hs-xxlb/index",
+    "pages/hs-fbxx/index",
     "pages/es-xxlb/index",
     "pages/es-fbxx/index",
     "pages/es-details/index"

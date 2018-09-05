@@ -1,0 +1,55 @@
+<view class="container">
+  <view class='top-img'>
+    <view class='top-img-title'>我爱的书 推荐你看</view>
+    <view class='top-img-renshu'></view>
+  </view>
+
+  <view class='top'>
+    <view class='top_fabu' bindtap="fabuTask">
+      <image src='/images/fabu.png'></image>
+      <view>好书推荐</view>
+    </view>
+  </view>
+
+  <view class="no-order" hidden="{{esxxList&&esxxList.length ? true : false}}">
+    <view class="text">暂无信息</view>
+  </view>
+
+  <view class='esxxlist' bindtap="xxDetailTap" data-id="{{item.id}}" hidden="{{esxxList ? false : true}}" wx:for-items="{{esxxList}}" wx:for-index="ind" wx:key="{{index}}">
+    <view class='img'>
+      <image src='{{item.goods_img}}' mode='aspectFit'></image>
+    </view>
+    <view class='esxxlist-content'>
+      <view class='name'>
+        <view class='name-shiming'>
+          {{item.goods_name}}
+        </view>
+        <view class='score' hidden='true'>
+          {{item.goods_price+"元"}}
+        </view>
+      </view>
+      <view class='fanwei'>
+        {{item.goods_desc }}
+      </view>
+
+      <view class='jiedan'>
+        {{item.goods_for }}
+      </view>
+      <view class='jiedan'>
+        <view></view>
+        <view class='btn' catchtap="xxEditTap" wx:if="{{user_id==item.user_id}}" data-id="{{item.id}}">编辑</view>
+        <view class='btn' catchtap="hireXxTap" wx:elif="{{item.is_want==0}}" data-id="{{item.id}}" data-ind="{{ind}}">我想借阅</view>
+        <view class='btn iswant' wx:else>已想借阅</view>
+      </view>
+
+    </view>
+  </view>
+
+
+  <view class="weui-loadmore" hidden="{{isHideLoadMore}}">
+    <view class="weui-loading" wx:if="{{isMoredata}}"></view>
+    <view class="weui-loadmore_tips" wx:if="{{isMoredata}}">正在加载</view>
+    <view class="weui-loadmore_tips" wx:else>到底了！</view>
+  </view>
+
+</view>

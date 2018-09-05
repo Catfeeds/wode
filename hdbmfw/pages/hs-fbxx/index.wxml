@@ -1,0 +1,31 @@
+<view class="container">
+  <form bindsubmit="bindSave">
+    <view class="form-box">
+      <view class="row-wrap">
+        <view class="label name">
+          书名</view>
+        <view class="label-right">
+          <input name="goods_name" class="input" type="text" value="{{esxxData.goods_name}}" />
+        </view>
+      </view>
+      <view class="row-wrap">
+        <view class="label name">
+          标价</view>
+        <view class="label-right">
+          <input name="goods_price" class="input" value="{{esxxData.goods_price}}" type="digit" />
+        </view>
+      </view>
+      <view class="row-wrap">
+        <view class="label">
+          推荐理由</view>
+        <textarea name="goods_for" class="label-right2" value="{{esxxData.goods_for}}" auto-height />
+      </view>
+      <view class="row-wrap">
+        <view class="label">
+          内容简介</view>
+        <textarea name="goods_desc" class="label-right2" value="{{esxxData.goods_desc}}" auto-height />
+      </view>
+    </view>
+    <button class="save-btn" formType="submit" bindtap='fabuClick' disabled='{{isclick}}' loading='{{isclick}}'>确定</button>
+  </form>
+</view>
