@@ -10,7 +10,7 @@ page {
 }
 
 .top-img {
-  background: url("https://www.lanrengj.com/static/images/weappshop/fbxx.png") no-repeat;
+  background: url("https://www.lanrengj.com/static/images/weappshop/fbxx_b.png") no-repeat;
   background-size: 100% 100%;
   padding: 80rpx 50rpx 140rpx 50rpx;
   font-size: 50rpx;
@@ -142,7 +142,7 @@ page {
 }
 
 .fanwei {
-  color: #e85654;
+  color: #0095e5;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;

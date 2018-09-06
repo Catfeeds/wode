@@ -157,7 +157,7 @@ page {
 }
 
 .btn {
-  background-color: #0095e5;
+  background-color: #e85654;
   color: #fff;
   border-radius: 50rpx;
   padding: 10rpx 20rpx;

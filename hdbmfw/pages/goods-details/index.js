@@ -86,7 +86,7 @@ Page({
     })
   },
   goShopCar: function() {
-    wx.reLaunch({
+    wx.navigateTo({
       url: "/pages/shop-cart/index"
     });
   },
