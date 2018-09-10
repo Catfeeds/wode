@@ -26,7 +26,7 @@
     </swiper>
   </view>
   <view class="goods-container">
-    <view class="goods-box" bindtap="toBldTap">
+    <view class="goods-box" hidden='true' bindtap="toBldTap">
       <view class="img-box">
         <image src="https://www.lanrengj.com/static/images/weappshop/hk2.png" class="image" mode="widthFix" lazy-load="true" />
       </view>
@@ -38,7 +38,13 @@
       </view>
       <view class="goods-title">发布闲置物品</view>
     </view>
-    <view class="goods-box" bindtap="toDingshuiTap">
+    <view class="goods-box" bindtap="toHaoshuTap">
+      <view class="img-box">
+        <image src="https://www.lanrengj.com/static/images/weappshop/hk2.png" class="image" mode="widthFix" lazy-load="true" />
+      </view>
+      <view class="goods-title">好书交流区</view>
+    </view>
+    <view class="goods-box" bindtap="toDingshuiTap" wx:if="{{userInfo.user_type>5}}">
       <view class="img-box">
         <image src="https://www.lanrengj.com/static/images/weappshop/hk2.png" class="image" mode="widthFix" lazy-load="true" />
       </view>

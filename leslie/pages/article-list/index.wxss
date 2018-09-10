@@ -1,0 +1,35 @@
+/* page/lmbg/bgxyxq/bgxyxq.wxss */
+.body{
+  height: 100%;
+  background-color: #fff;
+  padding: 20px;
+  color: #333;
+}
+.h1{
+  
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  font-size: 40rpx;
+}
+.date{
+  color: #888;
+  border-bottom: 1px solid #c4c4c4;
+  display: inline-block;
+  width: 100%;
+  padding-bottom: 10rpx;
+  padding-top: 20rpx;
+  text-align: center;
+  font-size: 26rpx;
+  line-height: 58rpx;
+}
+.content{
+  font-size: 30rpx;
+  padding-top: 20rpx;
+  display: inline-block;
+  line-height: 50rpx;
+}
+.content .p1{
+  text-indent: 60rpx;
+  margin-top: 20rpx
+}

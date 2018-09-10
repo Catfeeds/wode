@@ -11,6 +11,8 @@
     "pages/order-list-gzt/index",
     "pages/order-details/index",
     "pages/order-details-gzt/index",
+    "pages/article-detail/index",
+    "pages/article-list/index",
     "pages/my/index",
     "pages/my-information/index",
     "pages/notice/show",
@@ -36,19 +38,19 @@
         "text": "首页"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/first-nav/index",
         "iconPath": "images/nav/order-off.png",
         "selectedIconPath": "images/nav/order-on.png",
         "text": "互动"
       },
       {
-        "pagePath": "pages/shop-cart/index",
+        "pagePath": "pages/article-list/index",
         "iconPath": "images/nav/cart-off.png",
         "selectedIconPath": "images/nav/cart-on.png",
         "text": "音乐"
       },
       {
-        "pagePath": "pages/shop-cart/index",
+        "pagePath": "pages/article-list/index",
         "iconPath": "images/nav/cart-off.png",
         "selectedIconPath": "images/nav/cart-on.png",
         "text": "百科"
