@@ -1,0 +1,27 @@
+<!--pages/cli/answerProblems.wxml-->
+<view wx:if="{{processing}}">
+  处理中...
+</view>
+<text>当前状态: {{roomStatus}}[{{counter}}]</text>
+<button style='primary' wx:if="{{user == roomOwner && stepCode == 0 && showStartBtn}}" bindtap='startRoomTap'>开始答题</button>
+<view wx:if="{{ready}}">
+  <view class='problem-title'>第 {{problem.index + 1}} 题:</view>
+  <text class='problem-box'>{{problem.content}}</text>
+  <view wx:for="{{problem.choice}}" wx:key='idx'>
+    <button class='{{item.cls}}' id="{{item.idx}}" bindtap='clickChoiceTap'>{{item.val}}</button>
+  </view>
+</view>
+<view wx:if="{{stepCode==5}}">
+  <view wx:if="{{answerEnabled}}">恭喜你!!!</view>
+  <view>总奖金: {{result.reward}}</view>
+  <view>通过数: {{result.passed.length}}</view>
+  <view>人均奖金: {{result.each}}</view>
+  <view>成功用户:</view>
+
+  <view class="flex-wrp" style='flex-direction:row'>
+    <view wx:for="{{result.passed}}">
+      <image src="{{item.avatar}}" background-size="cover" class='userinfo-avatar'></image>
+    </view>
+  </view>
+
+</view>

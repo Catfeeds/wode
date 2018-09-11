@@ -11,6 +11,8 @@
   width: 100%;
   text-align: center;
   font-size: 40rpx;
+  border-bottom: 1px solid #c4c4c4;
+  padding-bottom: 30rpx;
 }
 .date{
   color: #888;

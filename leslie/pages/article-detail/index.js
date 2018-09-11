@@ -1,6 +1,7 @@
 // pages/bgxy-detail/index.js
 var util = require('../../utils/util.js');
 var WxParse = require('../../wxParse/wxParse.js');
+var app = getApp()
 Page({
 
   /**
@@ -10,7 +11,7 @@ Page({
     id: 0
   },
 
-  dataCode: function (data) {
+  dataCode: function(data) {
     var newDate = new Date();
     newDate.setTime(data * 1000);
     return util.formatDate(newDate);
@@ -19,21 +20,21 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (e) {
-     this.data.id = e.id;
+  onLoad: function(e) {
+    this.data.id = e.id;
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
     var that = this;
     // 获取帮哥学院文章
@@ -41,17 +42,17 @@ Page({
       url: app.globalData.subDomain + '/article_detail',
       method: 'GET',
       data: {
-      	  id:that.data.id
-	  },
+        id: that.data.id
+      },
       header: {
         'Accept': 'application/json'
       },
-      success: function (res) {
+      success: function(res) {
         wx.hideLoading();
         if (res.data.code == 0) {
           var datas = res.data.data;
           wx.setNavigationBarTitle({
-            title: datas.name
+            title: datas.post_title
           })
           datas.published_time = that.dataCode(datas.published_time);
           that.setData({
@@ -66,35 +67,35 @@ Page({
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   }
 })

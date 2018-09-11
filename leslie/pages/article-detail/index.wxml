@@ -4,7 +4,6 @@
 <view class='body'>
 
   <text class='h1'>{{bgxywz.post_title}}</text>
-  <text class='date'>{{bgxywz.published_time}}</text>
   <rich-text type="node" nodes="" class='content'>
     <template is="wxParse" data="{{wxParseData:article.nodes}}" />
   </rich-text>

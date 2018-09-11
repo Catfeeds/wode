@@ -1,11 +1,39 @@
-<!--page/lmbg/bgxyxq/bgxyxq.wxml-->
+<!--pages/my-help/index.wxml-->
 <import src="../../wxParse/wxParse.wxml" />
+<view class='container'>
 
-<view class='body'>
+  <view class="tab_list control-content-list">
+    <view bindtap="statusTap" class="status-label {{item.id == currentType ? 'active' : ''}}" wx:for-items="{{statusType}}" wx:key="{{item.id}}" data-index="{{item.id}}" data-name="{{item.name}}">
+      {{item.name}}
+      <view class='xueyuan' hidden="{{(item.id == currentType & !isclick)? false:true}}">
+        <view class="" class="status-label {{item.id == listType ? 'active' : ''}}" wx:for-items="{{item.xiaofenlei}}" wx:key="{{item.id}}" data-index="{{item.id}}" data-name="{{item.name}}" bindtap="listTap">
+          {{item.name}}
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='top'>
+  </view>
+  <view class="no-bgxyList" hidden="{{bgxyList.length > 0 ? true : false}}">
+    <view class="text">暂无文章</view>
+  </view>
 
-  <text class='h1'>{{bgxywz.post_title}}</text>
-  <text class='date'>{{bgxywz.published_time}}</text>
-  <rich-text type="node" nodes="" class='content'>
-    <template is="wxParse" data="{{wxParseData:article.nodes}}" />
-  </rich-text>
+  <view class='droplist'>
+    <block wx:for="{{bgxyList}}" wx:key="{{index}}">
+      <view class='droplist-title' data-index="{{index}}" data-id="{{item.id}}" bindtap='clickTitle'>
+        <view class='rotate {{bgxyList[index].isclick?"active":""}}'>
+          <text class='iconfont icon-zhankai'></text>
+        </view>
+        {{item.name}}
+
+      </view>
+      <view class='droplist-content {{bgxyList[index].isclick?"active":""}}'>
+        <block wx:for="{{item.aaa}}">
+          <view class='droplist-title' data-id="{{item.id}}" bindtap='clickPost'>
+            {{item.post_title}}
+          </view>
+        </block>
+      </view>
+    </block>
+  </view>
 </view>
