@@ -26,29 +26,35 @@
     </swiper>
   </view>
   <view class="goods-container">
-    <view class="goods-box" hidden='true' bindtap="toBldTap">
+    <view class="goods-box" bindtap="toDingshuiTap">
       <view class="img-box">
-        <image src="https://www.lanrengj.com/static/images/weappshop/hk2.png" class="image" mode="widthFix" lazy-load="true" />
+        <image src="https://www.lanrengj.com/static/images/weappshop/hk1.png" class="image" mode="widthFix" lazy-load="true" />
       </view>
-      <view class="goods-title">查看周边店铺</view>
+      <view class="goods-title">炫耀专区</view>
+    </view>
+    <view class="goods-box" bindtap="toBldTap">
+      <view class="img-box">
+        <image src="https://www.lanrengj.com/static/images/weappshop/hk1.png" class="image" mode="widthFix" lazy-load="true" />
+      </view>
+      <view class="goods-title">一起来投票</view>
     </view>
     <view class="goods-box" bindtap="toErshouTap">
       <view class="img-box">
-        <image src="https://www.lanrengj.com/static/images/weappshop/hk2.png" class="image" mode="widthFix" lazy-load="true" />
+        <image src="https://www.lanrengj.com/static/images/weappshop/hk1.png" class="image" mode="widthFix" lazy-load="true" />
       </view>
-      <view class="goods-title">发布闲置物品</view>
+      <view class="goods-title">小游戏</view>
     </view>
     <view class="goods-box" bindtap="toHaoshuTap">
       <view class="img-box">
-        <image src="https://www.lanrengj.com/static/images/weappshop/hk2.png" class="image" mode="widthFix" lazy-load="true" />
+        <image src="https://www.lanrengj.com/static/images/weappshop/hk1.png" class="image" mode="widthFix" lazy-load="true" />
       </view>
-      <view class="goods-title">好书交流区</view>
+      <view class="goods-title">现场抽奖</view>
     </view>
-    <view class="goods-box" bindtap="toDingshuiTap" wx:if="{{userInfo.user_type>5}}">
+    <view class="goods-box" bindtap="toHaoshuTap">
       <view class="img-box">
-        <image src="https://www.lanrengj.com/static/images/weappshop/hk2.png" class="image" mode="widthFix" lazy-load="true" />
+        <image src="https://www.lanrengj.com/static/images/weappshop/hk1.png" class="image" mode="widthFix" lazy-load="true" />
       </view>
-      <view class="goods-title">订水服务</view>
+      <view class="goods-title">组团吸荣</view>
     </view>
   </view>
   <view hidden="{{loadingMoreHidden ? true : false}}" class="no-more-goods">没有更多啦</view>

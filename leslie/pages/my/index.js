@@ -80,7 +80,7 @@ Page({
   },
   aboutUs: function() {
     wx.showModal({
-      title: '关于我们',
+      title: '',
       content: app.globalData.shareProfile,
       showCancel: false
     })

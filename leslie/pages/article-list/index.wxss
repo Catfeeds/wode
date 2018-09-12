@@ -15,7 +15,17 @@
   /* align-items: center; */
   border-right: 1px solid #f0f0f0;
   border-bottom: 1px solid #f0f0f0;
-  width: 33%;
+  width: 24.4%;
+}
+
+.weui_cell {
+  position: relative;
+  display: flex;
+  padding: 15px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-bottom: 1px solid #eee;
 }
 
 .nav {
@@ -28,7 +38,7 @@
 }
 
 .top {
-  height: 100rpx;
+  height: 10rpx;
 }
 
 .nav .status-label {
@@ -77,6 +87,7 @@
   font-weight: bold;
   margin-top: 20rpx;
   line-height: 60rpx;
+  border-bottom: 1px solid #eee;
 }
 
 .droplist-content {
