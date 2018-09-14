@@ -10,14 +10,14 @@
 }
 .swiper_box {
   width: 100%;
-  height:300rpx;
+  height:350rpx;
 }
 
 swiper-item image {
   width: 100%;
   display: inline-block;
   overflow: hidden;
-  height:300rpx;
+  height:350rpx;
 }
 .swiper-container .dots{  
   position: absolute;  
@@ -112,7 +112,7 @@ swiper-item image {
   padding-left: 10rpx;
   font-size: 26rpx;
   overflow: hidden;
-  color: #e64340;
+  color: #3a4169;
   width: 635rpx;
   height: 50rpx;
   line-height: 50rpx;

@@ -5,7 +5,7 @@
     <swiper class="swiper_box" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" bindchange="swiperchange">
       <block wx:for="{{banners}}" wx:key="id">
         <swiper-item>
-          <image bindtap="tapBanner" data-id="{{item.ad_id}}" src="{{item.picUrl}}" class="slide-image" />
+          <image bindtap="tapBanner" src="{{item.picUrl}}" class="slide-image" />
         </swiper-item>
       </block>
     </swiper>
@@ -18,7 +18,7 @@
   <view wx:if="{{noticeList}}" class="notice">
     <view class="notice_iteml">公告：</view>
     <swiper wx:if="{{noticeList}}" class="notice_swiper" vertical="true" autoplay="true" circular="true" interval="3000">
-      <navigator wx:for-items="{{noticeList}}" wx:key="id" url="/pages/notice/show?id={{item.article_id}}" open-type="navigate">
+      <navigator wx:for-items="{{noticeList}}" wx:key="id" url="" open-type="navigate">
         <swiper-item>
           <view class="notice_itemr">{{item.title}}</view>
         </swiper-item>
@@ -28,31 +28,31 @@
   <view class="goods-container">
     <view class="goods-box" bindtap="toDingshuiTap">
       <view class="img-box">
-        <image src="https://www.lanrengj.com/static/images/weappshop/hk1.png" class="image" mode="widthFix" lazy-load="true" />
+        <image src="https://www.lanrengj.com/static/images/leslie/bg1.jpg" class="image" mode="widthFix" lazy-load="true" />
       </view>
       <view class="goods-title">炫耀专区</view>
     </view>
     <view class="goods-box" bindtap="toBldTap">
       <view class="img-box">
-        <image src="https://www.lanrengj.com/static/images/weappshop/hk1.png" class="image" mode="widthFix" lazy-load="true" />
+        <image src="https://www.lanrengj.com/static/images/leslie/bg2.jpg" class="image" mode="widthFix" lazy-load="true" />
       </view>
       <view class="goods-title">一起来投票</view>
     </view>
     <view class="goods-box" bindtap="toErshouTap">
       <view class="img-box">
-        <image src="https://www.lanrengj.com/static/images/weappshop/hk1.png" class="image" mode="widthFix" lazy-load="true" />
+        <image src="https://www.lanrengj.com/static/images/leslie/bg3.jpg" class="image" mode="widthFix" lazy-load="true" />
       </view>
       <view class="goods-title">小游戏</view>
     </view>
     <view class="goods-box" bindtap="toHaoshuTap">
       <view class="img-box">
-        <image src="https://www.lanrengj.com/static/images/weappshop/hk1.png" class="image" mode="widthFix" lazy-load="true" />
+        <image src="https://www.lanrengj.com/static/images/leslie/bg4.jpg" class="image" mode="widthFix" lazy-load="true" />
       </view>
       <view class="goods-title">现场抽奖</view>
     </view>
     <view class="goods-box" bindtap="toHaoshuTap">
       <view class="img-box">
-        <image src="https://www.lanrengj.com/static/images/weappshop/hk1.png" class="image" mode="widthFix" lazy-load="true" />
+        <image src="https://www.lanrengj.com/static/images/leslie/bg3.jpg" class="image" mode="widthFix" lazy-load="true" />
       </view>
       <view class="goods-title">组团吸荣</view>
     </view>

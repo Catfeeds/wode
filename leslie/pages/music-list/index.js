@@ -18,7 +18,7 @@ Page({
     var that = this;
     // 获取分类
     wx.request({
-      url: app.globalData.subDomain + '/category_list_0',
+      url: app.globalData.subDomain + '/category_list',
       method: 'GET',
       data: {
         parent_id: 1

@@ -15,7 +15,7 @@
   /* align-items: center; */
   border-right: 1px solid #f0f0f0;
   border-bottom: 1px solid #f0f0f0;
-  width: 19.4%;
+  width: 24.4%;
 }
 
 .weui_cell {

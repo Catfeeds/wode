@@ -13,6 +13,7 @@
     "pages/order-details-gzt/index",
     "pages/article-detail/index",
     "pages/article-list/index",
+    "pages/music-list/index",
     "pages/my/index",
     "pages/my-information/index",
     "pages/notice/show",
@@ -44,7 +45,7 @@
         "text": "互动"
       },
       {
-        "pagePath": "pages/article-list/index",
+        "pagePath": "pages/music-list/index",
         "iconPath": "images/nav/cart-off.png",
         "selectedIconPath": "images/nav/cart-on.png",
         "text": "音乐"
