@@ -1,0 +1,15 @@
+<!--pages/qzh/index.wxml-->
+<view class="container">
+  <block wx:for="{{qzh}}" wx:key="{{index}}">
+    <image src="{{item.img}}" style='position:absolute;top:{{item.top}}px;left:{{item.left}}px;width:100px;height:100px;transform:rotate({{item.jd}}deg);' bindtap="openQzh" mode='aspectFill'></image>
+  </block>
+
+
+
+  <view class="show-popup" hidden="{{hideShopPopup}}">
+    <view class="popup-mask" bindtap="closePopupTap" bindtouchstart="closePopupTap"></view>
+    <view class="popup-contents">
+
+    </view>
+  </view>
+</view>

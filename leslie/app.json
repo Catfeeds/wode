@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/qzh/index",
     "pages/first-nav/index",
     "pages/index/index",
     "pages/goods-details/index",
@@ -33,33 +34,33 @@
     "box-shadow": "0 0 6px 0",
     "list": [
       {
-        "pagePath": "pages/first-nav/index",
-        "iconPath": "images/nav/home-off.png",
-        "selectedIconPath": "images/nav/home-on.png",
+        "pagePath": "pages/qzh/index",
+        "iconPath": "images/nav/zh-off.png",
+        "selectedIconPath": "images/nav/zh-on.png",
         "text": "首页"
       },
       {
         "pagePath": "pages/first-nav/index",
-        "iconPath": "images/nav/order-off.png",
-        "selectedIconPath": "images/nav/order-on.png",
+        "iconPath": "images/nav/hd-off.png",
+        "selectedIconPath": "images/nav/hd-on.png",
         "text": "互动"
       },
       {
         "pagePath": "pages/music-list/index",
-        "iconPath": "images/nav/cart-off.png",
-        "selectedIconPath": "images/nav/cart-on.png",
+        "iconPath": "images/nav/yy-off.png",
+        "selectedIconPath": "images/nav/yy-on.png",
         "text": "音乐"
       },
       {
         "pagePath": "pages/article-list/index",
-        "iconPath": "images/nav/cart-off.png",
-        "selectedIconPath": "images/nav/cart-on.png",
+        "iconPath": "images/nav/bk-off.png",
+        "selectedIconPath": "images/nav/bk-on.png",
         "text": "百科"
       },
       {
         "pagePath": "pages/my/index",
-        "iconPath": "images/nav/my-off.png",
-        "selectedIconPath": "images/nav/my-on.png",
+        "iconPath": "images/nav/gr-off.png",
+        "selectedIconPath": "images/nav/gr-on.png",
         "text": "我的"
       }
     ]
