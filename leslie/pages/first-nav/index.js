@@ -150,27 +150,34 @@ Page({
       }
     })
   },
-  toBldTap: function() {
+  toXuanyaoTap: function() {
     wx.navigateTo({
       url: '/pages/search/index'
     })
   },
-  toErshouTap: function() {
+  toToupiaoTap: function() {
     wx.navigateTo({
       url: '/pages/es-xxlb/index'
     })
   },
-  toHaoshuTap: function() {
+  toYouxiTap: function () {
     wx.navigateTo({
-      url: '/pages/hs-xxlb/index'
+      url: '/pages/search/index'
     })
   },
-  toDingshuiTap: function() {
+  toChoujiangTap: function () {
     wx.navigateTo({
-      url: '/pages/index/index'
+      url: '/pages/es-xxlb/index'
     })
-    // wx.switchTab({
-    //   url: "/pages/index/index"
-    // });
-  }
+  },
+  toZhoubianTap: function () {
+    wx.navigateTo({
+      url: '/pages/search/index'
+    })
+  },
+  toZutuanTap: function () {
+    wx.navigateTo({
+      url: '/pages/es-xxlb/index'
+    })
+  },
 })

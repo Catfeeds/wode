@@ -26,33 +26,39 @@
     </swiper>
   </view>
   <view class="goods-container">
-    <view class="goods-box" bindtap="toDingshuiTap">
+    <view class="goods-box" bindtap="toXuanyaoTap">
       <view class="img-box">
         <image src="https://www.lanrengj.com/static/images/leslie/bg1.jpg" class="image" mode="widthFix" lazy-load="true" />
       </view>
       <view class="goods-title">炫耀专区</view>
     </view>
-    <view class="goods-box" bindtap="toBldTap">
+    <view class="goods-box" bindtap="toToupiaoTap">
       <view class="img-box">
         <image src="https://www.lanrengj.com/static/images/leslie/bg2.jpg" class="image" mode="widthFix" lazy-load="true" />
       </view>
       <view class="goods-title">一起来投票</view>
     </view>
-    <view class="goods-box" bindtap="toErshouTap">
+    <view class="goods-box" bindtap="toYouxiTap">
       <view class="img-box">
         <image src="https://www.lanrengj.com/static/images/leslie/bg3.jpg" class="image" mode="widthFix" lazy-load="true" />
       </view>
       <view class="goods-title">小游戏</view>
     </view>
-    <view class="goods-box" bindtap="toHaoshuTap">
+    <view class="goods-box" bindtap="toChoujiangTap">
       <view class="img-box">
         <image src="https://www.lanrengj.com/static/images/leslie/bg4.jpg" class="image" mode="widthFix" lazy-load="true" />
       </view>
       <view class="goods-title">现场抽奖</view>
     </view>
-    <view class="goods-box" bindtap="toHaoshuTap">
+    <view class="goods-box" bindtap="toZhoubianTap">
       <view class="img-box">
         <image src="https://www.lanrengj.com/static/images/leslie/bg3.jpg" class="image" mode="widthFix" lazy-load="true" />
+      </view>
+      <view class="goods-title">淘宝贝</view>
+    </view>
+    <view class="goods-box" bindtap="toZutuanTap">
+      <view class="img-box">
+        <image src="https://www.lanrengj.com/static/images/leslie/bg2.jpg" class="image" mode="widthFix" lazy-load="true" />
       </view>
       <view class="goods-title">组团吸荣</view>
     </view>
