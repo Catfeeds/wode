@@ -52,10 +52,10 @@ Page({
     wx.showLoading();
     // 获取分类列表
     wx.request({
-      url: app.globalData.subDomain + '/category_list',
+      url: app.globalData.subDomain + '/post_list',
       method: 'GET',
       data: {
-        parent_id: tp
+        category_id: tp
       },
       header: {
         'Accept': 'application/json'
@@ -75,43 +75,6 @@ Page({
         }
       }
     })
-  },
-
-  clickTitle: function(e) {
-    var that = this;
-    var cur = e.currentTarget.dataset.index;
-    //目前规则是打开第二个第一个要关闭上.然后单独每个可以打开和关闭
-    for (var index = 0; index < this.data.bgxyList.length; index++) {
-      if (index != cur) { //不是当前选中的给关闭
-        this.data.bgxyList[index].isclick = false;
-      }
-      else { //是当前选中的取反
-        this.data.bgxyList[cur].isclick = !this.data.bgxyList[cur].isclick;
-        if (this.data.bgxyList[cur].isclick){
-          var category_id = e.currentTarget.dataset.id;
-          wx.request({
-            url: app.globalData.subDomain + '/post_list',
-            method: 'GET',
-            data: {
-              category_id: category_id
-            },
-            header: {
-              'Accept': 'application/json'
-            },
-            success: function (res) {
-              wx.hideLoading();
-              if (res.data.code == 0) {
-                that.data.bgxyList[cur].aaa = res.data.data;
-                that.setData({
-                  bgxyList: that.data.bgxyList,
-                  clickTitle: cur
-                })
-              }
-            }
-          })
-        }
-      }
-    }
   },
 
   clickPost: function(e) {

@@ -50,7 +50,12 @@ Page({
     var that = this;
     var tp = that.data.currentType;
     wx.showLoading();
+    that.setData({
+      bgxyList: [],
+      bgxyList2: []
+    });
     // 获取分类列表
+    if (tp!=10 && tp!=14){
     wx.request({
       url: app.globalData.subDomain + '/category_list',
       method: 'GET',
@@ -75,6 +80,32 @@ Page({
         }
       }
     })
+    }else{
+    wx.request({
+      url: app.globalData.subDomain + '/post_list',
+      method: 'GET',
+      data: {
+        category_id: tp
+      },
+      header: {
+        'Accept': 'application/json'
+      },
+      success: function (res) {
+        wx.hideLoading();
+        if (res.data.code == 0) {
+          var datas = res.data.data;
+          that.setData({
+            bgxyList2: res.data.data
+          });
+          // if (res.data.data.length == 0) {
+          //   that.setData({
+          //     bgxyList: ''
+          //   });
+          // }
+        }
+      }
+    })
+    }
   },
 
   clickTitle: function(e) {

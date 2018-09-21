@@ -20,19 +20,11 @@
 
   <view class='droplist'>
     <block wx:for="{{bgxyList}}" wx:key="{{index}}">
-      <view class='droplist-title' data-index="{{index}}" data-id="{{item.id}}" bindtap='clickTitle'>
-        <view class='rotate {{bgxyList[index].isclick?"active":""}}'>
-          <text class='iconfont icon-zhankai'></text>
+      <view class='droplist-title' data-index="{{index}}" data-id="{{item.id}}" bindtap='clickPost'>
+        <view class='img'>
+          <image src='{{item.thumbnail}}' mode='aspectFit' wx:if="{{item.thumbnail}}"></image>
         </view>
-        {{item.name}}
-
-      </view>
-      <view class='droplist-content {{bgxyList[index].isclick?"active":""}}'>
-        <block wx:for="{{item.aaa}}">
-          <view class='droplist-title' data-id="{{item.id}}" bindtap='clickPost'>
-            {{item.post_title}}
-          </view>
-        </block>
+        {{item.post_title}} {{item.post_excerpt}}
       </view>
     </block>
   </view>
