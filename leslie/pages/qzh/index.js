@@ -1,4 +1,6 @@
 // pages/qzh/index.js
+var isclick = false;
+var app = getApp()
 Page({
 
   /**
@@ -50,6 +52,57 @@ Page({
     this.setData({
       hideShopPopup: true
     })
+  },
+
+
+  fabuClick: function () {
+    this.setData({
+      isClick: true
+    })
+  },
+
+  // 数据提交
+  bindSave: function (e) {
+    var that = this;
+    var user_name = e.detail.value.user_name;
+    var remark = e.detail.value.remark;
+
+    if (remark == "") {
+      wx.showModal({
+        title: '提示',
+        content: '请填写',
+        showCancel: false
+      })
+      return
+    }
+    this.setData({
+      hideShopPopup: true
+    })
+    var user_id = wx.getStorageSync('user_id');
+    wx.request({
+      url: app.globalData.subDomain + '/paper_crane_add',
+      data: {
+        user_id: user_id,
+        user_name: user_name,
+        remark: remark,
+        picture: "1.png",
+      },
+      success: function (res) {
+        if (res.data.code != 0) {
+          // 登录错误 
+          wx.hideLoading();
+          wx.showModal({
+            title: '失败',
+            content: res.data.msg,
+            showCancel: false
+          })
+          return;
+        }
+        // 刷新
+        
+      }
+    })
+
   },
 
   /**
