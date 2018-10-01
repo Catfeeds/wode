@@ -35,3 +35,25 @@
   text-indent: 60rpx;
   margin-top: 20rpx
 }
+
+.footer-box {
+  position: fixed;
+  right: 30rpx;
+  bottom: 0;
+  width: 120rpx;
+  z-index: 6;
+}
+
+.footer-box .contact {
+  position: relative;
+  width: 120rpx;
+  height: 100%;
+  line-height: 100rpx;
+  text-align: center;
+  padding-top: 26rpx;
+  font-size: 22rpx;
+  color: #008000;
+  box-sizing: border-box;
+  background: url("https://www.lanrengj.com/static/images/weappshop/weixin.png") no-repeat center 21rpx;
+  background-size: 55rpx auto;
+}

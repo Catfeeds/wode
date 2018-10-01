@@ -71,6 +71,7 @@ App({
     })
   },
   globalData: {
+    qzhImages: ["1_blue.png", "1_green.png", "1_mura.png", "1_orange.png", "1_qing.png", "1_red.png", "2_blue.png", "2_green.png", "2_mura.png", "2_orange.png", "2_qing.png", "2_red.png", "qzh1.png", "qzh10.png", "qzh11.png", "qzh12.png", "qzh13.png", "qzh14.png", "qzh15.png", "qzh16.png", "qzh2.png", "qzh3.png", "qzh4.png", "qzh5.png", "qzh6.png", "qzh7.png", "qzh8.png", "qzh9.png"],
     userInfo: null,
     uid: 0,
     subDomain: "https://www.lanrengj.com" + "/wxapi/leslie",

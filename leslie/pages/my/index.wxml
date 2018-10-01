@@ -29,3 +29,9 @@
   </view>
 
 </view>
+<view class="footer-box">
+  <view class="contact">
+    <contact-button style="opacity:0;position:absolute;" type="default-dark" session-from="shop" size="27">联系客服</contact-button>
+    联系客服
+  </view>
+</view>

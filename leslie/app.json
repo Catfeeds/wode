@@ -15,6 +15,7 @@
     "pages/article-detail/index",
     "pages/article-list/index",
     "pages/music-list/index",
+    "pages/hudong-list/index",
     "pages/my/index",
     "pages/my-information/index",
     "pages/notice/show",

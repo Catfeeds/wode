@@ -33,6 +33,11 @@ Page({
   tapBanner: function(e) {
 
   },
+  statusTap: function (e) {
+    wx.navigateTo({
+      url: "/pages/hudong-list/index"
+    })
+  },
   bindTypeTap: function(e) {
     this.setData({
       selectCurrent: e.index
@@ -82,6 +87,7 @@ Page({
       }
     })
     that.getNotice();
+    that.getCategory();
   },
 
 
@@ -150,6 +156,27 @@ Page({
       }
     })
   },
+  getCategory: function() {
+    var that = this;
+    // 获取分类
+    wx.request({
+      url: app.globalData.subDomain + '/category_list',
+      method: 'GET',
+      data: {
+        parent_id: 131
+      },
+      header: {
+        'Accept': 'application/json'
+      },
+      success: function(res) {
+        if (res.data.code == 0) {
+          that.setData({
+            statusType: res.data.data
+          });
+        }
+      }
+    })
+  },
   toXuanyaoTap: function() {
     wx.navigateTo({
       url: '/pages/search/index'
@@ -160,22 +187,22 @@ Page({
       url: '/pages/es-xxlb/index'
     })
   },
-  toYouxiTap: function () {
+  toYouxiTap: function() {
     wx.navigateTo({
       url: '/pages/search/index'
     })
   },
-  toChoujiangTap: function () {
+  toChoujiangTap: function() {
     wx.navigateTo({
       url: '/pages/es-xxlb/index'
     })
   },
-  toZhoubianTap: function () {
+  toZhoubianTap: function() {
     wx.navigateTo({
       url: '/pages/search/index'
     })
   },
-  toZutuanTap: function () {
+  toZutuanTap: function() {
     wx.navigateTo({
       url: '/pages/es-xxlb/index'
     })
