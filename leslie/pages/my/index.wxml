@@ -8,6 +8,9 @@
     <navigator url="/pages/shop-cart/index" hover-class="navigator-hover">购物车</navigator>
   </view>
   <view class="my-item">
+    <navigator url="/pages/my-qzh/index" hover-class="navigator-hover">我的千纸鹤</navigator>
+  </view>
+  <view class="my-item">
     <navigator url="/pages/select-address/index" hover-class="navigator-hover">我的地址</navigator>
   </view>
 

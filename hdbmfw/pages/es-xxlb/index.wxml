@@ -17,7 +17,7 @@
 
   <view class='esxxlist' bindtap="xxDetailTap" data-id="{{item.id}}" hidden="{{esxxList ? false : true}}" wx:for-items="{{esxxList}}" wx:for-index="ind" wx:key="{{index}}">
     <view class='img'>
-      <image src='{{item.goods_img}}' mode='aspectFit'></image>
+      <image src='{{item.goods_thumb}}' mode='aspectFit'></image>
     </view>
     <view class='esxxlist-content'>
       <view class='name'>

@@ -1,13 +1,13 @@
 <view class="container">
   <view class='top-img'>
-    <view class='top-img-title'>发布闲置物品信息</view>
+    <view class='top-img-title'>发布我的宝贝信息</view>
     <view class='top-img-renshu'></view>
   </view>
 
   <view class='top'>
     <view class='top_fabu' bindtap="fabuTask">
       <image src='/images/fabu.png'></image>
-      <view>发布信息</view>
+      <view>发布宝贝</view>
     </view>
   </view>
 
@@ -17,7 +17,7 @@
 
   <view class='esxxlist' bindtap="xxDetailTap" data-id="{{item.id}}" hidden="{{esxxList ? false : true}}" wx:for-items="{{esxxList}}" wx:for-index="ind" wx:key="{{index}}">
     <view class='img'>
-      <image src='{{item.goods_img}}' mode='aspectFit'></image>
+      <image src='{{item.goods_thumb}}' mode='aspectFit'></image>
     </view>
     <view class='esxxlist-content'>
       <view class='name'>

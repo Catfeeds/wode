@@ -30,6 +30,7 @@
   padding-top: 20rpx;
   display: inline-block;
   line-height: 50rpx;
+  width:100%;
 }
 .content .p1{
   text-indent: 60rpx;

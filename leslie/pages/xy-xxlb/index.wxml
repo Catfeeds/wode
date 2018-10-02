@@ -1,13 +1,13 @@
 <view class="container">
   <view class='top-img'>
-    <view class='top-img-title'>我爱的书 推荐你看</view>
+    <view class='top-img-title'>看！ 我就是给你看看</view>
     <view class='top-img-renshu'></view>
   </view>
 
   <view class='top'>
     <view class='top_fabu' bindtap="fabuTask">
       <image src='/images/fabu_b.png'></image>
-      <view>好书推荐</view>
+      <view>我要炫耀</view>
     </view>
   </view>
 

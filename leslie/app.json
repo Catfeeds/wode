@@ -16,15 +16,26 @@
     "pages/article-list/index",
     "pages/music-list/index",
     "pages/hudong-list/index",
+    "pages/search/index",
     "pages/my/index",
     "pages/my-information/index",
+    "pages/my-qzh/index",
+    "pages/es-xxlb/index",
+    "pages/es-fbxx/index",
+    "pages/es-details/index",
+    "pages/xy-xxlb/index",
+    "pages/xy-fbxx/index",
+    "pages/xy-details/index",
+    "pages/Game/choujiang/index",
+    "pages/Game/chuti/index",
+    "pages/Game/dati/index",
     "pages/notice/show",
     "pages/recharge/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "Leslie大百科",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {

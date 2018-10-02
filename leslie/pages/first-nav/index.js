@@ -179,32 +179,32 @@ Page({
   },
   toXuanyaoTap: function() {
     wx.navigateTo({
-      url: '/pages/search/index'
+      url: '/pages/xy-xxlb/index'
     })
   },
   toToupiaoTap: function() {
     wx.navigateTo({
-      url: '/pages/es-xxlb/index'
+      url: '/pages//index'
     })
   },
   toYouxiTap: function() {
     wx.navigateTo({
-      url: '/pages/search/index'
+      url: '/pages/Game//index'
     })
   },
   toChoujiangTap: function() {
     wx.navigateTo({
-      url: '/pages/es-xxlb/index'
+      url: '/pages/Game/choujiang/index'
     })
   },
   toZhoubianTap: function() {
     wx.navigateTo({
-      url: '/pages/search/index'
+      url: '/pages/es-xxlb/index'
     })
   },
   toZutuanTap: function() {
     wx.navigateTo({
-      url: '/pages/es-xxlb/index'
+      url: '/pages//index'
     })
   },
 })

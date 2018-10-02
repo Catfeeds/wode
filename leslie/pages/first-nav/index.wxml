@@ -9,9 +9,6 @@
         </swiper-item>
       </block>
     </swiper>
-
-
-
     <view class="dots">
       <block wx:for="{{banners}}" wx:key="unique">
         <view class="dot{{index == swiperCurrent ? ' active' : ''}}"></view>

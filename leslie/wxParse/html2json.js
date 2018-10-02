@@ -151,7 +151,12 @@ function html2json(html, bindName) {
                 if (imgUrl[0] == '') {
                     imgUrl.splice(0, 1);
                 }
-                imgUrl = wxDiscode.urlToHttpUrl(imgUrl, __placeImgeUrlHttps);
+              if (node.attr.src1) {
+                imgUrl = node.attr.src1 + wxDiscode.urlToHttpUrl(imgUrl, __placeImgeUrlHttps);
+              } else {
+                imgUrl = "https://www.lanrengj.com/upload/" + wxDiscode.urlToHttpUrl(imgUrl, __placeImgeUrlHttps);
+              }
+                //imgUrl = wxDiscode.urlToHttpUrl(imgUrl, __placeImgeUrlHttps);
                 node.attr.src = imgUrl;
                 node.from = bindName;
                 results.images.push(node);
