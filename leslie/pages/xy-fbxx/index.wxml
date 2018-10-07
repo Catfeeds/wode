@@ -1,6 +1,9 @@
 <view class="container">
   <form bindsubmit="bindSave">
     <view class="form-box">
+     <view class="row-wrap">
+     <image class="userinfo-avatar" src='{{userAvatar}}' background-size="cover" bindtap='clickUp'></image>
+     </view>
       <view class="row-wrap">
         <view class="label name">
           标题</view>

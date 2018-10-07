@@ -38,8 +38,8 @@
       <view class='jiedan'>
         <view></view>
         <view class='btn' catchtap="xxEditTap" wx:if="{{user_id==item.user_id}}" data-id="{{item.id}}">编辑</view>
-        <view class='btn' catchtap="hireXxTap" wx:elif="{{item.is_want==0}}" data-id="{{item.id}}" data-ind="{{ind}}">我想借阅</view>
-        <view class='btn iswant' wx:else>已想借阅</view>
+        <view class='btn' catchtap="hireXxTap" wx:elif="{{item.is_want==0}}" data-id="{{item.id}}" data-ind="{{ind}}">赞美</view>
+        <view class='btn iswant' wx:else>已赞美</view>
       </view>
 
     </view>

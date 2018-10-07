@@ -22,7 +22,7 @@ Page({
         data: {
           id: id
         },
-        success: function (res) {
+        success: function(res) {
           wx.hideLoading();
           if (res.data.code == 0) {
             that.setData({
@@ -33,6 +33,10 @@ Page({
           }
         }
       })
+    } else {
+      that.setData({
+        id: 0
+      });
     }
   },
 
@@ -88,6 +92,48 @@ Page({
   fabuClick: function() {
     this.setData({
       isClick: true
+    })
+  },
+
+  //上传
+  clickUp: function(e) {
+    var that = this;
+    var id = that.data.id;
+    var user_id = wx.getStorageSync('user_id');
+    wx.chooseImage({
+      count: 9, // 默认9
+      sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+      sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+      success: function(res) {
+        var tempFilePaths = res.tempFilePaths;
+        // console.log(tempFilePaths);
+        // return;
+        var imgPath = tempFilePaths;
+        wx.uploadFile({
+          url: app.globalData.subDomain + '/up_xuanyao?id=' + id + "&user_id=" + user_id,
+          filePath: imgPath[0] + "",
+          name: 'file',
+          header: {
+            'Accept': 'application/json'
+          },
+          success: function(res) {
+            var resData = JSON.parse(res.data.trim())
+            if (resData.code == 0) {
+              that.setData({
+                id: resData.data
+              });
+              wx.showToast({
+                title: '更改成功',
+              })
+            } else {
+              wx.showModal({
+                content: resData.message,
+                success: function(res) {}
+              })
+            }
+          }
+        })
+      }
     })
   },
 

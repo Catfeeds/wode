@@ -15,7 +15,7 @@
   </view>
 
   <view style='display:flex;padding-bottom:20rpx;'>
-    <button open-type="getPhoneNumber" style='width:100%;margin-right:70rpx;'  wx:if="{{userInfo.mobile==''}}" bindgetphonenumber="getPhoneNumber">绑定手机</button>
+    <button open-type="getPhoneNumber" style='width:100%;margin-right:70rpx;' wx:if="{{userInfo.mobile==''}}" bindgetphonenumber="getPhoneNumber">绑定手机</button>
     <button open-type="getUserInfo" style='width:100%;margin-right:70rpx;' lang="zh_CN" wx:if="{{userInfo.is_validated==0}}" bindgetuserinfo="onGotUserInfo">绑定微信</button>
   </view>
 
