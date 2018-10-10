@@ -31,7 +31,9 @@ Page({
     })
   },
   tapBanner: function(e) {
-
+    wx.navigateTo({
+      url: "/pages/video-show/index"
+    })
   },
   statusTap: function (e) {
     wx.navigateTo({

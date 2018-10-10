@@ -1,0 +1,15 @@
+/* pages/video-show/index.wxss */
+.container {
+  min-height: 100%;
+  overflow: hidden;
+  overflow-y: hidden;
+}
+
+.videoBox {
+  width: 100%;
+  text-align: center;
+  margin-top:50rpx;
+}
+video {
+  width: 100%;
+}

@@ -10,7 +10,10 @@
     <navigator url="/pages/shop-cart/index" hover-class="navigator-hover">购物车</navigator>
   </view>
   <view class="my-item">
-    <navigator url="/pages/my-qzh/index" hover-class="navigator-hover"><view class="weui_cell_hd"><text class='iconfont icon-setting'></text></view>我的千纸鹤</navigator>
+    <navigator url="/pages/my-qzh/index" hover-class="navigator-hover">
+      <view class="weui_cell_hd">
+        <text class='iconfont icon-setting'></text>
+      </view>我的千纸鹤</navigator>
   </view>
   <view class="my-item">
     <navigator url="/pages/select-address/index" hover-class="navigator-hover">我的地址</navigator>
