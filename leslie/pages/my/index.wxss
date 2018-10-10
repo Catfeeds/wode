@@ -5,11 +5,16 @@
 }
 .userinfo {
 	display: flex;
+	align-items: left;
+	background: url(https://www.lanrengj.com/static/images/weappshop/user_bg0.png) no-repeat center center;
+  width: 100%;
+}
+.usercont {
+	display: flex;
 	flex-direction: column;
 	padding: 50rpx 0;
 	align-items: center;
-	background: #e85654;
-  width: 750rpx;
+  width: 230rpx;
 }
 
 .userinfo-avatar {
@@ -43,6 +48,20 @@
     height: 100rpx;
     line-height: 100rpx;
     padding-left: 100rpx;
+}
+
+.weui_cell_hd {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+}
+
+.iconfont {
+  color: #999;
+  font-size: 50rpx;
+}
+.icon-setting{
+  color: #ff6f6f;
 }
 
 .about{
