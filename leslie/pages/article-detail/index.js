@@ -22,6 +22,12 @@ Page({
    */
   onLoad: function(e) {
     this.data.id = e.id;
+    if (e.curName){
+      wx.setNavigationBarTitle({
+        title: e.curName
+      })
+    }
+    
   },
 
   /**
@@ -51,15 +57,12 @@ Page({
         wx.hideLoading();
         if (res.data.code == 0) {
           var datas = res.data.data;
-          wx.setNavigationBarTitle({
-            title: datas.post_title
-          })
           datas.published_time = that.dataCode(datas.published_time);
           that.setData({
             bgxywz: datas
           });
           if (!datas.post_content){
-            datas.post_content="小编努力整理中(ง •_•)ง 敬请期待~~ <br> 欢迎投稿(*^__^*) ";
+            datas.post_content="小编努力整理中(ง •_•)ง 敬请期待~~ <br> 欢迎点击右下方投稿(*^__^*) ";
           }
           WxParse.wxParse('article', 'html', datas.post_content, that, 5);
         }

@@ -20,7 +20,7 @@
 
   <view class='droplist' wx:if="{{bgxyList.length > 0}}">
     <block wx:for="{{bgxyList}}" wx:key="{{index}}">
-      <view class='droplist-title' data-index="{{index}}" data-id="{{item.id}}" bindtap='clickTitle'>
+      <view class='droplist-title' data-index="{{index}}" data-id="{{item.id}}" data-name="{{item.name}}" bindtap='clickTitle'>
         <view class='rotate {{bgxyList[index].isclick?"active":""}}'>
           <text class='iconfont icon-zhankai'></text>
         </view>

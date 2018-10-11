@@ -101,6 +101,7 @@ swiper-item image {
   margin-top: 10rpx;
   background-color: #fff;
   border-bottom: 1rpx solid #eee;
+  /* font-weight:bold; */
 }
 
 .notice_swiper {

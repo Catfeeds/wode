@@ -1,20 +1,26 @@
 /* page/lmbg/bgxyxq/bgxyxq.wxss */
-.body{
+
+.body {
   height: 100%;
   background-color: #fff;
-  padding: 20px;
+  padding: 0 20px;
   color: #333;
 }
-.h1{
-  
+
+.h1 {
   display: inline-block;
   width: 100%;
   text-align: center;
   font-size: 40rpx;
   border-bottom: 1px solid #c4c4c4;
-  padding-bottom: 30rpx;
+  padding: 30rpx 0;
+  background: url(https://www.lanrengj.com/static/images/leslie/tab_bg5.png) no-repeat center center;
+  color: #333;
+  font-weight: bold;
+  box-shadow: 2px 2px 2px 1px #ddd;
 }
-.date{
+
+.date {
   color: #888;
   border-bottom: 1px solid #c4c4c4;
   display: inline-block;
@@ -25,16 +31,18 @@
   font-size: 26rpx;
   line-height: 58rpx;
 }
-.content{
+
+.content {
   font-size: 30rpx;
-  padding-top: 20rpx;
+  padding-top: 30rpx;
   display: inline-block;
   line-height: 50rpx;
-  width:100%;
+  width: 100%;
 }
-.content .p1{
+
+.content .p1 {
   text-indent: 60rpx;
-  margin-top: 20rpx
+  margin-top: 20rpx;
 }
 
 .footer-box {

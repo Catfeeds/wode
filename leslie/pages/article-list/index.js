@@ -8,7 +8,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    isclick: false
+    isclick: false,
+    currentName: "电影"
   },
 
   /**
@@ -41,7 +42,9 @@ Page({
 
   statusTap: function(e) {
     var curType = e.currentTarget.dataset.index;
-    this.data.currentType = curType
+    var curName = e.currentTarget.dataset.name;
+    this.data.currentType = curType;
+    this.data.currentName = curName;
     this.setData({
       currentType: curType,
       isclick: !isclick
@@ -82,8 +85,9 @@ Page({
 
   clickPost: function(e) {
     var id = e.currentTarget.dataset.id;
+    var curName = this.data.currentName;
     wx.navigateTo({
-      url: "../article-detail/index?id=" + id
+      url: "../article-detail/index?id=" + id + "&curName=" + curName
     })
 
   },

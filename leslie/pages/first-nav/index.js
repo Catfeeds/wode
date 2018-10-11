@@ -36,8 +36,10 @@ Page({
     })
   },
   statusTap: function (e) {
+    var id = e.currentTarget.dataset.id;
+    var curName = e.currentTarget.dataset.name;
     wx.navigateTo({
-      url: "/pages/hudong-list/index?id=" + e.currentTarget.dataset.id
+      url: "/pages/hudong-list/index?id=" + id + "&curName=" + curName
     })
   },
   bindTypeTap: function(e) {

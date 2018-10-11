@@ -8,7 +8,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    isclick: false
+    isclick: false,
+    currentName:"专辑"
   },
 
   /**
@@ -41,7 +42,9 @@ Page({
 
   statusTap: function(e) {
     var curType = e.currentTarget.dataset.index;
-    this.data.currentType = curType
+    var curName = e.currentTarget.dataset.name;
+    this.data.currentType = curType;
+    this.data.currentName = curName;
     this.setData({
       currentType: curType,
       isclick: !isclick
@@ -123,6 +126,8 @@ Page({
         this.data.bgxyList[cur].isclick = !this.data.bgxyList[cur].isclick;
         if (this.data.bgxyList[cur].isclick){
           var category_id = e.currentTarget.dataset.id;
+          var curName = e.currentTarget.dataset.name;
+          this.data.currentName = curName;
           wx.request({
             url: app.globalData.subDomain + '/post_list',
             method: 'GET',
@@ -150,8 +155,9 @@ Page({
 
   clickPost: function(e) {
     var id = e.currentTarget.dataset.id;
+    var curName = this.data.currentName;
     wx.navigateTo({
-      url: "../article-detail/index?id=" + id
+      url: "../article-detail/index?id=" + id + "&curName=" + curName
     })
 
   },
