@@ -14,8 +14,9 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function(e) {
     var that = this;
+    var t_id = e.id;
     // 获取分类
     wx.request({
       url: app.globalData.subDomain + '/category_list',
@@ -29,8 +30,11 @@ Page({
       success: function(res) {
         if (res.data.code == 0) {
           that.setData({
-            statusType: res.data.data
+            statusType: res.data.data,
+            currentType: t_id,
+            isclick: !isclick
           });
+          that.loadList();
         }
       }
     })

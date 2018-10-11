@@ -37,7 +37,7 @@ Page({
   },
   statusTap: function (e) {
     wx.navigateTo({
-      url: "/pages/hudong-list/index"
+      url: "/pages/hudong-list/index?id=" + e.currentTarget.dataset.id
     })
   },
   bindTypeTap: function(e) {

@@ -17,7 +17,7 @@
   </view>
   <view class='nav'>
     <scroll-view class="scroll-view_H" scroll-x style="width: 100%">
-      <view bindtap="statusTap" class="scroll-view-item_H {{item.id == currentType ? 'active' : ''}}" wx:for-items="{{statusType}}" wx:key="{{item.id}}" data-index="{{item.id}}" data-name="{{item.name}}">
+      <view bindtap="statusTap" class="scroll-view-item_H {{item.id == currentType ? 'active' : ''}}" wx:for-items="{{statusType}}" wx:key="{{item.id}}" data-index="{{item.id}}" data-id="{{item.id}}">
         <view class="weui_cell">{{item.name}}</view>
       </view>
     </scroll-view>

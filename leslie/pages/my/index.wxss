@@ -7,7 +7,7 @@
 .userinfo {
   display: flex;
   align-items: left;
-  background: url(https://www.lanrengj.com/static/images/weappshop/user_bg0.png) no-repeat center center;
+  background: url(https://www.lanrengj.com/static/images/leslie/user_bg1.png) no-repeat center center;
   width: 100%;
 }
 
@@ -62,7 +62,7 @@
   font-size: 50rpx;
 }
 
-.icon-setting {
+.icon-qianzhihe-copy {
   color: #ff6f6f;
 }
 

@@ -14,7 +14,7 @@
     </view>
   <view class='address-btn'>
     <view bindtap='addAddess' class='addbtn'>
-      <text class='iconfont icon-tianjia-copy main-color '></text>新增地址</view>
+      <text class='iconfont icon-jiahao main-color '></text>新增地址</view>
     <view bindtap='getWxAddress' class='wxbtn'>
       <text class='iconfont icon-weixin'></text>微信添加</view>
   </view>

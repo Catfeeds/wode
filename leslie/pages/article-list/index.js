@@ -29,8 +29,11 @@ Page({
       success: function(res) {
         if (res.data.code == 0) {
           that.setData({
-            statusType: res.data.data
+            statusType: res.data.data,
+            currentType: 2,
+            isclick: !isclick
           });
+          that.loadList();
         }
       }
     })
