@@ -7,14 +7,17 @@
 
 .control-content-list {
   justify-content: inherit;
+  color:#333;
+  background: url(https://www.lanrengj.com/static/images/leslie/tab_bg3.png) no-repeat center center;
 }
 
 .control-content-list .status-label {
   display: flex;
   flex-direction: column;
+  font-weight: bold;
   /* align-items: center; */
   border-right: 1px solid #f0f0f0;
-  border-bottom: 1px solid #f0f0f0;
+  /* border-bottom: 1px solid #f0f0f0; */
   width: 33%;
 }
 
@@ -142,7 +145,7 @@
 
 .scroll-view_H {
   white-space: nowrap;
-  background-color: #fff;
+  /* background-color: #fff; */
 }
 
 .scroll-view-item_H {
@@ -150,7 +153,8 @@
   text-align: center;
   font-size: 30rpx;
   padding: 30rpx 45rpx;
-  border-bottom: 6rpx solid #f0f0f0;
+  font-weight: bold;
+  /* border-bottom: 6rpx solid #f0f0f0; */
   /* display: flex; */
   position: relative;
 }

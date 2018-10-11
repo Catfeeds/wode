@@ -18,33 +18,38 @@
     <view class="text">暂无文章</view>
   </view>
 
-  <view class='droplist' >
+  <view class='droplist' wx:if="{{bgxyList.length > 0}}">
     <block wx:for="{{bgxyList}}" wx:key="{{index}}">
       <view class='droplist-title' data-index="{{index}}" data-id="{{item.id}}" bindtap='clickTitle'>
         <view class='rotate {{bgxyList[index].isclick?"active":""}}'>
           <text class='iconfont icon-zhankai'></text>
         </view>
-        <view class='img'>
-          <image src='{{item.thumbnail}}' mode='aspectFit' wx:if="{{item.thumbnail}}"></image>
+        <image class='goods-img' src='{{item.thumbnail}}' mode='aspectFit' wx:if="{{item.thumbnail}}"></image>
+        <view class='img-box1-1'>
+          <view>{{item.name}}</view>
+          <view class='img-box1-guige'>{{item.description}}</view>
         </view>
-        {{item.name}} {{item.description}}
       </view>
       <view class='droplist-content {{bgxyList[index].isclick?"active":""}}'>
         <block wx:for="{{item.aaa}}" wx:key="{{b}}">
           <view class='droplist-title' data-id="{{item.id}}" bindtap='clickPost'>
-            {{item.post_title}} {{item.post_excerpt}}
+            <view class='img-box2-1'>
+              <view>{{item.post_title}}</view>
+              <view class='img-box2-guige'>{{item.post_excerpt}}</view>
+            </view>
           </view>
         </block>
       </view>
     </block>
   </view>
-  <view class='droplist' >
+  <view class='droplist' wx:if="{{bgxyList2.length > 0}}">
     <block wx:for="{{bgxyList2}}" wx:key="{{index}}">
       <view class='droplist-title' data-index="{{index}}" data-id="{{item.id}}" bindtap='clickPost'>
-        <view class='img'>
-          <image src='{{item.thumbnail}}' mode='aspectFit' wx:if="{{item.thumbnail}}"></image>
+        <image class='goods-img' src='{{item.thumbnail}}' mode='aspectFit' wx:if="{{item.thumbnail}}"></image>
+        <view class='img-box2-1'>
+          <view>{{item.post_title}}</view>
+          <view class='img-box2-guige'>{{item.post_excerpt}}</view>
         </view>
-        {{item.post_title}} {{item.post_excerpt}}
       </view>
     </block>
   </view>

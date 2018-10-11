@@ -250,6 +250,7 @@ swiper-item image {
   text-align: center;
   font-size: 30rpx;
   padding: 30rpx 45rpx;
+  font-weight: bold;
   border-bottom: 6rpx solid #f0f0f0;
   /* display: flex; */
   position: relative;

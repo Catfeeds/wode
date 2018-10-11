@@ -7,14 +7,17 @@
 
 .control-content-list {
   justify-content: inherit;
+  color:#333;
+  background: url(https://www.lanrengj.com/static/images/leslie/tab_bg3.png) no-repeat center center;
 }
 
 .control-content-list .status-label {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  border-right: 1px solid #f0f0f0;
-  border-bottom: 1px solid #f0f0f0;
+  font-weight: bold;
+  align-items: center;
+  border-left: 1px solid #f0f0f0;
+  /* border-bottom: 1px solid #f0f0f0; */
   width: 33%;
 }
 
@@ -83,11 +86,38 @@
 }
 
 .droplist-title {
+  display: flex;
+  justify-content: space-between;
   font-size: 30rpx;
   font-weight: bold;
-  margin-top: 20rpx;
-  line-height: 60rpx;
+  /* margin-top: 20rpx;
+  line-height: 60rpx; */
+  min-height:70rpx;
   border-bottom: 1px solid #eee;
+}
+
+
+.droplist-title .goods-img {
+  width: 120rpx;
+  height: 120rpx;
+  /* padding-left: 30rpx; */
+  margin-right: 30rpx;
+  padding: 20rpx 0 20rpx 10rpx;
+}
+
+.img-box1-1 {
+  display: flex;
+  flex: 1;
+  /* flex-direction: column; 
+  justify-content: space-around;*/
+  justify-content: space-between;
+  align-items:center;
+  text-align: left;
+}
+
+.img-box1-guige {
+  font-size: 24rpx;
+  color: #797979;
 }
 
 .droplist-content {

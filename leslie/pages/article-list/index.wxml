@@ -21,10 +21,11 @@
   <view class='droplist'>
     <block wx:for="{{bgxyList}}" wx:key="{{index}}">
       <view class='droplist-title' data-index="{{index}}" data-id="{{item.id}}" bindtap='clickPost'>
-        <view class='img'>
-          <image src='{{item.thumbnail}}' mode='aspectFit' wx:if="{{item.thumbnail}}"></image>
+          <image class='goods-img' src='{{item.thumbnail}}' mode='aspectFit' wx:if="{{item.thumbnail}}"></image>
+        <view class='img-box1-1'>
+          <view>{{item.post_title}}</view>
+          <view class='img-box1-guige'>{{item.post_excerpt}}</view>
         </view>
-        {{item.post_title}} {{item.post_excerpt}}
       </view>
     </block>
   </view>

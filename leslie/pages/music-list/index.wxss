@@ -2,19 +2,22 @@
   flex-wrap: wrap;
   /* justify-content: space-between; */
   padding: 0;
-  display:flex;
+  display: flex;
 }
 
 .control-content-list {
   justify-content: inherit;
+  color:#333;
+  background: url(https://www.lanrengj.com/static/images/leslie/tab_bg3.png) no-repeat center center;
 }
 
 .control-content-list .status-label {
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  border-right: 1px solid #f0f0f0;
-  border-bottom: 1px solid #f0f0f0;
+  font-weight: bold;
+  align-items: center;
+  border-left: 1px solid #f0f0f0;
+  /* border-bottom: 1px solid #f0f0f0; */
   width: 24.4%;
 }
 
@@ -49,8 +52,8 @@
 }
 
 .active {
-  color: #e50012;
-  border-bottom: 3rpx solid #e50012;
+  color: #038af8;
+  border-bottom: 3rpx solid #038af8;
 }
 
 .xueyuan {
@@ -83,11 +86,55 @@
 }
 
 .droplist-title {
+  display: flex;
+  justify-content: space-between;
   font-size: 30rpx;
-  font-weight: bold;
+  /* font-weight: bold;
   margin-top: 20rpx;
-  line-height: 60rpx;
+  line-height: 60rpx; */
+  min-height: 70rpx;
   border-bottom: 1px solid #eee;
+}
+
+.droplist-title .goods-img {
+  width: 120rpx;
+  height: 120rpx;
+  /* padding-left: 30rpx; */
+  margin-right: 30rpx;
+  padding: 20rpx 0 20rpx 10rpx;
+}
+
+.img-box1-1 {
+  display: flex;
+  flex: 1;
+  /* flex-direction: column; 
+  justify-content: space-around;*/
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  font-weight: bold;
+}
+
+.img-box1-guige {
+  font-size: 24rpx;
+  color: #797979;
+  min-width: 40%;
+  margin-left: 20rpx;
+  text-align: right;
+}
+
+.img-box2-1 {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: left;
+}
+
+.img-box2-guige {
+  font-size: 24rpx;
+  color: #797979;
+  line-height: 50rpx;
 }
 
 .droplist-content {
@@ -107,6 +154,9 @@
   -moz-transition: height 1s; /* Firefox 4 */
   -webkit-transition: height 1s; /* Safari 和 Chrome */
   -o-transition: height 1s;
+  padding-left: 50rpx;
+  padding-right: 30rpx;
+  /* background-color: #fce2c5; */
 }
 
 .rotate {
