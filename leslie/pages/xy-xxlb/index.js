@@ -111,7 +111,7 @@ Page({
       },
       success: function(res) {
         wx.showToast({
-          title: '已想借阅',
+          title: '已赞美',
           icon: 'success',
           duration: 1000
         })

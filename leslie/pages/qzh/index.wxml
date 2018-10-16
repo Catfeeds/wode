@@ -1,12 +1,12 @@
 <!--pages/qzh/index.wxml-->
 <view class="container">
   <block wx:for="{{qzh}}" wx:key="{{index}}">
-    <image data-id="{{item.id}}" src="{{item.picture}}" style='position:absolute;top:{{item.top}}px;left:{{item.left}}px;width:100px;height:100px;transform:rotate({{item.jd}}deg);' bindtap="openQzh" mode='aspectFit'></image>
+    <image data-id="{{item.id}}" src="{{item.picture}}" style='position:absolute;top:{{item.top}}px;left:{{item.left}}px;width:{{qzh_width}}px;height:{{qzh_width}}px;transform:rotate({{item.jd}}deg);' bindtap="openQzh" mode='aspectFit'></image>
   </block>
 
   <view class='top'>
     <view class='top_fabu'>
-      <view bindtap="ffQzh">放飞千纸鹤</view>
+      <button class="save-btn" bindtap="ffQzh">放飞千纸鹤</button>
     </view>
   </view>
 
@@ -19,39 +19,29 @@
             <view class="label name">
               昵称</view>
             <view class="label-right">
-              <input name="user_name" class="input" type="text" value="匿名" />
+              <input name="user_name" class="input" type="text" placeholder="匿名" />
             </view>
           </view>
-          <view class="row-wrap">
-            <view class="label">
-              致哥哥</view>
-            <textarea name="remark" class="label-right2" value="" auto-height />
+          <view>
+            <textarea name="remark" placeholder="致亲爱的哥哥" value="" />
           </view>
         </view>
-        <button class="save-btn" formType="submit" bindtap='fabuClick' disabled='{{isclick}}' loading='{{isclick}}'>确认发布</button>
+        <button class="save-btn" formType="submit" bindtap='fabuClick' disabled='{{isclick}}' loading='{{isclick}}'>放飞千纸鹤</button>
       </form>
     </view>
   </view>
 
-    <view class="show-popup" hidden="{{hidePaperCrane}}">
+  <view class="show-popup" hidden="{{hidePaperCrane}}">
     <view class="popup-mask" bindtap="closePopupTap" bindtouchstart="closePopupTap"></view>
     <view class="popup-contents">
-      <form bindsubmit="bindSave">
-        <view class="form-box">
-          <view class="row-wrap">
-            <view class="label name">
-              昵称</view>
-            <view class="label-right">
-              <input name="user_name" class="input" type="text" value="{{craneInfo.user_name}}" />
-            </view>
-          </view>
-          <view class="row-wrap">
-            <view class="label">
-              致哥哥</view>
-            <textarea name="remark" class="label-right2" value="{{craneInfo.remark}}" auto-height />
-          </view>
+      <view class="form-box">
+        <view class="row-wrap">
+          From：{{craneInfo.user_name}}
         </view>
-      </form>
+        <view>
+          <textarea name="remark" value="{{craneInfo.remark}}" disabled='true' />
+        </view>
+      </view>
     </view>
   </view>
 </view>
