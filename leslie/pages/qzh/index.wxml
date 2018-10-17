@@ -3,10 +3,16 @@
   <block wx:for="{{qzh}}" wx:key="{{index}}">
     <image data-id="{{item.id}}" src="{{item.picture}}" style='position:absolute;top:{{item.top}}px;left:{{item.left}}px;width:{{qzh_width}}px;height:{{qzh_width}}px;transform:rotate({{item.jd}}deg);' bindtap="openQzh" mode='aspectFit'></image>
   </block>
-
   <view class='top'>
     <view class='top_fabu'>
-      <button class="save-btn" bindtap="ffQzh">放飞千纸鹤</button>
+      <view class="label">
+        <view class="l1">愿千纸鹤的翅膀</view>
+        <view class="l2">能载着我们的心意</view>
+        <view class="l3">飞到哥哥的身边。。。</view>
+      </view>
+      <view class="label-right">
+        <button class="save-btn" bindtap="ffQzh">放飞千纸鹤</button>
+      </view>
     </view>
   </view>
 

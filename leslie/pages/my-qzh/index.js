@@ -15,7 +15,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    // var that = this;
+    // wx.getSystemInfo({
+    //   success: function(res) {
+    //     var qzh_width = Math.floor((res.windowWidth - 20) / 4);
+    //     app.globalData.qzh_width = qzh_width;
+    //     that.getQzhList();
+    //   }
+    // })
   },
 
   /**
@@ -29,21 +36,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    var that = this;
-    wx.showLoading();
-    wx.request({
-      url: app.globalData.subDomain + '/paper_crane_list',
-      data: {},
-      success: (res) => {
-        wx.hideLoading();
-        if (res.data.code == 0) {
-          that.setData({
-            qzh: res.data.data,
-          });
-        }
-      }
-    })
-
+    if (app.globalData.qzh_width) {
+      this.getQzhList();
+    }
     // var qzh = new Array();
     // for (var i = 0; i < 12; i++) {
     //   var aaa = {}
@@ -56,6 +51,33 @@ Page({
     // this.setData({
     //   qzh: qzh
     // })
+  },
+
+  getQzhList: function() {
+    var that = this;
+    var qzh_width = app.globalData.qzh_width;
+    var user_id = wx.getStorageSync('user_id');
+    wx.showLoading();
+    wx.request({
+      url: app.globalData.subDomain + '/paper_crane_list',
+      data: {
+        user_id: user_id
+      },
+      success: (res) => {
+        wx.hideLoading();
+        if (res.data.code == 0) {
+          var datas = res.data.data
+          for (var i = 0; i < datas.length; i++) {
+            datas[i].top = (Math.floor(i / 4) * qzh_width) + Math.round(Math.random() * 20);
+            datas[i].left = (i % 4 * qzh_width) + Math.round(Math.random() * 20);
+          }
+          that.setData({
+            qzh: datas,
+            qzh_width: qzh_width
+          });
+        }
+      }
+    })
   },
 
   openQzh: function(e) {
@@ -81,12 +103,10 @@ Page({
         }
       }
     })
-
   },
 
 
   ffQzh: function() {
-
     this.setData({
       hideShopPopup: false
     })
@@ -112,10 +132,13 @@ Page({
     var user_name = e.detail.value.user_name;
     var remark = e.detail.value.remark;
 
+    if (user_name == "") {
+      user_name = "匿名"
+    }
     if (remark == "") {
       wx.showModal({
         title: '提示',
-        content: '请填写',
+        content: '请填写千纸鹤内容',
         showCancel: false
       })
       return
@@ -135,7 +158,7 @@ Page({
         remark: remark,
         picture: picture,
       },
-      success: function (res) {
+      success: function(res) {
         wx.hideLoading();
         if (res.data.code != 0) {
           // 登录错误 
@@ -147,7 +170,7 @@ Page({
           return;
         }
         // 刷新
-
+        that.getQzhList();
       }
     })
 
@@ -171,7 +194,10 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function() {
-
+    var that = this;
+    setTimeout(function() {
+      that.getQzhList();
+    }, 500)
   },
 
   /**

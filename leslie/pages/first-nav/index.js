@@ -187,14 +187,24 @@ Page({
     })
   },
   toToupiaoTap: function() {
-    wx.navigateTo({
-      url: '/pages//index'
+    wx.showToast({
+      title: '敬请期待',
+      icon: 'none',
+      duration: 2000
     })
+    // wx.navigateTo({
+    //   url: '/pages//index'
+    // })
   },
   toYouxiTap: function() {
-    wx.navigateTo({
-      url: '/pages/Game//index'
+    wx.showToast({
+      title: '敬请期待',
+      icon: 'none',
+      duration: 2000
     })
+    // wx.navigateTo({
+    //   url: '/pages/Game//index'
+    // })
   },
   toChoujiangTap: function() {
     wx.navigateTo({
@@ -207,8 +217,13 @@ Page({
     })
   },
   toZutuanTap: function() {
-    wx.navigateTo({
-      url: '/pages//index'
+    wx.showToast({
+      title: '敬请期待',
+      icon: 'none',
+      duration: 2000
     })
+    // wx.navigateTo({
+    //   url: '/pages//index'
+    // })
   },
 })

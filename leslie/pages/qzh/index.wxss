@@ -36,16 +36,12 @@
   display: flex;
 }
 
-.row-wrap .label-name {
-  width: 30%;
-}
-
 .row-wrap .label-right {
   width: 70%;
 }
 
 .row-wrap .label {
-  /* width: 25%;  */
+  /* width: 30%; */
   float: left;
   line-height: 80rpx;
   height: 80rpx;
@@ -84,8 +80,37 @@ textarea {
   display: flex;
   justify-content: center;
   position: fixed;
+  width: 100%;
+  background-color: #fff;
+  /* background: url(https://www.lanrengj.com/static/images/leslie/tab_bg5.png) no-repeat center center; */
 }
 
 .top_fabu {
   bottom: 0;
+  display: flex;
+  width: 100%;
+  margin: 20rpx;
+  align-items: center;
+}
+
+.top_fabu .label {
+  width: 60%;
+  color: #333;
+  /* font-weight: bold; */
+}
+
+.top_fabu .label .l1 {
+  margin-left: 10rpx;
+}
+
+.top_fabu .label .l2 {
+  margin-left: 40rpx;
+}
+
+.top_fabu .label .l3 {
+  margin-left: 70rpx;
+}
+
+.top_fabu .label-right {
+  width: 40%;
 }

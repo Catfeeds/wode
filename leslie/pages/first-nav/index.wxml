@@ -39,13 +39,13 @@
       </view>
       <view class="goods-title">炫耀专区</view>
     </view>
-    <view class="goods-box" bindtap="toToupiaoTap">
+    <view class="goods-box" bindtap="toToupiaoTap" wx:if="{{userInfo.user_type>1}}">
       <view class="img-box">
         <image src="https://www.lanrengj.com/static/images/leslie/bg2.jpg" class="image" mode="widthFix" lazy-load="true" />
       </view>
       <view class="goods-title">一起来投票</view>
     </view>
-    <view class="goods-box" bindtap="toYouxiTap">
+    <view class="goods-box" bindtap="toYouxiTap" wx:if="{{userInfo.user_type>1}}">
       <view class="img-box">
         <image src="https://www.lanrengj.com/static/images/leslie/bg3.jpg" class="image" mode="widthFix" lazy-load="true" />
       </view>
@@ -63,7 +63,7 @@
       </view>
       <view class="goods-title">淘宝贝</view>
     </view>
-    <view class="goods-box" bindtap="toZutuanTap">
+    <view class="goods-box" bindtap="toZutuanTap" wx:if="{{userInfo.user_type>1}}">
       <view class="img-box">
         <image src="https://www.lanrengj.com/static/images/leslie/bg2.jpg" class="image" mode="widthFix" lazy-load="true" />
       </view>

@@ -1,0 +1,11 @@
+<view class="container">
+    <view class="coupons-list">
+          <view class="coupons" >
+        <view>感谢各位荣亲对Leslie大百科的厚爱，为大家准备了一些小礼物，积分由低到高可免费兑换：书签、照片、戒指、项链、海报、张国荣传、继续宠爱图文纪念册、《幸》写真集等等。礼物采购中，敬请期待。</view>
+      </view>
+      <view class="coupons-item" wx:for-items="{{scores}}" wx:key="id" wx:for-index="idx"  >
+        <view style="font-size: 50rpx"> {{item.score}}分 </view>
+        <view> {{item.log_txt}} </view>
+      </view>
+    </view>
+</view>

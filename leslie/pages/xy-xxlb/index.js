@@ -87,15 +87,20 @@ Page({
   },
 
   xxDetailTap: function(e) {
-    wx.navigateTo({
-      url: "/pages/es-details/index?id=" + e.currentTarget.dataset.id
-    })
+    // wx.navigateTo({
+    //   url: "/pages/es-details/index?id=" + e.currentTarget.dataset.id
+    // })
   },
 
   xxEditTap: function(e) {
-    wx.navigateTo({
-      url: "/pages/xy-fbxx/index?id=" + e.currentTarget.dataset.id
+    wx.showToast({
+      title: '该功能暂未开放，一周后启用。',
+      icon: 'none',
+      duration: 2000
     })
+    // wx.navigateTo({
+    //   url: "/pages/xy-fbxx/index?id=" + e.currentTarget.dataset.id
+    // })
   },
 
   hireXxTap: function(e) {
