@@ -1,6 +1,0 @@
-<!--pages/video-show/index.wxml-->
-<view class="container">
-  <view class='videoBox'>
-    <video id="myVideo" src="https://www.lanrengj.com/static/images/leslie/Bio.mp4" binderror="videoErrorCallback" ></video>
-  </view>
-</view>
