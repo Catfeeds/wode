@@ -8,7 +8,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    id: 0
+    id: 0,
+    title: ""
   },
 
   dataCode: function(data) {
@@ -22,12 +23,12 @@ Page({
    */
   onLoad: function(e) {
     this.data.id = e.id;
-    if (e.curName){
+    if (e.curName) {
       wx.setNavigationBarTitle({
         title: e.curName
       })
     }
-    
+
   },
 
   /**
@@ -43,7 +44,7 @@ Page({
   onShow: function() {
 
     var that = this;
-    // 获取帮哥学院文章
+    // 获取文章
     wx.request({
       url: app.globalData.subDomain + '/article_detail',
       method: 'GET',
@@ -58,15 +59,22 @@ Page({
         if (res.data.code == 0) {
           var datas = res.data.data;
           datas.published_time = that.dataCode(datas.published_time);
+          that.data.title = datas.post_title;
           that.setData({
             bgxywz: datas
           });
-          if (!datas.post_content){
-            datas.post_content="小编努力整理中(ง •_•)ง 敬请期待~~ <br> 欢迎点击右下方投稿(*^__^*) ";
+          if (!datas.post_content) {
+            datas.post_content = "小编努力整理中(ง •_•)ง 敬请期待~~ <br> 欢迎点击右下方投稿(*^__^*) ";
           }
           WxParse.wxParse('article', 'html', datas.post_content, that, 5);
         }
       }
+    })
+  },
+
+  toHomePage: function() {
+    wx.switchTab({
+      url: '/pages/qzh/index'
     })
   },
 
@@ -102,6 +110,8 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {
-
+    return {
+      title: this.data.title
+    }
   }
 })

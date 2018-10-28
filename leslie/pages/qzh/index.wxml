@@ -1,8 +1,10 @@
 <!--pages/qzh/index.wxml-->
 <view class="container">
-  <block wx:for="{{qzh}}" wx:key="{{index}}">
-    <image data-id="{{item.id}}" src="{{item.picture}}" style='position:absolute;top:{{item.top}}px;left:{{item.left}}px;width:{{qzh_width}}px;height:{{qzh_width}}px;transform:rotate({{item.jd}}deg);' bindtap="openQzh" mode='aspectFit'></image>
-  </block>
+  <view>
+    <block wx:for="{{qzh}}" wx:key="{{index}}">
+      <image data-id="{{item.id}}" src="{{item.picture}}" style='position:absolute;top:{{item.top}}px;left:{{item.left}}px;width:{{qzh_width}}px;height:{{qzh_width}}px;transform:rotate({{item.jd}}deg);' bindtap="openQzh" mode='aspectFit'></image>
+    </block>
+  </view>
   <view class='top'>
     <view class='top_fabu'>
       <view class="label">
@@ -16,7 +18,7 @@
     </view>
   </view>
 
-  <view class="show-popup" hidden="{{hideShopPopup}}">
+  <view class="show-popup" catchtouchmove='stopMove' hidden="{{hideShopPopup}}">
     <view class="popup-mask" bindtap="closePopupTap" bindtouchstart="closePopupTap"></view>
     <view class="popup-contents">
       <form bindsubmit="bindSave">
@@ -37,12 +39,13 @@
     </view>
   </view>
 
-  <view class="show-popup" hidden="{{hidePaperCrane}}">
+  <view class="show-popup" catchtouchmove='stopMove' hidden="{{hidePaperCrane}}">
     <view class="popup-mask" bindtap="closePopupTap" bindtouchstart="closePopupTap"></view>
     <view class="popup-contents">
       <view class="form-box">
-        <view class="row-wrap">
-          From：{{craneInfo.user_name}}
+        <view class="row-wrap bt">
+          <view>From：{{craneInfo.user_name}}</view>
+          <view class="time">{{craneInfo.create_time}}</view>
         </view>
         <view>
           <textarea name="remark" value="{{craneInfo.remark}}" disabled='true' />

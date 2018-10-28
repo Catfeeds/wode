@@ -36,6 +36,10 @@
   display: flex;
 }
 
+.bt {
+  justify-content: space-between;
+}
+
 .row-wrap .label-right {
   width: 70%;
 }
@@ -46,6 +50,12 @@
   line-height: 80rpx;
   height: 80rpx;
   margin: 0 25rpx 0 20rpx;
+}
+
+.row-wrap .time {
+  color: #999;
+  font-size: 28rpx;
+  padding-right: 5rpx;
 }
 
 .row-wrap input {

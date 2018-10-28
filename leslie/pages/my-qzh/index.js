@@ -1,4 +1,5 @@
 // pages/qzh/index.js
+var util = require('../../utils/util.js');
 var isclick = false;
 var app = getApp()
 Page({
@@ -9,6 +10,12 @@ Page({
   data: {
     hideShopPopup: true,
     hidePaperCrane: true,
+  },
+
+  dataCode: function (data) {
+    var newDate = new Date();
+    newDate.setTime(data * 1000);
+    return util.formatTime2(newDate);
   },
 
   /**
@@ -92,9 +99,11 @@ Page({
       success: (res) => {
         wx.hideLoading();
         if (res.data.code == 0) {
+          var datas = res.data.data;
+          datas.create_time = that.dataCode(datas.create_time);
           that.setData({
             hidePaperCrane: false,
-            craneInfo: res.data.data
+            craneInfo: datas
           });
         } else {
           that.setData({
@@ -119,6 +128,9 @@ Page({
     })
   },
 
+  stopMove: function () {
+    return;
+  },
 
   fabuClick: function() {
     this.setData({

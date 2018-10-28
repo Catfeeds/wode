@@ -89,7 +89,6 @@ Page({
     wx.navigateTo({
       url: "../article-detail/index?id=" + id + "&curName=" + curName
     })
-
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

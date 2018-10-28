@@ -16,7 +16,7 @@
     </view>
   </view>
 
-  <view class="show-popup" hidden="{{hideShopPopup}}">
+  <view class="show-popup" catchtouchmove='stopMove' hidden="{{hideShopPopup}}">
     <view class="popup-mask" bindtap="closePopupTap" bindtouchstart="closePopupTap"></view>
     <view class="popup-contents">
       <form bindsubmit="bindSave">
@@ -37,12 +37,13 @@
     </view>
   </view>
 
-  <view class="show-popup" hidden="{{hidePaperCrane}}">
+  <view class="show-popup" catchtouchmove='stopMove' hidden="{{hidePaperCrane}}">
     <view class="popup-mask" bindtap="closePopupTap" bindtouchstart="closePopupTap"></view>
     <view class="popup-contents">
       <view class="form-box">
-        <view class="row-wrap">
-          From：{{craneInfo.user_name}}
+        <view class="row-wrap bt">
+          <view>From：{{craneInfo.user_name}}</view>
+          <view class="time">{{craneInfo.create_time}}</view>
         </view>
         <view>
           <textarea name="remark" value="{{craneInfo.remark}}" disabled='true' />
