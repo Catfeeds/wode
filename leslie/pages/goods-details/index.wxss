@@ -123,11 +123,11 @@ swiper-item image {
   height: 100%;
   line-height: 100rpx;
   text-align: center;
-  padding-top: 26rpx;
+  padding-top: 32rpx;
   font-size:20rpx;
-  color:#008000;
+  color:#09bb07;
   box-sizing: border-box;
-  background:url("https://www.lanrengj.com/static/images/weappshop/kefudh.png") no-repeat center 21rpx;
+  background:url("https://www.lanrengj.com/static/images/weappshop/weixin.png") no-repeat center 21rpx;
   background-size: 55rpx auto;
 }
 .footer-box .shop-cart-btn{
