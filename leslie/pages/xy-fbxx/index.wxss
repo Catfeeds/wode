@@ -17,7 +17,7 @@
 }
 
 .row-wrap .label {
-  width:160rpx;
+  width: 160rpx;
   float: left;
   line-height: 88rpx;
   margin-right: 20rpx;
@@ -66,4 +66,13 @@
   background-color: #e85654;
   color: #fff;
   width: 90%;
+}
+
+.img {
+  width: 220rpx;
+  height: 240rpx;
+  border: 1px solid #f0f0f0;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5rpx;
 }

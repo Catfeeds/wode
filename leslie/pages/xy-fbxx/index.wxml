@@ -1,9 +1,12 @@
 <view class="container">
   <form bindsubmit="bindSave">
     <view class="form-box">
-     <view class="row-wrap">
-     <image class="userinfo-avatar" src='{{userAvatar}}' background-size="cover" bindtap='clickUp'></image>
-     </view>
+      <view class="row-wrap">
+        <block wx:for="{{goods_imgs}}" wx:key="{{index}}">
+          <image class="img" src='https://www.lanrengj.com{{item}}' mode='aspectFit' bindtap='clickUp'></image>
+        </block>
+        <image class="img" src='https://www.lanrengj.com/static/images/weappshop/upload.png' mode='aspectFit' bindtap='clickUp'></image>
+      </view>
       <view class="row-wrap">
         <view class="label name">
           标题</view>
