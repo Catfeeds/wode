@@ -24,19 +24,23 @@ Page({
       },
       success: function(res) {
         var selectSizeTemp = "";
-        that.data.goodsDetail = res.data.data;
+        var datas = res.data.data;
+        var goods_imgs = datas.goods_img.split(',');
+        that.data.goodsDetail = datas;
         that.setData({
-          goodsDetail: res.data.data
+          goodsDetail: datas,
+          goods_imgs: goods_imgs
+
         });
-        WxParse.wxParse('article', 'html', res.data.data.goods_desc, that, 5);
+        WxParse.wxParse('article', 'html', datas.goods_desc, that, 5);
       }
     })
   },
 
-  toWant: function () {
-    
+  toWant: function() {
+
   },
-  
+
   makePhoneCall: function(e) {
     var phoneNumber = wx.getStorageSync('kefu');
     wx.makePhoneCall({

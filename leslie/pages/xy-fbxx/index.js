@@ -152,6 +152,7 @@ Page({
                         // that.setData({
                         //   esxxData: res.data.data
                         // });
+                        that.data.id = res.data.data;
                         var goods_imgs = that.data.imgs.split(',');
                         that.setData({
                           goods_imgs: goods_imgs
