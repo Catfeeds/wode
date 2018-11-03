@@ -13,7 +13,9 @@
         <view class="l3">飞到哥哥的身边。。。</view>
       </view>
       <view class="label-right">
-        <button class="save-btn" bindtap="ffQzh">放飞千纸鹤</button>
+        <form report-submit="true" bindsubmit='addformID'>
+          <button class="save-btn" bindtap="ffQzh" form-type='submit'>放飞千纸鹤</button>
+        </form>
       </view>
     </view>
   </view>
@@ -21,7 +23,7 @@
   <view class="show-popup" catchtouchmove='stopMove' hidden="{{hideShopPopup}}">
     <view class="popup-mask" bindtap="closePopupTap" bindtouchstart="closePopupTap"></view>
     <view class="popup-contents">
-      <form bindsubmit="bindSave">
+      <form report-submit="true" bindsubmit="bindSave">
         <view class="form-box">
           <view class="row-wrap">
             <view class="label name">
@@ -31,7 +33,7 @@
             </view>
           </view>
           <view>
-            <textarea name="remark" placeholder="致亲爱的哥哥" value="" />
+            <textarea name="remark" placeholder="致亲爱的哥哥" fixed='true' value="" />
           </view>
         </view>
         <button class="save-btn" formType="submit" bindtap='fabuClick' disabled='{{isclick}}' loading='{{isclick}}'>放飞千纸鹤</button>
@@ -48,7 +50,7 @@
           <view class="time">{{craneInfo.create_time}}</view>
         </view>
         <view>
-          <textarea name="remark" value="{{craneInfo.remark}}" disabled='true' />
+          <textarea name="remark" value="{{craneInfo.remark}}" fixed='true' disabled='true' />
         </view>
       </view>
     </view>

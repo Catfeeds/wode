@@ -135,6 +135,11 @@ Page({
     })
   },
 
+  addformID: function (e) {
+    var user_id = wx.getStorageSync('user_id');
+    app.addForm(e.detail.formId, user_id);
+  },
+
   // 数据提交
   bindSave: function(e) {
     var that = this;
@@ -181,8 +186,8 @@ Page({
         // 刷新
         that.getQzhList();
       }
-    })
-
+    });
+    app.addForm(e.detail.formId, user_id);
   },
 
   /**

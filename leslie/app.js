@@ -7,6 +7,7 @@ var qqmapsdk = new QQMapWX({
 });
 App({
   onLaunch: function() {
+    this.upData();
     var that = this;
     //  获取商城名称
     wx.setStorageSync('mallName', "Leslie大百科");
@@ -45,6 +46,54 @@ App({
       }
     })
   },
+  upData: function() {
+    // 获取小程序更新机制兼容
+    if (wx.canIUse('getUpdateManager')) {
+      const updateManager = wx.getUpdateManager()
+      updateManager.onCheckForUpdate(function(res) {
+        // 请求完新版本信息的回调
+        if (res.hasUpdate) {
+          updateManager.onUpdateReady(function() {
+            wx.showModal({
+              title: '更新提示',
+              content: '新版本已经准备好，是否重启应用？',
+              success: function(res) {
+                if (res.confirm) {
+                  // 新的版本已经下载好，调用 applyUpdate 应用新版本并重启
+                  updateManager.applyUpdate()
+                }
+              }
+            })
+          })
+          updateManager.onUpdateFailed(function() {
+            // 新的版本下载失败
+            wx.showModal({
+              title: '已经有新版本了哟~',
+              content: '新版本已经上线啦~，请您删除当前小程序，重新搜索打开哟~',
+            })
+          })
+        }
+      })
+    } else {
+      // 如果希望用户在最新版本的客户端上体验您的小程序，可以这样子提示
+      wx.showModal({
+        title: '提示',
+        content: '当前微信版本过低，无法使用该功能，请升级到最新微信版本后重试。'
+      })
+    }
+  },
+  addForm: function(formId, userId) {
+    var that = this;
+    wx.request({
+      url: that.globalData.subDomain + '/add_form',
+      data: {
+        form_id: formId,
+        user_id: userId
+      },
+      success: function(res) {
+      }
+    })
+  },
   sendTempleMsg: function(orderId, trigger, template_id, form_id, page, postJsonString) {
     var that = this;
     wx.request({
@@ -72,7 +121,7 @@ App({
   },
   globalData: {
     qzhImages: ["1_blue.png", "1_green.png", "1_mura.png", "1_orange.png", "1_qing.png", "1_red.png", "2_blue.png", "2_green.png", "2_mura.png", "2_orange.png", "2_qing.png", "2_red.png", "qzh1.png", "qzh10.png", "qzh11.png", "qzh12.png", "qzh13.png", "qzh14.png", "qzh15.png", "qzh16.png", "qzh2.png", "qzh3.png", "qzh4.png", "qzh5.png", "qzh6.png", "qzh7.png", "qzh8.png", "qzh9.png"],
-    qzh_width:0,
+    qzh_width: 0,
     userInfo: null,
     uid: 0,
     subDomain: "https://www.lanrengj.com" + "/wxapi/leslie",
