@@ -31,6 +31,7 @@
     "pages/Game/chuti/index",
     "pages/Game/dati/index",
     "pages/notice/show",
+    "pages/send-msg/show",
     "pages/recharge/index"
   ],
   "window": {

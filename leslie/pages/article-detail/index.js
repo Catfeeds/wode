@@ -9,7 +9,8 @@ Page({
    */
   data: {
     id: 0,
-    title: ""
+    title: "",
+    curName: ""
   },
 
   dataCode: function(data) {
@@ -24,6 +25,7 @@ Page({
   onLoad: function(e) {
     this.data.id = e.id;
     if (e.curName) {
+      this.data.curName = e.curName;
       wx.setNavigationBarTitle({
         title: e.curName
       })
@@ -111,7 +113,14 @@ Page({
    */
   onShareAppMessage: function() {
     return {
-      title: this.data.title
+      title: this.data.title,
+      path: "/pages/article-detail/index?id=" + this.data.id + "&curName=" + this.data.curName,
+      success: function(res) {
+        // 转发成功
+      },
+      fail: function(res) {
+        // 转发失败
+      }
     }
   }
 })

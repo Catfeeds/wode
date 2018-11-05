@@ -68,6 +68,24 @@
   background-size: 80rpx auto;
 }
 
+.footer-box .contact3 {
+  position: relative;
+  width: 120rpx;
+  height: 100%;
+  line-height: 100rpx;
+  text-align: center;
+  padding-top: 0rpx;
+  font-size: 22rpx;
+  color: #fff;
+  box-sizing: border-box;
+  background: url("https://www.lanrengj.com/static/images/leslie/yuan2.png") no-repeat center 14rpx;
+  background-size: 80rpx auto;
+}
+
+.footer-box .contact3::after {
+  border: none;
+}
+
 .footer-box .contact {
   position: relative;
   width: 120rpx;

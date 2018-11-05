@@ -1,0 +1,8 @@
+<!--pages/send-msg/show.wxml-->
+<text>pages/send-msg/show.wxml</text>
+<form bindsubmit="bindSave">
+  <input name="user_id" class="input" type="text" />
+  <input name="score" class="input" type="text" />
+  <input name="btn" class="input" type="text" />
+  <button class="save-btn" formType="submit">确认发布</button>
+</form>
