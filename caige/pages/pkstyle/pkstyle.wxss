@@ -1,0 +1,210 @@
+/* pages/pkstyle/pkstyle.wxss */
+
+page {
+  height: 100%;
+  width: 100%;
+}
+
+.main {
+  height: 100%;
+  width: 100%;
+  
+}
+
+.title {
+  width: 100%;
+  height: 230rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 44rpx;
+}
+
+.leftview {
+  display: block;
+  width: 226rpx;
+  height: 172rpx;
+}
+
+.blueview {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.userimage {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  border: 6rpx solid #fff;
+  display: block;
+  margin-top: -150rpx;
+  margin-left: 60rpx;
+}
+
+.rivalimage {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  border: 6rpx solid #fff;
+  display: block;
+  margin-top: -150rpx;
+  margin-left: 40rpx;
+}
+
+.pinkview {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.rightview {
+  display: block;
+  width: 226rpx;
+  height: 172rpx;
+}
+
+.username {
+  width: 100%;
+  font-size: 32rpx;
+  margin-top: 20rpx;
+  display: block;
+}
+
+.content {
+  width: 100%;
+  height: 720rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 60rpx;
+}
+
+.userscore {
+  width: 92rpx;
+  font-size: 60rpx;
+  color: #e43840;
+  display: block;
+}
+
+.content_left {
+  width: 92rpx;
+  height: 100%;
+  display: block;
+  margin-left: 50rpx;
+}
+
+.pkframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.content_right {
+  width: 92rpx;
+  height: 100%;
+  display: block;
+  margin-right: 50rpx;
+}
+
+.musicbtn {
+  width: 700rpx;
+  height: 100%;
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 100rpx;
+}
+
+/* .gamechoose {
+  width: 100%;
+  height: 100%;
+  
+  display: flex;
+  flex-direction: column;
+} */
+
+.choosebtn {
+  width: 300rpx;
+  height: 100rpx;
+  margin-bottom: 50rpx;
+  text-align: center;
+  align-items: center;
+  display: block;
+}
+
+.rightbtn {
+  background-color: #393;
+  color: white;
+}
+
+.falsebtn {
+  background-color: #900;
+  color: white;
+}
+
+.bottomview {
+  width: 100%;
+  height: 176rpx;
+  bottom: 0;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.progress {
+  display: block;
+  width: 300rpx;
+  height: 300rpx;
+}
+
+ .progress_bg {
+  
+  width: 210px;
+  height: 210px;
+  display: block;
+  margin-top: -90rpx;
+  margin-left: -60rpx;
+} 
+
+.progress_canvas {
+  width: 210px;
+  height: 210px;
+  display: block;
+  margin-top: -400rpx;
+  margin-left: 40rpx;
+}
+
+.progress_txt {
+  display: block;
+  color: red;
+  font-size: 60rpx;
+  font-weight: bold;
+  margin-top: -240rpx;
+  margin-left: 130rpx;
+}
+
+.leftcat {
+  width: 78rpx;
+  height: 82rpx;
+  display: block;
+  margin-left: 58rpx;
+  margin-bottom: 134rpx;
+}
+
+.rivalview {
+  width: 78rpx;
+  height: 82rpx;
+  display: block;
+  margin-right: 58rpx;
+  margin-bottom: 134rpx;
+}
+
+.pk_cat {
+  width: 78rpx;
+  height: 82rpx;
+  display: block;
+}

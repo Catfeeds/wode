@@ -1,0 +1,54 @@
+<!--pages/home/home.wxml-->
+<view class='home-view'>
+
+  <view class="home-user-view">
+    <view class='home-userleft'>
+      <image class="userinfo-image" src="{{userInfo.avatarUrl}}"></image>
+      <view class="userinfo-nickname">
+        <text class="userinfo-nicknametext">{{userInfo.nickName}}</text>
+      </view>
+    </view>
+    <view class='userinfo-right'>
+      <image class='userinfo-userinfo-musicnumlogo' src='../../images/home_musiclogo.png' mode='widthFix'></image>
+      <text class='userinfo-musicnum'>{{musicValue}}</text>
+    </view>
+  </view>
+
+  <view class="home-pkstylebtn" bindtap="pkbtnclick">
+    <image class='home-pk-text' src='../../images/home_pktext_bg.png' mode='widthFix' />
+    <image class='home-pk-image' src='../../images/logo1.png' mode='widthFix'></image>
+  </view>
+
+  <view class="home-passbtn" bindtap="passbtnclick">
+    <image class='home-pk-text' src='../../images/home_pass_text.png' mode='widthFix' />
+    <image class='home-pk-image' src='../../images/logo2.png' mode='widthFix'></image>
+  </view>
+
+</view>
+
+
+<block wx:if="{{value>0}}">
+  <view class="modal-mask" bindtap="hideModal" catchtouchmove="preventTouchMove" wx:if="{{showModal}}"></view>
+  <view class="box" wx:if="{{showModal}}">
+    <image class="login" src="../../images/loginpic.png"></image>
+    <view class="next" bindtap="toNote">
+      <text class='text'>点击领取</text>
+    </view>
+
+    <view class="modal-box" hidden="{{flagNote}}">
+
+      <view class="modal-body">
+
+        <view class="modal-content">
+          <image class="note" src="../../images/note.png"></image>
+          <text class='text1'>+{{value}}</text>
+          <view class="next1" bindtap="toLogin">
+            <text class='text'>好的</text>
+          </view>
+
+        </view>
+      </view>
+    </view>
+  </view>
+
+</block>

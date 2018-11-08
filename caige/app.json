@@ -1,0 +1,31 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/player/player",
+    "pages/content/content",
+    "pages/game/game",
+    "pages/index/index",
+    "pages/pkstyle/pkstyle",
+    "pages/pkend/pkend",
+    "pages/pkwelcome/pkwelcome",
+    "pages/pkwating/pkwating",
+    "pages/pass/pass",
+    "pages/logs/logs",
+    "pages/rank/rank"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ccf6f2",
+    "navigationBarTitleText": "猜歌名",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom ",
+    "enablePullDownRefresh": false
+  },
+  "networkTimeout": {
+    "request": 10000,
+    "connectSocket": 10000,
+    "uploadFile": 10000,
+    "downloadFile": 10000
+  },
+  "debug": false
+}
