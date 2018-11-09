@@ -29,7 +29,7 @@ Page({
         app.globalData.qzh_width = qzh_width;
         that.getQzhList();
       }
-    })
+    });
   },
 
   /**
@@ -46,6 +46,11 @@ Page({
     if (app.globalData.qzh_width) {
       this.getQzhList();
     }
+    // if (app.globalData.userInfo) {
+    //   this.setData({
+    //     userInfo: app.globalData.userInfo
+    //   });
+    // }
     // var qzh = new Array();
     // for (var i = 0; i < 12; i++) {
     //   var aaa = {}

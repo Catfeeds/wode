@@ -21,6 +21,11 @@
         <view class="weui_cell">{{item.name}}</view>
       </view>
     </scroll-view>
+    <scroll-view wx:if="{{userInfo.user_type>2}}" class="scroll-view_H" scroll-x style="width: 100%">
+      <view bindtap="statusTap" class="scroll-view-item_H {{item.id == currentType ? 'active' : ''}}" wx:for-items="{{statusType2}}" wx:key="{{item.id}}" data-index="{{item.id}}" data-id="{{item.id}}" data-name="{{item.name}}">
+        <view class="weui_cell">{{item.name}}</view>
+      </view>
+    </scroll-view>
   </view>
   <view wx:if="{{noticeList}}" class="notice">
     <view class="notice_iteml">公告：</view>
@@ -33,37 +38,37 @@
     </swiper>
   </view>
   <view class="goods-container">
-    <view class="goods-box" bindtap="toXuanyaoTap">
+    <view class="goods-box" bindtap="toXuanyaoTap" wx:if="{{userInfo.user_type>1}}">
       <view class="img-box">
         <image src="https://www.lanrengj.com/static/images/leslie/bg1.jpg" class="image" mode="widthFix" lazy-load="true" />
       </view>
       <view class="goods-title">炫耀专区</view>
     </view>
-    <view class="goods-box" bindtap="toToupiaoTap" wx:if="{{userInfo.user_type>1}}">
+    <view class="goods-box" bindtap="toToupiaoTap" wx:if="{{userInfo.user_type>2}}">
       <view class="img-box">
         <image src="https://www.lanrengj.com/static/images/leslie/bg2.jpg" class="image" mode="widthFix" lazy-load="true" />
       </view>
       <view class="goods-title">一起来投票</view>
     </view>
-    <view class="goods-box" bindtap="toYouxiTap" wx:if="{{userInfo.user_type>1}}">
+    <view class="goods-box" bindtap="toYouxiTap" wx:if="{{userInfo.user_type>2}}">
       <view class="img-box">
         <image src="https://www.lanrengj.com/static/images/leslie/bg3.jpg" class="image" mode="widthFix" lazy-load="true" />
       </view>
       <view class="goods-title">小游戏</view>
     </view>
-    <view class="goods-box" bindtap="toChoujiangTap">
+    <view class="goods-box" bindtap="toChoujiangTap" wx:if="{{userInfo.user_type>1}}">
       <view class="img-box">
         <image src="https://www.lanrengj.com/static/images/leslie/bg4.jpg" class="image" mode="widthFix" lazy-load="true" />
       </view>
       <view class="goods-title">现场抽奖</view>
     </view>
-    <view class="goods-box" bindtap="toZhoubianTap">
+    <view class="goods-box" bindtap="toZhoubianTap" wx:if="{{userInfo.user_type>1}}">
       <view class="img-box">
         <image src="https://www.lanrengj.com/static/images/leslie/bg3.jpg" class="image" mode="widthFix" lazy-load="true" />
       </view>
       <view class="goods-title">淘宝贝</view>
     </view>
-    <view class="goods-box" bindtap="toZutuanTap" wx:if="{{userInfo.user_type>1}}">
+    <view class="goods-box" bindtap="toZutuanTap" wx:if="{{userInfo.user_type>2}}">
       <view class="img-box">
         <image src="https://www.lanrengj.com/static/images/leslie/bg2.jpg" class="image" mode="widthFix" lazy-load="true" />
       </view>

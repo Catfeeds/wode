@@ -30,6 +30,11 @@ Page({
     //     that.getQzhList();
     //   }
     // })
+    if (app.globalData.userInfo) {
+      this.setData({
+        userInfo: app.globalData.userInfo
+      });
+    }
   },
 
   /**

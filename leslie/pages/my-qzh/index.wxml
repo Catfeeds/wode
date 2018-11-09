@@ -12,7 +12,7 @@
       </view>
       <view class="label-right">
         <form report-submit="true" bindsubmit='addformID'>
-          <button class="save-btn" bindtap="ffQzh" form-type='submit'>放飞千纸鹤</button>
+          <button wx:if="{{userInfo.user_type>1}}" class="save-btn" bindtap="ffQzh" form-type='submit'>放飞千纸鹤</button>
         </form>
       </view>
     </view>

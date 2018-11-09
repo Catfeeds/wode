@@ -164,18 +164,17 @@ Page({
     var that = this;
     // 获取分类
     wx.request({
-      url: app.globalData.subDomain + '/category_list',
+      url: app.globalData.subDomain + '/hudong_list',
       method: 'GET',
-      data: {
-        parent_id: 131
-      },
+      data: {},
       header: {
         'Accept': 'application/json'
       },
       success: function(res) {
         if (res.data.code == 0) {
           that.setData({
-            statusType: res.data.data
+            statusType: res.data.data.result1,
+            statusType2: res.data.data.result2
           });
         }
       }

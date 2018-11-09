@@ -48,7 +48,7 @@
 
 .footer-box {
   position: fixed;
-  right: 30rpx;
+  right: 20rpx;
   bottom: 80rpx;
   width: 120rpx;
   z-index: 6;
@@ -68,21 +68,22 @@
   background-size: 80rpx auto;
 }
 
-.footer-box .contact3 {
+.footer-box .contact4 {
   position: relative;
   width: 120rpx;
   height: 100%;
-  line-height: 100rpx;
+  line-height: 60rpx;
   text-align: center;
-  padding-top: 0rpx;
+  padding-top: 55rpx;
+  padding-bottom:0rpx;
   font-size: 22rpx;
-  color: #fff;
+  color: #594d9c;
   box-sizing: border-box;
-  background: url("https://www.lanrengj.com/static/images/leslie/yuan2.png") no-repeat center 14rpx;
-  background-size: 80rpx auto;
+  background: url("https://www.lanrengj.com/static/images/leslie/share.png") no-repeat center 21rpx;
+  background-size: 55rpx auto;
 }
 
-.footer-box .contact3::after {
+.footer-box .contact4::after {
   border: none;
 }
 

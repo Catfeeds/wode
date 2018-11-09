@@ -53,6 +53,7 @@ function wxParse(bindName = 'wxParseData', type='html', data='<div class="color:
 }
 // 图片点击事件
 function wxParseImgTap(e) {
+  return;
   var that = this;
   var nowImgUrl = e.target.dataset.src;
   var tagFrom = e.target.dataset.from;

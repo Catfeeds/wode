@@ -238,12 +238,13 @@ swiper-item image {
 
 .nav {
   width: 100%;
+  background: url(https://www.lanrengj.com/static/images/leslie/tab_bg3.png) no-repeat center center;
   /* overflow: hidden; */
 }
 
 .scroll-view_H {
   white-space: nowrap;
-  background-color: #fff;
+  /* background-color: #fff; */
 }
 
 .scroll-view-item_H {
