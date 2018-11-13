@@ -1,8 +1,8 @@
 <!--pages/send-msg/show.wxml-->
-<text>pages/send-msg/show.wxml</text>
+<text>该用户共放飞{{count}}只千纸鹤。</text>
 <form bindsubmit="bindSave">
-  <input name="user_id" class="input" type="text" />
-  <input name="score" class="input" type="text" />
-  <input name="btn" class="input" type="text" />
+  <input name="user_id" class="input" type="text" value='{{user_id}}' />
+  <input name="score" class="input" type="text" placeholder='30' />
+  <input name="btn" class="input" type="text" placeholder='1' />
   <button class="save-btn" formType="submit">确认发布</button>
 </form>

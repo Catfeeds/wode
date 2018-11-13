@@ -1,0 +1,112 @@
+/* pages/my-console-check/index.wxss */
+
+.icon-shouji {
+  font-size: 28rpx;
+  color: #44b8f4;
+}
+
+.icon-youcecaidan {
+  color: #e50012;
+}
+
+.check-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20rpx 40rpx;
+  border-bottom: 8rpx solid #f0f0f0;
+}
+
+.check-list-img {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.check-list-img image {
+  width: 100%;
+  height: 100%;
+}
+
+.check-list-content {
+  font-size: 28rpx;
+  line-height: 40rpx;
+  text-align: left;
+  margin-left: 20rpx;
+  flex: 1;
+}
+
+.check-list-btn {
+  width: 80rpx;
+  text-align: right;
+}
+
+.check-list-btn button {
+  height: 55rpx;
+  color: #fff;
+  background-color: #e85654;
+  line-height: 55rpx;
+  font-size: 26rpx;
+  border-radius: 30px;
+  padding: 0 10rpx;
+}
+
+.status-box {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-top: 1rpx solid #eee;
+}
+
+.status-box .status-label {
+  border-right: 1px solid #f0f0f0;
+  text-align: center;
+  font-size: 30rpx;
+  padding: 0px 40rpx;
+  flex: 1;
+  border-bottom: 6rpx solid #eee;
+  position: relative;
+}
+
+.status-box .status-label.active {
+  color: #e85654;
+  border-bottom: 6rpx solid #e85654;
+}
+
+.show-popup {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+}
+
+.popup-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 5;
+}
+
+.popup-contents {
+  position: fixed;
+  padding: 40rpx;
+  width: 60%;
+  /* background: url(https://www.lanrengj.com/static/images/leslie/tab_bg5.png) no-repeat center center; */
+  background-color: #fff;
+  border-radius: 10px;
+  z-index: 6;
+}
+
+.row-wrap {
+  display: flex;
+}

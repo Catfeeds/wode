@@ -13,7 +13,29 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    var user_id = options.user_id;
 
+    var that = this;
+    wx.request({
+      url: app.globalData.subDomain + '/paper_crane_count',
+      method: 'GET',
+      data: {
+        user_id: user_id
+      },
+      header: {
+        'Accept': 'application/json'
+      },
+      success: function(res) {
+        wx.hideLoading();
+        if (res.data.code == 0) {
+          var count = res.data.data;
+          that.setData({
+            user_id: user_id,
+            count: count
+          })
+        }
+      }
+    })
   },
 
   /**
