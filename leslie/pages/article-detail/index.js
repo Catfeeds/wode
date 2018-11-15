@@ -30,7 +30,15 @@ Page({
         title: e.curName
       })
     }
-
+    if (e.isBack) {
+      this.setData({
+        isBack: 1
+      });
+    } else {
+      this.setData({
+        isBack: 0
+      });
+    }
   },
 
   /**
@@ -77,6 +85,16 @@ Page({
   toHomePage: function() {
     wx.switchTab({
       url: '/pages/qzh/index'
+    })
+  },
+
+  toBackPage: function() {
+    wx.navigateBack({})
+  },
+
+  toMorePage: function () {
+    wx.switchTab({
+      url: '/pages/first-nav/index'
     })
   },
 

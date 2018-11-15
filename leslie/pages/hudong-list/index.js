@@ -93,7 +93,7 @@ Page({
     var id = e.currentTarget.dataset.id;
     var curName = this.data.currentName;
     wx.navigateTo({
-      url: "../article-detail/index?id=" + id + "&curName=" + curName
+      url: "../article-detail/index?id=" + id + "&curName=" + curName + "&isBack=1"
     })
 
   },
