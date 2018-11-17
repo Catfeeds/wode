@@ -10,9 +10,11 @@ Page({
   data: {
     hideShopPopup: true,
     hidePaperCrane: true,
+    currentPic: "",
+    is_secret: false,
   },
 
-  dataCode: function (data) {
+  dataCode: function(data) {
     var newDate = new Date();
     newDate.setTime(data * 1000);
     return util.formatTime2(newDate);
@@ -51,6 +53,9 @@ Page({
     if (app.globalData.qzh_width) {
       this.getQzhList();
     }
+    this.setData({
+      qzhImages: app.globalData.qzhImages
+    });
     // var qzh = new Array();
     // for (var i = 0; i < 12; i++) {
     //   var aaa = {}
@@ -119,7 +124,23 @@ Page({
     })
   },
 
-  addformID: function (e) {
+  choose_pic: function(e) {
+    var currentPic = e.currentTarget.dataset.id;
+    this.data.currentPic = currentPic;
+    this.setData({
+      currentPic: currentPic
+    })
+  },
+
+  secretChange: function() {
+    var is_secret = !this.data.is_secret;
+    this.data.is_secret = is_secret;
+    this.setData({
+      is_secret: is_secret
+    })
+  },
+
+  addformID: function(e) {
     var user_id = wx.getStorageSync('user_id');
     app.addForm(e.detail.formId, user_id);
   },
@@ -137,7 +158,7 @@ Page({
     })
   },
 
-  stopMove: function () {
+  stopMove: function() {
     return;
   },
 
@@ -169,7 +190,11 @@ Page({
     })
     wx.showLoading();
     var qzhImages = app.globalData.qzhImages;
-    var picture = qzhImages[Math.floor(Math.random() * qzhImages.length)];
+    var is_secret = Number(this.data.is_secret);
+    var picture = this.data.currentPic;
+    if (!picture) {
+      picture = qzhImages[Math.floor(Math.random() * qzhImages.length)];
+    }
     var user_id = wx.getStorageSync('user_id');
     wx.request({
       url: app.globalData.subDomain + '/paper_crane_add',
@@ -178,6 +203,7 @@ Page({
         user_name: user_name,
         remark: remark,
         picture: picture,
+        is_secret: is_secret,
       },
       success: function(res) {
         wx.hideLoading();

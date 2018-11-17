@@ -52,6 +52,14 @@
   margin: 0 25rpx 0 20rpx;
 }
 
+.row-wrap .label-left {
+  width: 30%;
+  float: left;
+  margin-top:5rpx;
+  /* line-height: 100rpx;
+  height: 80rpx; */
+}
+
 .row-wrap .time {
   color: #999;
   font-size: 28rpx;
@@ -73,7 +81,7 @@ textarea {
   border-radius: 5px;
   margin: 30rpx 0;
   padding: 20rpx;
-  height: 300rpx;
+  height: 250rpx;
   width: auto;
 }
 
@@ -123,4 +131,39 @@ textarea {
 
 .top_fabu .label-right {
   width: 40%;
+}
+
+.scroll-view_H {
+  white-space: nowrap;
+}
+
+.scroll-view-item_H {
+  display: inline-block;
+  text-align: center;
+  margin-bottom: 30rpx;
+  border: 1px solid #fff;
+}
+
+.scroll-view-item_H.active {
+  border: 1px solid #0095e5;
+}
+
+.weui_cell {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.wx-switch-input{
+width:82rpx !important;
+height:40rpx !important;
+}
+/*白色样式（false的样式）*/
+.wx-switch-input::before{
+width:80rpx !important;
+height: 36rpx !important;
+}
+/*绿色样式（true的样式）*/
+.wx-switch-input::after{
+width: 40rpx !important;
+height: 36rpx !important;
 }

@@ -29,14 +29,30 @@
             <view class="label name">
               昵称</view>
             <view class="label-right">
-              <input name="user_name" class="input" type="text" placeholder="匿名" />
+              <input name="user_name" class="input" type="text" maxlength="8" placeholder="匿名" />
             </view>
           </view>
           <view>
             <textarea name="remark" placeholder="致亲爱的哥哥" fixed='true' value="" />
           </view>
+          <view>
+            <scroll-view class="scroll-view_H" scroll-x style="width: 100%">
+              <view bindtap="choose_pic" class="scroll-view-item_H {{item == currentPic ? 'active' : ''}}" wx:for-items="{{qzhImages}}" wx:key="{{item}}" data-id="{{item}}">
+                <image src="https://www.lanrengj.com/static/images/leslie/qzh/{{item}}" class="weui_cell" mode='aspectFit' />
+              </view>
+            </scroll-view>
+          </view>
+          <view class="row-wrap">
+            <view class="label-left">
+              私密
+              <switch checked="{{is_secret}}" bindchange="secretChange" color='#0095e5' />
+            </view>
+            <view class="label-right">
+              <button class="save-btn" formType="submit" bindtap='fabuClick' disabled='{{isclick}}' loading='{{isclick}}'>放飞千纸鹤</button>
+            </view>
+          </view>
         </view>
-        <button class="save-btn" formType="submit" bindtap='fabuClick' disabled='{{isclick}}' loading='{{isclick}}'>放飞千纸鹤</button>
+
       </form>
     </view>
   </view>

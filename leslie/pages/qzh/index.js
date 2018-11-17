@@ -10,6 +10,8 @@ Page({
   data: {
     hideShopPopup: true,
     hidePaperCrane: true,
+    currentPic: "",
+    is_secret: false,
     userInfo: null
   },
 
@@ -39,6 +41,9 @@ Page({
     } else {
       this.getUserInfo();
     }
+    this.setData({
+      qzhImages: app.globalData.qzhImages
+    });
   },
 
   /**
@@ -104,6 +109,7 @@ Page({
       var that = this;
       wx.showLoading();
       var id = e.currentTarget.dataset.id;
+      var user_id = wx.getStorageSync('user_id');
       wx.request({
         url: app.globalData.subDomain + '/paper_crane',
         data: {
@@ -114,6 +120,9 @@ Page({
           if (res.data.code == 0) {
             var datas = res.data.data;
             datas.create_time = that.dataCode(datas.create_time);
+            if (datas.is_secret && user_id != datas.user_id) {
+              datas.remark = "【私密千纸鹤】";
+            }
             that.setData({
               hidePaperCrane: false,
               craneInfo: datas
@@ -146,8 +155,9 @@ Page({
           user_name: "匿名",
           remark: "❤",
           picture: picture,
+          is_secret: 1,
         },
-        success: function (res) {
+        success: function(res) {
           if (res.data.code != 0) {
             // 登录错误 
             wx.showModal({
@@ -186,6 +196,22 @@ Page({
     })
   },
 
+  choose_pic: function(e) {
+    var currentPic = e.currentTarget.dataset.id;
+    this.data.currentPic = currentPic;
+    this.setData({
+      currentPic: currentPic
+    })
+  },
+
+  secretChange: function() {
+    var is_secret = !this.data.is_secret;
+    this.data.is_secret = is_secret;
+    this.setData({
+      is_secret: is_secret
+    })
+  },
+
   addformID: function(e) {
     var user_id = wx.getStorageSync('user_id');
     app.addForm(e.detail.formId, user_id);
@@ -213,7 +239,11 @@ Page({
     })
     wx.showLoading();
     var qzhImages = app.globalData.qzhImages;
-    var picture = qzhImages[Math.floor(Math.random() * qzhImages.length)];
+    var is_secret = Number(this.data.is_secret);
+    var picture = this.data.currentPic;
+    if (!picture) {
+      picture = qzhImages[Math.floor(Math.random() * qzhImages.length)];
+    }
     var user_id = wx.getStorageSync('user_id');
     wx.request({
       url: app.globalData.subDomain + '/paper_crane_add',
@@ -222,6 +252,7 @@ Page({
         user_name: user_name,
         remark: remark,
         picture: picture,
+        is_secret: is_secret,
       },
       success: function(res) {
         wx.hideLoading();
