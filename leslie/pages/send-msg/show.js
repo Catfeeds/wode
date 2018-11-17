@@ -84,7 +84,7 @@ Page({
     var that = this;
     var user_id = e.detail.value.user_id;
     var score = e.detail.value.score;
-    var btn = e.detail.value.score;
+    var btn = e.detail.value.btn;
 
     wx.request({
       url: app.globalData.subDomain + '/send_msg' + btn,

@@ -10,9 +10,10 @@ Page({
   data: {
     hideShopPopup: true,
     hidePaperCrane: true,
+    userInfo: null
   },
 
-  dataCode: function (data) {
+  dataCode: function(data) {
     var newDate = new Date();
     newDate.setTime(data * 1000);
     return util.formatTime2(newDate);
@@ -30,6 +31,14 @@ Page({
         that.getQzhList();
       }
     });
+    if (app.globalData.userInfo) {
+      this.data.userInfo = app.globalData.userInfo;
+      this.setData({
+        userInfo: app.globalData.userInfo
+      });
+    } else {
+      this.getUserInfo();
+    }
   },
 
   /**
@@ -90,37 +99,74 @@ Page({
   },
 
   openQzh: function(e) {
-    var that = this;
-    wx.showLoading();
-    var id = e.currentTarget.dataset.id;
-    wx.request({
-      url: app.globalData.subDomain + '/paper_crane',
-      data: {
-        id: id
-      },
-      success: (res) => {
-        wx.hideLoading();
-        if (res.data.code == 0) {
-          var datas = res.data.data;
-          datas.create_time = that.dataCode(datas.create_time);
-          that.setData({
-            hidePaperCrane: false,
-            craneInfo: datas
-          });
-        } else {
-          that.setData({
-            craneInfo: null
-          });
+    var userInfo = this.data.userInfo;
+    if (userInfo && userInfo.user_type > 3) {
+      var that = this;
+      wx.showLoading();
+      var id = e.currentTarget.dataset.id;
+      wx.request({
+        url: app.globalData.subDomain + '/paper_crane',
+        data: {
+          id: id
+        },
+        success: (res) => {
+          wx.hideLoading();
+          if (res.data.code == 0) {
+            var datas = res.data.data;
+            datas.create_time = that.dataCode(datas.create_time);
+            that.setData({
+              hidePaperCrane: false,
+              craneInfo: datas
+            });
+          } else {
+            that.setData({
+              craneInfo: null
+            });
+          }
         }
-      }
-    })
+      })
+    }
   },
 
-
   ffQzh: function() {
-    this.setData({
-      hideShopPopup: false
-    })
+    var userInfo = this.data.userInfo;
+    if (userInfo && userInfo.user_type > 3) {
+      this.setData({
+        hideShopPopup: false
+      })
+    } else {
+      var that = this;
+      var qzhImages = app.globalData.qzhImages;
+      var picture = qzhImages[Math.floor(Math.random() * qzhImages.length)];
+      var user_id = wx.getStorageSync('user_id');
+      wx.request({
+        url: app.globalData.subDomain + '/paper_crane_add',
+        data: {
+          user_id: user_id,
+          user_name: "匿名",
+          remark: "❤",
+          picture: picture,
+        },
+        success: function (res) {
+          if (res.data.code != 0) {
+            // 登录错误 
+            wx.showModal({
+              title: '失败',
+              content: res.data.msg,
+              showCancel: false
+            })
+            return;
+          }
+          // 刷新
+          that.getQzhList();
+          wx.showToast({
+            title: '放飞成功',
+            icon: 'none',
+            duration: 2000
+          })
+        }
+      });
+    }
   },
 
   closePopupTap: function() {
@@ -130,7 +176,7 @@ Page({
     })
   },
 
-  stopMove: function () {
+  stopMove: function() {
     return;
   },
 
@@ -140,7 +186,7 @@ Page({
     })
   },
 
-  addformID: function (e) {
+  addformID: function(e) {
     var user_id = wx.getStorageSync('user_id');
     app.addForm(e.detail.formId, user_id);
   },
@@ -190,9 +236,39 @@ Page({
         }
         // 刷新
         that.getQzhList();
+        wx.showToast({
+          title: '放飞成功',
+          icon: 'none',
+          duration: 2000
+        })
       }
     });
     app.addForm(e.detail.formId, user_id);
+  },
+
+  getUserInfo: function() {
+    var that = this;
+    var user_id = wx.getStorageSync('user_id');
+    wx.request({
+      url: app.globalData.subDomain + '/user_detail',
+      data: {
+        user_id: user_id
+      },
+      success: (res) => {
+        wx.stopPullDownRefresh();
+        if (res.data.code == 0) {
+          app.globalData.userInfo = res.data.data;
+          that.data.userInfo = app.globalData.userInfo;
+          that.setData({
+            userInfo: res.data.data
+          });
+        } else {
+          that.setData({
+            userInfo: null
+          });
+        }
+      }
+    })
   },
 
   /**
