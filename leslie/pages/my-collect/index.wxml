@@ -1,0 +1,39 @@
+<!--pages/my-console-check/index.wxml-->
+<view class='container'>
+  <view class="status-box">
+    <view bindtap="statusTap" class="status-label {{index == currentType ? 'active' : ''}}" wx:for-items="{{statusType}}" wx:key="{{index}}" data-index="{{index}}" data-statu="{{statusKey[index]}}">
+      {{item}}
+      <view class="{{tabClass[index]}}"></view>
+    </view>
+  </view>
+  <!-- 我的收藏 -->
+  <view class='droplist' wx:if="{{currentStatu==2}}">
+    <view class="no-bgxyList" hidden="{{result1.length > 0 ? true : false}}">
+      <view class="text">暂无文章</view>
+    </view>
+    <block wx:for="{{result1}}" wx:key="{{index}}">
+      <view class='droplist-title' data-index="{{index}}" data-id="{{item.id}}" bindtap='clickPost'>
+        <view class='img-box1-1'>
+          <view>{{item.post_title}}</view>
+          <view class='img-box1-guige'>{{item.post_excerpt}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+  <!-- 我的赞  -->
+  <view class='droplist' wx:if="{{currentStatu==1}}">
+    <view class="no-bgxyList" hidden="{{result2.length > 0 ? true : false}}">
+      <view class="text">暂无文章</view>
+    </view>
+    <block wx:for="{{result2}}" wx:key="{{index}}">
+      <view class='droplist-title' data-index="{{index}}" data-id="{{item.id}}" bindtap='clickPost'>
+        <view class='img-box1-1'>
+          <view>{{item.post_title}}</view>
+          <view class='img-box1-guige'>{{item.post_excerpt}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+
+</view>

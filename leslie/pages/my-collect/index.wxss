@@ -1,0 +1,90 @@
+/* pages/my-console-check/index.wxss */
+
+.status-box {
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-top: 1rpx solid #eee;
+}
+
+.status-box .status-label {
+  border-right: 1px solid #f0f0f0;
+  text-align: center;
+  font-size: 30rpx;
+  padding: 0px 40rpx;
+  flex: 1;
+  border-bottom: 6rpx solid #eee;
+  position: relative;
+}
+
+.status-box .status-label.active {
+  color: #e85654;
+  border-bottom: 6rpx solid #e85654;
+}
+
+.droplist {
+  padding: 20rpx 40rpx 20rpx 40rpx;
+}
+
+.droplist-title {
+  display: flex;
+  justify-content: space-between;
+  font-size: 30rpx;
+  /* font-weight: bold;
+  margin-top: 20rpx;
+  line-height: 60rpx; */
+  min-height: 70rpx;
+  border-bottom: 1px solid #eee;
+}
+
+.droplist-title .goods-img {
+  width: 120rpx;
+  height: 120rpx;
+  /* padding-left: 30rpx; */
+  border: 1px solid #eee;
+  margin: 20rpx 15rpx 20rpx 10rpx;
+}
+
+.img-box1-1 {
+  display: flex;
+  flex: 1;
+  /* flex-direction: column; 
+  justify-content: space-around;*/
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  margin-left: 15rpx;
+}
+
+.img-box1-guige {
+  font-size: 24rpx;
+  color: #797979;
+}
+
+.droplist-content {
+  height: 0rpx;
+  line-height: 55rpx;
+  overflow: hidden;
+  transition: height 1s;
+  -moz-transition: height 1s; /* Firefox 4 */
+  -webkit-transition: height 1s; /* Safari 和 Chrome */
+  -o-transition: height 1s;
+}
+
+.droplist-content.active {
+  height: auto;
+  /* overflow: scroll; */
+  transition: height 1s;
+  -moz-transition: height 1s; /* Firefox 4 */
+  -webkit-transition: height 1s; /* Safari 和 Chrome */
+  -o-transition: height 1s;
+}
+
+.no-bgxyList {
+  text-align: center;
+  font-size: 32rpx;
+  padding: 80rpx 0;
+}

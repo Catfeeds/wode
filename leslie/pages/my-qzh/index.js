@@ -11,7 +11,7 @@ Page({
     hideShopPopup: true,
     hidePaperCrane: true,
     currentPic: "",
-    is_secret: false,
+    is_secret: true,
   },
 
   dataCode: function(data) {

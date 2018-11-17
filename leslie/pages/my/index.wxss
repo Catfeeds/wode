@@ -66,8 +66,12 @@
   color: #ddd905;
 }
 
-.icon-qianzhihe-copy:before {
+.icon-shoucang1:before {
   color: #ff6f6f;
+}
+
+.icon-qianzhihe-copy:before {
+  color: #1296db;
 }
 
 .icon-dizhi:before {
