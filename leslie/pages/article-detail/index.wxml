@@ -37,8 +37,8 @@
     </view>
   </view>
   <view class="contact3">
-    <view>浏览：{{bgxywz.post_hits}}</view>
-    <view>收藏：{{bgxywz.post_like}}</view>
-    <view>点赞：{{bgxywz.post_collect}}</view>
+    <view class='iconfont icon-liulan'>浏览：{{bgxywz.post_hits}}</view>
+    <view bindtap="toCollect" class="iconfont icon-shoucang {{bgxywz.if_collect ? 'active' : ''}}">收藏：{{bgxywz.post_collect}}</view>
+    <view bindtap="toLike" class="iconfont icon-dianzan1 {{bgxywz.if_like ? 'active' : ''}}">点赞：{{bgxywz.post_like}}</view>
   </view>
 </view>

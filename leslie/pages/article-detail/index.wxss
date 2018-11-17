@@ -111,3 +111,10 @@
   line-height: 60rpx;
   margin-top: 5rpx;
 }
+.iconfont {
+  color: #333;
+  font-size: 30rpx;
+}
+.active {
+  color: #eb7350;
+}

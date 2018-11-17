@@ -42,13 +42,13 @@
 
 .my-item {
   width: 100%;
-  background: url(https://www.lanrengj.com/static/images/weappshop/arrow-right.png) no-repeat 750rpx center;
-  background-size: 16rpx auto, 750rpx auto;
+  background: url(https://www.lanrengj.com/static/images/weappshop/arrow-right.png) no-repeat 680rpx center;
+  background-size: 16rpx auto, 680rpx auto;
   margin: 20rpx 0;
   border-bottom: 1px solid #eee;
   height: 100rpx;
   line-height: 100rpx;
-  padding-left: 100rpx;
+  padding-left: 60rpx;
 }
 
 .weui_cell_hd {
@@ -58,22 +58,32 @@
 }
 
 .iconfont {
-  color: #999;
-  font-size: 50rpx;
+  color: #333;
+  font-size: 32rpx;
 }
 
-.icon-qianzhihe-copy {
+.icon-jifen:before {
+  color: #ddd905;
+}
+
+.icon-qianzhihe-copy:before {
   color: #ff6f6f;
+}
+
+.icon-dizhi:before {
+  color: #2bce33;
+}
+
+.icon-about:before {
+  color: #666;
 }
 
 .about {
   width: 100%;
-  background: url(https://www.lanrengj.com/static/images/weappshop/arrow-right.png) no-repeat 750rpx center;
-  background-size: 16rpx auto, 750rpx auto;
   margin: 20rpx 0;
   height: 80rpx;
   line-height: 80rpx;
-  padding-left: 100rpx;
+  padding-left: 60rpx;
 }
 
 .footer-box {
