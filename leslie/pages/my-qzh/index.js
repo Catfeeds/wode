@@ -145,11 +145,11 @@ Page({
     app.addForm(e.detail.formId, user_id);
   },
 
-  ffQzh: function() {
+  ffQzh: util.throttle(function() {
     this.setData({
       hideShopPopup: false
     })
-  },
+  }),
 
   closePopupTap: function() {
     this.setData({
@@ -162,11 +162,11 @@ Page({
     return;
   },
 
-  fabuClick: function() {
+  fabuClick: util.throttle(function() {
     this.setData({
       isClick: true
     })
-  },
+  }),
 
   // 数据提交
   bindSave: function(e) {

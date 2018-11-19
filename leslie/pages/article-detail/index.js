@@ -102,7 +102,7 @@ Page({
     })
   },
 
-  toLike: function() {
+  toLike: util.throttle(function() {
     var that = this;
     if (!this.data.bgxywz) {
       return;
@@ -143,9 +143,9 @@ Page({
         }
       }
     })
-  },
+  }),
 
-  toCollect: function() {
+  toCollect: util.throttle(function() {
     var that = this;
     if (!this.data.bgxywz) {
       return;
@@ -186,7 +186,7 @@ Page({
         }
       }
     })
-  },
+  }),
 
   /**
    * 生命周期函数--监听页面隐藏

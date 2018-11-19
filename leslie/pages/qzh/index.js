@@ -137,7 +137,7 @@ Page({
     }
   },
 
-  ffQzh: function() {
+  ffQzh: util.throttle(function() {
     var userInfo = this.data.userInfo;
     if (userInfo && userInfo.user_type > 3) {
       this.setData({
@@ -177,7 +177,7 @@ Page({
         }
       });
     }
-  },
+  }),
 
   closePopupTap: function() {
     this.setData({
@@ -190,11 +190,11 @@ Page({
     return;
   },
 
-  fabuClick: function() {
+  fabuClick: util.throttle(function() {
     this.setData({
       isClick: true
     })
-  },
+  }),
 
   choose_pic: function(e) {
     var currentPic = e.currentTarget.dataset.id;
