@@ -42,7 +42,12 @@ public class YanTongXuanze extends HttpServlet{
 				out.println("window.location.href=\"xuanzejiemian.jsp\"");
 				out.println("</script>");
 		  }else{
-				if(xuanze.equals("1")){
+			  	if(xuanze.equals("0")){
+					request.getSession().setAttribute("yantong", yantong);
+					request.getSession().setAttribute("str2yantong", str2yantong);
+					response.sendRedirect("/addzhenduanshanghuxidao.jsp");
+					return;
+				}else if(xuanze.equals("1")){
 					request.getSession().setAttribute("yantong", yantong);
 					request.getSession().setAttribute("str2yantong", str2yantong);
 					response.sendRedirect("/addzhenduanganmaofashao.jsp");

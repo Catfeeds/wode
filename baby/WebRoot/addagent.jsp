@@ -172,6 +172,14 @@
 				<input type="text" name="address" id="address" placeholder="输入地址">
 			</div> -->
 			<div class="mui-input-row">
+				<label>选择备注</label>
+				<select name="address">
+	               <option value="会员" >会员</option>
+	               <option value="宝妈试用" >宝妈试用</option>
+	               <option value="测试人员" >测试人员</option>
+             </select>	
+			</div> 
+			<div class="mui-input-row">
 				<label>选择权限</label>
 				<select name="upower">
 	               <option value="1" >VIP会员</option>

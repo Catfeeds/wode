@@ -42,12 +42,42 @@ public class InputJishi extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		User user =(User)request.getSession().getAttribute("user");
+		// 获取系统时间
+		Date dt = new Date();// 如果不需要格式,可直接用dt,dt就是当前系统时间
+		DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// 设置显示格式
+		DateFormat ddf= new SimpleDateFormat("yyyy-MM-dd");
+		DateFormat ftm= new SimpleDateFormat("yyyy-MM-dd HH:mm");
+		String nowTime = "";
+		nowTime = df.format(dt);// 用DateFormat的format()方法在dt中获取并以yyyy/MM/dd
+								// HH:mm:ss格式显示
+		String ddfTime= ddf.format(dt);
+		System.out.println(nowTime);
+		String fTime= ftm.format(dt);
+		
+		
 		if(user==null){
 			out.println("<meta   http-equiv='Content-Type'   content='text/html;   charset=UTF-8'>");
 			out.println("<script>");
 			out.println("window.location.href=\"login.jsp\"");
 			out.println("</script>");
-		}else{
+		}else if(user.getUpower()==1||user.getUpower()==2||user.getUpower()==3){
+			//限制添加病例开始
+			String sannowTime = ddfTime+"%";
+			System.out.println("时间为："+sannowTime);
+			int uid=user.getUserid();
+			RecordDao recsan=new RecordDaoImpl();
+			int sange=recsan.getRecord(sannowTime,uid);
+			System.out.println("返回的孩子病例数"+sange);
+			
+			if(sange>=3){
+				out.println("<meta   http-equiv='Content-Type'   content='text/html;   charset=UTF-8'>");
+				out.println("<script>");
+				out.println("alert('尊敬的用户，小宝提醒您每天最多取穴3次！');");
+				out.println("window.location.href=\"xuanzejiemian.jsp\"");
+				out.println("</script>");
+				return;
+			}
+		}
 		if(user.getUpower()==3){
 			out.println("<meta   http-equiv='Content-Type'   content='text/html;   charset=UTF-8'>");
 			out.println("<script>");
@@ -55,52 +85,73 @@ public class InputJishi extends HttpServlet {
 			out.println("window.location.href=\"xuanzejiemian.jsp\"");
 			out.println("</script>");
 		}else{
+			String shiyucha ="01";
+			String tiaoshi="01";
+			String yanshi="01";
+			String youkouqi="01";
+			
+			String str2shiyucha ="";
+			String str2tiaoshi="";
+			String str2yanshi="";
+			String str2youkouqi="";
+			String str2shetaihou="";
+			
 		
-		String shiyucha = request.getParameter("shiyucha");
-			if(shiyucha==null || shiyucha == ""){
-				shiyucha="01_食欲差";
-				System.out.println("shiyucha--------"+shiyucha);
-				request.getSession().setAttribute("shiyucha", shiyucha);
-			}
-		String tiaoshi = request.getParameter("tiaoshi");
-			if(tiaoshi==null || tiaoshi == ""){
-				tiaoshi="01_挑食";
-				System.out.println("tiaoshi--------"+tiaoshi);
-				request.getSession().setAttribute("tiaoshi", tiaoshi);
-			}
-		String yanshi = request.getParameter("yanshi");
-			if(yanshi==null || yanshi == ""){
-				yanshi="01_厌食";
-				System.out.println("yanshi--------"+yanshi);
-				request.getSession().setAttribute("yanshi", yanshi);
-			}
-		String youkouqi = request.getParameter("youkouqi");
-			if(youkouqi==null || youkouqi == ""){
-				youkouqi="01_有口气";
-				System.out.println("youkouqi--------"+youkouqi);
-				request.getSession().setAttribute("youkouqi", youkouqi);
-			}
-		String shetaihou = request.getParameter("shetaihou");
-		if(shetaihou==null || shetaihou == ""){
-			shetaihou="01_舌苔厚";
-			System.out.println("shetaihou--------"+shetaihou);
-			request.getSession().setAttribute("shetaihou", shetaihou);
-			}
-		
-		String[] strshiyucha = shiyucha.split("_");
-		String[] strtiaoshi = tiaoshi.split("_");
-		String[] stryanshi = yanshi.split("_");
-		String[] stryoukouqi = youkouqi.split("_");
-		String[] strshetaihou = shetaihou.split("_");
+			String[] jishi=request.getParameterValues("jishi");
+			String shetaihou=request.getParameter("shetaihou");
+			   if(jishi!=null&&jishi.length>0) {
+			        for(int i= 0 ;i<jishi.length;i++)
+			        {
+			        	if(jishi[i]=="食欲差"||jishi[i].equals("食欲差")){
+			        	System.out.println("积食----------"+jishi[i]);
+			        		shiyucha="02";
+			        		str2shiyucha="食欲差";
+			        		}
+			        	
+			        	if(jishi[i]=="挑食"||jishi[i].equals("挑食")){
+			        		System.out.println("积食..----------"+jishi[i]);
+			        		tiaoshi="02";
+			        		str2tiaoshi="挑食";
+			        	}
+			        	
+			        	if(jishi[i]=="厌食"||jishi[i].equals("厌食")){
+			        		System.out.println("积食...----------"+jishi[i]);
+			        		yanshi="02";
+			        		str2yanshi="厌食";
+			        	}
+			        	
+			        	if(jishi[i]=="有口气"||jishi[i].equals("有口气")){
+			        		System.out.println("积食....----------"+jishi[i]);
+			        		youkouqi="02";
+			        		str2youkouqi="有口气";
+			        	}
+			        	
+			        		}
+			    }
+
+			   
+//		String[] strshetaihou = shetaihou.split("_");
+			   String strshetaihou="01";
+			   if(shetaihou==null || shetaihou == ""){
+				   shetaihou="01_舌苔不厚";
+					request.getSession().setAttribute("shetaihou", shetaihou);
+				}else if(shetaihou=="舌苔不厚"||shetaihou.equals("舌苔不厚")){
+					strshetaihou="01";
+					System.out.println("huang1----------"+shetaihou);
+				}else if(shetaihou=="舌苔厚"||shetaihou.equals("舌苔厚")){
+					strshetaihou="02";
+					System.out.println("huang2----------"+shetaihou);
+
+				}
 		
 		Plan plan=new Plan();
-		String str = strshiyucha[0] + strtiaoshi[0] + stryanshi[0] + stryoukouqi[0] + strshetaihou[0];
+		String str = shiyucha + tiaoshi + yanshi + youkouqi + strshetaihou;
 		System.out.println("str----------"+ str);
 		PlanDao planDao=new PlanDaoImpl(); 
 		plan=planDao.getJishiPlanZzbh(str);
 		String zzxwt=plan.getShoufa();
 		String zzxw=zzxwt+" ";
-		String miansexw="+03100";
+		String miansexw="+47500"+" ";
 		String xydxw="";
 //		//体征单独穴位开始
 //		Plan plan=new Plan();
@@ -801,7 +852,6 @@ public class InputJishi extends HttpServlet {
 			out.println("</script>");
 		}
 		out.close();
-		}
 		}
 	}
 

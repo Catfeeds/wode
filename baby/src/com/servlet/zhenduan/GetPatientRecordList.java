@@ -26,6 +26,7 @@ public class GetPatientRecordList extends HttpServlet {
 	public void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		String pid = request.getParameter("pid");
+		System.out.println("PID-----------"+pid);
 		int ipid=0;
 		if(pid!=null){
 			ipid=Integer.parseInt(pid);

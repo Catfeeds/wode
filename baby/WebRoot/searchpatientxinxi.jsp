@@ -30,13 +30,13 @@
 <head>
 	<meta charset="utf-8">
     <title>选择宝宝</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="stylesheet" href="css-changsha/mui.css">
-    <link rel="stylesheet" type="text/css" href="css-changsha/icons-extra.css" />
-    <link rel="stylesheet" href="css-changsha/main.css">
-	<script src="js-changsha/mui.min.js"></script>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <script src="dep-td/js/ydui.flexible.js"></script>
+    <link rel="stylesheet" type="text/css" href="css-td/health.css" />
+    <link rel="stylesheet" href="dep-td/css/ydui.css" />
     <script type="text/javascript">
     	
    		document.addEventListener('plusready', function(){
@@ -47,40 +47,71 @@
     </script>
 </head>
 <body>
-	
-	<header id="header" class="mui-bar mui-bar-nav">
-		
-			<h1 class="mui-title">选择宝宝</h1>
-		<a class="mui-action-back mui-icon mui-icon-extra mui-icon-extra-arrowleftcricle mui-pull-left"></a>
-	
-	<button class="mui-btn mui-btn-blue mui-btn-link mui-pull-right" onclick="javascript:window.location.href='inputinfor.jsp?str=${str}&str2=${str2}&chufang=${chufang}
+	<div class="g-flexview bgc-f">
+            <div class="g-scrollview bgc-flower">
+                <div class="navigation">
+                    <a class="back" href="javascript:;" onclick="javascript:history.back(-1);"><img src="img/back.png" /></a>
+                    <div class="navigation-title">选择宝宝</div>
+                    <a class="search" href="inputxinxi.jsp "><img src="img/add.png" /></a>
+                </div>
+                <div class="line"></div>
+                <div class="choose-list">
+                    <c:forEach items="${patientList }" var="p">
+                    	
+	                    <a href="GetPatientRecordList?pid=${p.pid}" class="choose-item">
+	                        <c:if test="${p.pxb == '男'}">
+	                        <img src="img/boy.png" />
+	                        </c:if>
+	                        
+	                         <c:if test="${p.pxb == '女'}">
+	                        <img src="img/girl.png" />
+	                        </c:if>
+	                        <p> ${p.pname }</p>
+	                    </a>
+	                 </c:forEach>
+                </div>
 
-&shoufa=${shoufa}'"></button>
-	</header>
-	<nav class="mui-bar mui-bar-tab">
-	    <a class="mui-tab-item-link mui-active" href="xuanzejiemian.jsp">
-	      <span class="mui-icon my-nav-icon-1"></span>
-	      <span class="mui-tab-label">辩证取穴</span>
-	    </a>
-	    <a class="mui-tab-item-link" href="jiankangyanghu.jsp">
-	      <span class="mui-icon my-nav-icon-2"></span>
-	      <span class="mui-tab-label">健康养护</span>
-	    </a>
-	    <a class="mui-tab-item-link" href="yuerketang.jsp">
-	      <span class="mui-icon my-nav-icon-3"></span>
-	      <span class="mui-tab-label">育儿课堂</span>
-	    </a>
-	    <a class="mui-tab-item-link" href="personal-center.jsp">
-	      <span class="mui-icon my-nav-icon-4"></span>
-	      <span class="mui-tab-label">我的</span>
-	    </a>
- 	 </nav>
-	<div class="mui-content">
-		<ul class="mui-table-view">
-			<c:forEach items="${patientList }" var="p">
-				<li onclick="javascript:window.location.href='GetPatientRecordList?pid=${p.pid}'" data-value="AKSJ" data-tags="AKeSiJin" class="mui-table-view-cell mui-indexed-list-item">${p.pname }</li>
-			</c:forEach>
-		</ul>
-	</div>
+            </div>
+            
+            <footer class="m-tabbar">
+                    <a href="xuanzejiemian.jsp" class="tabbar-item" id="tuina">
+                        <span class="tabbar-icon">
+                            <img src="img/bar1.png"/>
+                        </span>
+                        <span class="tabbar-txt">推拿取穴</span>
+                    </a>
+                    <div class="tabbar-item" id="silk">
+                        <span class="bgc-jn" id="bgc-jn"></span>
+                        <span class="tabbar-txt">育儿锦囊</span>
+                        <img class="bts-img" src="img/bts.png"/>
+                        <ul class="silk">
+                        	<li><a href="Tiaolifayu.jsp">宝宝成长</a></li>
+                        	<li><a href="Shiliaoxiaofang.jsp">食疗小方</a></li>
+                        	<li><a href="Tiaoliyinshi.jsp">饮食调理</a></li>
+                        	<li><a href="Tiaolishuimian.jsp">睡眠调理</a></li>
+                        	<li><a href="Tiaolichuandai.jsp">穿戴养护</a></li>
+                        </ul>
+                    </div>
+                    <div class="tabbar-item" id="classroom">
+                        <span class="bgc-cr" id="bgc-cr"></span>
+                        <span class="tabbar-txt">育儿课堂</span>
+                        <img class="bts-img" src="img/bts.png"/>
+                        <ul class="silk">
+                            <li><a href="Shipintuina.jsp">穴位查找</a></li>
+                            <li><a href="Jilaoshiwenda.jsp">吉老师问答</a></li>
+                            <li><a href="Tuinaxuzhi.jsp">推拿须知</a></li>
+                        </ul>
+                    </div>
+                    <a href="personal-center.jsp" class="tabbar-item" id="me">
+                        <span class="tabbar-icon">
+                            <img src="img/bar4.png"/>
+                        </span>
+                        <span class="tabbar-txt c-e9">我的</span>
+                    </a>
+                </footer>
+        </div>
+        <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="dep-td/js/ydui.js"></script>
+         <script src="js-td/health.js" type="text/javascript" charset="utf-8"></script>
 	</body>
 </html>

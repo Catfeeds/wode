@@ -50,12 +50,42 @@ public class InputSymptom extends HttpServlet {
 //		String ddfTime= ddf.format(dt);
 //		System.out.println(nowTime);
 		User user =(User)request.getSession().getAttribute("user");
+		// 获取系统时间
+		Date dt = new Date();// 如果不需要格式,可直接用dt,dt就是当前系统时间
+		DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// 设置显示格式
+		DateFormat ddf= new SimpleDateFormat("yyyy-MM-dd");
+		DateFormat ftm= new SimpleDateFormat("yyyy-MM-dd HH:mm");
+		String nowTime = "";
+		nowTime = df.format(dt);// 用DateFormat的format()方法在dt中获取并以yyyy/MM/dd
+								// HH:mm:ss格式显示
+		String ddfTime= ddf.format(dt);
+		System.out.println(nowTime);
+		String fTime= ftm.format(dt);
+		
+		
 		if(user==null){
 			out.println("<meta   http-equiv='Content-Type'   content='text/html;   charset=UTF-8'>");
 			out.println("<script>");
 			out.println("window.location.href=\"login.jsp\"");
 			out.println("</script>");
-		}else{
+		}else if(user.getUpower()==1||user.getUpower()==2||user.getUpower()==3){
+			//限制添加病例开始
+			String sannowTime = ddfTime+"%";
+			System.out.println("时间为："+sannowTime);
+			int uid=user.getUserid();
+			RecordDao recsan=new RecordDaoImpl();
+			int sange=recsan.getRecord(sannowTime,uid);
+			System.out.println("返回的孩子病例数"+sange);
+			
+			if(sange>=3){
+				out.println("<meta   http-equiv='Content-Type'   content='text/html;   charset=UTF-8'>");
+				out.println("<script>");
+				out.println("alert('尊敬的用户，小宝提醒您每天最多取穴3次！');");
+				out.println("window.location.href=\"xuanzejiemian.jsp\"");
+				out.println("</script>");
+				return;
+			}
+		}
 		if(user.getUpower()==3){
 			out.println("<meta   http-equiv='Content-Type'   content='text/html;   charset=UTF-8'>");
 			out.println("<script>");
@@ -64,110 +94,93 @@ public class InputSymptom extends HttpServlet {
 			out.println("</script>");
 		}else{
 			
-		String bisai = request.getParameter("bisai");
-			if(bisai==null || bisai == ""){
-				bisai="01_不鼻塞";
-				System.out.println("bisai--------"+bisai);
-				request.getSession().setAttribute("bisai", bisai);
-			}
-		System.out.println("1---------"+bisai);
-		String liuti = request.getParameter("liuti");
-			if(liuti==null || liuti == ""){
-				liuti="01_不流涕";
-				System.out.println("liuti--------"+liuti);
-				request.getSession().setAttribute("liuti", liuti);
-			}
-		System.out.println("2---------"+liuti);
-		String dapenti = request.getParameter("dapenti");
-			if(dapenti==null || dapenti == ""){
-				dapenti="01_不打喷嚏";
-				System.out.println("dapenti--------"+dapenti);
-				request.getSession().setAttribute("dapenti", dapenti);
-			}
-		System.out.println("3---------"+dapenti);
-		String yantong = request.getParameter("yantong");
-			if(yantong==null || yantong == ""){
-				yantong="01_不咽痛";
-				System.out.println("yantong--------"+yantong);
-				request.getSession().setAttribute("yantong", yantong);
-			}
-		System.out.println("4---------"+yantong);
-		String yanshi = request.getParameter("");
-			if(yanshi==null || yanshi == ""){
-				yanshi="01_不厌食";
-				System.out.println("yanshi--------"+yanshi);
-				request.getSession().setAttribute("yanshi", yanshi);
-			}
-		System.out.println("5---------"+yanshi);
-		String outu = request.getParameter("outu");
-			if(outu==null || outu == ""){
-				outu="01_不呕吐";
-				System.out.println("outu--------"+outu);
-				request.getSession().setAttribute("outu", outu);
-			}
-		System.out.println("6---------"+outu);
-		String fuxie = request.getParameter("fuxie");
-			if(fuxie==null || fuxie == ""){
-				fuxie="01_不腹泻";
-				System.out.println("fuxie--------"+fuxie);
-				request.getSession().setAttribute("fuxie", fuxie);
-			}
-		String futong = request.getParameter("futong");
-			if(futong==null || futong == ""){
-				futong="01_不腹痛";
-				System.out.println("futong--------"+futong);
-				request.getSession().setAttribute("futong", futong);
-			}
-		String toutong = request.getParameter("toutong");
-			if(toutong==null || toutong == ""){
-				toutong="01_不头痛";
-				System.out.println("toutong--------"+toutong);
-				request.getSession().setAttribute("toutong", toutong);
-			}
-		String touyun = request.getParameter("touyun");
-			if(touyun==null || touyun == ""){
-				touyun="01_不头晕";
-				System.out.println("touyun--------"+touyun);
-				request.getSession().setAttribute("touyun", touyun);
-			}
-		String bttzd = request.getParameter("bttzd");
-			if(bttzd==null || bttzd == ""){
-				bttzd="01_扁桃体不肿大";
-				System.out.println("bttzd--------"+bttzd);
-				request.getSession().setAttribute("bttzd", bttzd);
-			}
-		String sheti = "01_否";
-//		String sheti = request.getParameter("sheti");
-//			if(sheti==null || sheti == ""){
-//				sheti="01_正常_10";
-//				System.out.println("sheti--------"+sheti);
-//				request.getSession().setAttribute("sheti", sheti);
-//			}
-//		System.out.println("感冒的体征的全部-------------------"+fuxie+"***"+futong+"***"+toutong+"***"+sheti+"***"+touyun+"***"+bttzd);
-
-		String[] strbisai = bisai.split("_");
-		String[] strliuti = liuti.split("_");
-		String[] strdapenti = dapenti.split("_");
-		String[] stryantong = yantong.split("_");
-		String[] stryanshi = yanshi.split("_");
-		String[] stroutu = outu.split("_");
-		String[] strfuxie = fuxie.split("_");
-		String[] strtoutong = toutong.split("_");
-		String[] strfutong = futong.split("_");
-		String[] strtouyun = touyun.split("_");
-		String[] strbttzd = bttzd.split("_");
-		
+			String bisai ="01";
+			String liuti="01";
+			String dapenti="01";
+			String yantong="01";
+			String yanshi="01";
+			String outu="01";
+			String fuxie="01";
+			String futong="01";
+			String toutong="01";
+			String touyun="01";
+			String bttzd="01";
+			
+			String str2bisai="";
+			String str2liuti="";
+			String str2dapenti="";
+			String str2yantong="";
+			String str2yanshi="";
+			String str2outu="";
+			String str2fuxie="";
+			String str2futong="";
+			String str2toutong="";
+			String str2touyun="";
+			String str2bttzd="";
+			
+			
+		String[] ganmao=request.getParameterValues("ganmao");
+	   if(ganmao!=null&&ganmao.length>0) {
+	        for(int i= 0 ;i<ganmao.length;i++)
+	        {
+	        	if(ganmao[i]=="鼻塞"||ganmao[i].equals("鼻塞")){
+	        		bisai="02";
+	        		str2bisai="鼻塞";
+	        	}
+	        
+		        if(ganmao[i]=="流涕"||ganmao[i].equals("流涕")){
+	        		liuti="02";
+	        		str2liuti="流涕";
+	        	}
+		        if(ganmao[i]=="打喷嚏"||ganmao[i].equals("打喷嚏")){
+	        		dapenti="02";
+	        		str2dapenti="打喷嚏";
+	        	}
+		        if(ganmao[i]=="咽痛"||ganmao[i].equals("咽痛")){
+	        		yantong="02";
+	        		str2yantong="咽痛";
+	        	}
+		        if(ganmao[i]=="厌食"||ganmao[i].equals("厌食")){
+	        		yanshi="02";
+	        		str2yanshi="厌食";
+	        	}
+		        if(ganmao[i]=="呕吐"||ganmao[i].equals("呕吐")){
+	        		outu="02";
+	        		str2outu="呕吐";
+	        	}
+		        if(ganmao[i]=="腹泻"||ganmao[i].equals("腹泻")){
+	        		fuxie="02";
+	        		str2fuxie="腹泻";
+	        	}
+		        if(ganmao[i]=="腹痛"||ganmao[i].equals("腹痛")){
+	        		futong="02";
+	        		str2futong="腹痛";
+	        	}
+	        	if(ganmao[i]=="头痛"||ganmao[i].equals("头痛")){
+	        		toutong="02";
+	        		str2toutong="头痛";
+	        	}
+	        	if(ganmao[i]=="头晕"||ganmao[i].equals("头晕")){
+	        		touyun="02";
+	        		str2touyun="头晕";
+	        	}
+	        	if(ganmao[i]=="扁桃体肿大"||ganmao[i].equals("扁桃体肿大")){
+	        		bttzd="02";
+	        		str2bttzd="扁桃体肿大";
+	        	}
+	        }
+	    }
+	
 		//体征单独穴位开始
 		String change_i=null;
 		Plan plan=new Plan();
-		String str = strbisai[0] + strliuti[0]+strdapenti[0]+ stryantong[0]+stryanshi[0]+stroutu[0]+
-				strfuxie[0] + strtoutong[0]+strfutong[0]+ strtouyun[0]+strbttzd[0];
+		String str = bisai+liuti+dapenti+yantong+yanshi+outu+fuxie+futong+toutong+touyun+bttzd;
 		PlanDao planDao = new PlanDaoImpl();
 		plan = planDao.getGanmaoPlanZzbh(str);
 		 change_i="01";
 		String zzxwt=plan.getShoufa();
 		String zzxw=zzxwt+" ";
-		String miansexw="+03100";
+		String miansexw="-40100"+" ";
 		String xydxw="";
 //		String toutongxw=null;
 //		String shetixw=null;
@@ -796,8 +809,8 @@ public class InputSymptom extends HttpServlet {
 //		request.getSession().setAttribute("bttzdxw", bttzdxw);
 //		//体征单独穴位结束
 		// 1、获得诊断处方
-		 String	 str2= "从体质上看，孩子"+strbisai[1]+"、"+strliuti[1]+"、"+strdapenti[1]+"、"+stryantong[1]+"、"+stryanshi[1]+"、"+stroutu[1]+
-				 		strfuxie[1]+"、"+strfutong[1]+strtoutong[1]+"、"+strtouyun[1]+strbttzd[1]+"、";
+		 String	 str2= "从体质上看，孩子"+str2bisai+"、"+str2liuti+"、"+str2dapenti+"、"+str2yantong+"、"+str2yanshi+"、"+str2outu+
+				 		str2fuxie+"、"+str2futong+str2toutong+"、"+str2touyun+"、"+str2bttzd;
 //				 "；" +"面色："+strfuxie[1]+"  ；唇色："+strtoutong[1]+"  ；下眼袋："+strfutong[1]+"  ；舌质："+strtouyun[1]+"  ；舌体："+strsheti[1]
 //				 +"  ；舌苔："+strbttzd[1];
 		String zybh="01";
@@ -873,7 +886,6 @@ public class InputSymptom extends HttpServlet {
 		}
 		
 		out.close();
-		}
 		}
 	}
 

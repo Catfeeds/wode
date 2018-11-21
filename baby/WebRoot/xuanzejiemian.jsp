@@ -21,119 +21,105 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>首页</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="stylesheet" href="css-changsha/mui.css">
-    <link rel="stylesheet" href="css-changsha/main.css">
-     <style>
-    	html,body{height: 100%;background:#f9f7ef url(img/index2.jpg) center no-repeat; background-size: contain;}
-    	.mui-content{background-color: transparent;}
-    	.mui-input-row label~input{width: 75%;}
-    	
-    </style>
-    <script type="text/javascript">
-    	
-   		document.addEventListener('plusready', function(){
-   			//console.log("所有plus api都应该在此事件发生后调用，否则会出现plus is undefined。"
-   			
-   		});
-   		
-    </script>
+    <title>推拿取穴</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <link rel="stylesheet" href="dep-td/css/ydui.css" />
+    <script src="dep-td/js/ydui.flexible.js"></script>
+    <link rel="stylesheet" type="text/css" href="css-td/health.css" />
+    
 </head>
 <body>
-	<header id="header" class="mui-bar mui-bar-nav">
-<!--图标显示
-	<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
--->			
-			<h1 class="mui-title">健康宝管理系统</h1>
-	</header>
-	<nav class="mui-bar mui-bar-tab">
-	    <a class="mui-tab-item-link mui-active" href="xuanzejiemian.jsp">
-	      <span class="mui-icon my-nav-icon-1"></span>
-	      <span class="mui-tab-label">推拿取穴</span>
-	    </a>
-	    <a class="mui-tab-item-link" href="jiankangyanghu.jsp">
-	      <span class="mui-icon my-nav-icon-2"></span>
-	      <span class="mui-tab-label">学育儿</span>
-	    </a>
-	    <a class="mui-tab-item-link" href="yuerketang.jsp">
-	      <span class="mui-icon my-nav-icon-3"></span>
-	      <span class="mui-tab-label">学推拿</span>
-	    </a>
-	    <a class="mui-tab-item-link" href="personal-center.jsp">
-	      <span class="mui-icon my-nav-icon-4"></span>
-	      <span class="mui-tab-label">我的</span>
-	    </a>
- 	 </nav>
+	<div class="g-flexview bgc-imgt">
+            <div class="g-scrollview index">
+                <div class="title">健康宝管理系统</div>
+                <div id="scrollobj">
+                    <span>温馨提示：</span>
+                    <span>健康宝系统已经上线，此系统为1.0版本，1.0版本针对于普通感冒、感冒发烧、感冒咳嗽、腹泻、便秘、呕吐、积食、保健的调理，其中还包括宝宝成长中需要的育儿知识、食疗小方、推拿视频等，教会您如何在家里给宝宝推拿，简单易学好操作，请开始您的健康旅行吧。</span>
+                </div>
+                <div class="index-text">
+                    <span class="hint">温馨提示</span>${user.name}您好！欢迎登陆健康宝管理系统，很高兴为您提供在线专业儿童健康检测与管理服务，您是第${user.userid}位使用者。
+                                          您的帐号到期时间为 ${user.ystime}。
+                   <%-- 您的可用次数剩余：<span class="ff">${numbers }次</span> --%>
+                </div>
 
-	<div class="mui-content">
-		<div class="my-txt-box">
-			<p><b class="my-txt-bt">温馨提示</b>${user.name}您好！欢迎登陆健康宝管理系统，很高兴为您提供在线专业儿童健康监测与管理服务，您是第${user.userid}位使用者，<strong>本系统只用于保健</strong>
-			<%
-				 if(user.getUpower()==0||user.getUpower()==1||user.getUpower()==2){
+                <div class="index-select">
+               		<a class="item active" href="XuanzeServlet?xz=06"><span class="text">保健</span></a>
+                    <a class="item" href="XuanzeServlet?xz=07"><span class="text">调理<br/>脾胃</span></a>
+                    <a class="item" href="XuanzeServlet?xz=00"><span class="text">普通<br/>感冒</span></a>
+                    <a class="item" href="XuanzeServlet?xz=01"><span class="text">感冒<br/>发烧</span></a>
+                    <a class="item" href="XuanzeServlet?xz=02"><span class="text">感冒<br/>咳嗽</span></a>
+                    <a class="item" href="XuanzeServlet?xz=03"><span class="text">腹泻</span></a>
+                    <a class="item" href="XuanzeServlet?xz=04"><span class="text">便秘</span></a>
+                    <a class="item" href="XuanzeServlet?xz=09"><span class="text">呕吐</span></a>
+                    <a class="item" href="XuanzeServlet?xz=05"><span class="text">积食</span></a>
+                    
+                    <%
+				 if(user.getUpower()==0){
 				    %>
-			，您还剩余${numbers }次可以使用。
-			<%
-			       }
-			       %>
-			</p>
-		</div>
-		<ul class="my-grid-9">
-			<li class="my-col-sm-3 my-view-cell">
-				<a href="XuanzeServlet?xz=01">
-                    <span class="my-grid-icon">感冒</span>
-				</a>
-			</li>
-			<li class="my-col-sm-3 my-view-cell">
-				<a href="XuanzeServlet?xz=01">
-                    <span class="my-grid-icon my-grid-text-2">感冒发烧</span>
-				</a>
-			</li>
-			<li class="my-col-sm-3 my-view-cell">
-				<a href="XuanzeServlet?xz=02">
-                    <span class="my-grid-icon my-grid-text-2">感冒咳嗽</span>
-				</a>
-			</li>
-			<li class="my-col-sm-3 my-view-cell">
-				<a href="XuanzeServlet?xz=03">
-                    <span class="my-grid-icon">腹泻</span>
-				</a>
-			</li>
-			<li class="my-col-sm-3 my-view-cell">
-				<a href="XuanzeServlet?xz=04">
-                    <span class="my-grid-icon">便秘</span>
-				</a>
-			</li>
-			<li class="my-col-sm-3 my-view-cell">
-				<a href="XuanzeServlet?xz=05">
-                    <span class="my-grid-icon">积食</span>
-				</a>
-			</li>
-			<li class="my-col-sm-3 my-view-cell">
-				<a href="XuanzeServlet?xz=06">
-                    <span class="my-grid-icon">保健</span>
-				</a>
-			</li>
-			<!-- <li class="">
-				<a href="XuanzeServlet?xz=07">
-                    <span class=""></span>
-				</a>
-			</li> -->
-			<li class="my-col-sm-3 my-view-cell">
-				<a href="XuanzeServlet?xz=07">
-                    <span class="my-grid-icon my-grid-text-3">增强<br />免疫力</span>
-				</a>
-			</li>
-			<li class="my-col-sm-3 my-view-cell">
-				<a href="XuanzeServlet?xz=08">
-                    <span class="my-grid-icon my-grid-text-2">益智助长</span>
-				</a>
-			</li>
-		</ul>
-        
-	</div>
-	<script src="js-changsha/mui.min.js"></script>
-</body>
+                   <a class="item" href="XuanzeServlet?xz=10"><span class="text">鼻炎</span></a>
+                    <a class="item" href="XuanzeServlet?xz=11"><span class="text">慢性<br/>咳嗽</span></a>
+                    <a class="item" href="XuanzeServlet?xz=12"><span class="text">咽炎</span></a> 
+                    
+                     <%
+						}
+				    %>
+                    <!-- <a class="item" href="XuanzeServlet?xz=08"><span class="text">益智<br/>助长</span></a> -->
+                </div>
+ 				<!--通知-->
+                
+                <footer class="m-tabbar">
+                    <a href="xuanzejiemian.jsp" class="tabbar-item" id="tuina">
+                        <span class="tabbar-icon">
+                            <img src="img/bar1-click.png"/>
+                        </span>
+                        <span class="tabbar-txt c-e9">推拿取穴</span>
+                    </a>
+                    <div class="tabbar-item" id="silk">
+                        <span class="bgc-jn" id="bgc-jn"></span>
+                        <span class="tabbar-txt">育儿锦囊</span>
+                        <img class="bts-img" src="img/bts.png"/>
+                        <ul class="silk">
+                        	<li><a href="Tiaolifayu.jsp">宝宝成长</a></li>
+                        	<li><a href="Shiliaoxiaofang.jsp">食疗小方</a></li>
+                        	<li><a href="Tiaoliyinshi.jsp">饮食调理</a></li>
+                        	<li><a href="Tiaolishuimian.jsp">睡眠调理</a></li>
+                        	<li><a href="Tiaolichuandai.jsp">穿戴养护</a></li>
+                        </ul>
+                    </div>
+                    <div class="tabbar-item" id="classroom">
+                        <span class="bgc-cr" id="bgc-cr"></span>
+                        <span class="tabbar-txt">育儿课堂</span>
+                        <img class="bts-img" src="img/bts.png"/>
+                        <ul class="silk">
+                            <li><a href="Shipintuina.jsp">穴位查找</a></li>
+                            <li><a href="Jilaoshiwenda.jsp">吉老师问答</a></li>
+                            <li><a href="Tuinaxuzhi.jsp">推拿须知</a></li>
+                        </ul>
+                    </div>
+                    <a href="personal-center.jsp" class="tabbar-item" id="me">
+                        <span class="tabbar-icon">
+                            <img src="img/bar4.png"/>
+                        </span>
+                        <span class="tabbar-txt">我的</span>
+                    </a>
+                </footer>
+            </div>
+        </div>
+        <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="dep-td/js/ydui.js"></script>
+        <script src="js-td/health.js" type="text/javascript" charset="utf-8"></script>
+        <script language="javascript" type="text/javascript">
+            function scroll(obj) {
+                var tmp = (obj.scrollLeft) ++;
+                //当滚动条到达右边顶端时
+                if(obj.scrollLeft == tmp) obj.innerHTML += obj.innerHTML;
+                //当滚动条滚动了初始内容的宽度时滚动条回到最左端
+                if(obj.scrollLeft >= obj.firstChild.offsetWidth) obj.scrollLeft = 0;
+            }
+            setInterval("scroll(document.getElementById('scrollobj'))", 20);
+        </script>
+    </body>
 </html>

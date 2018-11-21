@@ -19,14 +19,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE html>
 <html>
   <meta charset="utf-8">
-    <title>健康养护</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="stylesheet" href="css-changsha/mui.css">
-    <link rel="stylesheet" type="text/css" href="css-changsha/icons-extra.css" />
-    <link rel="stylesheet" type="text/css" href="css-changsha/iconfont.css" />
-    <link rel="stylesheet" href="css-changsha/main.css">
+    <title>宝宝成长</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <link rel="stylesheet" href="dep-td/css/ydui.css" />
+    <script src="dep-td/js/ydui.flexible.js"></script>
+    <link rel="stylesheet" type="text/css" href="css-td/health.css" />
     <script type="text/javascript">
     	
    		document.addEventListener('plusready', function(){
@@ -37,82 +37,122 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </script>
 </head>
 <body>
-	<header id="header" class="mui-bar mui-bar-nav">
-	<a class="mui-action-back mui-icon mui-icon-extra mui-icon-extra-arrowleftcricle mui-pull-left"></a>
-			<h1 class="mui-title ">发育调理</h1>
-	</header>
-	<nav class="mui-bar mui-bar-tab">
-	    <a class="mui-tab-item-link" href="xuanzejiemian.jsp">
-	      <span class="mui-icon my-nav-icon-1"></span>
-	      <span class="mui-tab-label">辩证取穴</span>
-	    </a>
-	    <a class="mui-tab-item-link mui-active" href="jiankangyanghu.jsp">
-	      <span class="mui-icon my-nav-icon-2"></span>
-	      <span class="mui-tab-label">健康养护</span>
-	    </a>
-	    <a class="mui-tab-item-link" href="yuerketang.jsp">
-	      <span class="mui-icon my-nav-icon-3"></span>
-	      <span class="mui-tab-label">育儿课堂</span>
-	    </a>
-	    <a class="mui-tab-item-link" href="personal-center.jsp">
-	      <span class="mui-icon my-nav-icon-4"></span>
-	      <span class="mui-tab-label">我的</span>
-	    </a>
- 	 </nav>
-	<div class="mui-content">
-		<ul class="mui-table-view">
-				<li class="mui-table-view-cell mui-media">
-					<a href="jkyh_text/Fayupage1.jsp">
-						<img class="mui-media-object mui-pull-left" src="img/jkyh/hl-26.png">
-						<div class="mui-media-body">
-							变蒸——在变化中蒸蒸日上
-							<p class='mui-ellipsis'>什么是小儿“变蒸”呢，小儿“变蒸”会出现哪些表现，怎么应对呢？</p>
-							<p><span class="my-date-icon"><em class="my-iconfont my-icon-shijian"></em>2016/11/07</span></p>
-						</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a href="TiaoLiServlet?tiaolibh=24">
-						<img class="mui-media-object mui-pull-left" src="img/pic_1.jpg">
-						<div class="mui-media-body">
-							0-6个月
-							<p class='mui-ellipsis'>这个时间段的宝宝：喝奶量急剧上升，容易出现腹泻、便秘等问题</p>
-							<p><span class="my-date-icon"><em class="my-iconfont my-icon-shijian"></em>2016/11/07</span></p>
-						</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a href="TiaoLiServlet?tiaolibh=25">
-						<img class="mui-media-object mui-pull-left" src="img/pic_1.jpg">
-						<div class="mui-media-body">
-							6-12个月
-							<p class='mui-ellipsis'>这个时间段的宝宝：突然比之前容易感冒发烧，经常需要往医院跑</p>
-							<p><span class="my-date-icon"><em class="my-iconfont my-icon-shijian"></em>2016/11/07</span></p>
-						</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a href="TiaoLiServlet?tiaolibh=26">
-						<img class="mui-media-object mui-pull-left" src="img/pic_1.jpg">
-						<div class="mui-media-body">
-							1-3岁
-							<p class='mui-ellipsis'>这个时间段的宝宝：每天都问很多为什么，对很多东西都感到好奇。</p>
-							<p><span class="my-date-icon"><em class="my-iconfont my-icon-shijian"></em>2016/11/07</span></p>
-						</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a href="TiaoLiServlet?tiaolibh=27">
-						<img class="mui-media-object mui-pull-left" src="img/pic_1.jpg">
-						<div class="mui-media-body">
-							3-6岁
-							<p class='mui-ellipsis'>这个时间段的宝宝：开始有第一次的独立活动，离开妈妈身边</p>
-							<p><span class="my-date-icon"><em class="my-iconfont my-icon-shijian"></em>2016/11/07</span></p>
-						</div>
-					</a>
-				</li>
-			</ul>
-	</div>
-	<script src="js-changsha/mui.min.js"></script>
+	<div class="g-flexview bgc-f4">
+            <div class="g-scrollview">
+                <div class="navigation">
+                    <a class="back" href="javascript:;" onclick="javascript:history.back(-1);"><img src="img/back.png" /></a>
+                    <div class="navigation-title">宝宝成长</div>
+                </div>
+
+                <div class="m-cell">
+                	<a href="jkyh_text/Fayupage4.jsp" class="cell-item article bgc-f">
+                        <div class="cell-left"><img src="img/jkyh/fy-bz0.jpg"/></div>
+                        <div class="cell-right">
+                            <div class="text">
+                            	<p class="title">辣妈的带娃经历之乐乐妈</p>
+                            	<p class="con">我是一位宝妈，我的儿子乐乐已经七个月了。在这里我要诚挚的感谢吉亚宁老师。</p>
+                            	<div class="time"><img src="img/time.png"/>2018/07/07</div>
+                            </div>
+                        </div>
+                    </a>
+                    <a href="jkyh_text/Fayupage1.jsp" class="cell-item article bgc-f">
+                        <div class="cell-left"><img src="img/jkyh/fy-bz.jpg"/></div>
+                        <div class="cell-right">
+                            <div class="text">
+                            	<p class="title">变蒸——在变化中蒸蒸日上</p>
+                            	<p class="con">什么是小儿“变蒸”呢，小儿“变蒸”会出现哪些表现，怎么应对呢？</p>
+                            	<div class="time"><img src="img/time.png"/>2018/07/07</div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                     <a href="jkyh_text/Fayupage2.jsp" class="cell-item article bgc-f">
+                        <div class="cell-left"><img src="img/jkyh/hl-12.png"/></div>
+                        <div class="cell-right">
+                            <div class="text">
+                                <p class="title">0-6个月的宝宝成长</p>
+                                <p class="con">这个时间段的宝宝容易出现腹泻、湿疹等问题</p>
+                                <div class="time"><img src="img/time.png"/>2018/07/07</div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                   <a href="jkyh_text/Fayupage3.jsp" class="cell-item article bgc-f">
+                        <div class="cell-left"><img src="img/jkyh/fy-2.png"/></div>
+                        <div class="cell-right">
+                            <div class="text">
+                                <p class="title">6-12个月的宝宝成长</p>
+                                <p class="con">这个时间段的宝宝容易出现积食、幼儿急疹等问题</p>
+                                <div class="time"><img src="img/time.png"/>2018/07/07</div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    
+                     <!--<a href="TiaoLiServlet?tiaolibh=26" class="cell-item article bgc-f">
+                        <div class="cell-left"><img src="img/jkyh/fy-3.png"/></div>
+                        <div class="cell-right">
+                            <div class="text">
+                                <p class="title">1-3岁的宝宝成长</p>
+                                <p class="con">这个时间段的宝宝：每天都问很多为什么，对很多东西都感到好奇。</p>
+                                <div class="time"><img src="img/time.png"/>2018/07/07</div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="TiaoLiServlet?tiaolibh=27" class="cell-item article bgc-f">
+                        <div class="cell-left"><img src="img/jkyh/fy-4.png"/></div>
+                        <div class="cell-right">
+                            <div class="text">
+                                <p class="title">3-6岁的宝宝成长</p>
+                                <p class="con">这个时间段的宝宝：开始有第一次的独立活动，离开妈妈身边</p>
+                                <div class="time"><img src="img/time.png"/>2018/07/07</div>
+                            </div>
+                        </div>
+                    </a>
+                     -->
+                </div>
+                
+               <footer class="m-tabbar">
+                    <a href="xuanzejiemian.jsp" class="tabbar-item" id="tuina">
+                        <span class="tabbar-icon">
+                            <img src="img/bar1.png"/>
+                        </span>
+                        <span class="tabbar-txt">推拿取穴</span>
+                    </a>
+                    <div class="tabbar-item" id="silk">
+                        <span class="bgc-jn" id="bgc-jn"></span>
+                        <span class="tabbar-txt c-e9">育儿锦囊</span>
+                        <img class="bts-img" src="img/bts.png"/>
+                        <ul class="silk">
+                        	<li><a href="Tiaolifayu.jsp">宝宝成长</a></li>
+                        	<li><a href="Shiliaoxiaofang.jsp">食疗小方</a></li>
+                        	<li><a href="Tiaoliyinshi.jsp">饮食调理</a></li>
+                        	<li><a href="Tiaolishuimian.jsp">睡眠调理</a></li>
+                        	<li><a href="Tiaolichuandai.jsp">穿戴养护</a></li>
+                        </ul>
+                    </div>
+                    <div class="tabbar-item" id="classroom">
+                        <span class="bgc-cr" id="bgc-cr"></span>
+                        <span class="tabbar-txt">育儿课堂</span>
+                        <img class="bts-img" src="img/bts.png"/>
+                        <ul class="silk">
+                            <li><a href="Shipintuina.jsp">穴位查找</a></li>
+                            <li><a href="Jilaoshiwenda.jsp">吉老师问答</a></li>
+                            <li><a href="Tuinaxuzhi.jsp">推拿须知</a></li>
+                        </ul>
+                    </div>
+                    <a href="personal-center.jsp" class="tabbar-item" id="me">
+                        <span class="tabbar-icon">
+                            <img src="img/bar4.png"/>
+                        </span>
+                        <span class="tabbar-txt">我的</span>
+                    </a>
+                </footer>
+            </div>
+        </div>
+        <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="dep-td/js/ydui.js"></script>
+        <script src="js-td/health.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>

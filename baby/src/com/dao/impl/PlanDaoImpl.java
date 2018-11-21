@@ -20,12 +20,24 @@ public class PlanDaoImpl extends BaseDao implements PlanDao{
 		// TODO Auto-generated method stub
 		List l =new ArrayList();
 		l.add(str);
-		List list=this.executeQuery("select * from t_plan11 where zzbh='"+str+"'", null, Plan.class);
+		List list=this.executeQuery("select * from t_plan00 where zzbh='"+str+"'", null, Plan.class);
 		if(list.size()>0) {
 			return (Plan) list.get(0);
 		}
 		return null;
 	}
+	
+	//查询感冒其中包括感冒、感冒发烧、感冒咳嗽中的手法和穴位
+		public Plan getGanmaofashaoPlanZzbh(String str) {
+			// TODO Auto-generated method stub
+			List l =new ArrayList();
+			l.add(str);
+			List list=this.executeQuery("select * from t_plan11 where zzbh='"+str+"'", null, Plan.class);
+			if(list.size()>0) {
+				return (Plan) list.get(0);
+			}
+			return null;
+		}
 
 	public Plan getGanmaoKesouPlanZzbh(String str) {
 		// TODO Auto-generated method stub
@@ -99,6 +111,42 @@ public class PlanDaoImpl extends BaseDao implements PlanDao{
 		}
 		return null;
 	}
+	
+	//查询鼻炎的手法和穴位
+		public Plan getBiyanPlanZzbh(String str) {
+			// TODO Auto-generated method stub
+			List l =new ArrayList();
+			l.add(str);
+			List list=this.executeQuery("select * from t_plan20 where zzbh='"+str+"'", null, Plan.class);
+			if(list.size()>0) {
+				return (Plan) list.get(0);
+			}
+			return null;
+		}
+		
+		//查询慢性咳嗽的手法和穴位
+		public Plan getManxingkesouPlanZzbh(String str) {
+			// TODO Auto-generated method stub
+			List l =new ArrayList();
+			l.add(str);
+			List list=this.executeQuery("select * from t_plan21 where zzbh='"+str+"'", null, Plan.class);
+			if(list.size()>0) {
+				return (Plan) list.get(0);
+			}
+			return null;
+		}
+		
+		//查询咽炎的手法和穴位
+		public Plan getYanyanPlanZzbh(String str) {
+			// TODO Auto-generated method stub
+			List l =new ArrayList();
+			l.add(str);
+			List list=this.executeQuery("select * from t_plan22 where zzbh='"+str+"'", null, Plan.class);
+			if(list.size()>0) {
+				return (Plan) list.get(0);
+			}
+			return null;
+		}
 
 	public  int updateRecord(Record record){
 		
@@ -226,6 +274,17 @@ public class PlanDaoImpl extends BaseDao implements PlanDao{
 				}
 				return null;
 		}
+		//查询积食中的手法和穴位
+			public Plan getOutuPlanZzbh(String str) {
+			// TODO Auto-generated method stub
+					List l =new ArrayList();
+					l.add(str);
+					List list=this.executeQuery("select * from t_plan19 where zzbh='"+str+"'", null, Plan.class);
+					if(list.size()>0) {
+						return (Plan) list.get(0);
+					}
+					return null;
+			}
 
 	public Plan getPlanByZzbh2(String str) {
 		// TODO Auto-generated method stub

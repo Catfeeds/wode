@@ -43,12 +43,42 @@ public class InputBianmi extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out=response.getWriter();
 		User user =(User)request.getSession().getAttribute("user");
+		// 获取系统时间
+		Date dt = new Date();// 如果不需要格式,可直接用dt,dt就是当前系统时间
+		DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// 设置显示格式
+		DateFormat ddf= new SimpleDateFormat("yyyy-MM-dd");
+		DateFormat ftm= new SimpleDateFormat("yyyy-MM-dd HH:mm");
+		String nowTime = "";
+		nowTime = df.format(dt);// 用DateFormat的format()方法在dt中获取并以yyyy/MM/dd
+								// HH:mm:ss格式显示
+		String ddfTime= ddf.format(dt);
+		System.out.println(nowTime);
+		String fTime= ftm.format(dt);
+		
+		
 		if(user==null){
 			out.println("<meta   http-equiv='Content-Type'   content='text/html;   charset=UTF-8'>");
 			out.println("<script>");
 			out.println("window.location.href=\"login.jsp\"");
 			out.println("</script>");
-		}else{
+		}else if(user.getUpower()==1||user.getUpower()==2||user.getUpower()==3){
+			//限制添加病例开始
+			String sannowTime = ddfTime+"%";
+			System.out.println("时间为："+sannowTime);
+			int uid=user.getUserid();
+			RecordDao recsan=new RecordDaoImpl();
+			int sange=recsan.getRecord(sannowTime,uid);
+			System.out.println("返回的孩子病例数"+sange);
+			
+			if(sange>=3){
+				out.println("<meta   http-equiv='Content-Type'   content='text/html;   charset=UTF-8'>");
+				out.println("<script>");
+				out.println("alert('尊敬的用户，小宝提醒您每天最多取穴3次！');");
+				out.println("window.location.href=\"xuanzejiemian.jsp\"");
+				out.println("</script>");
+				return;
+			}
+		}
 		if(user.getUpower()==3){
 			out.println("<meta   http-equiv='Content-Type'   content='text/html;   charset=UTF-8'>");
 			out.println("<script>");
@@ -69,16 +99,30 @@ public class InputBianmi extends HttpServlet {
 				System.out.println("qiwei--------"+qiwei);
 				request.getSession().setAttribute("qiwei", qiwei);
 			}
-		String yanse = request.getParameter("yanse");
-			if(yanse==null || yanse == ""){
-				yanse="01_正常";
-				System.out.println("yanse--------"+yanse);
-				request.getSession().setAttribute("yanse", yanse);
+			
+			String dabianyanse = request.getParameter("dabianyanse");
+
+			String strdabianyanse="01";
+
+			if(dabianyanse==null || dabianyanse == ""){
+				dabianyanse="01_黄色";
+				request.getSession().setAttribute("dabianyanse", dabianyanse);
+			}else if(dabianyanse=="黄色"||dabianyanse.equals("黄色")){
+				strdabianyanse="01";
+				System.out.println("huang1----------"+strdabianyanse);
+			}else if(dabianyanse=="黄褐色"||dabianyanse.equals("黄褐色")){
+				strdabianyanse="02";
+				System.out.println("huang2----------"+strdabianyanse);
+
+			}else if(dabianyanse=="绿色"||dabianyanse.equals("绿色")){
+				strdabianyanse="03";
+				System.out.println("huang3----------"+strdabianyanse);
+
 			}
 		
 		String[] strxingzhuang = xingzhuang.split("_");
 		String[] strqiwei = qiwei.split("_");
-		String[] stryanse = yanse.split("_");
+//		String[] strdabianyanse = yanse.split("_");
 //		String[] strmianse = mianse.split("_");
 //		String[] strchunse = chunse.split("_");
 //		String[] strxiayandai = xiayandai.split("_");
@@ -89,12 +133,12 @@ public class InputBianmi extends HttpServlet {
 		//体征单独穴位开始
 		String change_i="11";
 		Plan plan=new Plan();
-		String str = strxingzhuang[0] + strqiwei[0] + stryanse[0] ;
+		String str = strxingzhuang[0] + strqiwei[0] + strdabianyanse;
 		PlanDao planDao=new PlanDaoImpl(); 
 		plan=planDao.getBianmiPlanZzbh(str);
 		String zzxwt=plan.getShoufa();
 		String zzxw=zzxwt+" ";
-		String miansexw="+03100";
+		String miansexw="29500"+" ";
 		String xydxw="";
 //		System.out.println("便秘的数据库-----------------"+zzxw);
 //		String miansexw=null;
@@ -727,7 +771,7 @@ public class InputBianmi extends HttpServlet {
 //		request.getSession().setAttribute("shetixw", shetixw);
 //		request.getSession().setAttribute("shezhixw", shezhixw);
 //		request.getSession().setAttribute("shetaixw", shetaixw);
-		 String	 str2="从体质上看,孩子 大便性状："+strxingzhuang[1]+ "气味："+strqiwei[1]+ "  ；大便颜色："+stryanse[1] ;
+		 String	 str2="从体质上看,孩子 大便性状："+strxingzhuang[1]+ "气味："+strqiwei[1]+ "  ；大便颜色："+dabianyanse;
 		System.out.println("str------------------------"+str);
         
         //用于修改处方标识
@@ -798,7 +842,6 @@ public class InputBianmi extends HttpServlet {
 		}
 		
 		out.close();
-		}
 		}
 	}
 }

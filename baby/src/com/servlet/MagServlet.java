@@ -53,17 +53,18 @@ public class MagServlet  extends HttpServlet{
 		String ddfTime = "";
 		ddfTime = dft.format(dt);// 用DateFormat的format()方法在dt中获取并以yyyy/MM/dd
 								// HH:mm:ss格式显示
+		System.out.println("验证码已发送1-----");
 		String url="http://gw.api.taobao.com/router/rest";
 		String appkey="23590744";
 		String secret="a51d2f6e00a9e40f26ff17fae48c022e";
-		
 		String myphone = request.getParameter("myphone");
 		String uname=new String(request.getParameter("uname").getBytes("ISO-8859-1"),"UTF-8");
 		String qqweixin=new String(request.getParameter("qqweixin").getBytes("ISO-8859-1"),"UTF-8");
 		String address=new String(request.getParameter("address").getBytes("ISO-8859-1"),"UTF-8");
-		String upassword = request.getParameter("upassword");
+		String password = request.getParameter("password");
 		String qrpassword = request.getParameter("qrpassword");
 		String time = request.getParameter("time");
+		String pId = request.getParameter("pId");
 		String charValue = "";
 		UserDao usdao=new UserDaoImpl();
 		List<User> phlist=usdao.getUserPhone(myphone);
@@ -79,9 +80,10 @@ public class MagServlet  extends HttpServlet{
 			request.getSession().setAttribute("qqweixin", qqweixin);
 			request.getSession().setAttribute("address", address);
 //			request.getSession().setAttribute("charValue", charValue);
-			request.getSession().setAttribute("upassword", upassword);
+			request.getSession().setAttribute("password", password);
 			request.getSession().setAttribute("qrpassword", qrpassword);
 			request.getSession().setAttribute("time", ddfTime);
+			request.getSession().setAttribute("pId", pId);
 			
 			
 			out.println("<meta   http-equiv='Content-Type'   content='text/html;   charset=UTF-8'>");
@@ -108,10 +110,10 @@ public class MagServlet  extends HttpServlet{
 		AlibabaAliqinFcSmsNumSendRequest req = new AlibabaAliqinFcSmsNumSendRequest();
 		req.setExtend( "" );
 		req.setSmsType( "normal" );
-		req.setSmsFreeSignName( "辣妈小儿推拿" );
+		req.setSmsFreeSignName( "健康宝健康管理系统" );
 		req.setSmsParamString( cde );
 		req.setRecNum( myphone);
-		req.setSmsTemplateCode( "SMS_38435068" );
+		req.setSmsTemplateCode( "SMS_142947856" );
 		AlibabaAliqinFcSmsNumSendResponse rsp = null;
 		try {
 			rsp = client.execute(req);
@@ -123,9 +125,10 @@ public class MagServlet  extends HttpServlet{
 				request.getSession().setAttribute("qqweixin", qqweixin);
 				request.getSession().setAttribute("address", address);
 				request.getSession().setAttribute("charValue", charValue);
-				request.getSession().setAttribute("upassword", upassword);
+				request.getSession().setAttribute("password", password);
 				request.getSession().setAttribute("qrpassword", qrpassword);
 				request.getSession().setAttribute("time", ddfTime);
+				request.getSession().setAttribute("pId", pId);
 				
 				out.println("<meta   http-equiv='Content-Type'   content='text/html;   charset=UTF-8'>");
 				out.println("<script>");

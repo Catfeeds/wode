@@ -3,7 +3,7 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-<!DOCTYPE html>
+
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -37,73 +37,79 @@ function getMac(){
 	    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
 		<meta name="apple-mobile-web-app-capable" content="yes">
 		<meta name="apple-mobile-web-app-status-bar-style" content="black">
-	    <link rel="stylesheet" href="css-changsha/mui.css">
-	    <link rel="stylesheet" href="css-changsha/app.css">
-	    <link rel="stylesheet" href="css-changsha/main.css">
-	    <style>
-	    	
-			html{height: 100%;background: url(img/login_bg1.jpg);background-size:contain ;position: relative;}
-	    	body{background: transparent;}
-	    	.mui-content{background-color: transparent;}
-	    	.mui-input-row label~input{width: 75%;}
-	    	
-	    	p.my-copyright{text-align: center; color: #fff; margin-top: 120px;}
-	    	
-	    </style>
+	    <link rel="stylesheet" href="dep-td/css/ydui.css" />
+        <script src="dep-td/js/ydui.flexible.js"></script>
+        <link rel="stylesheet" type="text/css" href="css-td/health.css" />
+	    <style type="text/css">
+        .btn-list{
+             display: flex;
+    		width: 80%;
+    		margin-left: 10%;
+            
+        }
+        
+        .btn-list .login-btn{
+			width:2rem
+			}
+    </style>
+	    
 </head>
 
 <body>
 <form action="LoginServlet" id="login_form" method="post" target="_parent" class="loading">
-<div class="mui-content">
-		<div class="my-login">
-			<div class="my-login-bt"><img src="img/login_bt1.png" width="100%" /></div>
-					<div class="mui-input-row my-login-input">
-						<label class="my-login-name"><img src="img/icon_name.png" width="100%"/></label>
-						<input type="text" class="mui-input-clear" name="loginName" id="loginName" placeholder="请输入账号">
-					</div>
-					<div class="mui-input-row my-login-input">
-						<label class="my-login-name"><img src="img/icon_passwd1.png" width="100%"/></label>
-						<input type="text" type="password" name="userPassword" id="userPassword" class="mui-input-password" placeholder="请输入密码">
-					</div>
-					<div class="mui-button-row my-login-btn">
-						<button type="submit" class="mui-btn mui-btn-primary">登录</button>
-						<!-- <br><br><a href="addzhucefram.jsp" class="mui-btn mui-btn-primary">注册</a> -->
-					</div>
-		</div>
-	</div>
+	<div class="g-flexview">
+            <div class="g-scrollview bgc-img">
+                <div class="log">
+                    <img class="logo" src="img/logotd.png" />
+                    <img class="name" src="img/title.png" />
+                </div>
+
+                <div class="m-cell login-input">
+                    <div class="cell-item bgc-input">
+                        <div class="cell-left "><img src="img/user.png" /></div>
+                        <div class="cell-right"><input name="loginName" id="loginName" type="text" class="cell-input" placeholder="请输入您的账号" autocomplete="off" /></div>
+                    </div>
+                    <div class="cell-item bgc-input">
+                        <div class="cell-left"><img src="img/pass.png" /></div>
+                        <div class="cell-right"><input name="userPassword" id="userPassword" type="password" class="cell-input" placeholder="请输入您的密码" autocomplete="off" /></div>
+                    </div>
+                </div>
+				<div class="btn-list">
+				    <input name="pId" id="pId" type="hidden" value="${param.pid}" />
+	                <button id="submit" type="submit" class="btn-block btn-primary login-btn">登录</button>
+	                <a href="addzhuce.jsp?pid=${param.pid}" class="btn-block btn-primary login-btn">注册</a> 
+	            </div>
+                 <div class="btm-text">
+                    <p>本系统由六经扶阳派小儿推拿</p>
+                    <p>创始人吉亚宁老师发明并提供技术支持</p>
+                    <p>Copyright 2018 玖壹康宁健康咨询管理</p>
+                </div>
+            </div>
+            
+        </div>
 	<input type="hidden" id="txtMac" name="mac"/> 
 	   </form>
-	<script src="js-changsha/mui.min.js"></script>
-		<p class="my-copyright" style="font-size:12px;margin-top:30px;color:white;">
-		<!-- <p class="my-copyright"> -->
-			本系统由六经扶阳派<br/>小儿推拿创始人吉亚宁老师发明<br/>并提供技术支持<br/>
-			Copyright © 2015 玖壹康宁健康管理咨询<br/>
-		     </p>
-		     <script language="javascript" type="text/javascript" src="http://js.users.51.la/19060340.js"></script>
+	 <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="dep-td/js/ydui.js"></script>
+        <script type="text/javascript">
+            $('#submit').click(function() {
+                var acc = $('#account').val(),
+                    pass = $('#password').val();
+                if(acc == '') {
+                    YDUI.dialog.toast('请填写您的账号', 'none', 1000);
+                    return false;
+                }
+                if(pass == '') {
+                    YDUI.dialog.toast('请填写您的密码', 'none', 1000);
+                    return false;
+                }
+            })
+             $(document).ready(function() {
+                $('body').height($('body')[0].clientHeight);
+            });
+        </script>
+		
+	 <script language="javascript" type="text/javascript" src="http://js.users.51.la/19060340.js"></script>
 <noscript><a href="http://www.51.la/?19060340" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="http://img.users.51.la/19060340.asp" style="border:none" /></a></noscript>
 </body>
-
-<script type="text/javascript">
-$(function(){
-    $('.rem').click(function(){
-        $(this).toggleClass('selected');
-    })
-    $('#signup_select').click(function(){
-        $('.form_row ul').show();
-        event.cancelBubble = true;
-    })
-    $('#d').click(function(){
-        $('.form_row ul').toggle();
-        event.cancelBubble = true;
-    })
-    $('body').click(function(){
-        $('.form_row ul').hide();
-    })
-    $('.form_row li').click(function(){
-        var v  = $(this).text();
-        $('#signup_select').val(v);
-        $('.form_row ul').hide();
-    })
-})
-</script>
 </html>

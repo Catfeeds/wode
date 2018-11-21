@@ -31,13 +31,13 @@
 <head>
 	<meta charset="utf-8">
     <title>选择宝宝</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="stylesheet" href="css-changsha/mui.css">
-    <link rel="stylesheet" type="text/css" href="css-changsha/icons-extra.css" />
-    <link rel="stylesheet" href="css-changsha/main.css">
-	<script src="js-changsha/mui.min.js"></script>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <script src="dep-td/js/ydui.flexible.js"></script>
+    <link rel="stylesheet" type="text/css" href="css-td/health.css" />
+    <link rel="stylesheet" href="dep-td/css/ydui.css" />
     <script type="text/javascript">
     	
    		document.addEventListener('plusready', function(){
@@ -48,20 +48,35 @@
     </script>
 </head>
 <body>
+	<div class="g-flexview bgc-f">
+            <div class="g-scrollview bgc-flower">
+            	<div class="navigation">
+                    <a class="back" href="javascript:;" onclick="javascript:history.back(-1);"><img src="img/back.png" /></a>
+                    <div class="navigation-title">选择宝宝</div>
+                    <a class="search" href="inputinfor.jsp"><img src="img/add.png" /></a>
+                </div>
+                
+                <div class="line"></div>
+                <div class="choose-list">
+                    <c:forEach items="${patientList }" var="p">
+                    	
+	                    <a href="ForwardToAddSymptom?pid=${p.pid}&pname=${p.pname }&userid=${user.userid}&fid=${user.fid}&zhuyibh=${zhuyibh}&selplan=${selplan}&age=${p.page }'" class="choose-item">
+	                        <c:if test="${p.pxb == '男'}">
+	                        <img src="img/boy.png" />
+	                        </c:if>
+	                        
+	                         <c:if test="${p.pxb == '女'}">
+	                        <img src="img/girl.png" />
+	                        </c:if>
+	                        <p> ${p.pname }</p>
+	                    </a>
+	                 </c:forEach>
+                </div>
+
+            </div>
+        </div>
+        <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="dep-td/js/ydui.js"></script>
 	
-	<header id="header" class="mui-bar mui-bar-nav">
-		
-			<h1 class="mui-title">选择宝宝</h1>
-		<a class="mui-action-back mui-icon mui-icon-extra mui-icon-extra-arrowleftcricle mui-pull-left"></a>
-	
-	<button class="mui-btn mui-btn-blue mui-btn-link mui-pull-right" onclick="javascript:window.location.href='inputinfor.jsp'">添加</button>
-	</header>
-	<div class="mui-content">
-		<ul class="mui-table-view">
-			<c:forEach items="${patientList }" var="p">
-				<li onclick="javascript:window.location.href='ForwardToAddSymptom?pid=${p.pid}&pname=${p.pname }&userid=${user.userid}&fid=${user.fid}&zhuyibh=${zhuyibh}&selplan=${selplan}&age=${p.page }'" data-value="AKSJ" data-tags="AKeSiJin" class="mui-table-view-cell mui-indexed-list-item">${p.pname }</li>
-			</c:forEach>
-		</ul>
-	</div>
 	</body>
 </html>

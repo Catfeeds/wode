@@ -8,6 +8,7 @@ import com.bean.Zhuyi;
 public interface PlanDao {
 
 	public Plan getGanmaoPlanZzbh(String str);
+	public Plan getGanmaofashaoPlanZzbh(String str);
 	public Plan getPlanByZzbh02(String str);
 	public Plan geJishiPlanZzbh(String str);
 	public Plan getPlanByZzbh04(String str);
@@ -22,9 +23,12 @@ public interface PlanDao {
 	public Plan getQidongZhihuiPlanZzbh(String str);
 	public Plan getTigaoMianYiliPlanZzbh(String str);
 	public Plan getJishiPlanZzbh(String str);
+	public Plan getOutuPlanZzbh(String str);
 	
 	public Plan getGanmaoKesouPlanZzbh(String str);
-	
+	public Plan getBiyanPlanZzbh(String str);
+	public Plan getManxingkesouPlanZzbh(String str);
+	public Plan getYanyanPlanZzbh(String str);
 	
 	public int updateRecord(Record record);
 	

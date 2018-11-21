@@ -51,12 +51,42 @@ public class InputFuxie extends HttpServlet {
 		response.setContentType("text/html;charset=utf-8");
 		PrintWriter out=response.getWriter();
 		User user =(User)request.getSession().getAttribute("user");
+		// 获取系统时间
+		Date dt = new Date();// 如果不需要格式,可直接用dt,dt就是当前系统时间
+		DateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");// 设置显示格式
+		DateFormat ddf= new SimpleDateFormat("yyyy-MM-dd");
+		DateFormat ftm= new SimpleDateFormat("yyyy-MM-dd HH:mm");
+		String nowTime = "";
+		nowTime = df.format(dt);// 用DateFormat的format()方法在dt中获取并以yyyy/MM/dd
+								// HH:mm:ss格式显示
+		String ddfTime= ddf.format(dt);
+		System.out.println(nowTime);
+		String fTime= ftm.format(dt);
+		
+		
 		if(user==null){
 			out.println("<meta   http-equiv='Content-Type'   content='text/html;   charset=UTF-8'>");
 			out.println("<script>");
 			out.println("window.location.href=\"login.jsp\"");
 			out.println("</script>");
-		}else{
+		}else if(user.getUpower()==1||user.getUpower()==2||user.getUpower()==3){
+			//限制添加病例开始
+			String sannowTime = ddfTime+"%";
+			System.out.println("时间为："+sannowTime);
+			int uid=user.getUserid();
+			RecordDao recsan=new RecordDaoImpl();
+			int sange=recsan.getRecord(sannowTime,uid);
+			System.out.println("返回的孩子病例数"+sange);
+			
+			if(sange>=3){
+				out.println("<meta   http-equiv='Content-Type'   content='text/html;   charset=UTF-8'>");
+				out.println("<script>");
+				out.println("alert('尊敬的用户，小宝提醒您每天最多取穴3次！');");
+				out.println("window.location.href=\"xuanzejiemian.jsp\"");
+				out.println("</script>");
+				return;
+			}
+		}
 		if(user.getUpower()==3){
 			out.println("<meta   http-equiv='Content-Type'   content='text/html;   charset=UTF-8'>");
 			out.println("<script>");
@@ -78,25 +108,43 @@ public class InputFuxie extends HttpServlet {
 				request.getSession().setAttribute("qiwei", qiwei);
 			}
 			String dabianyanse = request.getParameter("dabianyanse");
+			System.out.println("dabianyanse----------"+dabianyanse);
+
+			String strdabianyanse="01";
+			System.out.println("huang0----------"+strdabianyanse);
+
 			if(dabianyanse==null || dabianyanse == ""){
 				dabianyanse="01_黄色";
 				System.out.println("qiwei--------"+dabianyanse);
 				request.getSession().setAttribute("dabianyanse", dabianyanse);
+			}else if(dabianyanse=="黄色"||dabianyanse.equals("黄色")){
+				strdabianyanse="01";
+				System.out.println("huang1----------"+strdabianyanse);
+			}else if(dabianyanse=="黄褐色"||dabianyanse.equals("黄褐色")){
+				strdabianyanse="02";
+				System.out.println("huang2----------"+strdabianyanse);
+
+			}else if(dabianyanse=="绿色"||dabianyanse.equals("绿色")){
+				strdabianyanse="03";
+				System.out.println("huang3----------"+strdabianyanse);
+
 			}
 		
 		String[] strxingzhuang = xingzhuang.split("_");
 		String[] strqiwei = qiwei.split("_");
-		String[] strdabianyanse = dabianyanse.split("_");
+//		String[] strdabianyanse = dabianyanse.split("_");
 
 		//体征单独穴位开始
+
 				String change_i="14";
 				Plan plan=new Plan();
-				String str = strxingzhuang[0] + strqiwei[0]+strdabianyanse[0];
+				String str = strxingzhuang[0] + strqiwei[0]+strdabianyanse;
+				System.out.println("STR----------"+str);
 				PlanDao planDao=new PlanDaoImpl(); 
 				plan=planDao.getFuxiePlanZzbh(str);
 				String zzxwt=plan.getShoufa();
 				String zzxw=zzxwt+" ";
-				String miansexw="+03100";
+				String miansexw="36500"+" ";
 				String xydxw="";
 //				String dzzxw=null;
 				
@@ -326,9 +374,8 @@ public class InputFuxie extends HttpServlet {
 		// 1、获得诊断编号
 //		String str =strxingzhuang[0] +strqiwei[0]+strmianse[0]+strchunse[0]+strxiayandai[0]+strshezhi[0]+strshetai[0]+strsheti[0];
 		// 1、获得诊断处方
-		
 		request.getSession().setAttribute("zzxw", zzxw);
-		 String	 str2= "从体质上看,孩子腹泻性状："+strxingzhuang[1]+" ； 气味："+strqiwei[1]+ "  ；大便颜色："+strdabianyanse[1];
+		 String	 str2= "从体质上看,孩子腹泻性状："+strxingzhuang[1]+" ； 气味："+strqiwei[1]+ "  ；大便颜色："+dabianyanse;
         
         //用于修改处方标识
     	request.getSession().setAttribute("change_i", change_i);
@@ -396,7 +443,6 @@ public class InputFuxie extends HttpServlet {
 		}
 		
 		out.close();
-		}
 		}
 	}
 

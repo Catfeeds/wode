@@ -16,19 +16,25 @@ String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
   <head>
     <base href="<%=basePath%>">
-    
-    <meta charset="utf-8">
-    <title>舌苔厚的选择</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="stylesheet" href="css-changsha/mui.css">
-    <link rel="stylesheet" type="text/css" href="css-changsha/icons-extra.css" />
-    <link rel="stylesheet" href="css-changsha/main.css">
+    <title>选择颜色</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <link rel="stylesheet" href="dep-td/css/ydui.css" />
+    <script src="dep-td/js/ydui.flexible.js"></script>
+    <link rel="stylesheet" type="text/css" href="css-td/health.css" />
+    <link rel="stylesheet" type="text/css" href="css-td/swiper.min.css" />
+	 <style type="text/css">
+        .swiper-wrapper {
+            margin-left: .4rem;
+            padding-bottom: .3rem;
+        }
+    </style>
     <script type="text/javascript">
     	
    		document.addEventListener('plusready', function(){
@@ -41,29 +47,71 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-  <form name="form2" action="SheTaiHouXuanze" method="post">
-    <header id="header" class="mui-bar mui-bar-nav">
+     <div class="g-flexview">
+            <div class="g-scrollview">
+                <div class="navigation">
+                    <a class="back" href="javascript:;" onclick="javascript:history.back(-1);"><img src="img/back.png" /></a>
+                    <div class="navigation-title">舌苔厚</div>
+                </div>
 
-	<a class="mui-action-back mui-icon mui-icon-extra mui-icon-extra-arrowleftcricle mui-pull-left"></a>
-<!--  <a class="mui-icon mui-pull-left" href="xuanzejiemian.jsp" style="margin-left:20px ">首页</a>-->
-		
-			<h1 class="mui-title">舌苔厚</h1>
-	<button class="mui-btn mui-btn-blue mui-btn-link mui-pull-right" type="submit">确定</button>
-	</header>
-	<div class="mui-content">
-		<div class="mui-input-group">
-			<div class="mui-input-row mui-radio">
-				<label>否</label>
-				<input type="hidden" name="xuanze" value="<%=request.getParameter("xuanze")%>"/>
-				<input name="shetaihou" type="radio" checked="checked" value="01_舌苔不厚">
-			</div>
-			<div class="mui-input-row mui-radio">
-				<label>是</label>
-				<input name="shetaihou" type="radio" value="02_舌苔厚">
-			</div>
-		</div>
-	</div>
-	</form>
-	<script src="js-changsha/mui.min.js"></script>
+                <div class="color-block">
+
+                    <div class="color-list">
+                        <div class="m-cell">
+                            <label class="cell-item">
+                                    <span class="cell-left">舌苔不厚</span>
+                                    <label class="cell-right">
+                                    	<input type="hidden" name="xuanze" value="<%=request.getParameter("xuanze")%>"/>
+                                        <input type="radio" name="shetaihou"  value="舌苔不厚" checked/>
+                                        <i class="cell-radio-icon"></i>
+                                    </label>
+                            </label>
+                            <div class="swiper-container color-img bgc-f">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide"><img src="img/stai-baobai1.jpg" /></div>
+                                    <div class="swiper-slide"><img src="img/stai-baobai2.jpg" /></div>
+                                </div>
+                            </div>
+                            <label class="cell-item">
+                                    <span class="cell-left">舌苔厚</span>
+                                    <label class="cell-right">
+                                        <input type="radio" name="shetaihou" value="舌苔厚"/>
+                                        <i class="cell-radio-icon"></i>
+                                    </label>
+                            </label>
+                            <div class="swiper-container color-img bgc-f">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide"><img src="img/stai-baihou1.jpg" /></div>
+                                    <div class="swiper-slide"><img src="img/stai-baihou3-td.jpg" /></div>
+                                    <div class="swiper-slide"><img src="img/stai-baihou4-td.jpg" /></div>
+                                    <div class="swiper-slide"><img src="img/stai-baihou2.jpg" /></div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <button id="submit" type="submit" class="btn-block btn-primary login-btn">确定</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="dep-td/js/ydui.js"></script>
+        <script src="js-td/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+        <script>
+        $('#submit').click(function(){
+                var val = $("input[type='radio']:checked").val();
+                sessionStorage.setItem('shitjishi', val);
+                window.history.back();
+            })
+            var swiper = new Swiper('.swiper-container', {
+                slidesPerView: 2,
+                spaceBetween: 0,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+            });
+        </script>
   </body>
 </html>

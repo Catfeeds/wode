@@ -47,7 +47,7 @@ public class AddAgentServlet extends HttpServlet{
 		String money=request.getParameter("moneys");
 //		String money="30";
 //		String sjid = request.getParameter("sjid");
-		String address = "湖南";
+		String address = request.getParameter("address");
 		String jieshutime = request.getParameter("jieshutime");
 		String zhujiao = request.getParameter("zhujiao");
 		String[] strzhujiao=zhujiao.split("_");
@@ -60,7 +60,7 @@ public class AddAgentServlet extends HttpServlet{
 		String courseend=starttime;
 		
 		System.out.println("upower------------"+upower);
-		int zhujiaoid=26;
+		int zhujiaoid=1;
 		String zhujiaoname=strzhujiao[1];
 		if(strzhujiao[0]!=null){
 			zhujiaoid=Integer.parseInt(strzhujiao[0]);
@@ -88,7 +88,7 @@ public class AddAgentServlet extends HttpServlet{
 		int fid=1;
 		String haslogin="1";
 		String clientip="";
-		String diaming="玖壹康宁";
+		String diaming="健康宝";
 		String name=uname;
 		int xjclick=0;
 		int sumuclick=0;

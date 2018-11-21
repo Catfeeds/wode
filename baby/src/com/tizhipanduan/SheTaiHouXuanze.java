@@ -30,7 +30,17 @@ public class SheTaiHouXuanze extends HttpServlet{
 		
 		String xuanze=request.getParameter("xuanze");
 		String shetaihou=request.getParameter("shetaihou");
-		
+		String[] jishi=request.getParameterValues("jishi");
+		if(jishi!=null&&jishi.length>0) {
+	        for(int i= 0 ;i<jishi.length;i++)
+	        {
+	        	if(jishi[i]=="食欲差"||jishi[i].equals("食欲差")){
+	        	System.out.println("积食11111111----------"+jishi[i]);
+	        	String shiyucha="02";
+	        	String	str2shiyucha="食欲差";
+	        		}
+	        }
+		}
 		if(shetaihou==null || shetaihou == ""){
 			shetaihou="01_舌苔不厚";
 		}

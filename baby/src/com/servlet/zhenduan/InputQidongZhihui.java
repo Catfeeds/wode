@@ -73,7 +73,7 @@ public class InputQidongZhihui extends HttpServlet{
 			plan=planDao.getQidongZhihuiPlanZzbh(str);
 			String zzxwt=plan.getShoufa();
 			String zzxw=zzxwt+" ";
-			String miansexw="+03100";
+			String miansexw="+17100"+" ";
 			String xydxw="";
 //			//体征单独穴位开始
 //			Plan plan=new Plan();

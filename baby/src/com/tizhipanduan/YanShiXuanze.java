@@ -44,7 +44,12 @@ public class YanShiXuanze extends HttpServlet{
 				out.println("window.location.href=\"xuanzejiemian.jsp\"");
 				out.println("</script>");
 		  }else{
-				if(xuanze.equals("1")){
+			  	if(xuanze.equals("0")){
+					request.getSession().setAttribute("yanshi", yanshi);
+					request.getSession().setAttribute("str2yanshi", str2yanshi);
+					response.sendRedirect("/addzhenduanshanghuxidao.jsp");
+					return;
+				}else if(xuanze.equals("1")){
 					request.getSession().setAttribute("yanshi", yanshi);
 					request.getSession().setAttribute("str2yanshi", str2yanshi);
 					response.sendRedirect("/addzhenduanganmaofashao.jsp");

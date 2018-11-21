@@ -60,15 +60,15 @@ public class AddZhuceServlet extends HttpServlet {
 		String uname = request.getParameter("uname");
 		String phone = request.getParameter("phone");
 		// String upower = request.getParameter("upower");
-		String qqweixin = request.getParameter("qqweixin");
+		String qqweixin = request.getParameter("phone");
 		// String money=request.getParameter("moneys");
 		String sjid = request.getParameter("sjid");
-		String address = "湖南";
+		String address =  request.getParameter("paddress");
 		// String jieshutime = request.getParameter("jieshutime");
 		// System.out.println("upower------------"+upower);
-		int sjuid = 26;
-		int upowers = 1;
-		String zhujiaoname = "文霞";
+		int sjuid = 1;
+		int upowers = 2;
+		String zhujiaoname = "总部";
 		int course = 0;
 		String coursestart = starttime;
 		String courseend = starttime;
@@ -77,11 +77,11 @@ public class AddZhuceServlet extends HttpServlet {
 		// sjuid=Integer.parseInt(sjid);
 		// }
 
-		String upassword = request.getParameter("upassword");
+		String upassword = request.getParameter("password");
 		int fid = 1;
 		String haslogin = "1";
-		String clientip1 = "";
-		String diaming = "玖壹康宁";
+		String clientip1 = " ";
+		String diaming = "健康宝";
 		String name = uname;
 		int xjclick = 0;
 		int sumuclick = 0;

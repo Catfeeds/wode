@@ -177,6 +177,7 @@ table.gridtable td {
           	<input type='text' id="phone"  name="phone" value='' style='width:150px;height:60px;font-size:28px' />
         </td>
          <td style="background:url();" align='center'><span style="font-size:40px">&nbsp;权限：</span></td>
+         <a href="addzhuce.jsp" class="btn-block btn-primary login-btn">注册</a>
           <td>
           	<select name="upower" style='width:150px;height:60px;font-size:20px'>
           			<option value="" >全部</option>

@@ -19,14 +19,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE html>
 <html>
   <meta charset="utf-8">
-    <title>健康养护</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="stylesheet" href="css-changsha/mui.css">
-    <link rel="stylesheet" type="text/css" href="css-changsha/icons-extra.css" />
-    <link rel="stylesheet" type="text/css" href="css-changsha/iconfont.css" />
-    <link rel="stylesheet" href="css-changsha/main.css">
+    <title>睡眠调理</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <link rel="stylesheet" href="dep-td/css/ydui.css" />
+    <script src="dep-td/js/ydui.flexible.js"></script>
+    <link rel="stylesheet" type="text/css" href="css-td/health.css" />
     <script type="text/javascript">
     	
    		document.addEventListener('plusready', function(){
@@ -37,83 +37,100 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </script>
 </head>
 <body>
-	<header id="header" class="mui-bar mui-bar-nav">
-	<a class="mui-action-back mui-icon mui-icon-extra mui-icon-extra-arrowleftcricle mui-pull-left"></a>
-			<h1 class="mui-title ">睡眠调理</h1>
-	</header>
-	<nav class="mui-bar mui-bar-tab">
-	    <a class="mui-tab-item-link" href="xuanzejiemian.jsp">
-	      <span class="mui-icon my-nav-icon-1"></span>
-	      <span class="mui-tab-label">辩证取穴</span>
-	    </a>
-	    <a class="mui-tab-item-link mui-active" href="jiankangyanghu.jsp">
-	      <span class="mui-icon my-nav-icon-2"></span>
-	      <span class="mui-tab-label">健康养护</span>
-	    </a>
-	    <a class="mui-tab-item-link" href="yuerketang.jsp">
-	      <span class="mui-icon my-nav-icon-3"></span>
-	      <span class="mui-tab-label">育儿课堂</span>
-	    </a>
-	    <a class="mui-tab-item-link" href="personal-center.jsp">
-	      <span class="mui-icon my-nav-icon-4"></span>
-	      <span class="mui-tab-label">我的</span>
-	    </a>
- 	 </nav>
-	<div class="mui-content">
-		<ul class="mui-table-view">
-				<li class="mui-table-view-cell mui-media">
-					<a href="TiaoLiServlet?tiaolibh=13">
-						<img class="mui-media-object mui-pull-left" src="img/pic_1.jpg">
-						<div class="mui-media-body">
-							小儿正常睡眠需求
-							<p class='mui-ellipsis'>儿童身高除了与遗传、营养、体育锻炼等因素有关外</p>
-							<p><span class="my-date-icon"><em class="my-iconfont my-icon-shijian"></em>2016/11/07</span></p>
-						</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a href="TiaoLiServlet?tiaolibh=14">
-						<img class="mui-media-object mui-pull-left" src="img/pic_1.jpg">
-						<div class="mui-media-body">
-							婴儿睡眠不好的原因一
-							<p class='mui-ellipsis'>当宝宝在晚上有大小便时，排泄物会让宝宝感觉屁屁不舒服</p>
-							<p><span class="my-date-icon"><em class="my-iconfont my-icon-shijian"></em>2016/11/07</span></p>
-						</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a href="TiaoLiServlet?tiaolibh=15">
-						<img class="mui-media-object mui-pull-left" src="img/pic_1.jpg">
-						<div class="mui-media-body">
-							婴儿睡眠不好的原因二
-							<p class='mui-ellipsis'>宝宝在出生3个月之前一直都是在睡觉，这时爸妈绝对不能可以改变睡眠时间</p>
-							<p><span class="my-date-icon"><em class="my-iconfont my-icon-shijian"></em>2016/11/07</span></p>
-						</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a href="TiaoLiServlet?tiaolibh=16">
-						<img class="mui-media-object mui-pull-left" src="img/pic_1.jpg">
-						<div class="mui-media-body">
-							婴儿睡眠不好的原因三
-							<p class='mui-ellipsis'>出生4个月的宝宝会有分离不安的情绪，所以在晚上经常会要妈妈陪伴在旁</p>
-							<p><span class="my-date-icon"><em class="my-iconfont my-icon-shijian"></em>2016/11/07</span></p>
-						</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a href="TiaoLiServlet?tiaolibh=17">
-						<img class="mui-media-object mui-pull-left" src="img/pic_1.jpg">
-						<div class="mui-media-body">
-							婴儿睡眠不好的原因四
-							<p class='mui-ellipsis'>爸妈不可以因为宝宝哭闹或者正在游戏玩耍，而随便延迟睡眠时间</p>
-							<p><span class="my-date-icon"><em class="my-iconfont my-icon-shijian"></em>2016/11/07</span></p>
-						</div>
-					</a>
-				</li>
+	<div class="g-flexview bgc-f4">
+            <div class="g-scrollview">
+                <div class="navigation">
+                    <a class="back" href="javascript:;" onclick="javascript:history.back(-1);"><img src="img/back.png" /></a>
+                    <div class="navigation-title">睡眠调理</div>
+                </div>
 
-			</ul>
-	</div>
-	<script src="js-changsha/mui.min.js"></script>
+                <div class="m-cell">
+                    <a href="TiaoLiServlet?tiaolibh=13" class="cell-item article bgc-f">
+                        <div class="cell-left"><img src="img/jkyh/sm-1.jpg"/></div>
+                        <div class="cell-right">
+                            <div class="text">
+                            	<p class="title">小儿正常睡眠需求</p>
+                            	<p class="con">儿童身高除了与遗传、营养、体育锻炼等因素有关外</p>
+                            	<div class="time"><img src="img/time.png"/>2018/07/07</div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="jkyh_text/Shuimianpage1.jsp" class="cell-item article bgc-f">
+                        <div class="cell-left"><img src="img/jkyh/sm-4.jpg"/></div>
+                        <div class="cell-right">
+                            <div class="text">
+                                <p class="title">宝宝打呼噜，说明睡得香？情况可能比你想的严重……</p>
+                                <p class="con">无论是深夜入眠还是午间小憩，看着孩子沉睡在梦乡里总是一件幸福的事。</p>
+                                <div class="time"><img src="img/time.png"/>2018/07/07</div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="TiaoLiServlet?tiaolibh=14" class="cell-item article bgc-f">
+                        <div class="cell-left"><img src="img/jkyh/sm-2.jpg"/></div>
+                        <div class="cell-right">
+                            <div class="text">
+                                <p class="title">婴儿睡眠不好的原因一</p>
+                                <p class="con">当宝宝在晚上有大小便时，排泄物会让宝宝感觉屁屁不舒服</p>
+                                <div class="time"><img src="img/time.png"/>2018/07/07</div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                    <a href="TiaoLiServlet?tiaolibh=15" class="cell-item article bgc-f">
+                        <div class="cell-left"><img src="img/jkyh/sm-3.jpg"/></div>
+                        <div class="cell-right">
+                            <div class="text">
+                                <p class="title">婴儿睡眠不好的原因二</p>
+                                <p class="con">宝宝在出生3个月之前一直都是在睡觉，这时爸妈绝对不能可以改变睡眠时间</p>
+                                <div class="time"><img src="img/time.png"/>2018/07/07</div>
+                            </div>
+                        </div>
+                    </a>
+                    
+                </div>
+                
+               <footer class="m-tabbar">
+                    <a href="xuanzejiemian.jsp" class="tabbar-item" id="tuina">
+                        <span class="tabbar-icon">
+                            <img src="img/bar1.png"/>
+                        </span>
+                        <span class="tabbar-txt">推拿取穴</span>
+                    </a>
+                    <div class="tabbar-item" id="silk">
+                        <span class="bgc-jn" id="bgc-jn"></span>
+                        <span class="tabbar-txt c-e9">育儿锦囊</span>
+                        <img class="bts-img" src="img/bts.png"/>
+                        <ul class="silk">
+                        	<li><a href="Tiaolifayu.jsp">宝宝成长</a></li>
+                        	<li><a href="Shiliaoxiaofang.jsp">食疗小方</a></li>
+                        	<li><a href="Tiaoliyinshi.jsp">饮食调理</a></li>
+                        	<li><a href="Tiaolishuimian.jsp">睡眠调理</a></li>
+                        	<li><a href="Tiaolichuandai.jsp">穿戴养护</a></li>
+                        </ul>
+                    </div>
+                    <div class="tabbar-item" id="classroom">
+                        <span class="bgc-cr" id="bgc-cr"></span>
+                        <span class="tabbar-txt">育儿课堂</span>
+                        <img class="bts-img" src="img/bts.png"/>
+                        <ul class="silk">
+                            <li><a href="Shipintuina.jsp">穴位查找</a></li>
+                            <li><a href="Jilaoshiwenda.jsp">吉老师问答</a></li>
+                            <li><a href="Tuinaxuzhi.jsp">推拿须知</a></li>
+                        </ul>
+                    </div>
+                    <a href="personal-center.jsp" class="tabbar-item" id="me">
+                        <span class="tabbar-icon">
+                            <img src="img/bar4.png"/>
+                        </span>
+                        <span class="tabbar-txt">我的</span>
+                    </a>
+                </footer>
+            </div>
+        </div>
+        <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="dep-td/js/ydui.js"></script>
+        <script src="js-td/health.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>

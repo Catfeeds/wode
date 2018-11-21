@@ -17,14 +17,13 @@
 <head>
  <meta charset="utf-8">
     <title>修改密码</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="stylesheet" href="css-changsha/mui.css">
-    <link href="css-changsha/mui.picker.css" rel="stylesheet" />
-	<link href="css-changsha/mui.poppicker.css" rel="stylesheet" />
-	<link rel="stylesheet" type="text/css" href="css-changsha/icons-extra.css" />
-    <link rel="stylesheet" href="css-changsha/main.css">
+        <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+        <meta content="yes" name="apple-mobile-web-app-capable" />
+        <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+        <meta content="telephone=no" name="format-detection" />
+        <link rel="stylesheet" href="dep-td/css/ydui.css" />
+        <script src="dep-td/js/ydui.flexible.js"></script>
+        <link rel="stylesheet" type="text/css" href="css-td/health.css" />
     <script type="text/javascript">
     	
    		document.addEventListener('plusready', function(){
@@ -35,46 +34,74 @@
     </script>
 </head>
 <body>
-	<header id="header" class="mui-bar mui-bar-nav">
-
-	<a class="mui-action-back mui-icon-extra mui-icon-extra-arrowleftcricle mui-icon  mui-pull-left"></a>
-		
-			<h1 class="mui-title">修改密码</h1>
-	</header>
-	<nav class="mui-bar mui-bar-tab">
-	    <a class="mui-tab-item-link mui-active" href="xuanzejiemian.jsp">
-	      <span class="mui-icon my-nav-icon-1"></span>
-	      <span class="mui-tab-label">辩证取穴</span>
-	    </a>
-	    <a class="mui-tab-item-link" href="jiankangyanghu.jsp">
-	      <span class="mui-icon my-nav-icon-2"></span>
-	      <span class="mui-tab-label">健康养护</span>
-	    </a>
-	    <a class="mui-tab-item-link" href="yuerketang.jsp">
-	      <span class="mui-icon my-nav-icon-3"></span>
-	      <span class="mui-tab-label">育儿课堂</span>
-	    </a>
-	    <a class="mui-tab-item-link" href="personal-center.jsp">
-	      <span class="mui-icon my-nav-icon-4"></span>
-	      <span class="mui-tab-label">我的</span>
-	    </a>
- 	 </nav>
-	<div class="mui-content">
-		<form class="mui-input-group" name="form2" action="ChangePassServlet" method="post">
-			<div class="mui-input-row">
-				<label>原密码：</label>
-				<input type="text" name="password">
-			</div>
-			<div class="mui-input-row">
-				<label>新密码：</label>
-				<input type="text" name="newpassword">
-			</div>
-		
-		<div class="mui-content-padded">
-	        <button type="submit" class="mui-btn my-btn mui-btn-block">提交</button>
-	    </div>
-	    </form>
-	</div>
-	<script src="js-changsha/mui.min.js"></script>
+	<div class="g-flexview bgc-f ">
+			<form class="mui-input-group" name="form2" action="ChangePassServlet" method="post">
+            <div class="g-scrollview bgc-flower">
+                <div class="navigation">
+                    <a class="back" href="javascript:;" onclick="javascript:history.back(-1);"><img src="img/back.png" /></a>
+                    <div class="navigation-title">修改密码</div>
+                </div>
+                
+                <div class="m-cell change-pw">
+                    <div class="cell-item">
+                        <div class="cell-left">原密码：</div>
+                        <div class="cell-right"><input id="original" type="text" name="password" class="cell-input" autocomplete="off" /></div>
+                    </div>
+                    <div class="cell-item">
+                        <div class="cell-left">新密码：</div>
+                        <div class="cell-right"><input id="newpassword" name="newpassword" type="text" class="cell-input" autocomplete="off" /></div>
+                    </div>
+                </div>
+                
+                <button id="submit" type="submit" class="btn-block btn-primary login-btn">提 交</button>
+            </div>
+            </form>
+        </div>
+        <footer class="m-tabbar">
+                    <a href="xuanzejiemian.jsp" class="tabbar-item" id="tuina">
+                        <span class="tabbar-icon">
+                            <img src="img/bar1.png"/>
+                        </span>
+                        <span class="tabbar-txt">推拿取穴</span>
+                    </a>
+                    <div class="tabbar-item" id="silk">
+                        <span class="bgc-jn" id="bgc-jn"></span>
+                        <span class="tabbar-txt">育儿锦囊</span>
+                        <img class="bts-img" src="img/bts.png"/>
+                        <ul class="silk">
+                        	<li><a href="Tiaolifayu.jsp">宝宝成长</a></li>
+                        	<li><a href="Shiliaoxiaofang.jsp">食疗小方</a></li>
+                        	<li><a href="Tiaoliyinshi.jsp">饮食调理</a></li>
+                        	<li><a href="Tiaolishuimian.jsp">睡眠调理</a></li>
+                        	<li><a href="Tiaolichuandai.jsp">穿戴养护</a></li>
+                        </ul>
+                    </div>
+                    <div class="tabbar-item" id="classroom">
+                        <span class="bgc-cr" id="bgc-cr"></span>
+                        <span class="tabbar-txt">育儿课堂</span>
+                        <img class="bts-img" src="img/bts.png"/>
+                        <ul class="silk">
+                            <li><a href="Shipintuina.jsp">学推拿</a></li>
+                            <li><a href="Jilaoshiwenda.jsp">吉老师问答</a></li>
+                            <li><a href="Tuinaxuzhi.jsp">推拿须知</a></li>
+                        </ul>
+                    </div>
+                    <a href="personal-center.jsp" class="tabbar-item" id="me">
+                        <span class="tabbar-icon">
+                            <img src="img/bar4.png"/>
+                        </span>
+                        <span class="tabbar-txt c-e9">我的</span>
+                    </a>
+                </footer>
+        <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="dep-td/js/ydui.js"></script>
+        <script src="js-td/health.js" type="text/javascript" charset="utf-8"></script>
+        <script type="text/javascript">
+        	$('#submit').click(function(){
+        	    var original = $('#original').val(),
+        	        newpassword = $('#newpassword').val();
+        	        
+        	})
+        </script>
 </body>
 </html>

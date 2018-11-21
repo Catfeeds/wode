@@ -21,60 +21,104 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
 		<title>反馈意见</title>
-		<link rel="stylesheet" href="css-changsha/mui.css">
-    	<link rel="stylesheet" type="text/css" href="css-changsha/icons-extra.css" />
-    	<link rel="stylesheet" type="text/css" href="css-changsha/feedback.css" />
-    	<link rel="stylesheet" href="css-changsha/main.css">	
+        <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+        <meta content="yes" name="apple-mobile-web-app-capable" />
+        <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+        <meta content="telephone=no" name="format-detection" />
+        <link rel="stylesheet" href="dep-td/css/ydui.css" />
+        <script src="dep-td/js/ydui.flexible.js"></script>
+        <link rel="stylesheet" type="text/css" href="css-td/health.css" />
     	
     	
 	</head>
 
 	<body>
 		<form action="FanKuiYiJianServlet" method="post">
-		<header class="mui-bar mui-bar-nav">
-			<a class="mui-action-back mui-icon-extra mui-icon-extra-arrowleftcricle mui-icon  mui-pull-left"></a>
-			<button type="submit" class="mui-btn mui-btn-blue mui-btn-link mui-pull-right">发送</button>
-			<h1 class="mui-title">反馈意见</h1>
-		</header>
-		<nav class="mui-bar mui-bar-tab">
-		    <a class="mui-tab-item-link" href="xuanzejiemian.jsp">
-		      <span class="mui-icon my-nav-icon-1"></span>
-		      <span class="mui-tab-label">辩证取穴</span>
-		    </a>
-		    <a class="mui-tab-item-link" href="jiankangyanghu.jsp">
-		      <span class="mui-icon my-nav-icon-2"></span>
-		      <span class="mui-tab-label">健康养护</span>
-		    </a>
-		    <a class="mui-tab-item-link" href="yuerketang.jsp">
-		      <span class="mui-icon my-nav-icon-3"></span>
-		      <span class="mui-tab-label">育儿课堂</span>
-		    </a>
-		    <a class="mui-tab-item-link mui-active" href="personal-center.jsp">
-		      <span class="mui-icon my-nav-icon-4"></span>
-		      <span class="mui-tab-label">我的</span>
-		    </a>
- 		 </nav>
-		<div class="mui-content">
-			<div class="mui-content-padded">
-				<div class="mui-inline">问题和意见</div>
-			</div>
-			<div class="row mui-input-row">
-				<input type="hidden" name="userid" value="${user.userid }">
-				<input type="hidden" name="uname" value="${user.uname }">
-				<textarea id='question' id="fankuiyijian" name="fankuiyijian" class="mui-input-clear question" placeholder="请详细描述你的问题和意见...">${fankuiyijian}</textarea>
-			</div>
-			<p>QQ/邮箱</p>
-			<div class="mui-input-row">
-				<input id='contact' type="text" id="email" name="email" class="mui-input-clear contact" placeholder="(选填,方便我们联系你 )" />
-			</div>
-		</div>
-		</form>
-		<script src="js-changsha/mui.min.js"></script>
-		<script src=" js-changsha/feedback.js" type="text/javascript" charset="utf-8"></script>
-		<script type="text/javascript">
-			mui.init();
-			mui('.mui-scroll-wrapper').scroll();
-		</script>
+		<div class="g-flexview bgc-f">
+            <div class="g-scrollview bgc-flower">
+                <div class="navigation">
+                    <a class="back" href="javascript:;" onclick="javascript:history.back(-1);"><img src="img/back.png" /></a>
+                    <div class="navigation-title">反馈意见</div>
+                </div>
+                <div class="bgc-f opinion">
+                    <div class="m-celltitle">问题和意见</div>
+                    <div class="m-cell">
+                        <div class="cell-item">
+                            <div class="cell-right">
+                            	<input type="hidden" name="userid" value="${user.userid }">
+								<input type="hidden" name="uname" value="${user.uname }">
+                                <textarea class="cell-textarea" name="fankuiyijian"  placeholder="请详细描述您的问题和意见...">${fankuiyijian}</textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bgc-f opinion">
+                    <div class="m-celltitle">QQ/邮箱</div>
+                    <div class="m-cell">
+                        <div class="cell-item">
+                            <div class="cell-right">
+                                <textarea class="cell-textarea" name="email" placeholder="方便我们联系你..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <button id="submit" type="submit" class="btn-block btn-primary login-btn">发送</button>
+                 <br>
+                <div class="bgc-f opinion">
+                    
+                    	<div class="m-celltitle" style>
+                    	<center>也可关注公众号"吉言吉语"给我们留言。</center>
+                   	</div>
+                   	 <center><img src="img/gzh.jpg">
+                   	</center>
+                </div>
+                
+               
+                
+            </div>
+        </div>
+        </form>
+         <footer class="m-tabbar">
+                    <a href="xuanzejiemian.jsp" class="tabbar-item" id="tuina">
+                        <span class="tabbar-icon">
+                            <img src="img/bar1.png"/>
+                        </span>
+                        <span class="tabbar-txt">推拿取穴</span>
+                    </a>
+                    <div class="tabbar-item" id="silk">
+                        <span class="bgc-jn" id="bgc-jn"></span>
+                        <span class="tabbar-txt">育儿锦囊</span>
+                        <img class="bts-img" src="img/bts.png"/>
+                        <ul class="silk">
+                        	<li><a href="Tiaolifayu.jsp">宝宝成长</a></li>
+                        	<li><a href="Shiliaoxiaofang.jsp">食疗小方</a></li>
+                        	<li><a href="Tiaoliyinshi.jsp">饮食调理</a></li>
+                        	<li><a href="Tiaolishuimian.jsp">睡眠调理</a></li>
+                        	<li><a href="Tiaolichuandai.jsp">穿戴养护</a></li>
+                        </ul>
+                    </div>
+                    <div class="tabbar-item" id="classroom">
+                        <span class="bgc-cr" id="bgc-cr"></span>
+                        <span class="tabbar-txt">育儿课堂</span>
+                        <img class="bts-img" src="img/bts.png"/>
+                        <ul class="silk">
+                            <li><a href="Shipintuina.jsp">穴位查找</a></li>
+                            <li><a href="Jilaoshiwenda.jsp">吉老师问答</a></li>
+                            <li><a href="Tuinaxuzhi.jsp">推拿须知</a></li>
+
+                        </ul>
+                    </div>
+                    <a href="personal-center.jsp" class="tabbar-item" id="me">
+                        <span class="tabbar-icon">
+                            <img src="img/bar4.png"/>
+                        </span>
+                        <span class="tabbar-txt c-e9">我的</span>
+                    </a>
+                </footer>
+        <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="dep-td/js/ydui.js"></script>
+         <script src="js-td/health.js" type="text/javascript" charset="utf-8"></script>
 	</body>
 
 </html>

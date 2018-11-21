@@ -17,14 +17,13 @@
 <head>
 <meta charset="utf-8">
     <title>信息录入</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="stylesheet" href="css-changsha/mui.css">
-    <link href="css-changsha/mui.picker.css" rel="stylesheet" />
-	<link href="css-changsha/mui.poppicker.css" rel="stylesheet" />
-	<link rel="stylesheet" type="text/css" href="css-changsha/icons-extra.css" />
-    <link rel="stylesheet" href="css-changsha/main.css">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <link rel="stylesheet" href="dep-td/css/ydui.css" />
+    <script src="dep-td/js/ydui.flexible.js"></script>
+    <link rel="stylesheet" type="text/css" href="css-td/health.css" />
     <script type="text/javascript">
     	
    		document.addEventListener('plusready', function(){
@@ -33,141 +32,148 @@
    		});
    		
     </script>
-    <script type="text/javascript">
-    	function adaptValue () {
-    	
-    		if(document.getElementById("account").value == "") {
-			alert("请输入家长姓名");
-			document.getElementById("account").focus();
-			return false;
-		}
-    		
-    		if(document.getElementById("time").value == "") {
-			alert("请输入年龄");
-			document.getElementById("time").focus();
-			return false;
-		}
-    		
-    		if(document.getElementById("iphone").value == "") {
-			alert("请输入联系方式");
-			document.getElementById("iphone").focus();
-			return false;
-		}
-		else{
-		     var num = document.getElementById("iphone").value;
-             var phone1 = /^1[3,5]\d{9}$/;
-             var phone2= /^1[0-9]{10}$/;
-             //var phone3=/(^(\d{3,4}-)?\d{7,8})$|(13[0-9]{9}$/
-                        
-               if(phone1.test(num)||phone2.test(num)){
-             }
-              else{alert("联系方式输入不正确");
-                 return false;}
-		}
-		
-			if(document.getElementById("name").value == "") {
-				alert("请输入家长姓名");
-				document.getElementById("name").focus();
-				return false;
-			}
-			
-    		if(document.getElementById("address").value == "") {
-			alert("请输入地址");
-			document.getElementById("address").focus();
-			return false;
-		}
-		
-		if(document.getElementById("qqhao").value == "") {
-			alert("请输入QQ号");
-			document.getElementById("qqhao").focus();
-			return false;
-		}
-		
-		if(document.getElementById("weixinhao").value == "") {
-			alert("请输入微信号");
-			document.getElementById("weixinhao").focus();
-			return false;
-		}
-    			//校验数据
-    			//数据合法返回true，否则返回false，并提示用户
-    			return true;
-    		}
-    		
-    
-    </script>
 </head>
 <body>
-	<header id="header" class="mui-bar mui-bar-nav">
+	<div class="g-flexview me-bgc">
+          <div class="g-scrollview">
+              <div class="navigation">
+                  <a class="back" href="javascript:;" onclick="javascript:history.back(-1);"><img src="img/back.png" /></a>
+               <div class="navigation-title">信息录入</div>
+           </div>
+	<form method="post" action="SavePatientServlet" onSubmit="return adaptValue();">
+           <div class="m-cell infor">
+               <div class="cell-item">
+                   <div class="cell-left">家长姓名</div>
+                   <div class="cell-right">
+                   		<input type="hidden" name="str" value="${str }"/>
+						<input type="hidden" name="str2" value="${str2}">
+						<input type="hidden" name="zhuyibh" value="${zhuyibh}">
+						<input type="hidden" name="change_i" value="${change_i}">
+						<input type="hidden" name="chufang" value="${chufang}">
+						<input type="hidden" name="shoufa" value="${shoufa}">
+						
+						
+                       <input type="text" class="cell-input" name="ppname" id="patriarch"  placeholder="请输入家长姓名" autocomplete="off" />
+                       <img src="img/enter.png" />
+                   </div>
+               </div>
+               <div class="cell-item">
+                   <div class="cell-left">联系电话</div>
+                   <div class="cell-right">
+                       <input type="number" class="cell-input" name="pphone" id="phone"  placeholder="请输入 联系电话" autocomplete="off" />
+                       <img src="img/enter.png" />
+                   </div>
+               </div>
+               <div class="cell-item">
+                   <div class="cell-left">宝宝姓名</div>
+                   <div class="cell-right">
+                       <input type="text" class="cell-input" name="pname" id="baby" placeholder="请输入宝宝姓名" autocomplete="off" />
+                       <img src="img/enter.png" />
+                   </div>
+               </div>
 
-	<a class="mui-action-back mui-icon-extra mui-icon-extra-arrowleftcricle mui-icon  mui-pull-left"></a>
-		
-			<h1 class="mui-title">信息录入</h1>
-	</header>
-	<nav class="mui-bar mui-bar-tab">
-	    <a class="mui-tab-item-link mui-active" href="xuanzejiemian.jsp">
-	      <span class="mui-icon my-nav-icon-1"></span>
-	      <span class="mui-tab-label">辩证取穴</span>
-	    </a>
-	    <a class="mui-tab-item-link" href="jiankangyanghu.jsp">
-	      <span class="mui-icon my-nav-icon-2"></span>
-	      <span class="mui-tab-label">健康养护</span>
-	    </a>
-	    <a class="mui-tab-item-link" href="yuerketang.jsp">
-	      <span class="mui-icon my-nav-icon-3"></span>
-	      <span class="mui-tab-label">育儿课堂</span>
-	    </a>
-	    <a class="mui-tab-item-link" href="personal-center.jsp">
-	      <span class="mui-icon my-nav-icon-4"></span>
-	      <span class="mui-tab-label">我的</span>
-	    </a>
- 	 </nav>
-	<div class="mui-content">
-		<form class="mui-input-group" method="post" action="SavePatientServlet" onSubmit="return adaptValue();">
-			<div class="mui-input-row">
-				<label>家长姓名</label>
-				<input type="hidden" name="str" value="${str }"/>
-				<input type="hidden" name="str2" value="${str2}">
-				<input type="hidden" name="zhuyibh" value="${zhuyibh}">
-				<input type="hidden" name="change_i" value="${change_i}">
-				<input type="hidden" name="chufang" value="${chufang}">
-				<input type="hidden" name="shoufa" value="${shoufa}">
-				<input type="text" name="ppname" id="name"   placeholder="输入家长姓名">
-			</div>
-			<div class="mui-input-row">
-				<label>联系电话</label>
-				<input type="text" name="pphone" id="iphone" placeholder="输入联系电话">
-			</div>
-			<div class="mui-input-row">
-				<label>宝宝姓名</label>
-				<input type="text" name="pname" id="account" placeholder="输入宝宝姓名">
-			</div>
-			
-			<div class="mui-input-row">
-				<label>宝宝性别</label>
-				<div class="mui-radio my-radio">男 <input name="pxb" type="radio" value="男" checked="checked"></div> 
-				<div class="mui-radio my-radio">女 <input name="pxb" type="radio" value="女"></div>
-			</div>
-			<div class="mui-input-row">
-				<label>宝宝年龄</label>
-				<input type="text" name="page" id="time" placeholder="输入宝宝年龄">
-			</div>
-			<div class="mui-input-row">
-				<label>家长微信</label>
-				<input type="text" name="weixin" id="weixinhao"  placeholder="输入家长微信">
-			</div>
-			<div class="mui-input-row">
-				<label>地址</label>
-				<input type="text" name="paddress" id="address" placeholder="输入地址">
-			</div>
-			 <button type="submit" class="mui-btn my-btn mui-btn-block" onclick="adaptValue()">提交</button>
-		</form>
-		
-	</div>
-	<script src="js-changsha/mui.min.js"></script>
-	<script src="js-changsha/mui.picker.js"></script>
-	<script src="js-changsha/mui.poppicker.js"></script>
-	<script src="js-changsha/city.data.js" type="text/javascript" charset="utf-8"></script>
-	<script src="js-changsha/city.data-3.js" type="text/javascript" charset="utf-8"></script>
-	
+               <div class="cell-item">
+                   <div class="cell-left">宝宝性别</div>
+                   <div class="cell-right" id="sex">
+                       <label class="cell-item">
+                           <label class="cell-right">
+                               <input type="radio" name="pxb" value="男" checked/>
+                               <i class="cell-radio-icon"></i>
+                           </label>
+                       <span class="cell-left"><img src="img/boy.png"/></span>
+
+                       </label>
+                       <label class="cell-item">
+
+                           <label class="cell-right">
+                               <input type="radio" name="pxb" value="女"/>
+                               <i class="cell-radio-icon"></i>
+                           </label>
+                       <span class="cell-left"><img src="img/girl.png"/></span>
+                       </label>
+                   </div>
+               </div>
+
+               <div class="cell-item">
+                   <div class="cell-left">宝宝年龄</div>
+                   <div class="cell-right">
+                       <input type="text" class="cell-input" name="page" id="age" placeholder="请输入宝宝年龄" autocomplete="off" />
+                       <img src="img/enter.png" />
+                   </div>
+               </div>
+
+               <div class="cell-item">
+                   <div class="cell-left">家长微信</div>
+                   <div class="cell-right">
+                       <input type="text" class="cell-input" name="weixin" id="wx" placeholder="请输入家长微信" autocomplete="off" />
+                       <img src="img/enter.png" />
+                   </div>
+               </div>
+               <div class="cell-item">
+                   <div class="cell-left">地址</div>
+                   <div class="cell-right">
+                       <input type="text" class="cell-input" readonly="" name="paddress" id="J_Address"  placeholder="请选择地址">
+                       <img src="img/enter.png" />
+                   </div>
+               </div>
+           </div>
+
+           <button id="submit" type="submit" class="btn-block  present">提交</button>
+        </form>
+       </div>
+   </div>
+   <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+   <script src="dep-td/js/ydui.js"></script>
+   <script src="http://static.ydcss.com/uploads/ydui/ydui.citys.js"></script>
+   <script type="text/javascript">
+       $('#submit').click(function() {
+           var reg = /^(13[0-9]|14[5-9]|15[012356789]|166|17[0-8]|18[0-9]|19[8-9])[0-9]{8}$/,
+               patriarch = $('#patriarch').val(),
+               phone = $('#phone').val(),
+               baby = $('#baby').val(),
+               age = $('#age').val(),
+               wx = $('#wx').val(),
+               site = $('#J_Address').val(),
+               sex = $("input[name='pxb']:checked").val();
+           if(patriarch == '') {
+               YDUI.dialog.toast('请输入家长姓名', 'none', 1000);
+               return false;
+           }
+           if(!reg.test(phone)) {
+               YDUI.dialog.toast('请输入十一位正确格式的手机号', 'none', 1000);
+               return false;
+           }
+
+           if(baby == '') {
+               YDUI.dialog.toast('请输入宝宝姓名', 'none', 1000);
+               return false;
+           }
+
+           if(age == '') {
+               YDUI.dialog.toast('请输入宝宝年龄', 'none', 1000);
+               return false;
+           }
+
+           if(wx == '') {
+               YDUI.dialog.toast('请输入您的微信号', 'none', 1000);
+               return false;
+           }
+           if(site == '') {
+               YDUI.dialog.toast('请选择您的地址', 'none', 1000);
+               return false;
+           }
+       })
+   </script>
+   <!--地址-->
+   <script type="text/javascript">
+       var $address = $('#J_Address');
+       $address.citySelect();
+       $address.on('click', function() {
+           $address.citySelect('open');
+       });
+       $address.on('done.ydui.cityselect', function(ret) {
+           $(this).val(ret.provance + ' ' + ret.city + ' ' + ret.area);
+       });
+   </script>
 </body>
 </html>

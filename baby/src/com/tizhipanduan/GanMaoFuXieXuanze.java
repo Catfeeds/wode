@@ -43,52 +43,57 @@ public class GanMaoFuXieXuanze extends HttpServlet{
 				out.println("window.location.href=\"xuanzejiemian.jsp\"");
 				out.println("</script>");
 		  }else{
-		if(xuanze.equals("1")){
-			request.getSession().setAttribute("ganmaofuxie", ganmaofuxie);
-			request.getSession().setAttribute("str2ganmaofuxie", str2ganmaofuxie);
-			response.sendRedirect("/addzhenduanganmaofashao.jsp");
-			return;
-		}else if(xuanze.equals("2")){
-			request.getSession().setAttribute("ganmaofuxie", ganmaofuxie);
-			request.getSession().setAttribute("str2ganmaofuxie", str2ganmaofuxie);
-			response.sendRedirect("/addzhenduanganmaokesou.jsp");
-			return;
-		}else if(xuanze.equals("3")){
-			request.getSession().setAttribute("ganmaofuxie", ganmaofuxie);
-			request.getSession().setAttribute("str2ganmaofuxie", str2ganmaofuxie);
-			response.sendRedirect("/addzhenduanfuxie.jsp");
-			return;
-		}else if(xuanze.equals("4")){
-			request.getSession().setAttribute("ganmaofuxie", ganmaofuxie);
-			request.getSession().setAttribute("str2ganmaofuxie", str2ganmaofuxie);
-			response.sendRedirect("/addzhenduanbianmi.jsp");
-			return;
-		}else if(xuanze.equals("5")){
-			request.getSession().setAttribute("ganmaofuxie", ganmaofuxie);
-			request.getSession().setAttribute("str2ganmaofuxie", str2ganmaofuxie);
-			response.sendRedirect("/addzhenduanjishi.jsp");
-			return;
-		}else if(xuanze.equals("6")){
-			request.getSession().setAttribute("ganmaofuxie", ganmaofuxie);
-			request.getSession().setAttribute("str2ganmaofuxie", str2ganmaofuxie);
-			response.sendRedirect("/addzhenduanbaojian.jsp");
-			return;
-		}else if(xuanze.equals("7")){
-			request.getSession().setAttribute("ganmaofuxie", ganmaofuxie);
-			request.getSession().setAttribute("str2ganmaofuxie", str2ganmaofuxie);
-			response.sendRedirect("/addzhenduantigaomianyili.jsp");
-			return;
-		}else if(xuanze.equals("8")){
-			request.getSession().setAttribute("ganmaofuxie", ganmaofuxie);
-			request.getSession().setAttribute("str2ganmaofuxie", str2ganmaofuxie);
-			response.sendRedirect("/addzhenduanqidongzhihui.jsp");
-			return;
-		}else if(xuanze.equals("9")){
-			request.getSession().setAttribute("ganmaofuxie", ganmaofuxie);
-			request.getSession().setAttribute("str2ganmaofuxie", str2ganmaofuxie);
-			response.sendRedirect("/addzhenduanqidongzhihui.jsp");
-			return;
-		}
+			  	if(xuanze.equals("0")){
+					request.getSession().setAttribute("ganmaofuxie", ganmaofuxie);
+					request.getSession().setAttribute("str2ganmaofuxie", str2ganmaofuxie);
+					response.sendRedirect("/addzhenduanshanghuxidao.jsp");
+					return;
+				}else if(xuanze.equals("1")){
+					request.getSession().setAttribute("ganmaofuxie", ganmaofuxie);
+					request.getSession().setAttribute("str2ganmaofuxie", str2ganmaofuxie);
+					response.sendRedirect("/addzhenduanganmaofashao.jsp");
+					return;
+				}else if(xuanze.equals("2")){
+					request.getSession().setAttribute("ganmaofuxie", ganmaofuxie);
+					request.getSession().setAttribute("str2ganmaofuxie", str2ganmaofuxie);
+					response.sendRedirect("/addzhenduanganmaokesou.jsp");
+					return;
+				}else if(xuanze.equals("3")){
+					request.getSession().setAttribute("ganmaofuxie", ganmaofuxie);
+					request.getSession().setAttribute("str2ganmaofuxie", str2ganmaofuxie);
+					response.sendRedirect("/addzhenduanfuxie.jsp");
+					return;
+				}else if(xuanze.equals("4")){
+					request.getSession().setAttribute("ganmaofuxie", ganmaofuxie);
+					request.getSession().setAttribute("str2ganmaofuxie", str2ganmaofuxie);
+					response.sendRedirect("/addzhenduanbianmi.jsp");
+					return;
+				}else if(xuanze.equals("5")){
+					request.getSession().setAttribute("ganmaofuxie", ganmaofuxie);
+					request.getSession().setAttribute("str2ganmaofuxie", str2ganmaofuxie);
+					response.sendRedirect("/addzhenduanjishi.jsp");
+					return;
+				}else if(xuanze.equals("6")){
+					request.getSession().setAttribute("ganmaofuxie", ganmaofuxie);
+					request.getSession().setAttribute("str2ganmaofuxie", str2ganmaofuxie);
+					response.sendRedirect("/addzhenduanbaojian.jsp");
+					return;
+				}else if(xuanze.equals("7")){
+					request.getSession().setAttribute("ganmaofuxie", ganmaofuxie);
+					request.getSession().setAttribute("str2ganmaofuxie", str2ganmaofuxie);
+					response.sendRedirect("/addzhenduantigaomianyili.jsp");
+					return;
+				}else if(xuanze.equals("8")){
+					request.getSession().setAttribute("ganmaofuxie", ganmaofuxie);
+					request.getSession().setAttribute("str2ganmaofuxie", str2ganmaofuxie);
+					response.sendRedirect("/addzhenduanqidongzhihui.jsp");
+					return;
+				}else if(xuanze.equals("9")){
+					request.getSession().setAttribute("ganmaofuxie", ganmaofuxie);
+					request.getSession().setAttribute("str2ganmaofuxie", str2ganmaofuxie);
+					response.sendRedirect("/addzhenduanqidongzhihui.jsp");
+					return;
+				}
 		  }
 			out.close();
 	}

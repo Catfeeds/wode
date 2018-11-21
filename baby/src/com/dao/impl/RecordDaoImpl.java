@@ -124,8 +124,8 @@ public class RecordDaoImpl extends BaseDao implements RecordDao {
 	}
 	
 	//为了限制一个宝宝一天中最多能录入三个病例
-	public int getRecord(String sannowTime,int pid){
-		String sql="select * from record where CTIME like '"+sannowTime+"' and PID='"+pid+"'";
+	public int getRecord(String sannowTime,int uid){
+		String sql="select * from record where CTIME like '"+sannowTime+"' and USERID='"+uid+"'";
 		return this.executeQuery(sql, null, Record.class).size();
 	}
 	

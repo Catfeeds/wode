@@ -42,7 +42,12 @@ public class LiuTiXuanze extends HttpServlet{
 				out.println("window.location.href=\"xuanzejiemian.jsp\"");
 				out.println("</script>");
 		  }else{
-				if(xuanze.equals("1")){
+			  if(xuanze.equals("0")){
+					request.getSession().setAttribute("liuti", liuti);
+					request.getSession().setAttribute("str2liuti", str2liuti);
+					response.sendRedirect("/addzhenduanshanghuxidao.jsp");
+					return;
+				}else if(xuanze.equals("1")){
 					request.getSession().setAttribute("liuti", liuti);
 					request.getSession().setAttribute("str2liuti", str2liuti);
 					response.sendRedirect("/addzhenduanganmaofashao.jsp");

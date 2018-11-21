@@ -21,13 +21,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
 <head>
     <meta charset="utf-8">
-    <title>表单提交</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="stylesheet" href="css-changsha/mui.css">
-    <link rel="stylesheet" type="text/css" href="css-changsha/icons-extra.css" />
-    <link rel="stylesheet" href="css-changsha/main.css">
+    <title>症状选择</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <link rel="stylesheet" href="dep-td/css/ydui.css" />
+    <script src="dep-td/js/ydui.flexible.js"></script>
+    <link rel="stylesheet" type="text/css" href="css-td/health.css" />
     <script type="text/javascript">
     	
    		document.addEventListener('plusready', function(){
@@ -38,129 +39,50 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </script>
 </head>
 <body>
-	<header id="header" class="mui-bar mui-bar-nav">
-
-	<a class="mui-action-back mui-icon-extra mui-icon-extra-arrowleftcricle mui-icon  mui-pull-left"></a>
-		
-			<h1 class="mui-title">辩证取穴 - 保健</h1>
-	</header>
 	
-	<div class="mui-content">
 	 <form id="form7" action="InputBaojian" method="post">
-		<div class="mui-content">
-		<div class="mui-input-group">
-			<div class="mui-input-row mui-radio">
-				<label>日常保健</label>
-				<input type="hidden" name="xuanze" value="<%=request.getParameter("xuanze")%>"/>
-				<input name="baojian" type="radio" checked="checked" value="01_日常保健">
-			</div>
-			<div class="mui-input-row mui-radio">
-				<label>易感儿</label>
-				<input name="baojian" type="radio" value="02_易感儿">
-			</div>
-			
-			
-		</div>
-		</div>
-		<!--<ul class="mui-table-view">
-			 <li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selectliuhan.jsp?xuanze=7"> 
-					<span class="mui-badge my-list-wz">${str2liuhan}</span>
-					流汗<input type="hidden" name="liuhan" value="${liuhan}"/> 
-				</a>
-			</li>
-			<li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selectchuzhen.jsp?xuanze=7"> 
-					<span class="mui-badge my-list-wz">${str2chuzhen}</span>
-					触诊<input type="hidden" name="chuzhen" value="${chuzhen}"/> 
-				</a>
-			</li>
-			<li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selectwenzhen.jsp?xuanze=7"> 
-					<span class="mui-badge my-list-wz">${str2wenzhen}</span>
-					闻诊<input type="hidden" name="wenzhen" value="${wenzhen}"/> 
-				</a>
-			</li>
-			<li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selectyanshen-img.jsp?xuanze=7">
+	 <div class="g-flexview bgc-imgt">
+            <div class="g-scrollview">
+				<div class="m-cell symptom">
+					<div class="navigation">
+                    <a class="back" href="javascript:;" onclick="javascript:history.back(-1);"><img src="img/back.png" /></a>
+                    <div class="navigation-title">保健</div>
+                </div>
 					
-					<span class="mui-badge my-list-wz">${str2yanshen}</span>
-					眼神<input type="hidden" name="yanshen" value="${yanshen}"/> 
-				</a>
-			</li> 
-			<li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selectmianse.jsp?xuanze=6">
-					<span class="mui-badge my-list-wz">${str2mianse}</span>
-					面色<input type="hidden" name="mianse" value="${mianse}"/>
-				</a>
-			</li>
-			<li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selectxiayandai.jsp?xuanze=6">
-					<span class="mui-badge my-list-wz">${str2xiayandai}</span>
-					下眼袋<input type="hidden" name="xiayandai" value="${xiayandai}"/>
-				</a>
-			</li>
-			 <li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selectbiliang.jsp?xuanze=7">
-					<span class="mui-badge my-list-wz">${str2biliang}</span>
-					鼻梁<input type="hidden" name="biliang" value="${biliang}"/>
-				</a>
-			</li>
-			<li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selectbiyiliangce.jsp?xuanze=7">
-					<span class="mui-badge my-list-wz">${str2biyiliangce}</span>
-					鼻翼两侧<input type="hidden" name="biyiliangce" value="${biyiliangce}"/>
-				</a>
-			</li> 
-			<li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selectchunse.jsp?xuanze=6">
-					<span class="mui-badge my-list-wz">${str2chunse}</span>
-					唇色<input type="hidden" name="chunse" value="${chunse}"/>
-				</a>
-			</li>
-			<li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selectsheti.jsp?xuanze=6">
-					<span class="mui-badge my-list-wz">${str2sheti}</span>
-					舌体<input type="hidden" name="sheti" value="${sheti}"/>
-				</a>
-			</li>
-			<li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selectshezhi.jsp?xuanze=6">
-					<span class="mui-badge my-list-wz">${str2shezhi}</span>
-					舌质<input type="hidden" name="shezhi" value="${shezhi}"/>
-				</a>
-			</li>
-			<!--  <li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selectshezhiyanse.jsp?xuanze=7">
-					<span class="mui-badge my-list-wz">${str2shezhiyanse}</span>
-					舌质颜色<input type="hidden" name="shezhiyanse" value="${shezhiyanse}"/>
-				</a>
-			</li>
-			<li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selectshetai.jsp?xuanze=6">
-					<span class="mui-badge my-list-wz">${str2shetai}</span>
-					舌苔<input type="hidden" name="shetai" value="${shetai}"/>
-				</a>
-			</li>
-			<li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selectyanhou.jsp?xuanze=7">
-					<span class="mui-badge my-list-wz">${str2yanhou}</span>
-					咽喉<input type="hidden" name="yanhou" value="${yanhou}"/>
-				</a>
-			</li> 
-			<li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selectkouqiang.jsp?xuanze=6">
-					<span class="mui-badge my-list-wz">${str2kouqiang}</span>
-					口腔<input type="hidden" name="kouqiang" value="${kouqiang}"/>
-				</a>
-			</li>
-		</ul>-->
-	    </form>
-	    <div class="mui-content-padded">
-	        <button form="form7" type="submit" class="mui-btn my-btn mui-btn-block">提交</button>
-	    </div>
-	</div>
-	
-	<script src="js-changsha/mui.min.js"></script>
+					
+                    <label class="cell-item">
+                        <label class="cell-left">日常保健</label>
+                    <label class="cell-right">
+                            <input type="radio" name="baojian" checked="checked" value="01_日常保健"/>
+                            <i class="cell-checkbox-icon"></i>
+                    </label>
+                    </label>
+                    <label class="cell-item">
+                        <label class="cell-left">易感儿</label>
+                    <label class="cell-right">
+                            <input type="radio" name="baojian" value="02_易感儿"/>
+                            <i class="cell-checkbox-icon"></i>
+                    </label>
+                    </label>
+
+                </div>
+                
+                <div class="standard-list">
+                       <div class="title"></div>
+					<p><b>日常保健：</b>根据节气不同变换，一年四季根据八节二十四气七十二候取穴组方；
+日常保健穴位是平时在家给孩子取穴推拿保健，来激发经络之气,以起到通经活络、调节人体脏腑气血功能的作用,达到预防保健改善机体免疫功能，起到扶正培元，强身健体的作用。另外，保健穴位有较好的健运脾胃的功能，补中益气，有效调理胃肠功能。</p>
+					<p><b>易感儿：</b>易感儿，多见于6个月至6岁的宝宝，其中以1-3岁的宝宝更为多见。尤其是在季节交替的时候，气候一发生变化，他们体质较差，便反复地并发呼吸道感染。由于处理不当，很容易引发哮喘等疾病，严重影响生长发育速度和身心健康。
+易感儿体征：
+面色淡黄/暗黄，无光泽（面色晦暗），舌苔白厚，唇色淡红（唇色发白血色度不足）
+触摸孩子手脚常表现为发凉，触摸孩子后脖颈表现为发凉</p>
+
+                </div>
+
+                <button id="submit" type="submit" class="btn-block  present">提交</button>
+            </div>
+        </div>
+       </form>
+        <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="dep-td/js/ydui.js"></script>
 </body>
 </html>

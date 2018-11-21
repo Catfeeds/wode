@@ -21,14 +21,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>表单提交</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="stylesheet" href="css-changsha/mui.css">
-    <link rel="stylesheet" type="text/css" href="css-changsha/icons-extra.css" />
-    <link rel="stylesheet" href="css-changsha/main.css">
+	  <meta charset="utf-8">
+	  <title>症状选择</title>
+	  <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+	  <meta content="yes" name="apple-mobile-web-app-capable" />
+	  <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	  <meta content="telephone=no" name="format-detection" />
+	  <link rel="stylesheet" href="dep-td/css/ydui.css" />
+	  <script src="dep-td/js/ydui.flexible.js"></script>
+	  <link rel="stylesheet" type="text/css" href="css-td/health.css" />
     <script type="text/javascript">
     	
    		document.addEventListener('plusready', function(){
@@ -39,95 +40,126 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </script>
 </head>
 <body>
-	<header id="header" class="mui-bar mui-bar-nav">
+	<div class="g-flexview bgc-imgt">
+		<form id="form1" action="InputGanmaoFashao" method="post">
+            <div class="g-scrollview">
+                <div class="navigation">
+                    <a class="back" href="javascript:;" onclick="javascript:history.back(-1);"><img src="img/back.png" /></a>
+                    <div class="navigation-title">感冒发烧</div>
+                </div>
 
-	<a class="mui-action-back mui-icon-extra mui-icon-extra-arrowleftcricle mui-icon  mui-pull-left"></a>
-		
-			<h1 class="mui-title">辩证取穴 - 感冒发烧</h1>
-	</header>
-	
-	<div class="mui-content">
-	<form id="form1" action="InputSymptom" method="post">
-		<ul class="mui-table-view">
-			<li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selectdushu.jsp?xuanze=2"> 
-					<span class="mui-badge my-list-wz">${str2dushu}</span>
-					度数<input type="hidden" name="dushu" value="${dushu}"/> 
-				</a>
-			</li>
-			<li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selectbisai.jsp?xuanze=1"> 
-					<span class="mui-badge my-list-wz">${str2bisai}</span>
-					鼻塞<input type="hidden" name="bisai" value="${bisai}"/> 
-				</a>
-			</li>
-			<li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selectliuti.jsp?xuanze=1"> 
-					<span class="mui-badge my-list-wz">${str2liuti}</span>
-					流涕<input type="hidden" name="liuti" value="${liuti}"/> 
-				</a>
-			</li>
-			<li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selectdapenti.jsp?xuanze=1"> 
-					<span class="mui-badge my-list-wz">${str2dapenti}</span>
-					打喷嚏<input type="hidden" name="dapenti" value="${dapenti}"/> 
-				</a>
-			</li>
-			<li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selectyantong.jsp?xuanze=1"> 
-					<span class="mui-badge my-list-wz">${str2yantong}</span>
-					咽痛<input type="hidden" name="yantong" value="${yantong}"/> 
-				</a>
-			</li>
-			<li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selectyanshi.jsp?xuanze=1"> 
-					<span class="mui-badge my-list-wz">${str2yanshi}</span>
-					厌食<input type="hidden" name="yanshi" value="${yanshi}"/> 
-				</a>
-			</li>
-			<li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selectoutu.jsp?xuanze=1"> 
-					<span class="mui-badge my-list-wz">${str2outu}</span>
-					呕吐<input type="hidden" name="outu" value="${outu}"/> 
-				</a>
-			</li>
-			<li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selectganmaofuxie.jsp?xuanze=1"> 
-					<span class="mui-badge my-list-wz">${str2ganmaofuxie}</span>
-					腹泻<input type="hidden" name="ganmaofuxie" value="${ganmaofuxie}"/> 
-				</a>
-			</li>
-			 <li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selectfutong.jsp?xuanze=1"> 
-					<span class="mui-badge my-list-wz">${str2futong}</span>
-					腹痛<input type="hidden" name="futong" value="${futong}"/> 
-				</a>
-			</li>
-			<li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selecttoutong.jsp?xuanze=1"> 
-					<span class="mui-badge my-list-wz">${str2toutong}</span>
-					头痛<input type="hidden" name="toutong" value="${toutong}"/> 
-				</a>
-			</li>
-			<li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selecttouyun.jsp?xuanze=1"> 
-					<span class="mui-badge my-list-wz">${str2touyun}</span>
-					头晕<input type="hidden" name="touyun" value="${touyun}"/> 
-				</a>
-			</li>
-			<li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selectbttzd.jsp?xuanze=1"> 
-					<span class="mui-badge my-list-wz">${str2bttzd}</span>
-					扁桃体肿大<input type="hidden" name="bttzd" value="${bttzd}"/> 
-				</a>
-			</li>
-		</ul>
-	    </form>
-	    <div class="mui-content-padded">
-	        <button form="form1" type="submit" class="mui-btn my-btn mui-btn-block">提交</button>
-	    </div>
-	</div>
-	
-	<script src="js-changsha/mui.min.js"></script>
+                <!--症状-->
+                <div class="m-cell symptom">
+					<div class="cell-item">
+                        <div class="cell-left">度数</div>
+                        <div class="cell-right"><input id="limit" type="number" class="cell-input" placeholder="单击输入" autocomplete="off" step="0.1" />℃</div>
+                    </div>
+                    <label class="cell-item">
+                        <label class="cell-left">鼻塞</label>
+	                    <label class="cell-right">
+	                            <input type="checkbox" name="ganmao" value="鼻塞"/>
+	                            <i class="cell-checkbox-icon"></i>
+	                    </label>
+                    </label>
+                    <label class="cell-item">
+                        <label class="cell-left">流涕</label>
+	                    <label class="cell-right">
+	                            <input type="checkbox" name="ganmao" value="流涕"/>
+	                            <i class="cell-checkbox-icon"></i>
+	                    </label>
+                    </label>
+                    <label class="cell-item">
+                        <label class="cell-left">打喷嚏</label>
+                    <label class="cell-right">
+                            <input type="checkbox" name="ganmao" value="打喷嚏"/>
+                            <i class="cell-checkbox-icon"></i>
+                    </label>
+                    </label>
+
+                    <label class="cell-item">
+                        <label class="cell-left">咽痛</label>
+                    <label class="cell-right">
+                            <input type="checkbox" name="ganmao" value="咽痛"/>
+                            <i class="cell-checkbox-icon"></i>
+                    </label>
+                    </label>
+
+                    <label class="cell-item">
+                        <label class="cell-left">厌食</label>
+                    <label class="cell-right">
+                            <input type="checkbox" name="ganmao" value="厌食"/>
+                            <i class="cell-checkbox-icon"></i>
+                    </label>
+                    </label>
+
+                    <label class="cell-item">
+                        <label class="cell-left">呕吐</label>
+                    <label class="cell-right">
+                            <input type="checkbox" name="ganmao" value="呕吐"/>
+                            <i class="cell-checkbox-icon"></i>
+                    </label>
+                    </label>
+
+                    <label class="cell-item">
+                        <label class="cell-left">腹泻</label>
+                    <label class="cell-right">
+                            <input type="checkbox" name="ganmao" value="腹泻"/>
+                            <i class="cell-checkbox-icon"></i>
+                    </label>
+                    </label>
+                    
+                    <label class="cell-item">
+                        <label class="cell-left">腹痛</label>
+                    <label class="cell-right">
+                            <input type="checkbox" name="ganmao" value="腹痛"/>
+                            <i class="cell-checkbox-icon"></i>
+                    </label>
+                    </label>
+
+
+					<label class="cell-item">
+                        <label class="cell-left">头晕</label>
+                    <label class="cell-right">
+                            <input type="checkbox" name="ganmao" value="头晕"/>
+                            <i class="cell-checkbox-icon"></i>
+                    </label>
+                    </label>
+                    
+                    <label class="cell-item">
+                        <label class="cell-left">头痛</label>
+                    <label class="cell-right">
+                            <input type="checkbox" name="ganmao" value="头痛"/>
+                            <i class="cell-checkbox-icon"></i>
+                    </label>
+                    </label>
+                    <label class="cell-item">
+                        <label class="cell-left">扁桃体肿大</label>
+                    <label class="cell-right">
+                            <input type="checkbox" name="ganmao" value="扁桃体肿大"/>
+                            <i class="cell-checkbox-icon"></i>
+                    </label>
+                    </label>
+                </div>
+
+                <button form="form1" id="submit" type="submit" class="btn-block  present">提交</button>
+            </div>
+        </div>
+        <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="dep-td/js/ydui.js"></script>
+        <script type="text/javascript">
+            $('#submit').click(function() {
+                var limit = $('#limit').val(),
+                    arr = [];//选中的症状
+                $.each($('input:checkbox:checked'), function() {
+                    console.log($(this).val())
+                    arr.push($(this).val())
+                });
+                if(limit == '') {
+                    YDUI.dialog.toast('请输入度数', 'none', 1000);
+                    return false;
+                }
+                
+            })
+        </script>
 </body>
 </html>

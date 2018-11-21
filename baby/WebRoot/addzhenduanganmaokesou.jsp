@@ -21,14 +21,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <title>表单提交</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="stylesheet" href="css-changsha/mui.css">
-    <link rel="stylesheet" type="text/css" href="css-changsha/icons-extra.css" />
-    <link rel="stylesheet" href="css-changsha/main.css">
+	  <meta charset="utf-8">
+	  <title>症状选择</title>
+	  <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+	  <meta content="yes" name="apple-mobile-web-app-capable" />
+	  <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+	  <meta content="telephone=no" name="format-detection" />
+	  <link rel="stylesheet" href="dep-td/css/ydui.css" />
+	  <script src="dep-td/js/ydui.flexible.js"></script>
+	  <link rel="stylesheet" type="text/css" href="css-td/health.css" />
     <script type="text/javascript">
     	
    		document.addEventListener('plusready', function(){
@@ -39,133 +40,135 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </script>
 </head>
 <body>
-	<header id="header" class="mui-bar mui-bar-nav">
+	<div class="g-flexview bgc-imgt">
+		<form id="form1" action="InputGanmaoKesou" method="post">
+            <div class="g-scrollview">
+                <div class="navigation">
+                    <a class="back" href="javascript:;" onclick="javascript:history.back(-1);"><img src="img/back.png" /></a>
+                    <div class="navigation-title">感冒-咳嗽</div>
+                </div>
 
-	<a class="mui-action-back mui-icon-extra mui-icon-extra-arrowleftcricle mui-icon  mui-pull-left"></a>
-		
-			<h1 class="mui-title">辩证取穴 - 感冒咳嗽</h1>
-	</header>
-	
-	<div class="mui-content">
-	<form id="form2" action="InputGanmaoKesou" method="post">
-		<ul class="mui-table-view">
-			
-			<li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selectganke.jsp?xuanze=2"> 
-					<span class="mui-badge my-list-wz">${str2ganke}</span>
-					干咳<input type="hidden" name="ganke" value="${ganke}"/> 
-				</a>
-			</li>
-			<li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selectkechuan.jsp?xuanze=2"> 
-					<span class="mui-badge my-list-wz">${str2kechuan}</span>
-					咳喘<input type="hidden" name="kechuan" value="${kechuan}"/> 
-				</a>
-			</li>
-			<li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selectkesouyoutan.jsp?xuanze=2"> 
-					<span class="mui-badge my-list-wz">${str2kesouyoutan}</span>
-					咳嗽有痰<input type="hidden" name="kesouyoutan" value="${kesouyoutan}"/> 
-				</a>
-			</li>
-			<!--<li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selectmuchiyan.jsp?xuanze=2"> 
-					<span class="mui-badge my-list-wz">${str2mcyfmwd}</span>
-					目赤分泌物<input type="hidden" name="mcyfmwd" value="${mcyfmwd}"/> 
-				</a>
-			</li>
-			 <li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selectliuhan.jsp?xuanze=2"> 
-					<span class="mui-badge my-list-wz">${str2liuhan}</span>
-					流汗<input type="hidden" name="liuhan" value="${liuhan}"/> 
-				</a>
-			</li>
-			<li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selectchuzhen.jsp?xuanze=2"> 
-					<span class="mui-badge my-list-wz">${str2chuzhen}</span>
-					触诊<input type="hidden" name="chuzhen" value="${chuzhen}"/> 
-				</a>
-			</li>
-			<li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selectwenzhen.jsp?xuanze=2"> 
-					<span class="mui-badge my-list-wz">${str2wenzhen}</span>
-					闻诊<input type="hidden" name="wenzhen" value="${wenzhen}"/> 
-				</a>
-			</li>
-			<li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selectyanshen-img.jsp?xuanze=2">
-					
-					<span class="mui-badge my-list-wz">${str2yanshen}</span>
-					眼神<input type="hidden" name="yanshen" value="${yanshen}"/> 
-				</a>
-			</li>
-			<li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selectmianse.jsp?xuanze=2">
-					<span class="mui-badge my-list-wz">${str2mianse}</span>
-					面色<input type="hidden" name="mianse" value="${mianse}"/>
-				</a>
-			</li> 
-			<li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selectxiayandai.jsp?xuanze=2">
-					<span class="mui-badge my-list-wz">${str2xiayandai}</span>
-					下眼袋<input type="hidden" name="xiayandai" value="${xiayandai}"/>
-				</a>
-			</li>-->
-			<!-- <li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selectbiliang.jsp?xuanze=2">
-					<span class="mui-badge my-list-wz">${str2biliang}</span>
-					鼻梁<input type="hidden" name="biliang" value="${biliang}"/>
-				</a>
-			</li>
-			<li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selectbiyiliangce.jsp?xuanze=2">
-					<span class="mui-badge my-list-wz">${str2biyiliangce}</span>
-					鼻翼两侧<input type="hidden" name="biyiliangce" value="${biyiliangce}"/>
-				</a>
-			</li>
-			<li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selectchunse.jsp?xuanze=2">
-					<span class="mui-badge my-list-wz">${str2chunse}</span>
-					唇色<input type="hidden" name="chunse" value="${chunse}"/>
-				</a>
-			</li>
-			<li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selectsheti.jsp?xuanze=2">
-					<span class="mui-badge my-list-wz">${str2sheti}</span>
-					舌体<input type="hidden" name="sheti" value="${sheti}"/>
-				</a>
-			</li>
-			<li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selectshezhi.jsp?xuanze=2">
-					<span class="mui-badge my-list-wz">${str2shezhi}</span>
-					舌质<input type="hidden" name="shezhi" value="${shezhi}"/>
-				</a>
-			</li>
-			<!-- <li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selectshezhiyanse.jsp?xuanze=2">
-					<span class="mui-badge my-list-wz">${str2shezhiyanse}</span>
-					舌质颜色<input type="hidden" name="shezhiyanse" value="${shezhiyanse}"/>
-				</a>
-			</li> 
-			<li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selectshetai.jsp?xuanze=2">
-					<span class="mui-badge my-list-wz">${str2shetai}</span>
-					舌苔<input type="hidden" name="shetai" value="${shetai}"/>
-				</a>
-			</li>
-			<!-- <li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selectyanhou.jsp?xuanze=2">
-					<span class="mui-badge my-list-wz">${str2yanhou}</span>
-					咽喉<input type="hidden" name="yanhou" value="${yanhou}"/>
-				</a>
-			</li> -->
-		</ul>
-	    </form>
-	    <div class="mui-content-padded">
-	        <button form="form2" type="submit" class="mui-btn my-btn mui-btn-block">提交</button>
-	    </div>
-	</div>
-	
-	<script src="js-changsha/mui.min.js"></script>
+                <!--症状-->
+                <div class="m-cell symptom">
+                	<div class="cell-item">
+                        <div class="cell-left">度数</div>
+                        <div class="cell-right"><input id="limit" type="number" class="cell-input" placeholder="单击输入" autocomplete="off" step="0.1"/>℃</div>
+                    </div>
+                	<label class="cell-item">
+                        <label class="cell-left">干咳</label>
+                    <label class="cell-right">
+                            <input type="checkbox" name="ganmaokesou" value="干咳"/>
+                            <i class="cell-checkbox-icon"></i>
+                    </label>
+                    </label>
+                    
+                    <label class="cell-item">
+                        <label class="cell-left">咳喘</label>
+                    <label class="cell-right">
+                            <input type="checkbox" name="ganmaokesou" value="咳喘"/>
+                            <i class="cell-checkbox-icon"></i>
+                    </label>
+                    </label>
+                	
+                	<label class="cell-item">
+                        <label class="cell-left">咳嗽有痰</label>
+                    <label class="cell-right">
+                            <input type="checkbox" name="ganmaokesou" value="咳嗽有痰"/>
+                            <i class="cell-checkbox-icon"></i>
+                    </label>
+                    </label>
+                	
+                    <label class="cell-item">
+                        <label class="cell-left">鼻塞</label>
+                    <label class="cell-right">
+                            <input type="checkbox" name="ganmaokesou" value="鼻塞"/>
+                            <i class="cell-checkbox-icon"></i>
+                    </label>
+                    </label>
+                    <label class="cell-item">
+                        <label class="cell-left">流涕</label>
+                    <label class="cell-right">
+                            <input type="checkbox" name="ganmaokesou" value="流涕"/>
+                            <i class="cell-checkbox-icon"></i>
+                    </label>
+                    </label>
+                    <label class="cell-item">
+                        <label class="cell-left">打喷嚏</label>
+                    <label class="cell-right">
+                            <input type="checkbox" name="ganmaokesou" value="打喷嚏"/>
+                            <i class="cell-checkbox-icon"></i>
+                    </label>
+                    </label>
+
+                    <label class="cell-item">
+                        <label class="cell-left">咽痛</label>
+                    <label class="cell-right">
+                            <input type="checkbox" name="ganmaokesou" value="咽痛"/>
+                            <i class="cell-checkbox-icon"></i>
+                    </label>
+                    </label>
+
+                    <label class="cell-item">
+                        <label class="cell-left">厌食</label>
+                    <label class="cell-right">
+                            <input type="checkbox" name="ganmaokesou" value="厌食"/>
+                            <i class="cell-checkbox-icon"></i>
+                    </label>
+                    </label>
+
+                    <label class="cell-item">
+                        <label class="cell-left">呕吐</label>
+                    <label class="cell-right">
+                            <input type="checkbox" name="ganmaokesou" value="呕吐"/>
+                            <i class="cell-checkbox-icon"></i>
+                    </label>
+                    </label>
+
+                    <label class="cell-item">
+                        <label class="cell-left">腹泻</label>
+                    <label class="cell-right">
+                            <input type="checkbox" name="ganmaokesou" value="腹泻"/>
+                            <label class="cell-checkbox-icon"></label>
+                    </label>
+                    </label>
+                    
+                    <label class="cell-item">
+                        <label class="cell-left">腹痛</label>
+                    <label class="cell-right">
+                            <input type="checkbox" name="ganmaokesou" value="腹痛"/>
+                            <i class="cell-checkbox-icon"></i>
+                    </label>
+                    </label>
+
+
+					<label class="cell-item">
+                        <label class="cell-left">头痛</label>
+                    <label class="cell-right">
+                            <input type="checkbox" name="ganmaokesou" value="头痛"/>
+                            <i class="cell-checkbox-icon"></i>
+                    </label>
+                    </label>
+                    
+                    <label class="cell-item">
+                        <label class="cell-left">头晕</label>
+                    <label class="cell-right">
+                            <input type="checkbox" name="ganmaokesou" value="头晕"/>
+                            <i class="cell-checkbox-icon"></i>
+                    </label>
+                    </label>
+                    <label class="cell-item">
+                        <label class="cell-left">扁桃体肿大</label>
+                    <label class="cell-right">
+                            <input type="checkbox" name="ganmao" value="扁桃体肿大"/>
+                            <i class="cell-checkbox-icon"></i>
+                    </label>
+                    </label>
+                </div>
+
+                <button form="form1" id="submit" type="submit" class="btn-block  present">提交</button>
+            </div>
+        </div>
+        <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="dep-td/js/ydui.js"></script>
 </body>
 </html>

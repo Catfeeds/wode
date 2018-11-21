@@ -19,7 +19,7 @@ public interface RecordDao {
 
 	public int getRecordCount(String name, String phone, String isdo, User user);
 	
-	public int getRecord(String sannowTime,int pid);
+	public int getRecord(String sannowTime,int uid);
 	
 	public Record getRecordsShow(String cid);
 

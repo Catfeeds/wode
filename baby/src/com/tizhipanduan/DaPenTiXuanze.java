@@ -43,7 +43,12 @@ public class DaPenTiXuanze extends HttpServlet{
 				out.println("window.location.href=\"xuanzejiemian.jsp\"");
 				out.println("</script>");
 		  }else{
-				if(xuanze.equals("1")){
+			  	if(xuanze.equals("0")){
+					request.getSession().setAttribute("dapenti", dapenti);
+					request.getSession().setAttribute("str2dapenti", str2dapenti);
+					response.sendRedirect("/addzhenduanshanghuxidao.jsp");
+					return;
+				}else if(xuanze.equals("1")){
 					request.getSession().setAttribute("dapenti", dapenti);
 					request.getSession().setAttribute("str2dapenti", str2dapenti);
 					response.sendRedirect("/addzhenduanganmaofashao.jsp");

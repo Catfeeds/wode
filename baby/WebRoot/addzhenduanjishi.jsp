@@ -22,13 +22,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <html>
 <head>
     <meta charset="utf-8">
-    <title>表单提交</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="stylesheet" href="css-changsha/mui.css">
-    <link rel="stylesheet" type="text/css" href="css-changsha/icons-extra.css" />
-    <link rel="stylesheet" href="css-changsha/main.css">
+     <title>症状选择</title>
+     <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+     <meta content="yes" name="apple-mobile-web-app-capable" />
+     <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+     <meta content="telephone=no" name="format-detection" />
+     <link rel="stylesheet" href="dep-td/css/ydui.css" />
+     <script src="dep-td/js/ydui.flexible.js"></script>
+     <link rel="stylesheet" type="text/css" href="css-td/health.css" />
     <script type="text/javascript">
     	
    		document.addEventListener('plusready', function(){
@@ -39,54 +40,72 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </script>
 </head>
 <body>
-	<header id="header" class="mui-bar mui-bar-nav">
+	
+	 <form id="form6" action="InputJishi" method="post">
+		<div class="g-flexview bgc-imgt">
+            <div class="g-scrollview">
+                <div class="navigation">
+                    <a class="back" href="javascript:;" onclick="javascript:history.back(-1);"><img src="img/back.png" /></a>
+                    <div class="navigation-title">积食</div>
+                </div>
 
-	<a class="mui-action-back mui-icon-extra mui-icon-extra-arrowleftcricle mui-icon  mui-pull-left"></a>
-		
-			<h1 class="mui-title">辩证取穴 - 积食</h1>
-	</header>
-	
-	<div class="mui-content">
-	 <form id="form5" action="InputJishi" method="post">
-		<ul class="mui-table-view">
-		
-			<li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selectshiyucha.jsp?xuanze=5">
-					<span class="mui-badge my-list-wz">${str2shiyucha}</span>
-					食欲差<input type="hidden" name="shiyucha" value="${shiyucha}"/>
-				</a>
-			</li>
-			<li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selecttiaoshi.jsp?xuanze=5">
-					<span class="mui-badge my-list-wz">${str2tiaoshi}</span>
-					挑食<input type="hidden" name="tiaoshi" value="${tiaoshi}"/>
-				</a>
-			</li>
-			<li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selectyanshi.jsp?xuanze=5">
-					<span class="mui-badge my-list-wz">${str2yanshi}</span>
-					厌食<input type="hidden" name="yanshi" value="${yanshi}"/>
-				</a>
-			</li>
-			<li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selectyoukouqi.jsp?xuanze=5">
-					<span class="mui-badge my-list-wz">${str2youkouqi}</span>
-					有口气<input type="hidden" name="youkouqi" value="${youkouqi}"/>
-				</a>
-			</li>
-			<li class="mui-table-view-cell">
-				<a class="mui-navigate-right" href="from-selectshetaihou.jsp?xuanze=5">
-					<span class="mui-badge my-list-wz">${str2shetaihou}</span>
-					舌苔厚<input type="hidden" name="shetaihou" value="${shetaihou}"/>
-				</a>
-			</li>
-		</ul>
-	    </form>
-	    <div class="mui-content-padded">
-	        <button form="form5" type="submit" class="mui-btn my-btn mui-btn-block">提交</button>
-	    </div>
-	</div>
-	
-	<script src="js-changsha/mui.min.js"></script>
+                <!--症状-->
+                <div class="m-cell symptom">
+					<!-- <div class="cell-item">
+	                        <div class="cell-left">度数</div>
+	                        <div class="cell-right"><input id="limit" type="number" class="cell-input" placeholder="单击输入" autocomplete="off" step="0.1"/>℃</div>
+                  	</div> -->
+                    <label class="cell-item">
+                        <label class="cell-left">食欲差</label>
+                    <label class="cell-right">
+                            <input type="checkbox" name="jishi" value="食欲差"/>
+                            <i class="cell-checkbox-icon"></i>
+                    </label>
+                    </label>
+                    <label class="cell-item">
+                        <label class="cell-left">挑食</label>
+                    <label class="cell-right">
+                            <input type="checkbox" name="jishi" value="挑食"/>
+                            <i class="cell-checkbox-icon"></i>
+                    </label>
+                    </label>
+                    <label class="cell-item">
+                        <label class="cell-left">厌食</label>
+                    <label class="cell-right">
+                            <input type="checkbox" name="jishi" value="厌食"/>
+                            <i class="cell-checkbox-icon"></i>
+                    </label>
+                    </label>
+
+                    <label class="cell-item">
+                        <label class="cell-left">有口气</label>
+                    <label class="cell-right">
+                            <input type="checkbox" name="jishi" value="有口气"/>
+                            <i class="cell-checkbox-icon"></i>
+                    </label>
+                    </label>
+                    
+                    <a  class="cell-item" id="color" href="from-selectshetaihou.jsp?xuanze=5">
+	                           <div class="cell-left">舌苔厚</div>
+	                           <label class="cell-right">
+	                               <input id="color1" class="cell-input" type="text"  name="shetaihou" value="舌苔不厚" readonly/>
+	                               <!-- <input class="cell-input" type="hidden"  name="shetaihou" value="${shetaihou}" readonly/> -->
+	                               <img src="img/enter.png"/>
+	                           </label>
+	                  </a>
+
+                </div>
+
+            </div>
+        </div>
+       </form>
+        <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="dep-td/js/ydui.js"></script>
+        <script type="text/javascript">
+             var data = sessionStorage.getItem('shitjishi');
+             $('#color1').val(data)
+        </script>
+        <button form="form6" type="submit" class="btn-block  present">提交</button>
+	   
 </body>
 </html>

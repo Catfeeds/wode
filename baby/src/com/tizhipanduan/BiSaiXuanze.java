@@ -43,7 +43,12 @@ public class BiSaiXuanze extends HttpServlet{
 			out.println("window.location.href=\"xuanzejiemian.jsp\"");
 			out.println("</script>");
 	  }else{
-			if(xuanze.equals("1")){
+			if(xuanze.equals("0")){
+				request.getSession().setAttribute("bisai", bisai);
+				request.getSession().setAttribute("str2bisai", str2bisai);
+				response.sendRedirect("/addzhenduanshanghuxidao.jsp");
+				return;
+			}else if(xuanze.equals("1")){
 				request.getSession().setAttribute("bisai", bisai);
 				request.getSession().setAttribute("str2bisai", str2bisai);
 				response.sendRedirect("/addzhenduanganmaofashao.jsp");

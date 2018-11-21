@@ -16,24 +16,25 @@ String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE HTML>
 <html>
   <head>
     <base href="<%=basePath%>">
-    
-    <meta charset="utf-8">
-    <title>颜色的选择</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-     <link rel="stylesheet" href="css-changsha/mui.css">
-    <link rel="stylesheet" type="text/css" href="css-changsha/icons-extra.css" />
-    <link rel="stylesheet" href="css-changsha/main.css">
-    <style>
-		.mui-input-group .mui-input-row {
-			height: auto;
-		}
-	</style>
+    <title>选择颜色</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <link rel="stylesheet" href="dep-td/css/ydui.css" />
+    <script src="dep-td/js/ydui.flexible.js"></script>
+    <link rel="stylesheet" type="text/css" href="css-td/health.css" />
+    <link rel="stylesheet" type="text/css" href="css-td/swiper.min.css" />
+	 <style type="text/css">
+        .swiper-wrapper {
+            margin-left: .4rem;
+            padding-bottom: .3rem;
+        }
+    </style>
     <script type="text/javascript">
     	
    		document.addEventListener('plusready', function(){
@@ -46,98 +47,85 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   </head>
   
   <body>
-  <form name="form2" action="DaBianYanSeXuanze" method="post">
-    <header id="header" class="mui-bar mui-bar-nav">
+     <div class="g-flexview">
+            <div class="g-scrollview">
+                <div class="navigation">
+                    <a class="back" href="javascript:;" onclick="javascript:history.back(-1);"><img src="img/back.png" /></a>
+                    <div class="navigation-title">大便颜色</div>
+                </div>
 
-	<a class="mui-action-back mui-icon mui-icon-extra mui-icon-extra-arrowleftcricle mui-pull-left"></a>
-		
-			<h1 class="mui-title">大便颜色</h1>
-	<button class="mui-btn mui-btn-blue mui-btn-link mui-pull-right" type="submit">确定</button>
-	</header>
-	<div class="mui-content">
-		<ul class="mui-input-group">
-			<li class="mui-input-row mui-radio">
-				<label>黄色</label>
-				<input type="hidden" name="xuanze" value="<%=request.getParameter("xuanze")%>"/>
-				<input name="dabianyanse" type="radio" checked="checked" value="01_黄色">
-				<div class="mui-slider" style="margin-bottom: 1px;">
-		         <div class="mui-slider-group">
-		        	<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一个图文表格) -->
-		            <div class="mui-slider-item mui-slider-item-duplicate">
-		                <ul class="mui-table-view mui-grid-view">
-		                    <li class="mui-table-view-cell mui-media mui-col-xs-6"><a href="javascript:void(0);"><img class="mui-media-object" src="img/db-huang1.jpg">
-		                            </a></li>
-		                    <li class="mui-table-view-cell mui-media mui-col-xs-6"><a href="javascript:void(0);"><img class="mui-media-object" src="img/db-huang2.jpg">
-		                            </a></li>
-		                </ul>
-		            </div>
-		            <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一个图文表格) -->
-		        </div>
-		    </div>
-			</li>
-			<li class="mui-input-row mui-radio">
-				<label>黄褐色</label>
-				<input name="dabianyanse" type="radio" value="02_黄褐色">
-				<div class="mui-slider" style="margin-bottom: 1px;">
-		         <div class="mui-slider-group">
-		        	<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一个图文表格) -->
-		            <div class="mui-slider-item mui-slider-item-duplicate">
-		                <ul class="mui-table-view mui-grid-view">
-		                    <li class="mui-table-view-cell mui-media mui-col-xs-6"><a href="javascript:void(0);"><img class="mui-media-object" src="img/db-huanghe1.jpg">
-		                            </a></li>
-		                    <li class="mui-table-view-cell mui-media mui-col-xs-6"><a href="javascript:void(0);"><img class="mui-media-object" src="img/db-huanghe2.jpg">
-		                            </a></li>
-		                </ul>
-		            </div>
-		            <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一个图文表格) -->
-		        </div>
-		    </div>
-			</li>
-			<li class="mui-input-row mui-radio">
-				<label>绿色</label>
-				<input name="dabianyanse" type="radio" value="03_绿色">
-				<div class="mui-slider" style="margin-bottom: 1px;">
-		         <div class="mui-slider-group mui-slider-loop">
-		        	<!-- 额外增加的一个节点(循环轮播：第一个节点是最后一个图文表格) -->
-		            <div class="mui-slider-item mui-slider-item-duplicate">
-		                <ul class="mui-table-view mui-grid-view">
-		                    <li class="mui-table-view-cell mui-media mui-col-xs-6"><a href="javascript:void(0);"><img class="mui-media-object" src="img/db-lv3.jpg">
-		                            </a></li>
-		                    <li class="mui-table-view-cell mui-media mui-col-xs-6"><a href="javascript:void(0);"><img class="mui-media-object" src="img/db-lv4.jpg">
-		                            </a></li>
-		                </ul>
-		            </div>
-		            <div class="mui-slider-item">
-		                <ul class="mui-table-view mui-grid-view">
-		                    <li class="mui-table-view-cell mui-media mui-col-xs-6"><a href="javascript:void(0);"><img class="mui-media-object" src="img/db-lv1.jpg">
-		                            </a></li>
-		                    <li class="mui-table-view-cell mui-media mui-col-xs-6"><a href="javascript:void(0);"><img class="mui-media-object" src="img/db-lv2.jpg">
-		                            </a></li>
-		                </ul>
-		            </div>
-		            <div class="mui-slider-item">
-		                <ul class="mui-table-view mui-grid-view">
-		                    <li class="mui-table-view-cell mui-media mui-col-xs-6"><a href="javascript:void(0);"><img class="mui-media-object" src="img/db-lv3.jpg">
-		                            </a></li>
-		                    <li class="mui-table-view-cell mui-media mui-col-xs-6"><a href="javascript:void(0);"><img class="mui-media-object" src="img/db-lv4.jpg">
-		                            </a></li>
-		                </ul>
-		            </div>
-		            <div class="mui-slider-item mui-slider-item-duplicate">
-		                <ul class="mui-table-view mui-grid-view">
-		                    <li class="mui-table-view-cell mui-media mui-col-xs-6"><a href="javascript:void(0);"><img class="mui-media-object" src="img/db-lv1.jpg">
-		                            </a></li>
-		                    <li class="mui-table-view-cell mui-media mui-col-xs-6"><a href="javascript:void(0);"><img class="mui-media-object" src="img/db-lv2.jpg">
-		                            </a></li>
-		                </ul>
-		            </div>
-		            <!-- 额外增加的一个节点(循环轮播：最后一个节点是第一个图文表格) -->
-		        </div>
-		    </div>
-			</li>
-		</ul>
-	</div>
-	</form>
-	<script src="js-changsha/mui.min.js"></script>
+                <div class="color-block">
+
+                    <div class="color-list">
+                        <div class="m-cell">
+                            <label class="cell-item">
+                                    <span class="cell-left">黄色</span>
+                                    <label class="cell-right">
+                                    	<input type="hidden" name="xuanze" value="<%=request.getParameter("xuanze")%>"/>
+                                        <input type="radio" name="dabianyanse"  value="黄色" checked/>
+                                        <i class="cell-radio-icon"></i>
+                                    </label>
+                            </label>
+                            <div class="swiper-container color-img bgc-f">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide"><img src="img/db-huang1.jpg" /></div>
+                                    <div class="swiper-slide"><img src="img/db-huang2.jpg" /></div>
+                                </div>
+                            </div>
+                            <label class="cell-item">
+                                    <span class="cell-left">黄褐色</span>
+                                    <label class="cell-right">
+                                        <input type="radio" name="dabianyanse" value="黄褐色"/>
+                                        <i class="cell-radio-icon"></i>
+                                    </label>
+                            </label>
+                            <div class="swiper-container color-img bgc-f">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide"><img src="img/db-huanghe1.jpg" /></div>
+                                    <div class="swiper-slide"><img src="img/db-huanghe2.jpg" /></div>
+                                </div>
+                            </div>
+
+                            <label class="cell-item">
+                                    <span class="cell-left">绿色</span>
+                                    <label class="cell-right">
+                                        <input type="radio" name="dabianyanse" value="绿色"/>
+                                        <i class="cell-radio-icon"></i>
+                                    </label>
+                            </label>
+                            <div class="swiper-container color-img bgc-f">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide"><img src="img/db-lv1.jpg" /></div>
+                                    <div class="swiper-slide"><img src="img/db-lv2.jpg" /></div>
+                                    <div class="swiper-slide"><img src="img/db-lv3.jpg" /></div>
+                                    <div class="swiper-slide"><img src="img/db-lv4.jpg" /></div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <button id="submit" type="submit" class="btn-block btn-primary login-btn">确定</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+        <script src="dep-td/js/ydui.js"></script>
+        <script src="js-td/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+        <script>
+        $('#submit').click(function(){
+                var val = $("input[type='radio']:checked").val();
+                sessionStorage.setItem('shitfuxie', val);
+                window.history.back();
+            })
+            var swiper = new Swiper('.swiper-container', {
+                slidesPerView: 2,
+                spaceBetween: 0,
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+            });
+        </script>
   </body>
 </html>

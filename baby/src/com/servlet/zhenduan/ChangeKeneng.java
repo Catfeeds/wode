@@ -17,7 +17,7 @@ import com.dao.impl.KenengDaoImpl;
 import com.dao.impl.ZhuyiDaoImpl;
 
 /**
- * @author 杜欢  Email：huandu01@163.com
+ * @author  
  *
  */
 public class ChangeKeneng extends HttpServlet {
