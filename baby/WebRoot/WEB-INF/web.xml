@@ -1,0 +1,1187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <display-name></display-name>
+  
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.servlet.LoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>InfInputServlet</servlet-name>
+    <servlet-class>com.servlet.InfInputServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>InfSearchServlet</servlet-name>
+    <servlet-class>com.servlet.InfSearchServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SearchPatientServlet</servlet-name>
+    <servlet-class>com.servlet.SearchPatientServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SavePatientServlet</servlet-name>
+    <servlet-class>com.servlet.SavePatientServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>InputSymptom</servlet-name>
+    <servlet-class>com.servlet.zhenduan.InputSymptom</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>InputBaojian</servlet-name>
+    <servlet-class>com.servlet.zhenduan.InputBaojian</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>InputJishi</servlet-name>
+    <servlet-class>com.servlet.zhenduan.InputJishi</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>InputQidongZhihui</servlet-name>
+    <servlet-class>com.servlet.zhenduan.InputQidongZhihui</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>InputmanxingKesou</servlet-name>
+    <servlet-class>com.servlet.zhenduan.InputmanxingKesou</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>InputBihoudilou</servlet-name>
+    <servlet-class>com.servlet.zhenduan.InputBihoudilou</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>InputGanmaoKesou</servlet-name>
+    <servlet-class>com.servlet.zhenduan.InputGanmaoKesou</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>InputGanmaoFashao</servlet-name>
+    <servlet-class>com.servlet.zhenduan.InputGanmaoFashao</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>YanHouXuanze</servlet-name>
+    <servlet-class>com.tizhipanduan.YanHouXuanze</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Photoknow</servlet-name>
+    <servlet-class>com.servlet.Photoknow</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>Kenengknow</servlet-name>
+    <servlet-class>com.servlet.Kenengknow</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SearchAgentPageServlet</servlet-name>
+    <servlet-class>com.servlet.SearchAgentPageServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UpdateAgentServlet</servlet-name>
+    <servlet-class>com.servlet.UpdateAgentServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>JieSuan</servlet-name>
+    <servlet-class>com.servlet.JieSuan</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>JieSuanQingLing</servlet-name>
+    <servlet-class>com.servlet.JieSuanQingLing</servlet-class>
+  </servlet>
+  
+  
+  
+  
+  
+  <servlet-mapping>
+    <servlet-name>JieSuanQingLing</servlet-name>
+    <url-pattern>/JieSuanQingLing</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>JieSuan</servlet-name>
+    <url-pattern>/JieSuan</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UpdateAgentServlet</servlet-name>
+    <url-pattern>/UpdateAgentServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SearchAgentPageServlet</servlet-name>
+    <url-pattern>/SearchAgentPageServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Kenengknow</servlet-name>
+    <url-pattern>/Kenengknow</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Photoknow</servlet-name>
+    <url-pattern>/Photoknow</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>InputBaojian</servlet-name>
+    <url-pattern>/InputBaojian</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>InputJishi</servlet-name>
+    <url-pattern>/InputJishi</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>InputQidongZhihui</servlet-name>
+    <url-pattern>/InputQidongZhihui</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>InputmanxingKesou</servlet-name>
+    <url-pattern>/InputmanxingKesou</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>InputBihoudilou</servlet-name>
+    <url-pattern>/InputBihoudilou</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>InputGanmaoKesou</servlet-name>
+    <url-pattern>/InputGanmaoKesou</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>YanHouXuanze</servlet-name>
+    <url-pattern>/YanHouXuanze</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>InputGanmaoFashao</servlet-name>
+    <url-pattern>/InputGanmaoFashao</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>InfInputServlet</servlet-name>
+    <url-pattern>/InfInputServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>InfSearchServlet</servlet-name>
+    <url-pattern>/InfSearchServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SearchPatientServlet</servlet-name>
+    <url-pattern>/SearchPatientServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SavePatientServlet</servlet-name>
+    <url-pattern>/SavePatientServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>InputSymptom</servlet-name>
+    <url-pattern>/InputSymptom</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>login.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>InputSymptomPatientList</display-name>
+    <servlet-name>InputSymptomPatientList</servlet-name>
+    <servlet-class>com.servlet.zhenduan.InputSymptomPatientList</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InputSymptomPatientList</servlet-name>
+    <url-pattern>/InputSymptomPatientList</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ForwardToAddSymptom</display-name>
+    <servlet-name>ForwardToAddSymptom</servlet-name>
+    <servlet-class>direct.ForwardToAddSymptom</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ForwardToAddSymptom</servlet-name>
+    <url-pattern>/ForwardToAddSymptom</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>GetPatientRecordList</servlet-name>
+    <servlet-class>com.servlet.zhenduan.GetPatientRecordList</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SearchRecordServlet</servlet-name>
+    <servlet-class>com.servlet.SearchRecordServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SearchPhotoServlet</servlet-name>
+    <servlet-class>com.servlet.SearchPhotoServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SearchPhoServlet</servlet-name>
+    <servlet-class>com.servlet.SearchPhoServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AddPhoServlet</servlet-name>
+    <servlet-class>com.servlet.AddPhoServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SearchPatientPageServlet</servlet-name>
+    <servlet-class>com.servlet.SearchPatientPageServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ExitServlet</servlet-name>
+    <servlet-class>com.servlet.ExitServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>XuanzeServlet</servlet-name>
+    <servlet-class>com.servlet.XuanzeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>IsdoServlet</servlet-name>
+    <servlet-class>com.servlet.IsdoServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SearchRecordPageServlet</servlet-name>
+    <servlet-class>com.servlet.SearchRecordPageServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UserManagerServlet</servlet-name>
+    <servlet-class>com.servlet.UserManagerServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>UserManagerPageServlet</servlet-name>
+    <servlet-class>com.servlet.UserManagerPageServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ForwardToAddUserServlet</servlet-name>
+    <servlet-class>direct.ForwardToAddUserServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AddUserServlet</servlet-name>
+    <servlet-class>com.servlet.AddUserServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>RestPasswordServlet</servlet-name>
+    <servlet-class>com.servlet.RestPasswordServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ForwardToEditUserServlet</servlet-name>
+    <servlet-class>direct.ForwardToEditUserServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>EditUserServlet</servlet-name>
+    <servlet-class>com.servlet.EditUserServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>XiaYanDaiXuanze</servlet-name>
+    <servlet-class>com.tizhipanduan.XiaYanDaiXuanze</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ChanZdYiServlet</servlet-name>
+    <servlet-class>com.servlet.ChanZdYiServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SheZhiXuanze</servlet-name>
+    <servlet-class>com.tizhipanduan.SheZhiXuanze</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>TestServlet</servlet-name>
+    <servlet-class>com.servlet.TestServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>QitaSelect</servlet-name>
+    <servlet-class>com.servlet.zhenduan.QitaSelect</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>InputBianmi</servlet-name>
+    <servlet-class>com.servlet.zhenduan.InputBianmi</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>InputTigaoMianYili</servlet-name>
+    <servlet-class>com.servlet.zhenduan.InputTigaoMianYili</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ChangePassServlet</servlet-name>
+    <servlet-class>com.servlet.ChangePassServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ForwardToEditPassServlet</servlet-name>
+    <servlet-class>direct.ForwardToEditPassServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>CheckAddUserServlet</servlet-name>
+    <servlet-class>com.servlet.CheckAddUserServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ChunSeXuanze</servlet-name>
+    <servlet-class>com.tizhipanduan.ChunSeXuanze</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SheTiXuanze</servlet-name>
+    <servlet-class>com.tizhipanduan.SheTiXuanze</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>InputFuxie</servlet-name>
+    <servlet-class>com.servlet.zhenduan.InputFuxie</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>YanShenXuanze</servlet-name>
+    <servlet-class>com.tizhipanduan.YanShenXuanze</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ChangeEr1Servlet</servlet-name>
+    <servlet-class>com.servlet.zhenduan.ChangeEr1Servlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ChuZhenXuanze</servlet-name>
+    <servlet-class>com.tizhipanduan.ChuZhenXuanze</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>WenZhenXuanze</servlet-name>
+    <servlet-class>com.tizhipanduan.WenZhenXuanze</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ChangeZdEr4</servlet-name>
+    <servlet-class>com.servlet.zhenduan.ChangeZdEr4</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>MianSeXuanze</servlet-name>
+    <servlet-class>com.tizhipanduan.MianSeXuanze</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>BiYiLiangCeXuanze</servlet-name>
+    <servlet-class>com.tizhipanduan.BiYiLiangCeXuanze</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ForwardToChanPlan</servlet-name>
+    <servlet-class>direct.ForwardToChanPlan</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>XuanzehuliServlet</servlet-name>
+    <servlet-class>com.servlet.XuanzehuliServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SheZhiYanSeXuanze</servlet-name>
+    <servlet-class>com.tizhipanduan.SheZhiYanSeXuanze</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SearchKenengServlet</servlet-name>
+    <servlet-class>com.servlet.SearchKenengServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SheTaiXuanze</servlet-name>
+    <servlet-class>com.tizhipanduan.SheTaiXuanze</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ChangeSearchKenengServlet</servlet-name>
+    <servlet-class>com.servlet.ChangeSearchKenengServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetPatientRecordList</servlet-name>
+    <url-pattern>/GetPatientRecordList</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SearchRecordServlet</servlet-name>
+    <url-pattern>/SearchRecordServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SearchPhotoServlet</servlet-name>
+    <url-pattern>/SearchPhotoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SearchPhoServlet</servlet-name>
+    <url-pattern>/SearchPhoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddPhoServlet</servlet-name>
+    <url-pattern>/AddPhoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SearchPatientPageServlet</servlet-name>
+    <url-pattern>/SearchPatientPageServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ExitServlet</servlet-name>
+    <url-pattern>/ExitServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>XuanzeServlet</servlet-name>
+    <url-pattern>/XuanzeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>IsdoServlet</servlet-name>
+    <url-pattern>/IsdoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SearchRecordPageServlet</servlet-name>
+    <url-pattern>/SearchRecordPageServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserManagerServlet</servlet-name>
+    <url-pattern>/UserManagerServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserManagerPageServlet</servlet-name>
+    <url-pattern>/UserManagerPageServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ForwardToAddUserServlet</servlet-name>
+    <url-pattern>/ForwardToAddUserServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddUserServlet</servlet-name>
+    <url-pattern>/AddUserServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RestPasswordServlet</servlet-name>
+    <url-pattern>/RestPasswordServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ForwardToEditUserServlet</servlet-name>
+    <url-pattern>/ForwardToEditUserServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>EditUserServlet</servlet-name>
+    <url-pattern>/EditUserServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>XiaYanDaiXuanze</servlet-name>
+    <url-pattern>/XiaYanDaiXuanze</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ChanZdYiServlet</servlet-name>
+    <url-pattern>/ChanZdYiServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SheZhiXuanze</servlet-name>
+    <url-pattern>/SheZhiXuanze</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>TestServlet</servlet-name>
+    <url-pattern>/TestServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>QitaSelect</servlet-name>
+    <url-pattern>/QitaSelect</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>InputBianmi</servlet-name>
+    <url-pattern>/InputBianmi</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>InputTigaoMianYili</servlet-name>
+    <url-pattern>/InputTigaoMianYili</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ChangePassServlet</servlet-name>
+    <url-pattern>/ChangePassServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ForwardToEditPassServlet</servlet-name>
+    <url-pattern>/ForwardToEditPassServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CheckAddUserServlet</servlet-name>
+    <url-pattern>/CheckAddUserServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ChunSeXuanze</servlet-name>
+    <url-pattern>/ChunSeXuanze</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SheTiXuanze</servlet-name>
+    <url-pattern>/SheTiXuanze</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>InputFuxie</servlet-name>
+    <url-pattern>/InputFuxie</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>YanShenXuanze</servlet-name>
+    <url-pattern>/YanShenXuanze</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ChangeEr1Servlet</servlet-name>
+    <url-pattern>/ChangeEr1Servlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ChuZhenXuanze</servlet-name>
+    <url-pattern>/ChuZhenXuanze</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>WenZhenXuanze</servlet-name>
+    <url-pattern>/WenZhenXuanze</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ChangeZdEr4</servlet-name>
+    <url-pattern>/ChangeZdEr4</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MianSeXuanze</servlet-name>
+    <url-pattern>/MianSeXuanze</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>BiYiLiangCeXuanze</servlet-name>
+    <url-pattern>/BiYiLiangCeXuanze</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ForwardToChanPlan</servlet-name>
+    <url-pattern>/ForwardToChanPlan</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>XuanzehuliServlet</servlet-name>
+    <url-pattern>/XuanzehuliServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SheZhiYanSeXuanze</servlet-name>
+    <url-pattern>/SheZhiYanSeXuanze</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SearchKenengServlet</servlet-name>
+    <url-pattern>/SearchKenengServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SheTaiXuanze</servlet-name>
+    <url-pattern>/SheTaiXuanze</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ChangeSearchKenengServlet</servlet-name>
+    <url-pattern>/ChangeSearchKenengServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DistrictManagerServlet</display-name>
+    <servlet-name>DistrictManagerServlet</servlet-name>
+    <servlet-class>com.servlet.DistrictManagerServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DistrictManagerServlet</servlet-name>
+    <url-pattern>/DistrictManagerServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CheckFenBuNameServlet</display-name>
+    <servlet-name>CheckFenBuNameServlet</servlet-name>
+    <servlet-class>com.servlet.CheckFenBuNameServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CheckFenBuNameServlet</servlet-name>
+    <url-pattern>/CheckFenBuNameServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AddFenbuServlet</display-name>
+    <servlet-name>AddFenbuServlet</servlet-name>
+    <servlet-class>com.servlet.AddFenbuServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>XuanzeServlet_change</servlet-name>
+    <servlet-class>com.servlet.XuanzeServlet_change</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AllChangeServlet</servlet-name>
+    <servlet-class>com.servlet.zhenduan.AllChangeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>his is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AddAgentServlet</servlet-name>
+    <servlet-class>com.servlet.AddAgentServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>SearchAgentServlet</servlet-name>
+    <servlet-class>com.servlet.SearchAgentServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ChongZhiServlet</servlet-name>
+    <servlet-class>com.servlet.ChongZhiServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>ChaKanYuEServlet</servlet-name>
+    <servlet-class>com.servlet.ChaKanYuEServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>AddAgentChaxunID</servlet-name>
+    <servlet-class>com.servlet.AddAgentChaxunID</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>This is the description of my J2EE component</description>
+  	<display-name>This is the display name of my J2EE component</display-name>
+  	<servlet-name>SavePatientXinxiServlet</servlet-name>
+  	<servlet-class>com.servlet.SavePatientXinxiServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>This is the description of my J2EE component</description>
+  	<display-name>This is the display name of my J2EE component</display-name>
+  	<servlet-name>SearchPatientXinxiServlet</servlet-name>
+  	<servlet-class>com.servlet.SearchPatientXinxiServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>This is the description of my J2EE component</description>
+  	<display-name>This is the display name of my J2EE component</display-name>
+  	<servlet-name>SearchPatientPageXinxiServlet</servlet-name>
+  	<servlet-class>com.servlet.SearchPatientPageXinxiServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>This is the description of my J2EE component</description>
+  	<display-name>This is the display name of my J2EE component</display-name>
+  	<servlet-name>RecordShowServlet</servlet-name>
+  	<servlet-class>com.servlet.RecordShowServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>This is the description of my J2EE component</description>
+  	<display-name>This is the display name of my J2EE component</display-name>
+  	<servlet-name>LiuHanXuanze</servlet-name>
+  	<servlet-class>com.tizhipanduan.LiuHanXuanze</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>This is the description of my J2EE component</description>
+  	<display-name>This is the display name of my J2EE component</display-name>
+  	<servlet-name>BiSaiXuanze</servlet-name>
+  	<servlet-class>com.tizhipanduan.BiSaiXuanze</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>This is the description of my J2EE component</description>
+  	<display-name>This is the display name of my J2EE component</display-name>
+  	<servlet-name>LiuTiXuanze</servlet-name>
+  	<servlet-class>com.tizhipanduan.LiuTiXuanze</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>This is the description of my J2EE component</description>
+  	<display-name>This is the display name of my J2EE component</display-name>
+  	<servlet-name>DaPenTiXuanze</servlet-name>
+  	<servlet-class>com.tizhipanduan.DaPenTiXuanze</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>This is the description of my J2EE component</description>
+  	<display-name>This is the display name of my J2EE component</display-name>
+  	<servlet-name>YanTongXuanze</servlet-name>
+  	<servlet-class>com.tizhipanduan.YanTongXuanze</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>This is the description of my J2EE component</description>
+  	<display-name>This is the display name of my J2EE component</display-name>
+  	<servlet-name>GanKeXuanze</servlet-name>
+  	<servlet-class>com.tizhipanduan.GanKeXuanze</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>This is the description of my J2EE component</description>
+  	<display-name>This is the display name of my J2EE component</display-name>
+  	<servlet-name>KeSouYouTanXuanze</servlet-name>
+  	<servlet-class>com.tizhipanduan.KeSouYouTanXuanze</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>This is the description of my J2EE component</description>
+  	<display-name>This is the display name of my J2EE component</display-name>
+  	<servlet-name>MuChiYanXuanze</servlet-name>
+  	<servlet-class>com.tizhipanduan.MuChiYanXuanze</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>This is the description of my J2EE component</description>
+  	<display-name>This is the display name of my J2EE component</display-name>
+  	<servlet-name>XingZhuangXuanze</servlet-name>
+  	<servlet-class>com.tizhipanduan.XingZhuangXuanze</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>This is the description of my J2EE component</description>
+  	<display-name>This is the display name of my J2EE component</display-name>
+  	<servlet-name>QiWeiXuanze</servlet-name>
+  	<servlet-class>com.tizhipanduan.QiWeiXuanze</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>This is the description of my J2EE component</description>
+  	<display-name>This is the display name of my J2EE component</display-name>
+  	<servlet-name>DaBianYanSeXuanze</servlet-name>
+  	<servlet-class>com.tizhipanduan.DaBianYanSeXuanze</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>This is the description of my J2EE component</description>
+  	<display-name>This is the display name of my J2EE componen</display-name>
+  	<servlet-name>TiaoLiServlet</servlet-name>
+  	<servlet-class>com.servlet.TiaoLiServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>This is the description of my J2EE component</description>
+  	<display-name>This is the display name of my J2EE componen</display-name>
+  	<servlet-name>FanKuiYiJianServlet</servlet-name>
+  	<servlet-class>com.servlet.FanKuiYiJianServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>This is the description of my J2EE component</description>
+  	<display-name>This is the display name of my J2EE componen</display-name>
+  	<servlet-name>BiLiangXuanze</servlet-name>
+  	<servlet-class>com.tizhipanduan.BiLiangXuanze</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>This is the description of my J2EE component</description>
+  	<display-name>This is the display name of my J2EE componen</display-name>
+  	<servlet-name>FuXieXingZhuangXuanze</servlet-name>
+  	<servlet-class>com.tizhipanduan.FuXieXingZhuangXuanze</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>This is the description of my J2EE component</description>
+  	<display-name>This is the display name of my J2EE componen</display-name>
+  	<servlet-name>KouQiangXuanze</servlet-name>
+  	<servlet-class>com.tizhipanduan.KouQiangXuanze</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>This is the description of my J2EE component</description>
+  	<display-name>This is the display name of my J2EE componen</display-name>
+  	<servlet-name>ShiPinChuFangServlet</servlet-name>
+  	<servlet-class>com.servlet.ShiPinChuFangServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>This is the description of my J2EE component</description>
+  	<display-name>This is the display name of my J2EE componen</display-name>
+  	<servlet-name>ShiPinServlet</servlet-name>
+  	<servlet-class>com.servlet.ShiPinServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>This is the description of my J2EE component</description>
+  	<display-name>This is the display name of my J2EE componen</display-name>
+  	<servlet-name>DuShuXuanze</servlet-name>
+  	<servlet-class>com.tizhipanduan.DuShuXuanze</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>This is the description of my J2EE component</description>
+  	<display-name>This is the display name of my J2EE componen</display-name>
+  	<servlet-name>ShiJianXiuGaiServlet</servlet-name>
+  	<servlet-class>com.servlet.ShiJianXiuGaiServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>This is the description of my J2EE component</description>
+  	<display-name>This is the display name of my J2EE componen</display-name>
+  	<servlet-name>AddZhuceServlet</servlet-name>
+  	<servlet-class>com.servlet.AddZhuceServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>This is the description of my J2EE component</description>
+  	<display-name>This is the display name of my J2EE componen</display-name>
+  	<servlet-name>XiuGaiZhujiaoServlet</servlet-name>
+  	<servlet-class>com.servlet.XiuGaiZhujiaoServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>This is the description of my J2EE component</description>
+  	<display-name>This is the display name of my J2EE componen</display-name>
+  	<servlet-name>MagServlet</servlet-name>
+  	<servlet-class>com.servlet.MagServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>This is the description of my J2EE component</description>
+  	<display-name>This is the display name of my J2EE componen</display-name>
+  	<servlet-name>JianzhiServlet</servlet-name>
+  	<servlet-class>com.servlet.JianzhiServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>This is the description of my J2EE component</description>
+  	<display-name>This is the display name of my J2EE componen</display-name>
+  	<servlet-name>ChongZhiPsswordServlet</servlet-name>
+  	<servlet-class>com.servlet.ChongZhiPsswordServlet</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>This is the description of my J2EE component</description>
+  	<display-name>This is the display name of my J2EE component</display-name>
+  	<servlet-name>Export</servlet-name>
+  	<servlet-class>com.servlet.Export</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>This is the description of my J2EE component</description>
+  	<display-name>This is the display name of my J2EE component</display-name>
+  	<servlet-name>YanShiXuanze</servlet-name>
+  	<servlet-class>com.tizhipanduan.YanShiXuanze</servlet-class>
+  </servlet>
+     <servlet>
+  	<description>This is the description of my J2EE component</description>
+  	<display-name>This is the display name of my J2EE component</display-name>
+  	<servlet-name>OuTuXuanze</servlet-name>
+  	<servlet-class>com.tizhipanduan.OuTuXuanze</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>This is the description of my J2EE component</description>
+  	<display-name>This is the display name of my J2EE component</display-name>
+  	<servlet-name>GanMaoFuXieXuanze</servlet-name>
+  	<servlet-class>com.tizhipanduan.GanMaoFuXieXuanze</servlet-class>
+  </servlet>
+   <servlet>
+  	<description>This is the description of my J2EE component</description>
+  	<display-name>This is the display name of my J2EE component</display-name>
+  	<servlet-name>FuTongXuanze</servlet-name>
+  	<servlet-class>com.tizhipanduan.FuTongXuanze</servlet-class>
+  </servlet>
+   <servlet>
+  	<description>This is the description of my J2EE component</description>
+  	<display-name>This is the display name of my J2EE component</display-name>
+  	<servlet-name>TouTongXuanze</servlet-name>
+  	<servlet-class>com.tizhipanduan.TouTongXuanze</servlet-class>
+  </servlet>
+   <servlet>
+  	<description>This is the description of my J2EE component</description>
+  	<display-name>This is the display name of my J2EE component</display-name>
+  	<servlet-name>TouYunXuanze</servlet-name>
+  	<servlet-class>com.tizhipanduan.TouYunXuanze</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>This is the description of my J2EE component</description>
+  	<display-name>This is the display name of my J2EE component</display-name>
+  	<servlet-name>BttzdXuanze</servlet-name>
+  	<servlet-class>com.tizhipanduan.BttzdXuanze</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>This is the description of my J2EE component</description>
+  	<display-name>This is the display name of my J2EE component</display-name>
+  	<servlet-name>KeChuanXuanze</servlet-name>
+  	<servlet-class>com.tizhipanduan.KeChuanXuanze</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>This is the description of my J2EE component</description>
+  	<display-name>This is the display name of my J2EE component</display-name>
+  	<servlet-name>ShiYuChaXuanze</servlet-name>
+  	<servlet-class>com.tizhipanduan.ShiYuChaXuanze</servlet-class>
+  </servlet>
+ <servlet>
+  	<description>This is the description of my J2EE component</description>
+  	<display-name>This is the display name of my J2EE component</display-name>
+  	<servlet-name>TiaoShiXuanze</servlet-name>
+  	<servlet-class>com.tizhipanduan.TiaoShiXuanze</servlet-class>
+  </servlet>
+ <servlet>
+  	<description>This is the description of my J2EE component</description>
+  	<display-name>This is the display name of my J2EE component</display-name>
+  	<servlet-name>YouKouQiXuanze</servlet-name>
+  	<servlet-class>com.tizhipanduan.YouKouQiXuanze</servlet-class>
+  </servlet>
+  <servlet>
+  	<description>This is the description of my J2EE component</description>
+  	<display-name>This is the display name of my J2EE component</display-name>
+  	<servlet-name>SheTaiHouXuanze</servlet-name>
+  	<servlet-class>com.tizhipanduan.SheTaiHouXuanze</servlet-class>
+  </servlet>
+
+
+
+    <servlet-mapping>
+		<servlet-name>SheTaiHouXuanze</servlet-name>
+		<url-pattern>/SheTaiHouXuanze</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>YouKouQiXuanze</servlet-name>
+		<url-pattern>/YouKouQiXuanze</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>TiaoShiXuanze</servlet-name>
+		<url-pattern>/TiaoShiXuanze</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>ShiYuChaXuanze</servlet-name>
+		<url-pattern>/ShiYuChaXuanze</url-pattern>
+	</servlet-mapping>
+    <servlet-mapping>
+		<servlet-name>YanShiXuanze</servlet-name>
+		<url-pattern>/YanShiXuanze</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>KeChuanXuanze</servlet-name>
+		<url-pattern>/KeChuanXuanze</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>BttzdXuanze</servlet-name>
+		<url-pattern>/BttzdXuanze</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>TouYunXuanze</servlet-name>
+		<url-pattern>/TouYunXuanze</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>TouTongXuanze</servlet-name>
+		<url-pattern>/TouTongXuanze</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>FuTongXuanze</servlet-name>
+		<url-pattern>/FuTongXuanze</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>GanMaoFuXieXuanze</servlet-name>
+		<url-pattern>/GanMaoFuXieXuanze</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>OuTuXuanze</servlet-name>
+		<url-pattern>/OuTuXuanze</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>Export</servlet-name>
+		<url-pattern>/Export</url-pattern>
+	</servlet-mapping>
+  
+  <servlet-mapping>
+  	<servlet-name>ChongZhiPsswordServlet</servlet-name>
+  	<url-pattern>/ChongZhiPsswordServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>JianzhiServlet</servlet-name>
+  	<url-pattern>/JianzhiServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>MagServlet</servlet-name>
+  	<url-pattern>/MagServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>XiuGaiZhujiaoServlet</servlet-name>
+  	<url-pattern>/XiuGaiZhujiaoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AddZhuceServlet</servlet-name>
+  	<url-pattern>/AddZhuceServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ShiJianXiuGaiServlet</servlet-name>
+  	<url-pattern>/ShiJianXiuGaiServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DuShuXuanze</servlet-name>
+  	<url-pattern>/DuShuXuanze</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ShiPinChuFangServlet</servlet-name>
+  	<url-pattern>/ShiPinChuFangServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ShiPinServlet</servlet-name>
+  	<url-pattern>/ShiPinServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>KouQiangXuanze</servlet-name>
+  	<url-pattern>/KouQiangXuanze</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>FuXieXingZhuangXuanze</servlet-name>
+  	<url-pattern>/FuXieXingZhuangXuanze</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>BiLiangXuanze</servlet-name>
+  	<url-pattern>/BiLiangXuanze</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>FanKuiYiJianServlet</servlet-name>
+  	<url-pattern>/FanKuiYiJianServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>TiaoLiServlet</servlet-name>
+  	<url-pattern>/TiaoLiServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DaBianYanSeXuanze</servlet-name>
+  	<url-pattern>/DaBianYanSeXuanze</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>QiWeiXuanze</servlet-name>
+  	<url-pattern>/QiWeiXuanze</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>XingZhuangXuanze</servlet-name>
+  	<url-pattern>/XingZhuangXuanze</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>MuChiYanXuanze</servlet-name>
+  	<url-pattern>/MuChiYanXuanze</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>KeSouYouTanXuanze</servlet-name>
+  	<url-pattern>/KeSouYouTanXuanze</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>GanKeXuanze</servlet-name>
+  	<url-pattern>/GanKeXuanze</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>YanTongXuanze</servlet-name>
+  	<url-pattern>/YanTongXuanze</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>DaPenTiXuanze</servlet-name>
+  	<url-pattern>/DaPenTiXuanze</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>LiuTiXuanze</servlet-name>
+  	<url-pattern>/LiuTiXuanze</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>BiSaiXuanze</servlet-name>
+  	<url-pattern>/BiSaiXuanze</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>LiuHanXuanze</servlet-name>
+  	<url-pattern>/LiuHanXuanze</url-pattern>
+  </servlet-mapping>
+ <servlet-mapping>
+ 	<servlet-name>RecordShowServlet</servlet-name>
+ 	<url-pattern>/RecordShowServlet</url-pattern>
+ </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>SearchPatientPageXinxiServlet</servlet-name>
+  	<url-pattern>/SearchPatientPageXinxiServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>SearchPatientXinxiServlet</servlet-name>
+  	<url-pattern>/SearchPatientXinxiServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>SavePatientXinxiServlet</servlet-name>
+  	<url-pattern>/SavePatientXinxiServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddAgentChaxunID</servlet-name>
+    <url-pattern>/AddAgentChaxunID</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ChaKanYuEServlet</servlet-name>
+    <url-pattern>/ChaKanYuEServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ChongZhiServlet</servlet-name>
+    <url-pattern>/ChongZhiServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddFenbuServlet</servlet-name>
+    <url-pattern>/AddFenbuServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>XuanzeServlet_change</servlet-name>
+    <url-pattern>/XuanzeServlet_change</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AllChangeServlet</servlet-name>
+    <url-pattern>/AllChangeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddAgentServlet</servlet-name>
+    <url-pattern>/AddAgentServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SearchAgentServlet</servlet-name>
+    <url-pattern>/SearchAgentServlet</url-pattern>
+  </servlet-mapping>
+</web-app>
