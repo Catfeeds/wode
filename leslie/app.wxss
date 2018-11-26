@@ -8,6 +8,11 @@
   position: relative;
 }
 
+.main-color-btn {
+  background-color: #e50012 !important;
+  color: #fff !important;
+}
+
 @font-face {font-family: "iconfont";
   src: url('//at.alicdn.com/t/font_868001_bvc9sk38mlh.eot?t=1542447758155'); /* IE9*/
   src: url('//at.alicdn.com/t/font_868001_bvc9sk38mlh.eot?t=1542447758155#iefix') format('embedded-opentype'), /* IE6-IE8 */

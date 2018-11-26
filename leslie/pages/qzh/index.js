@@ -139,7 +139,13 @@ Page({
 
   ffQzh: util.throttle(function() {
     var userInfo = this.data.userInfo;
-    if (userInfo && userInfo.user_type > 3) {
+    if (!userInfo) {
+      wx.showModal({
+        title: '失败',
+        content: '放飞失败，请稍后重试。',
+        showCancel: false
+      })
+    } else if (userInfo && userInfo.user_type > 3) {
       this.setData({
         hideShopPopup: false
       })

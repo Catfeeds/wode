@@ -1,4 +1,5 @@
 // pages/search/index.js
+var app = getApp()
 Page({
 
   /**
@@ -7,6 +8,7 @@ Page({
   data: {
     ssButton: "取消",
     buttonClass: "",
+    istap: false,
     keyword: "",
     keywordList: []
   },
@@ -28,9 +30,7 @@ Page({
   },
   buttonTap: function() {
     if (this.data.ssButton == "确定") {
-      wx.navigateTo({
-        url: "/pages/search-list/index?keyword=" + this.data.keyword
-      })
+      this.getPostList(this.data.keyword);
     } else {
       wx.switchTab({
         url: '/pages/first-nav/index',
@@ -44,18 +44,57 @@ Page({
       keyword: e.currentTarget.dataset.keyword
     })
   },
+  getPostList: function(keyword) {
+    var that = this;
+    if (this.data.istap) {
+      console.log("双击");
+      return
+    }
+    wx.showLoading();
+    this.data.istap = true;
+    var user_id = wx.getStorageSync('user_id');
+    wx.request({
+      url: app.globalData.subDomain + '/my_collect_list',
+      data: {
+        keyword: keyword,
+        user_id: user_id
+      },
+      success: function(res) {
+        if (res.data.code == 0) {
+          var result = res.data.data.result1;
+          that.setData({
+            result: result
+          })
+          that.data.istap = false;
+          wx.hideLoading();
+        }
+      },
+      fail: function() {
+        this.data.istap = false;
+        wx.hideLoading();
+      }
+    })
+  },
+  clickPost: function(e) {
+    var id = e.currentTarget.dataset.id;
+    var curName = "搜索";
+    wx.navigateTo({
+      url: "../article-detail/index?id=" + id + "&curName=" + curName + "&isBack=1"
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    if (options.selectid && options.city) {
+    if (options.keyword) {
       this.setData({
-        selectid: options.selectid,
-        city: options.city
+        keyword: options.keyword,
       })
     }
 
     this.getKeywordList();
+    this.getPostList(options.keyword);
   },
 
   /**
@@ -98,17 +137,15 @@ Page({
 
   },
   getKeywordList: function() {
-    // var that = this;
-    // wx.request({
-    //   url: 'Jpcsc/keyword',
-    //   data: {
-
-    //   },
-    //   success: function (res) {
-    //     that.data.keywordList = res.data.data;
-    //     that.changeKeywords();
-    //   }
-    // })
+    var that = this;
+    wx.request({
+      url: app.globalData.subDomain + '/keywords',
+      data: {},
+      success: function(res) {
+        that.data.keywordList = res.data.data;
+        that.changeKeywords();
+      }
+    })
   },
   changeKeywords: function() {
     var keywordList = [];
