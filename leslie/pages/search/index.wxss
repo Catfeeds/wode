@@ -59,7 +59,7 @@
 }
 
 .ss-my-d {
-  width: 100rpx;
+  width: 110rpx;
   height: 60rpx;
   border: 1px solid #f0f0f0;
   text-align: center;

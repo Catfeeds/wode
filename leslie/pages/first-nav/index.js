@@ -57,6 +57,15 @@ Page({
     // console.log('e.detail.scrollTop:'+e.detail.scrollTop) ;
     // console.log('scrollTop:'+scrollTop)
   },
+  buttonTap: function (e) {
+    var user_id = wx.getStorageSync('user_id');
+    app.addForm(e.detail.formId, user_id);
+
+    var keyword = e.detail.value.keyword;
+    wx.navigateTo({
+      url: "/pages/search/index?keyword=" + keyword
+    })
+  },
   onLoad: function() {
     var that = this
     wx.setNavigationBarTitle({
@@ -71,25 +80,25 @@ Page({
       this.getUserInfo();
     }
 
-    wx.request({
-      url: app.globalData.subDomain + '/banner_list',
-      data: {
-        key: 'mallName'
-      },
-      success: function(res) {
-        if (res.data.code == 404) {
-          wx.showModal({
-            title: '提示',
-            content: '请在后台添加 banner 轮播图片',
-            showCancel: false
-          })
-        } else {
-          that.setData({
-            banners: res.data.data
-          });
-        }
-      }
-    })
+    // wx.request({
+    //   url: app.globalData.subDomain + '/banner_list',
+    //   data: {
+    //     key: 'mallName'
+    //   },
+    //   success: function(res) {
+    //     if (res.data.code == 404) {
+    //       wx.showModal({
+    //         title: '提示',
+    //         content: '请在后台添加 banner 轮播图片',
+    //         showCancel: false
+    //       })
+    //     } else {
+    //       that.setData({
+    //         banners: res.data.data
+    //       });
+    //     }
+    //   }
+    // })
     that.getNotice();
     that.getCategory();
   },

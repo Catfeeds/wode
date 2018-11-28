@@ -1,7 +1,24 @@
 <!--pages/my-help/index.wxml-->
 <import src="../../wxParse/wxParse.wxml" />
 <view class='container'>
-
+  <form report-submit="true" bindsubmit="buttonTap">
+    <view class='ss-my'>
+      <view class='ss-my-c'>
+        <view class='ss-my-c-img'>
+          <image src='/images/s.png'></image>
+        </view>
+        <view class='ss-my-c-ipt'>
+          <input name="keyword" value='{{keyword}}' placeholder='输入想要搜索的内容' auto-focus></input>
+        </view>
+        <view class='ss-my-c-x'>
+          <text hidden='true'></text>
+        </view>
+      </view>
+      <button class='ss-my-d' formType="submit">
+        确定
+      </button>
+    </view>
+  </form>
   <view class="tab_list control-content-list">
     <view bindtap="statusTap" class="status-label {{item.id == currentType ? 'active' : ''}}" wx:for-items="{{statusType}}" wx:key="{{item.id}}" data-index="{{item.id}}" data-name="{{item.name}}">
       <view class="weui_cell">{{item.name}}</view>

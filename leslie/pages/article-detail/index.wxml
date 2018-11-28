@@ -15,7 +15,7 @@
     联系客服
   </view>
 </view>
-<view class="footer-box3" wx:if="{{bgxywz.id!=490}}">
+<view class="footer-box3" wx:if="{{bgxywz.id!=490&bgxywz.id!=749}}">
   <view class="contact3">
     <view>
       <button class="btn1" bindtap="toHomePage">

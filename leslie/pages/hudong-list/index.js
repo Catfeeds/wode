@@ -11,6 +11,16 @@ Page({
     isclick: false,
     currentName: ""
   },
+  
+  buttonTap: function (e) {
+    var user_id = wx.getStorageSync('user_id');
+    app.addForm(e.detail.formId, user_id);
+
+    var keyword = e.detail.value.keyword;
+    wx.navigateTo({
+      url: "/pages/search/index?keyword=" + keyword
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载

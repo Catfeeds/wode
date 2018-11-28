@@ -79,10 +79,8 @@ Page({
     })
   },
   aboutUs: function() {
-    wx.showModal({
-      title: '',
-      content: app.globalData.shareProfile,
-      showCancel: false
+    wx.navigateTo({
+      url: "../article-detail/index?id=749&curName=关于我们&isBack=1"
     })
   },
   getPhoneNumber: function(e) {

@@ -257,6 +257,73 @@ swiper-item image {
   /* display: flex; */
   position: relative;
 }
+
 .weui_cell {
   padding: 5rpx;
+}
+
+.ss-my {
+  display: flex;
+  text-align: center;
+  padding: 24rpx;
+  border-bottom: 1px solid #f0f0f0;
+  background-color: #e50012;
+}
+
+.ss-my-c {
+  display: flex;
+  flex: 1;
+}
+
+.ss-my-c image {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.ss-my-c-img {
+  background-color: #f0f0f0;
+  width: 60rpx;
+  height: 60rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 90px 0 0 90px;
+}
+
+.ss-my-c-ipt {
+  background-color: #f0f0f0;
+  height: 60rpx;
+  line-height: 60rpx;
+  flex: 1;
+}
+
+.ss-my-c-ipt input {
+  width: 100%;
+  height: 100%;
+  font-size: 30rpx;
+}
+
+.ss-my-c-x {
+  background-color: #f0f0f0;
+  width: 60rpx;
+  height: 60rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0px 90px 90px 0px;
+}
+
+.ss-my-d {
+  width: 110rpx;
+  height: 60rpx;
+  border: 1px solid #f0f0f0;
+  text-align: center;
+  line-height: 60rpx;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+  /* background-color: #fafafa; */
+  margin-left: 10rpx;
+  background-color: #f0f0f0;
+  color: #111;
+  padding: 0px;
 }
