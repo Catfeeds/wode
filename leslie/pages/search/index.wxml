@@ -18,18 +18,19 @@
 
   </view>
   <view class='ss-hot'>
-    <view class='ss-title '>
-      <view>热门搜索</view>
+    <view class='ss-title'>
+      <view style="width: 88%">
+        <scroll-view class="ss-content" scroll-x>
+          <view wx:for-items="{{keywords}}" wx:key="{{index}}" bindtap="toSearchTap" data-keyword="{{item.keyword}}">{{item.keyword}}</view>
+        </scroll-view>
+      </view>
       <view bindtap="toChangeKeyTap" class='main-color'>换一批</view>
     </view>
-    <view class='ss-content'>
-      <view wx:for-items="{{keywords}}" wx:key="{{index}}" bindtap="toSearchTap" data-keyword="{{item.keyword}}">{{item.keyword}}</view>
-    </view>
   </view>
-  
-  <view class='droplist' >
+
+  <view class='droplist'>
     <view class="no-bgxyList" hidden="{{result.length > 0 ? true : false}}">
-      <view class="text">暂无文章</view>
+      <view class="text">暂无内容</view>
     </view>
     <block wx:for="{{result}}" wx:key="{{index}}">
       <view class='droplist-title' data-index="{{index}}" data-id="{{item.id}}" bindtap='clickPost'>

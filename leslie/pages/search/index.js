@@ -32,17 +32,19 @@ Page({
     if (this.data.ssButton == "确定") {
       this.getPostList(this.data.keyword);
     } else {
-      wx.switchTab({
-        url: '/pages/first-nav/index',
-      })
+      wx.navigateBack({})
+      // wx.switchTab({
+      //   url: '/pages/first-nav/index',
+      // })
     }
   },
   toSearchTap: function(e) {
     this.setData({
       ssButton: "确定",
-      buttonClass: "queding",
+      buttonClass: "main-color-btn",
       keyword: e.currentTarget.dataset.keyword
     })
+    this.getPostList(e.currentTarget.dataset.keyword);
   },
   getPostList: function(keyword) {
     var that = this;
@@ -54,14 +56,14 @@ Page({
     this.data.istap = true;
     var user_id = wx.getStorageSync('user_id');
     wx.request({
-      url: app.globalData.subDomain + '/my_collect_list',
+      url: app.globalData.subDomain + '/sel_post_list',
       data: {
         keyword: keyword,
         user_id: user_id
       },
       success: function(res) {
         if (res.data.code == 0) {
-          var result = res.data.data.result1;
+          var result = res.data.data;
           that.setData({
             result: result
           })
