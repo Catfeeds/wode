@@ -20,6 +20,7 @@ Page({
     wx.request({
       url: app.globalData.subDomain + '/esxx_detail',
       data: {
+        user_id: user_id,
         id: e.id
       },
       success: function(res) {
@@ -28,6 +29,7 @@ Page({
         var goods_imgs = datas.goods_img.split(',');
         that.data.goodsDetail = datas;
         that.setData({
+          zan_list: res.data.data2,
           goodsDetail: datas,
           goods_imgs: goods_imgs
 
@@ -37,8 +39,34 @@ Page({
     })
   },
 
-  toWant: function() {
 
+  hireXxTap: function(e) {
+    var that = this;
+    var goodsDetail = this.data.goodsDetail;
+    var goods_id = e.currentTarget.dataset.id;
+    if (goodsDetail.is_want > 0) {
+      return;
+    }
+    var user_id = wx.getStorageSync('user_id');
+    wx.request({
+      url: app.globalData.subDomain + '/user_es_goods_want',
+      data: {
+        user_id: user_id,
+        goods_id: goods_id
+      },
+      success: function(res) {
+        wx.showToast({
+          title: '已赞美',
+          icon: 'success',
+          duration: 1000
+        })
+        goodsDetail.is_want = 1;
+        goodsDetail.num_zan += 1;
+        that.setData({
+          goodsDetail: goodsDetail,
+        });
+      }
+    })
   },
 
   makePhoneCall: function(e) {

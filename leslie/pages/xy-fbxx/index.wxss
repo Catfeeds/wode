@@ -63,7 +63,7 @@
 
 .save-btn {
   margin-top: 30rpx;
-  background-color: #e85654;
+  background-color: #0095e5;
   color: #fff;
   width: 90%;
 }

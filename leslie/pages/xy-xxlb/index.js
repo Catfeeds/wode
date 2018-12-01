@@ -100,9 +100,13 @@ Page({
 
   hireXxTap: function(e) {
     var that = this;
-    var user_id = wx.getStorageSync('user_id');
+    var esxxList = this.data.esxxList;
     var goods_id = e.currentTarget.dataset.id;
     var ind = e.currentTarget.dataset.ind;
+    if (esxxList[ind]['is_want']>0) {
+      return;
+    }
+    var user_id = wx.getStorageSync('user_id');
     wx.request({
       url: app.globalData.subDomain + '/user_es_goods_want',
       data: {
@@ -115,8 +119,8 @@ Page({
           icon: 'success',
           duration: 1000
         })
-        var esxxList = that.data.esxxList;
         esxxList[ind]['is_want'] = 1;
+        esxxList[ind]['num_zan'] += 1;
         that.setData({
           esxxList: esxxList,
         });
