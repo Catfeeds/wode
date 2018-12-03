@@ -33,7 +33,7 @@
             </view>
           </view>
           <view>
-            <textarea name="remark" placeholder="致亲爱的哥哥" fixed='true' value="" />
+            <textarea name="remark" placeholder="致亲爱的哥哥" fixed='true' value="{{con}}" />
           </view>
           <view>
             <scroll-view class="scroll-view_H" scroll-x style="width: 100%">
@@ -66,7 +66,7 @@
           <view class="time">{{craneInfo.create_time}}</view>
         </view>
         <view>
-          <textarea name="remark" value="{{craneInfo.remark}}" fixed='true' disabled='true' />
+          <textarea class='readqzh' name="remark" value="{{craneInfo.remark}}" fixed='true' disabled='true' />
         </view>
       </view>
     </view>

@@ -55,7 +55,7 @@
 .row-wrap .label-left {
   width: 30%;
   float: left;
-  margin-top:5rpx;
+  margin-top: 5rpx;
   /* line-height: 100rpx;
   height: 80rpx; */
 }
@@ -83,6 +83,10 @@ textarea {
   padding: 20rpx;
   height: 250rpx;
   width: auto;
+}
+
+.readqzh {
+  height: 300rpx;
 }
 
 .save-btn {
@@ -153,17 +157,21 @@ textarea {
   height: 80rpx;
 }
 
-.wx-switch-input{
-width:82rpx !important;
-height:40rpx !important;
+.wx-switch-input {
+  width: 82rpx !important;
+  height: 40rpx !important;
 }
+
 /*白色样式（false的样式）*/
-.wx-switch-input::before{
-width:80rpx !important;
-height: 36rpx !important;
+
+.wx-switch-input::before {
+  width: 80rpx !important;
+  height: 36rpx !important;
 }
+
 /*绿色样式（true的样式）*/
-.wx-switch-input::after{
-width: 40rpx !important;
-height: 36rpx !important;
+
+.wx-switch-input::after {
+  width: 40rpx !important;
+  height: 36rpx !important;
 }

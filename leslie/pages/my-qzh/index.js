@@ -50,9 +50,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    if (app.globalData.qzh_width) {
-      this.getQzhList();
+    if (!app.globalData.qzh_width) {
+      var qzh_width = Math.floor((wx.getSystemInfoSync().windowWidth - 20) / 4);
+      app.globalData.qzh_width = qzh_width;
     }
+    this.getQzhList();
     this.setData({
       qzhImages: app.globalData.qzhImages
     });
@@ -208,7 +210,7 @@ Page({
       success: function(res) {
         wx.hideLoading();
         if (res.data.code != 0) {
-          // 登录错误 
+          // 错误 
           wx.showModal({
             title: '失败',
             content: res.data.msg,
@@ -216,6 +218,9 @@ Page({
           })
           return;
         }
+        that.setData({
+          con: "",
+        });
         // 刷新
         that.getQzhList();
       }
