@@ -39,6 +39,7 @@
   display: inline-block;
   line-height: 50rpx;
   width: 100%;
+  background: url(https://www.lanrengj.com/static/images/leslie/post_bg.png) repeat-y center;
 }
 
 .content .p1 {
@@ -111,10 +112,12 @@
   line-height: 60rpx;
   margin-top: 5rpx;
 }
+
 .iconfont {
   color: #333;
   font-size: 30rpx;
 }
+
 .active {
   color: #eb7350;
 }
