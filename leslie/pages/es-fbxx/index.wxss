@@ -67,3 +67,11 @@
   color: #fff;
   width: 90%;
 }
+.img {
+  width: 220rpx;
+  height: 240rpx;
+  border: 1px solid #f0f0f0;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5rpx;
+}

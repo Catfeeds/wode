@@ -2,6 +2,12 @@
   <form bindsubmit="bindSave">
     <view class="form-box">
       <view class="row-wrap">
+        <block wx:for="{{goods_imgs}}" wx:key="{{index}}">
+          <image class="img" src='https://www.lanrengj.com{{item}}' mode='aspectFit' bindtap='clickUp'></image>
+        </block>
+        <image class="img" src='https://www.lanrengj.com/static/images/weappshop/upload.png' mode='aspectFit' bindtap='clickUp'></image>
+      </view>
+      <view class="row-wrap">
         <view class="label name">
           物品名称</view>
         <view class="label-right">
