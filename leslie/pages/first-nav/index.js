@@ -195,14 +195,14 @@ Page({
     })
   },
   toToupiaoTap: function() {
-    wx.showToast({
-      title: '敬请期待',
-      icon: 'none',
-      duration: 2000
-    })
-    // wx.navigateTo({
-    //   url: '/pages//index'
+    // wx.showToast({
+    //   title: '敬请期待',
+    //   icon: 'none',
+    //   duration: 2000
     // })
+    wx.navigateTo({
+      url: '/pages/vote/index/index'
+    })
   },
   toYouxiTap: function() {
     wx.showToast({
@@ -225,13 +225,13 @@ Page({
     })
   },
   toZutuanTap: function() {
-    wx.showToast({
-      title: '敬请期待',
-      icon: 'none',
-      duration: 2000
-    })
-    // wx.navigateTo({
-    //   url: '/pages//index'
+    // wx.showToast({
+    //   title: '敬请期待',
+    //   icon: 'none',
+    //   duration: 2000
     // })
+    wx.navigateTo({
+      url: '/pages/link/index/index'
+    })
   },
 })

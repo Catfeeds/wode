@@ -88,7 +88,7 @@ Page({
 
   xxDetailTap: function(e) {
     wx.navigateTo({
-      url: "/pages/es-details/index?id=" + e.currentTarget.dataset.id
+      url: "/pages/xy-details/index?id=" + e.currentTarget.dataset.id
     })
   },
 

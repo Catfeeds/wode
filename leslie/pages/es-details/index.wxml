@@ -27,7 +27,7 @@
     </view>
   </view>
   <view class="goods-des-info">
-    <view class="label-title">赞美过的人</view>
+    <view class="label-title">想要的人</view>
     <view class="goods-text">
       <block wx:for="{{zan_list}}" wx:key="{{index}}">
         <view class='droplist-title' data-id="{{item.user_id}}" bindtap=''>
@@ -47,7 +47,7 @@
     <view class="shop-cart-btn" bindtap="goShopCar">
     </view>
     <view class="join-shop-cart" bindtap="toAddShopCar"></view>
-    <view class="zan iconfont icon-dianzan1 {{goodsDetail.is_want ? 'active' : ''}}" catchtap="hireXxTap" data-id="{{goodsDetail.id}}">{{goodsDetail.num_zan}}赞美</view>
+    <view class="zan iconfont icon-dianzan1 {{goodsDetail.is_want ? 'active' : ''}}" catchtap="hireXxTap" data-id="{{goodsDetail.id}}">{{goodsDetail.num_zan}}想要</view>
   </view>
 
 </view>

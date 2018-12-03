@@ -1,66 +1,91 @@
-// pages/xy-details/index.js
+//index.js
+//获取应用实例
+var app = getApp();
+var WxParse = require('../../wxParse/wxParse.js');
+
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
-  
+    autoplay: true,
+    interval: 3000,
+    duration: 1000,
+    goodsDetail: {},
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-  
+  onLoad: function(e) {
+    var that = this;
+    var user_id = wx.getStorageSync('user_id');
+    this.setData({
+      user_id: user_id,
+    });
+    wx.request({
+      url: app.globalData.subDomain + '/esxx_detail',
+      data: {
+        user_id: user_id,
+        id: e.id
+      },
+      success: function(res) {
+        var selectSizeTemp = "";
+        var datas = res.data.data;
+        var goods_imgs = datas.goods_img.split(',');
+        that.data.goodsDetail = datas;
+        that.setData({
+          zan_list: res.data.data2,
+          goodsDetail: datas,
+          goods_imgs: goods_imgs
+
+        });
+        WxParse.wxParse('article', 'html', datas.goods_desc, that, 5);
+      }
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
+
+  hireXxTap: function(e) {
+    var that = this;
+    var goodsDetail = this.data.goodsDetail;
+    var goods_id = e.currentTarget.dataset.id;
+    if (goodsDetail.is_want > 0) {
+      return;
+    }
+    var user_id = wx.getStorageSync('user_id');
+    wx.request({
+      url: app.globalData.subDomain + '/user_es_goods_want',
+      data: {
+        user_id: user_id,
+        goods_id: goods_id
+      },
+      success: function(res) {
+        wx.showToast({
+          title: '已赞美',
+          icon: 'success',
+          duration: 1000
+        })
+        goodsDetail.is_want = 1;
+        goodsDetail.num_zan += 1;
+        that.setData({
+          goodsDetail: goodsDetail,
+        });
+      }
+    })
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-  
+  makePhoneCall: function(e) {
+    var phoneNumber = wx.getStorageSync('kefu');
+    wx.makePhoneCall({
+      phoneNumber: phoneNumber,
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-  
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-  
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-  
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-  
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-  
+  onShareAppMessage: function() {
+    var user_id = wx.getStorageSync('user_id');
+    return {
+      title: this.data.goodsDetail.goods_name,
+      path: '/pages/es-details/index?id=' + this.data.goodsDetail.id + '&inviter_id=' + user_id,
+      success: function(res) {
+        // 转发成功
+      },
+      fail: function(res) {
+        // 转发失败
+      }
+    }
   }
 })

@@ -56,7 +56,7 @@ Page({
       },
       success: function(res) {
         wx.showToast({
-          title: '已赞美',
+          title: '已想要',
           icon: 'success',
           duration: 1000
         })
