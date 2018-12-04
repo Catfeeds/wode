@@ -52,30 +52,32 @@ Page({
       title: '加载中...',
     })
     wx.request({  //请求接龙任务的详情数据
-      url: `${app.globalData.host}/application/link/getjielongtask.php`,
+      url: app.globalData.subDomain + '/getjielongtask',
       data: {
         taskid: opt.taskid,
       },
-      dataType: 'JSONP',
+      // dataType: 'JSONP',
       success: function (res) {
         wx.hideLoading();
-        var data0 = JSON.parse(res.data)[0]
+        console.log(res.data)
+        var data0 = res.data.data;//JSON.parse(res.data)[0]
+        console.log(data0)
         that.setData({
           taskData: data0
         })
-        wx.request({  //请求任务的参与者列表
-          url: `${app.globalData.host}/application/link/getTaskJoiner.php`,
-          data: {
-            taskid: opt.taskid,
-          },
-          dataType: 'JSONP',
-          success: function (res) {
-            var data0 = JSON.parse(res.data);
-            that.setData({
-              joinerData: data0
-            })
-          }
-        });
+        // wx.request({  //请求任务的参与者列表
+        //   url: `${app.globalData.host}/application/link/getTaskJoiner.php`,
+        //   data: {
+        //     taskid: opt.taskid,
+        //   },
+        //   dataType: 'JSONP',
+        //   success: function (res) {
+        //     var data0 = JSON.parse(res.data);
+        //     that.setData({
+        //       joinerData: data0
+        //     })
+        //   }
+        // });
       }
     });
     p.then(function () {
@@ -207,7 +209,7 @@ Page({
       title: '加载中...',
     })
     wx.request({  //加入此活动，并将用户更多信息存入数据库
-      url: app.globalData.host + '/application/link/joinjielongtask.php',
+      url: app.globalData.subDomain + '/joinjielongtask',
       data: {
         openid: app.globalData.openid,
         taskid: that.data.taskid,
@@ -215,7 +217,7 @@ Page({
         joinerTel: that.data.joinerTel,
         joinerRemark: that.data.joinerRemark,
       },
-      dataType: 'JSONP',
+      // dataType: 'JSONP',
       success: function (res) {
         wx.hideLoading();
         wx.showToast({

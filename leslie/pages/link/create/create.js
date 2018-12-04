@@ -131,7 +131,7 @@ Page({
       })
       console.log('创建页面的openid为:' + app.globalData.openid)
       wx.request({
-        url: app.globalData.host +'/application/link/creatjielongtask.php',
+        url: app.globalData.subDomain + '/creatjielongtask',
         data: {
           openid: app.globalData.openid,  //openid对应taskid
           taskid: that.data.taskid,  //用创建的时间作为接龙的id号
