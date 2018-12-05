@@ -6,4 +6,7 @@
   <view class="my-item">
     <navigator url="/pages/my-users-gzt/index" hover-class="navigator-hover">用户管理</navigator>
   </view>
+  <view class="my-item">
+    <navigator url="/pages/my-users-ckgzt/index" hover-class="navigator-hover">查看用户</navigator>
+  </view>
 </view>

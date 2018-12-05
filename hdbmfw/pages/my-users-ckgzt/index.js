@@ -7,10 +7,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    statusType: ["管理员", "会员", "非会员"],
-    statusKey: ["0", "1", "2"],
+    statusType: ["新用户", "新访问", "绑定"],
+    statusKey: ["1", "2", "3"],
     currentType: 0,
-    currentStatu: "0",
+    currentStatu: "1",
   },
   statusTap: function(e) {
     var that = this
@@ -38,22 +38,22 @@ Page({
   getShenheList: function() {
     var that = this;
     wx.request({
-      url: app.globalData.subDomain + '/yhlb',
+      url: app.globalData.subDomain + '/ck_yhlb',
       data: {},
       success: function(res) {
         if (res.data.code == 0) {
-          var user1 = res.data.data.gly;
+          var user1 = res.data.data.user1;
           for (var i = 0; i < user1.length; i++) {
             user1[i].reg_time = that.dataCode(user1[i].reg_time);
           }
-          var user2 = res.data.data.ptyh;
+          var user2 = res.data.data.user2;
           for (var i = 0; i < user2.length; i++) {
-            user2[i].reg_time = that.dataCode(user2[i].reg_time);
+            user2[i].last_login = that.dataCode(user2[i].last_login);
           }
           that.setData({
-            yishenhe: user1,
-            weishenhe: user2,
-            fhy: res.data.data.fhy
+            user1: user1,
+            user2: user2,
+            user3: res.data.data.user3
           })
         }
       }
@@ -63,52 +63,26 @@ Page({
   toSetTap: function(e) {
     var that = this;
     var user_id = e.currentTarget.dataset.id;
-    var user_type = e.currentTarget.dataset.utype;
-    if (user_type == 2) {
-      wx.showActionSheet({
-        itemList: ['设为管理员', '设为会员', '删除'],
-        success: function(res) {
-          switch (res.tapIndex) {
-            case 0:
-              that.swgl(user_id);
-              break;
-            case 1:
-              that.byh(user_id);
-              break;
-            case 2:
-              that.hyh(user_id);
-              break;
-            default:
-              break;
-          }
-        },
-        fail: function(res) {}
-      })
-    } else if (user_type == 6) {
-      wx.showActionSheet({
-        itemList: ['设为管理员', '取消会员', '删除'],
-        success: function(res) {
-          switch (res.tapIndex) {
-            case 0:
-              that.swgl(user_id);
-              break;
-            case 1:
-              that.qxhy(user_id);
-              break;
-            case 2:
-              that.hyh(user_id);
-              break;
-            default:
-              break;
-          }
-        },
-        fail: function(res) {}
-      })
-    } else {
 
-    }
-
-
+    wx.showActionSheet({
+      itemList: ['设为管理员', '设为会员', '删除'],
+      success: function(res) {
+        switch (res.tapIndex) {
+          case 0:
+            that.swgl(user_id);
+            break;
+          case 1:
+            that.byh(user_id);
+            break;
+          case 2:
+            that.hyh(user_id);
+            break;
+          default:
+            break;
+        }
+      },
+      fail: function(res) {}
+    })
   },
 
   //设为会员
@@ -143,24 +117,6 @@ Page({
       success: function(res) {
         wx.showToast({
           title: '删除成功',
-          icon: 'success',
-          duration: 2000
-        })
-        that.getShenheList()
-      }
-    })
-  },
-  qxhy: function (user_id) {
-    var that = this;
-    var user_id = user_id;
-    wx.request({
-      url: app.globalData.subDomain + '/qxgl',
-      data: {
-        user_id: user_id
-      },
-      success: function (res) {
-        wx.showToast({
-          title: '取消会员成功',
           icon: 'success',
           duration: 2000
         })
@@ -252,13 +208,6 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function() {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function() {
 
   },
 
