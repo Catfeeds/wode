@@ -3,6 +3,7 @@
       <view class="coupons-item" wx:for-items="{{shuipiaos}}" wx:key="id" wx:for-index="idx"  bindtap="toDetailsTap" data-id="{{item.goods_id}}">
         <view style="font-size: 50rpx"> {{item.water_number}}张 </view>
         <view> {{item.goods_name}} </view>
+        <view> 欠{{item.tong_number}}个桶 </view>
       </view>
     </view>
     <view class="goodsList" hidden='true'>

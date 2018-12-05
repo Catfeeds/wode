@@ -1,12 +1,27 @@
 <view class="container" wx:if="{{userInfo.user_type>=99}}">
   <view style="height:20rpx;background: #eee;width:100%;"></view>
   <view class="my-item">
-    <navigator url="/pages/order-list-gzt/index" hover-class="navigator-hover">订单管理 </navigator>
+    <form report-submit="true" bindsubmit="buttonTap1">
+      <button formType="submit">
+        订单管理
+      </button>
+    </form>
+    <!-- <navigator url="/pages/order-list-gzt/index" hover-class="navigator-hover">订单管理 </navigator> -->
   </view>
   <view class="my-item">
-    <navigator url="/pages/my-users-gzt/index" hover-class="navigator-hover">用户管理</navigator>
+    <form report-submit="true" bindsubmit="buttonTap2">
+      <button formType="submit">
+        用户管理
+      </button>
+    </form>
+    <!-- <navigator url="/pages/my-users-gzt/index" hover-class="navigator-hover">用户管理</navigator> -->
   </view>
   <view class="my-item">
-    <navigator url="/pages/my-users-ckgzt/index" hover-class="navigator-hover">查看用户</navigator>
+    <form report-submit="true" bindsubmit="buttonTap3">
+      <button formType="submit">
+        查看用户
+      </button>
+    </form>
+    <!-- <navigator url="/pages/my-users-ckgzt/index" hover-class="navigator-hover">查看用户</navigator> -->
   </view>
 </view>

@@ -7,10 +7,26 @@ Page({
     score: 0,
     score_sign_continuous: 0
   },
-  onLoad() {
+
+  buttonTap1: function(e) {
+    var user_id = wx.getStorageSync('user_id');
+    app.addForm(e.detail.formId, user_id);
+
+    wx.navigateTo({
+      url: "/pages/my-gzt/index"
+    })
   },
+  buttonTap2: function (e) {
+    var user_id = wx.getStorageSync('user_id');
+    app.addForm(e.detail.formId, user_id);
+
+    wx.navigateTo({
+      url: "/pages/order-list-gzt/index"
+    })
+  },
+  onLoad() {},
   onShow() {
-    if (app.globalData.userInfo){
+    if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo
       });
@@ -32,7 +48,7 @@ Page({
           that.setData({
             userInfo: res.data.data
           });
-        } else{
+        } else {
           that.setData({
             userInfo: null
           });

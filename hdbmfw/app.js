@@ -53,6 +53,17 @@ App({
       }
     })
   },
+  addForm: function(formId, userId) {
+    var that = this;
+    wx.request({
+      url: that.globalData.subDomain + '/add_form',
+      data: {
+        form_id: formId,
+        user_id: userId
+      },
+      success: function(res) {}
+    })
+  },
   sendTempleMsg: function(orderId, trigger, template_id, form_id, page, postJsonString) {
     var that = this;
     wx.request({

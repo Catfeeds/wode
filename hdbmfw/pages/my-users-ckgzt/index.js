@@ -23,10 +23,17 @@ Page({
       currentStatu: curStatu
     });
   },
-  dataCode: function (data) {
+  dataCode: function(data) {
     var newDate = new Date();
     newDate.setTime(data * 1000);
     return util.formatTime(newDate);
+  },
+
+  toUserOrder: function(e) {
+    var user_id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: "/pages/order-list-user/index?user_id=" + user_id
+    })
   },
   /**
    * 生命周期函数--监听页面加载

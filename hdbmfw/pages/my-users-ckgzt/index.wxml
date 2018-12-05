@@ -19,8 +19,7 @@
       <view>注册时间：{{item.reg_time}}</view>
     </view>
     <view class='check-list-btn'>
-      {{item.user_id}}
-      <!-- <button catchtap='toSetTap' data-id="{{item.user_id}}">设置</button> -->
+      <button bindtap="toUserOrder" data-id="{{item.user_id}}">查看</button>
     </view>
   </view>
 
@@ -37,8 +36,7 @@
       <view>登录时间：{{item.last_login}}</view>
     </view>
     <view class='check-list-btn'>
-      {{item.user_id}}
-      <!-- <button catchtap='qxgl' data-id="{{item.user_id}}">取消管理员</button> -->
+      <button bindtap="toUserOrder" data-id="{{item.user_id}}">查看</button>
     </view>
   </view>
 
@@ -54,8 +52,7 @@
       </view>
     </view>
     <view class='check-list-btn'>
-      {{item.user_id}}
-      <!-- <button catchtap='qxgl' data-id="{{item.user_id}}">取消管理员</button> -->
+      <button bindtap="toUserOrder" data-id="{{item.user_id}}">查看</button>
     </view>
   </view>
 
