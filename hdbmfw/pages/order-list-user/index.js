@@ -19,6 +19,32 @@ Page({
   //   });
   //   this.onShow();
   // },
+  buttonTap: function(e) {
+    var that = this;
+    var user_id = e.detail.value.user_id;
+    var tong_number = e.detail.value.tong_number;
+    var yajin = e.detail.value.yajin;
+
+    wx.request({
+      url: app.globalData.subDomain + '/up_tongyajin',
+      data: {
+        user_id: user_id,
+        tong_number: tong_number,
+        yajin: yajin
+      },
+      success: function(res) {
+        if (res.data.code == 0) {
+          wx.showModal({
+            title: '成功',
+            content: '',
+            showCancel: false
+          })
+          return;
+        }
+      }
+    })
+  },
+
   dataCode: function(data) {
     var newDate = new Date();
     newDate.setTime(data * 1000);
@@ -74,7 +100,7 @@ Page({
       data: {
         user_id: user_id
       },
-      success: function (res) {
+      success: function(res) {
         if (res.data.code == 0) {
           var shuipiaos = res.data.data;
           var us = res.data.us;
@@ -102,13 +128,13 @@ Page({
     //     currentStatu: options.order_status
     //   })
     // }
-  }, 
+  },
   onReady: function() {
     // 生命周期函数--监听页面初次渲染完成
 
   },
-  onShow: function () {
-    
+  onShow: function() {
+
   },
   onHide: function() {
     // 生命周期函数--监听页面隐藏

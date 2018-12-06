@@ -6,7 +6,18 @@
     </view>
   </view> -->
 
-  <view> 空桶{{us.tong_number}}个  押金{{us.yajin}}元 </view>
+  <view class="form-box">
+    <form report-submit="true" bindsubmit="buttonTap">
+      <input name="user_id" hidden='true' class="input" type="hidden" value="{{us.user_id}}" />
+      <view class="row-wrap">空桶
+        <input name="tong_number" class="input" type="text" placeholder="数量" value="{{us.tong_number}}" />个</view>
+      <view class="row-wrap">押金
+        <input name="yajin" class="input" type="text" placeholder="押金金额" value="{{us.yajin}}" />元</view>
+      <button class="my-btn" formType="submit">
+        修改
+      </button>
+    </form>
+  </view>
   <view class="coupons-list">
     <view class="coupons-item" wx:for-items="{{shuipiaos}}" wx:key="id" wx:for-index="idx" bindtap="toDetailsTap" data-id="{{item.goods_id}}">
       <view style="font-size: 50rpx"> {{item.water_number}}张 </view>

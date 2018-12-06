@@ -228,13 +228,14 @@
   font-size: 24rpx;
 }
 
-.coupons-list{
-    width: 100%;
-    background-color: #fff;
-    margin-top: 20rpx;
+.coupons-list {
+  width: 100%;
+  background-color: #fff;
+  margin-top: 20rpx;
 }
-.coupons-item{
-  width:630rpx;
+
+.coupons-item {
+  width: 630rpx;
   height: 120rpx;
   margin: 10rpx;
   padding: 50rpx;
@@ -242,4 +243,31 @@
   font-size: 30rpx;
   line-height: 50rpx;
   color: #fff;
+}
+
+.form-box {
+  width: 100%;
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+
+.row-wrap {
+  width: 720rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  margin-left: 30rpx;
+  border-bottom: 1rpx solid #eee;
+  display: flex;
+  font-size: 28rpx;
+  /*justify-content: space-between;*/
+}
+
+.my-btn {
+  width: 50%;
+}
+
+input {
+  height: 100%;
+  font-size: 28rpx;
+  padding-left: 30rpx;
 }
