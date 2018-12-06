@@ -64,8 +64,13 @@ Page({
       success: function(res) {
         if (res.data.code == 0) {
           var result = res.data.data;
+          var tuijian = new Array();
+          if (res.data.tuijian){
+            tuijian = res.data.tuijian;
+          }
           that.setData({
-            result: result
+            result: result,
+            tuijian: tuijian
           })
           that.data.istap = false;
           wx.hideLoading();

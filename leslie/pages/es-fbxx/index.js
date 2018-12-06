@@ -138,7 +138,7 @@ Page({
                   var goods_imgs = that.data.imgs;
                   var goods_thumb = that.data.goods_thumb;
                   wx.request({
-                    url: app.globalData.subDomain + '/up_xy_imgs',
+                    url: app.globalData.subDomain + '/up_es_imgs',
                     method: 'POST',
                     data: {
                       id: id,

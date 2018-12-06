@@ -42,4 +42,22 @@
     </block>
   </view>
 
+
+  <view class='ss-hot' wx:if="{{tuijian.length>0}}">
+    <view class='ss-title'>
+      <view style="width: 88%">
+       内容太少？为您推荐：
+      </view>
+    </view>
+  </view>
+  <view class='droplist' wx:if="{{tuijian.length>0}}">
+    <block wx:for="{{tuijian}}" wx:key="{{index}}">
+      <view class='droplist-title' data-index="{{index}}" data-id="{{item.id}}" bindtap='clickPost'>
+        <view class='img-box1-1'>
+          <view>{{item.post_title}}</view>
+          <view class='img-box1-guige'>{{item.post_excerpt}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
 </view>

@@ -6,6 +6,7 @@
       <view class="coupons-item" wx:for-items="{{scores}}" wx:key="id" wx:for-index="idx"  >
         <view style="font-size: 50rpx"> {{item.score}}分 </view>
         <view> {{item.log_txt}} </view>
+        <view> {{item.create_time}} </view>
       </view>
     </view>
 </view>

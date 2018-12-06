@@ -16,12 +16,11 @@
   </view>
   <view class="goods-info">
     <view class="goods-title">{{goodsDetail.goods_name}}</view>
-  </view>
-  <view wx:if="{{hasMoreSelect}}" class="row-arrow" bindtap="bindGuiGeTap">
-    {{selectSize}}
+    <view class="goods-price" style="padding-left:35rpx;">¥ {{goodsDetail.goods_price}}</view>
+    <view class="goods-price" style="color:#999;font-size:24rpx;">{{goodsDetail.goods_number}}件</view>
   </view>
   <view wx:if="{{goodsDetail.goods_desc}}" class="goods-des-info">
-    <view class="label-title">介绍</view>
+    <view class="label-title">物品详情</view>
     <view class="goods-text">
       <template is="wxParse" data="{{wxParseData:article.nodes}}" />
     </view>

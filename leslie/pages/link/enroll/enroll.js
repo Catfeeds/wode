@@ -1,29 +1,29 @@
 var app = getApp()
-var p = new Promise(function (resolve, reject) {  //创建promise，确保页面加载数据前已经加载了openid!
-  wx.login({
-    success: function (res) {
-      if (res.code) {
-        wx.request({
-          url: app.globalData.host + '/application/link/getOpenid.php',
-          data: {
-            appid: app.globalData.AppID,
-            secret: app.globalData.secret,
-            js_code: res.code,
-            grant_type: 'authorization_code'
-          },
-          dataType: 'JSONP',
-          success: function (res) {  //服务端请求并存储openid,并发送openid过来
-            var data0 = JSON.parse(res.data);
-            app.globalData.openid = data0.openid;
-            resolve();
-          }
-        })
-      } else {
-        console.log('获取用户登录态失败！' + res.errMsg)
-      }
-    }
-  });
-})
+//var p = new Promise(function (resolve, reject) {  //创建promise，确保页面加载数据前已经加载了openid!
+//  wx.login({
+//    success: function (res) {
+//      if (res.code) {
+//        wx.request({
+//          url: app.globalData.host + '/application/link/getOpenid.php',
+//          data: {
+//            appid: app.globalData.AppID,
+//            secret: app.globalData.secret,
+//            js_code: res.code,
+//            grant_type: 'authorization_code'
+//          },
+//          dataType: 'JSONP',
+//          success: function (res) {  //服务端请求并存储openid,并发送openid过来
+//            var data0 = JSON.parse(res.data);
+//            app.globalData.openid = data0.openid;
+//            resolve();
+//          }
+//        })
+//      } else {
+//        console.log('获取用户登录态失败！' + res.errMsg)
+//      }
+//    }
+//  });
+//})
 
 Page({
   data: {
