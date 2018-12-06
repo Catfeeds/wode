@@ -18,7 +18,7 @@
   </view>
   <view class="my-item" wx:if="{{userInfo.user_type>99}}">
     <form report-submit="true" bindsubmit="buttonTap1">
-      <button formType="submit">
+      <button class="my-btn" formType="submit">
         工作台
       </button>
     </form>
@@ -26,7 +26,7 @@
   </view>
   <view class="my-item" wx:elif="{{userInfo.user_type==99}}">
     <form report-submit="true" bindsubmit="buttonTap2">
-      <button formType="submit">
+      <button class="my-btn" formType="submit">
         工作台
       </button>
     </form>

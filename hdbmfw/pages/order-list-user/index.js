@@ -77,9 +77,11 @@ Page({
       success: function (res) {
         if (res.data.code == 0) {
           var shuipiaos = res.data.data;
+          var us = res.data.us;
           if (shuipiaos.length > 0) {
             that.setData({
-              shuipiaos: shuipiaos
+              shuipiaos: shuipiaos,
+              us: us
             });
           }
         }
