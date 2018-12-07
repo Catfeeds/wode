@@ -44,6 +44,29 @@ Page({
       }
     })
   },
+  buttonTap3: function (e) {
+    var that = this;
+    var water_id = e.detail.value.water_id;
+    var water_number = e.detail.value.water_number;
+
+    wx.request({
+      url: app.globalData.subDomain + '/up_user_water',
+      data: {
+        water_id: water_id,
+        water_number: water_number
+      },
+      success: function (res) {
+        if (res.data.code == 0) {
+          wx.showModal({
+            title: '成功',
+            content: '',
+            showCancel: false
+          })
+          return;
+        }
+      }
+    })
+  },
 
   dataCode: function(data) {
     var newDate = new Date();
@@ -70,6 +93,7 @@ Page({
       success: (res) => {
         wx.hideLoading();
         if (res.data.code == 0) {
+          console.log(res.data.data)
           var datas = res.data.data.orderList;
           var datasW = res.data.data.orderWaterList;
           for (var i = 0; i < datas.length; i++) {
@@ -104,12 +128,10 @@ Page({
         if (res.data.code == 0) {
           var shuipiaos = res.data.data;
           var us = res.data.us;
-          if (shuipiaos.length > 0) {
-            that.setData({
-              shuipiaos: shuipiaos,
-              us: us
-            });
-          }
+          that.setData({
+            shuipiaos: shuipiaos,
+            us: us
+          });
         }
       }
     })

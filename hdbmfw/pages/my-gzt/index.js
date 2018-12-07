@@ -6,44 +6,37 @@ Page({
         icon: '../../images/my/fukuan.png',
         num: 0,
         text: '今日订单数',
-
-        url: '/pages/Shop/jlorder-list/index?type=daifukuan&currentIndex=0'
-
+        url: '/pages/search-orders/index'
       },
       {
         icon: '../../images/my/shouhuo.png',
         num: 0,
-
         text: '今日新用户',
-        url: '/pages/Shop/jlorder-list/index?type=daifahuo&currentIndex=1'
-
-
+        url: '/pages/search-users/index?reg_time=today'
       },
       {
         icon: '../../images/my/wancheng.png',
         num: 0,
         text: '今日访问用户',
-
-        url: '/pages/Shop/jlorder-list/index?type=yifahuo&currentIndex=2'
-
+        url: '/pages/search-users/index?last_login=today'
       },
       {
         icon: '../../images/my/wancheng.png',
         num: 0,
         text: '昨日订单数',
-        url: '/pages/Shop/jlorder-list/index?type=tuikuan&currentIndex=3'
+        url: '/pages/search-orders/index'
       },
       {
         icon: '../../images/my/wancheng.png',
         num: 0,
         text: '昨日新用户',
-        url: '/pages/Shop/jlorder-list/index?type=chenggong&currentIndex=4'
+        url: '/pages/search-users/index?reg_time=yesterday'
       },
       {
         icon: '../../images/my/wancheng.png',
         num: 0,
         text: '总用户',
-        url: '/pages/Shop/jlorder-list/index?type=guanbi&currentIndex=5'
+        url: '/pages/search-users/index'
       },
 
     ],
@@ -89,7 +82,6 @@ Page({
         'Accept': 'application/json'
       },
       success: function(res) {
-        console.log(res.data)
         var datas = res.data.data
         wx.hideLoading();
         if (res.data.code == 0) {

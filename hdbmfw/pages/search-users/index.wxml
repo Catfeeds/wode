@@ -1,0 +1,19 @@
+<!--pages/my-console-check/index.wxml-->
+<view class='container'>
+  <view class='check-list checked-list' wx:for="{{users}}" wx:key="{{index}}" catchtap='' data-id="{{item.user_id}}">
+    <view class='check-list-img'>
+      <image src='{{item.avatar}}'></image>
+    </view>
+    <view class='check-list-content'>
+      <view>姓名：{{item.user_name}}</view>
+      <view catchtap='tocallphone' data-phone="{{item.mobile}}">
+        <text class='iconfont icon-shouji'>手机号码：{{item.mobile}}</text>
+      </view>
+      <view>登录时间：{{item.last_login}}</view>
+    </view>
+    <view class='check-list-btn'>
+      <button bindtap="toUserOrder" data-id="{{item.user_id}}">查看</button>
+    </view>
+  </view>
+
+</view>

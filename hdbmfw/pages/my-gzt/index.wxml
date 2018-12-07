@@ -2,14 +2,16 @@
 
   <view class='data-num'>
     <block wx:for="{{tabList}}" wx:key="{{index}}">
-      <view class="weui_cell">
-        <view class="weui_cell_hd">
-          {{item.num}}
+      <navigator class="weui_cell" url="{{item.url}}">
+        <view>
+          <view class="weui_cell_hd">
+            {{item.num}}
+          </view>
+          <view class="weui_cell_bd">
+            <view class="weui_cell_bd_p"> {{item.text}}</view>
+          </view>
         </view>
-        <view class="weui_cell_bd">
-          <view class="weui_cell_bd_p"> {{item.text}}</view>
-        </view>
-      </view>
+      </navigator>
     </block>
   </view>
   <view style="height:20rpx;background: #eee;width:100%;"></view>

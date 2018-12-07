@@ -18,6 +18,8 @@
     "pages/my-users-gzt/index",
     "pages/my-users-ckgzt/index",
     "pages/my-information/index",
+    "pages/search-users/index",
+    "pages/search-orders/index",
     "pages/notice/show",
     "pages/recharge/index",
     "pages/search/index",

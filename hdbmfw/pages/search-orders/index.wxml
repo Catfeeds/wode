@@ -1,43 +1,8 @@
 <view class="container">
-  <!-- <view class="status-box">
-    <view bindtap="statusTap" class="status-label {{index == currentType ? 'active' : ''}}" wx:for-items="{{statusType}}" wx:key="{{index}}" data-index="{{index}}" data-statu="{{statusKey[index]}}">
-      {{item}}
-      <view class="{{tabClass[index]}}"></view>
-    </view>
-  </view> -->
-
-  <view class="form-box">
-    <form report-submit="true" bindsubmit="buttonTap">
-      <input name="user_id" hidden='true' class="input" type="hidden" value="{{us.user_id}}" />
-      <view class="row-wrap">空桶
-        <input name="tong_number" class="input" type="text" placeholder="数量" value="{{us.tong_number}}" />个</view>
-      <view class="row-wrap">押金
-        <input name="yajin" class="input" type="text" placeholder="押金金额" value="{{us.yajin}}" />元</view>
-      <button class="my-btn" formType="submit">
-        修改
-      </button>
-    </form>
-  </view>
-  <view class="coupons-list">
-    <view class="coupons-item" wx:for-items="{{shuipiaos}}" wx:key="id" wx:for-index="idx" data-id="{{item.goods_id}}">
-      <form report-submit="true" bindsubmit="buttonTap3">
-        <view class="row-wrap">
-          水票数量：
-          <input name="water_id" hidden='true' class="input" type="hidden" value="{{item.water_id}}" />
-          <input name="water_number" class="input" type="text" placeholder="水票" value="{{item.water_number}}" />张 </view>
-        <view class="row-wrap"> {{item.goods_name}} </view>
-        <view>
-          <button class="my-btn" formType="submit">
-            修改
-          </button>
-        </view>
-      </form>
-    </view>
-  </view>
-  <!-- <view class="no-order" hidden="{{(orderList.length || orderWaterList.length) ? true : false}}">
+  <view class="no-order" hidden="{{(orderList.length || orderWaterList.length) ? true : false}}">
     <image src="/images/no-order.png" class="no-order-img"></image>
     <view class="text">暂无订单</view>
-  </view> -->
+  </view>
   <view class="order-list" hidden="{{(orderList.length || orderWaterList.length) ? false : true}}">
     <view class="a-order" wx:for-items="{{orderWaterList}}" wx:key="{{index}}">
       <view class="order-date">
@@ -46,10 +11,12 @@
         <view class="status {{(item.order_status==-1) ? '':'red'}}" wx:if="{{item.shipping_status == 1}}">待收货</view>
         <view class="status {{(item.order_status==-1) ? '':'red'}}" wx:if="{{item.shipping_status == 2}}">交易成功</view>
       </view>
+      <view class="order-date" bindtap="toLocTap" data-addr="{{item.address}}">
+        <view class="date-box">收货地址：{{item.address}} （{{item.consignee}}）</view>
+      </view>
       <view class="order-date2" wx:if="{{item.remark}}">
         <view class="date-box">备注：{{item.remark}} </view>
       </view>
-
       <view data-id="{{item.id}}">
         <view wx:if="{{goodsWaterMap[index].length==1}}" class='img'>
           <view class='img-box1'>
@@ -71,9 +38,8 @@
         </scroll-view>
       </view>
       <view class="price-box" wx:if="{{item.shipping_status <= 1? true:false}}">
-        <view class="btn cancel-btn" wx:if="{{item.shipping_status==0?true:false}}" bindtap="cancelOrderWaterTap" data-id="{{item.id}}">取消叫水</view>
-        <view class="btn topay-btn main-color-click" wx:if="{{item.shipping_status == 1? true:false}}" bindtap="confirmBtnWaterTap" data-id="{{item.id}}">确认收货</view>
-        <view class="btn cancel-btn" bindtap="makePhoneCall">联系客服</view>
+        <view class="btn cancel-btn" wx:if="{{item.shipping_status==0?true:false}}" bindtap="shippingOrderWaterTap" data-id="{{item.id}}">开始送水</view>
+        <view class="btn cancel-btn" bindtap="makePhoneCall" data-phone="{{item.mobile}}">联系用户</view>
       </view>
     </view>
     <view class="a-order" wx:for-items="{{orderList}}" wx:key="{{index}}">
@@ -83,10 +49,12 @@
         <view class="status {{(item.order_status==-1) ? '':'red'}}" wx:if="{{item.shipping_status == 1}}">待收货</view>
         <view class="status {{(item.order_status==-1) ? '':'red'}}" wx:if="{{item.shipping_status == 2}}">交易成功</view>
       </view>
+      <view class="order-date" bindtap="toLocTap" data-addr="{{item.address}}">
+        <view class="date-box">收货地址：{{item.address}} （{{item.consignee}}）</view>
+      </view>
       <view class="order-date2" wx:if="{{item.remark}}">
         <view class="date-box">备注：{{item.remark}} </view>
       </view>
-
       <view bindtap="orderDetail" data-id="{{item.id}}">
         <view wx:if="{{goodsMap[index].length==1}}" class='img'>
           <view class='img-box1'>
@@ -111,9 +79,8 @@
         <view class="total-price">共计：¥ {{item.order_amount}}</view>
       </view>
       <view class="price-box" wx:if="{{item.shipping_status <= 1? true:false}}">
-        <view class="btn cancel-btn" wx:if="{{item.shipping_status==0?true:false}}" bindtap="cancelOrderTap" data-id="{{item.id}}">取消订单</view>
-        <view class="btn topay-btn main-color-click" wx:if="{{item.shipping_status == 1? true:false}}" bindtap="confirmBtnTap" data-id="{{item.id}}">确认收货</view>
-        <view class="btn cancel-btn" bindtap="makePhoneCall">联系客服</view>
+        <view class="btn cancel-btn" wx:if="{{item.shipping_status==0?true:false}}" bindtap="shippingOrderTap" data-id="{{item.id}}">发货</view>
+        <view class="btn cancel-btn" bindtap="makePhoneCall" data-phone="{{item.mobile}}">联系用户</view>
       </view>
     </view>
 
