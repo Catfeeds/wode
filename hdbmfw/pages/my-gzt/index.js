@@ -6,7 +6,7 @@ Page({
         icon: '../../images/my/fukuan.png',
         num: 0,
         text: '今日订单数',
-        url: '/pages/search-orders/index'
+        url: '/pages/search-orders/index?add_time=today'
       },
       {
         icon: '../../images/my/shouhuo.png',
@@ -24,7 +24,7 @@ Page({
         icon: '../../images/my/wancheng.png',
         num: 0,
         text: '昨日订单数',
-        url: '/pages/search-orders/index'
+        url: '/pages/search-orders/index?add_time=yesterday'
       },
       {
         icon: '../../images/my/wancheng.png',

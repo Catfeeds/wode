@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
+
   },
   dataCode: function(data) {
     var newDate = new Date();
@@ -26,20 +26,22 @@ Page({
    */
   onLoad: function(options) {
     if (options.reg_time) {
-
+      this.getShenheList(options.reg_time, "");
+    } else if (options.last_login) {
+      this.getShenheList("", options.last_login);
+    } else {
+      this.getShenheList("", "");
     }
-    if (options.last_login) {
-
-    }
-
-    this.getShenheList()
   },
   //列表
-  getShenheList: function() {
+  getShenheList: function(reg_time, last_login) {
     var that = this;
     wx.request({
       url: app.globalData.subDomain + '/user_search',
-      data: {},
+      data: {
+        reg_time,
+        last_login
+      },
       success: function(res) {
         if (res.data.code == 0) {
           var users = res.data.data;

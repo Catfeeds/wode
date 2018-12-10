@@ -7,8 +7,7 @@ var qqmapsdk = new QQMapWX({
 });
 var app = getApp()
 Page({
-  data: {
-  },
+  data: {},
   dataCode: function(data) {
     var newDate = new Date();
     newDate.setTime(data * 1000);
@@ -91,6 +90,11 @@ Page({
     })
   },
   onLoad: function(options) {
+    if (options.add_time) {
+      this.getDingdanList(options.add_time);
+    } else {
+      this.getDingdanList("");
+    }
     // 生命周期函数--监听页面加载
     // console.log(options.order_status);
     // if (options.currentType && options.currentType.length > 0) {
@@ -111,16 +115,15 @@ Page({
     // 生命周期函数--监听页面初次渲染完成
 
   },
-  onShow: function() {
+  getDingdanList: function(add_time) {
     // 获取订单列表
     wx.showLoading();
     var that = this;
-    var postData = {};
-    postData.status = that.data.currentStatu;
-    postData.shipping_id = wx.getStorageSync('user_id');
     wx.request({
       url: app.globalData.subDomain + '/order_search',
-      data: postData,
+      data: {
+        add_time
+      },
       success: (res) => {
         wx.hideLoading();
         if (res.data.code == 0) {
@@ -148,6 +151,9 @@ Page({
         }
       }
     })
+  },
+  onShow: function() {
+
   },
   onHide: function() {
     // 生命周期函数--监听页面隐藏
