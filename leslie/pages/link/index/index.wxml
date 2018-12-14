@@ -2,11 +2,11 @@
   <view class='tab'>
     <view class="{{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">我参加的</view>
     <view class="{{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">我创建的</view>
-    <view class="{{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">群活动</view>
+    <view class="{{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">全部活动</view>
   </view>
   <view>
     <view wx:if='{{currentTab==0}}'>
-      <view wx:for="{{joinData}}" data-taskid="{{item.taskid}}" bindtap='gotoEnroll' class='item'>
+      <view wx:for="{{joinData}}" wx:key="key" data-taskid="{{item.taskid}}" bindtap='gotoEnroll' class='item'>
         <view style='font-weight:bold;'>
           {{item.title}}
         </view>
@@ -14,7 +14,7 @@
       </view>
     </view>
     <view wx:if='{{currentTab==1}}'>
-      <view wx:for="{{createData}}" data-taskid="{{item.taskid}}" bindtap='gotoEnroll' class='item'>
+      <view wx:for="{{createData}}" wx:key="key" data-taskid="{{item.taskid}}" bindtap='gotoEnroll' class='item'>
         <view style='font-weight:bold;'>
           {{item.title}}
         </view>
@@ -24,7 +24,7 @@
   </view>
   <view wx:if='{{currentTab==2}}'>
     <view wx:if='{{groupData==""}}' style='color:gray;padding:40rpx 0;text-align:center;'>从群内打开该小程序才能查看到群活动</view>
-    <view wx:for="{{groupData}}" data-taskid="{{item.taskid}}" bindtap='gotoEnroll' class='item'>
+    <view wx:for="{{groupData}}" wx:key="key" data-taskid="{{item.taskid}}" bindtap='gotoEnroll' class='item'>
       <view style='font-weight:bold;'>
         {{item.title}}
       </view>
@@ -33,7 +33,7 @@
   </view>
 
   <view direction="all" class='creat' bindtap='creat'>
-    创建接龙
+    创建活动
   </view>
 
 </view>

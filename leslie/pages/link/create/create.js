@@ -11,8 +11,8 @@ var utils = (function () {
 var app = getApp()
 Page({
   data: {
-    taskid:'',  //接龙的id号
-    title: '', //接龙标题
+    taskid:'',  //活动的id号
+    title: '', //活动标题
     date: '', //活动日期
     time: '', //活动时间
     address: '',
@@ -26,20 +26,6 @@ Page({
       date: utils.year + '-' + ('0' + utils.month).substr(-2) + '-' + ('0' + utils.date).substr(-2),
       time: ('0' + utils.hours).substr(-2) + ':' + ('0' + utils.minutes).substr(-2)
     })
-    wx.request({  //请求发起人的nickName
-      url: app.globalData.host + '/application/link/wxuserDataGet.php',
-      data: {
-        openid: app.globalData.openid,
-      },
-      dataType: 'JSONP',
-      success: function (res) {
-        wx.hideLoading();
-        console.log('nickName为', JSON.parse(res.data))
-        that.setData({
-          name: JSON.parse(res.data)[0].nickName
-        })
-      }
-    });
   },
   bindDateChange: function (e) {
     var that = this;
@@ -117,7 +103,7 @@ Page({
     if (that.data.title == '') {
       wx.showModal({
         title: '警告!',
-        content: '接龙标题必需填写',
+        content: '标题必需填写',
         success: function (res) {
           
         }
@@ -129,13 +115,13 @@ Page({
       that.setData({
         taskid: new Date().getTime().toString() + parseInt(Math.random() * 10000000)//创建时间+随机数
       })
-      console.log('创建页面的openid为:' + app.globalData.openid)
+      var user_id = wx.getStorageSync('user_id');
       wx.request({
         url: app.globalData.subDomain + '/creatjielongtask',
         data: {
-          openid: app.globalData.openid,  //openid对应taskid
-          taskid: that.data.taskid,  //用创建的时间作为接龙的id号
-          title: that.data.title, //接龙标题
+          user_id: user_id,  //openid对应taskid
+          taskid: that.data.taskid,  //用创建的时间作为活动的id号
+          title: that.data.title, //活动标题
           date: that.data.date, //活动日期
           time: that.data.time, //活动时间
           address: that.data.address,
